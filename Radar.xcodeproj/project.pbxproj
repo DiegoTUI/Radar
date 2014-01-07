@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38B136DFD47540C18913D650 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEA3BF1EC8242E485E23BF5 /* libPods.a */; };
 		76D727A8187C523900F3545E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A7187C523900F3545E /* Foundation.framework */; };
 		76D727AA187C523900F3545E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A9187C523900F3545E /* CoreGraphics.framework */; };
 		76D727AC187C523900F3545E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727AB187C523900F3545E /* UIKit.framework */; };
@@ -20,7 +21,22 @@
 		76D727C8187C523A00F3545E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A7187C523900F3545E /* Foundation.framework */; };
 		76D727C9187C523A00F3545E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727AB187C523900F3545E /* UIKit.framework */; };
 		76D727D1187C523A00F3545E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76D727CF187C523A00F3545E /* InfoPlist.strings */; };
-		76D727D3187C523A00F3545E /* RadarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727D2187C523A00F3545E /* RadarTests.m */; };
+		76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727EA187C5CC500F3545E /* TUIBaseController.m */; };
+		76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727ED187C5CC500F3545E /* TUIBaseViewController.m */; };
+		76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727F1187C5CDB00F3545E /* TUIBaseMapAnnotation.m */; };
+		76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727F3187C5CDB00F3545E /* TUIBaseModel.m */; };
+		76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727F9187C5CF000F3545E /* TUIBaseLabel.m */; };
+		76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727FC187C5CF000F3545E /* TUIBaseView.m */; };
+		76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72807187C5D6F00F3545E /* NSString+TUIString.m */; };
+		76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72809187C5D6F00F3545E /* UIColor+TUIColors.m */; };
+		76D72810187C5D8400F3545E /* TUITitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7280D187C5D8400F3545E /* TUITitleView.m */; };
+		76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7280F187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m */; };
+		76D72818187C62B600F3545E /* NSString+TUIStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72817187C62B600F3545E /* NSString+TUIStringSpec.m */; };
+		76D7281B187C62D000F3545E /* TUIBaseMapAnnotationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72819187C62D000F3545E /* TUIBaseMapAnnotationSpec.m */; };
+		76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7281A187C62D000F3545E /* TUIBaseModelSpec.m */; };
+		76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7281D187C62E100F3545E /* TUIBaseControllerSpec.m */; };
+		76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7281E187C62E100F3545E /* TUIBaseViewControllerSpec.m */; };
+		CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13DA0B9C148D4F648817352A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarTests.xcconfig"; path = "Pods/Pods-RadarTests.xcconfig"; sourceTree = "<group>"; };
 		76D727A4187C523900F3545E /* Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D727A7187C523900F3545E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76D727A9187C523900F3545E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,7 +71,43 @@
 		76D727C6187C523A00F3545E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		76D727CE187C523A00F3545E /* RadarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RadarTests-Info.plist"; sourceTree = "<group>"; };
 		76D727D0187C523A00F3545E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		76D727D2187C523A00F3545E /* RadarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadarTests.m; sourceTree = "<group>"; };
+		76D727E8187C5CC500F3545E /* TUIBaseController_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseController_Private.h; path = Modules/Base/Controller/TUIBaseController_Private.h; sourceTree = "<group>"; };
+		76D727E9187C5CC500F3545E /* TUIBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseController.h; path = Modules/Base/Controller/TUIBaseController.h; sourceTree = "<group>"; };
+		76D727EA187C5CC500F3545E /* TUIBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseController.m; path = Modules/Base/Controller/TUIBaseController.m; sourceTree = "<group>"; };
+		76D727EB187C5CC500F3545E /* TUIBaseViewController_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseViewController_Private.h; path = Modules/Base/Controller/TUIBaseViewController_Private.h; sourceTree = "<group>"; };
+		76D727EC187C5CC500F3545E /* TUIBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseViewController.h; path = Modules/Base/Controller/TUIBaseViewController.h; sourceTree = "<group>"; };
+		76D727ED187C5CC500F3545E /* TUIBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseViewController.m; path = Modules/Base/Controller/TUIBaseViewController.m; sourceTree = "<group>"; };
+		76D727F0187C5CDB00F3545E /* TUIBaseMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseMapAnnotation.h; path = Modules/Base/Model/TUIBaseMapAnnotation.h; sourceTree = "<group>"; };
+		76D727F1187C5CDB00F3545E /* TUIBaseMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseMapAnnotation.m; path = Modules/Base/Model/TUIBaseMapAnnotation.m; sourceTree = "<group>"; };
+		76D727F2187C5CDB00F3545E /* TUIBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseModel.h; path = Modules/Base/Model/TUIBaseModel.h; sourceTree = "<group>"; };
+		76D727F3187C5CDB00F3545E /* TUIBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseModel.m; path = Modules/Base/Model/TUIBaseModel.m; sourceTree = "<group>"; };
+		76D727F4187C5CDB00F3545E /* TUISerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISerializable.h; path = Modules/Base/Model/TUISerializable.h; sourceTree = "<group>"; };
+		76D727F7187C5CF000F3545E /* TUIBaseLabel_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseLabel_Private.h; path = Modules/Base/View/TUIBaseLabel_Private.h; sourceTree = "<group>"; };
+		76D727F8187C5CF000F3545E /* TUIBaseLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseLabel.h; path = Modules/Base/View/TUIBaseLabel.h; sourceTree = "<group>"; };
+		76D727F9187C5CF000F3545E /* TUIBaseLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseLabel.m; path = Modules/Base/View/TUIBaseLabel.m; sourceTree = "<group>"; };
+		76D727FA187C5CF000F3545E /* TUIBaseView_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseView_Private.h; path = Modules/Base/View/TUIBaseView_Private.h; sourceTree = "<group>"; };
+		76D727FB187C5CF000F3545E /* TUIBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseView.h; path = Modules/Base/View/TUIBaseView.h; sourceTree = "<group>"; };
+		76D727FC187C5CF000F3545E /* TUIBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseView.m; path = Modules/Base/View/TUIBaseView.m; sourceTree = "<group>"; };
+		76D72800187C5D5600F3545E /* Accessibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Accessibility.h; path = Modules/Shared/Constants/Accessibility.h; sourceTree = "<group>"; };
+		76D72801187C5D5600F3545E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Modules/Shared/Constants/Constants.h; sourceTree = "<group>"; };
+		76D72802187C5D5600F3545E /* Fonts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Fonts.h; path = Modules/Shared/Constants/Fonts.h; sourceTree = "<group>"; };
+		76D72803187C5D5600F3545E /* Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Layout.h; path = Modules/Shared/Constants/Layout.h; sourceTree = "<group>"; };
+		76D72804187C5D5600F3545E /* Numbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Numbers.h; path = Modules/Shared/Constants/Numbers.h; sourceTree = "<group>"; };
+		76D72805187C5D5600F3545E /* OSVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OSVersion.h; path = Modules/Shared/Constants/OSVersion.h; sourceTree = "<group>"; };
+		76D72806187C5D6F00F3545E /* NSString+TUIString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+TUIString.h"; path = "Modules/Shared/Model/NSString+TUIString.h"; sourceTree = "<group>"; };
+		76D72807187C5D6F00F3545E /* NSString+TUIString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+TUIString.m"; path = "Modules/Shared/Model/NSString+TUIString.m"; sourceTree = "<group>"; };
+		76D72808187C5D6F00F3545E /* UIColor+TUIColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+TUIColors.h"; path = "Modules/Shared/Model/UIColor+TUIColors.h"; sourceTree = "<group>"; };
+		76D72809187C5D6F00F3545E /* UIColor+TUIColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+TUIColors.m"; path = "Modules/Shared/Model/UIColor+TUIColors.m"; sourceTree = "<group>"; };
+		76D7280C187C5D8400F3545E /* TUITitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUITitleView.h; path = Modules/Shared/View/TUITitleView.h; sourceTree = "<group>"; };
+		76D7280D187C5D8400F3545E /* TUITitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUITitleView.m; path = Modules/Shared/View/TUITitleView.m; sourceTree = "<group>"; };
+		76D7280E187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+BackBarButtonItem.h"; path = "Modules/Shared/View/UIBarButtonItem+BackBarButtonItem.h"; sourceTree = "<group>"; };
+		76D7280F187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+BackBarButtonItem.m"; path = "Modules/Shared/View/UIBarButtonItem+BackBarButtonItem.m"; sourceTree = "<group>"; };
+		76D72817187C62B600F3545E /* NSString+TUIStringSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+TUIStringSpec.m"; path = "Modules/Shared/Model/NSString+TUIStringSpec.m"; sourceTree = "<group>"; };
+		76D72819187C62D000F3545E /* TUIBaseMapAnnotationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseMapAnnotationSpec.m; path = Modules/Base/Model/TUIBaseMapAnnotationSpec.m; sourceTree = "<group>"; };
+		76D7281A187C62D000F3545E /* TUIBaseModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseModelSpec.m; path = Modules/Base/Model/TUIBaseModelSpec.m; sourceTree = "<group>"; };
+		76D7281D187C62E100F3545E /* TUIBaseControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseControllerSpec.m; path = Modules/Base/Controller/TUIBaseControllerSpec.m; sourceTree = "<group>"; };
+		76D7281E187C62E100F3545E /* TUIBaseViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseViewControllerSpec.m; path = Modules/Base/Controller/TUIBaseViewControllerSpec.m; sourceTree = "<group>"; };
+		EFEA3BF1EC8242E485E23BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +118,7 @@
 				76D727AA187C523900F3545E /* CoreGraphics.framework in Frameworks */,
 				76D727AC187C523900F3545E /* UIKit.framework in Frameworks */,
 				76D727A8187C523900F3545E /* Foundation.framework in Frameworks */,
+				38B136DFD47540C18913D650 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +129,7 @@
 				76D727C7187C523A00F3545E /* XCTest.framework in Frameworks */,
 				76D727C9187C523A00F3545E /* UIKit.framework in Frameworks */,
 				76D727C8187C523A00F3545E /* Foundation.framework in Frameworks */,
+				CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +143,8 @@
 				76D727CC187C523A00F3545E /* RadarTests */,
 				76D727A6187C523900F3545E /* Frameworks */,
 				76D727A5187C523900F3545E /* Products */,
+				13DA0B9C148D4F648817352A /* Pods.xcconfig */,
+				6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +164,8 @@
 				76D727A9187C523900F3545E /* CoreGraphics.framework */,
 				76D727AB187C523900F3545E /* UIKit.framework */,
 				76D727C6187C523A00F3545E /* XCTest.framework */,
+				EFEA3BF1EC8242E485E23BF5 /* libPods.a */,
+				477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +173,9 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
+				76D727E4187C596600F3545E /* Search */,
+				76D727DD187C58F100F3545E /* Shared */,
+				76D727DC187C58E400F3545E /* Base */,
 				76D727B6187C523A00F3545E /* TUIAppDelegate.h */,
 				76D727B7187C523A00F3545E /* TUIAppDelegate.m */,
 				76D727B9187C523A00F3545E /* Main.storyboard */,
@@ -137,7 +201,8 @@
 		76D727CC187C523A00F3545E /* RadarTests */ = {
 			isa = PBXGroup;
 			children = (
-				76D727D2187C523A00F3545E /* RadarTests.m */,
+				76D72815187C613F00F3545E /* Shared */,
+				76D72812187C60F000F3545E /* Base */,
 				76D727CD187C523A00F3545E /* Supporting Files */,
 			);
 			path = RadarTests;
@@ -152,6 +217,181 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		76D727DC187C58E400F3545E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				76D727E0187C590E00F3545E /* Controller */,
+				76D727DE187C58FA00F3545E /* Model */,
+				76D727DF187C590400F3545E /* View */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		76D727DD187C58F100F3545E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				76D727FF187C5D3A00F3545E /* Constants */,
+				76D727E1187C593700F3545E /* Controller */,
+				76D727E2187C594100F3545E /* Model */,
+				76D727E3187C594900F3545E /* View */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		76D727DE187C58FA00F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D727F0187C5CDB00F3545E /* TUIBaseMapAnnotation.h */,
+				76D727F1187C5CDB00F3545E /* TUIBaseMapAnnotation.m */,
+				76D727F2187C5CDB00F3545E /* TUIBaseModel.h */,
+				76D727F3187C5CDB00F3545E /* TUIBaseModel.m */,
+				76D727F4187C5CDB00F3545E /* TUISerializable.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D727DF187C590400F3545E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76D727F7187C5CF000F3545E /* TUIBaseLabel_Private.h */,
+				76D727F8187C5CF000F3545E /* TUIBaseLabel.h */,
+				76D727F9187C5CF000F3545E /* TUIBaseLabel.m */,
+				76D727FA187C5CF000F3545E /* TUIBaseView_Private.h */,
+				76D727FB187C5CF000F3545E /* TUIBaseView.h */,
+				76D727FC187C5CF000F3545E /* TUIBaseView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		76D727E0187C590E00F3545E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76D727E8187C5CC500F3545E /* TUIBaseController_Private.h */,
+				76D727E9187C5CC500F3545E /* TUIBaseController.h */,
+				76D727EA187C5CC500F3545E /* TUIBaseController.m */,
+				76D727EB187C5CC500F3545E /* TUIBaseViewController_Private.h */,
+				76D727EC187C5CC500F3545E /* TUIBaseViewController.h */,
+				76D727ED187C5CC500F3545E /* TUIBaseViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		76D727E1187C593700F3545E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		76D727E2187C594100F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D72806187C5D6F00F3545E /* NSString+TUIString.h */,
+				76D72807187C5D6F00F3545E /* NSString+TUIString.m */,
+				76D72808187C5D6F00F3545E /* UIColor+TUIColors.h */,
+				76D72809187C5D6F00F3545E /* UIColor+TUIColors.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D727E3187C594900F3545E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76D7280C187C5D8400F3545E /* TUITitleView.h */,
+				76D7280D187C5D8400F3545E /* TUITitleView.m */,
+				76D7280E187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.h */,
+				76D7280F187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		76D727E4187C596600F3545E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				76D727E7187C597F00F3545E /* Controller */,
+				76D727E6187C597700F3545E /* Model */,
+				76D727E5187C597000F3545E /* View */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		76D727E5187C597000F3545E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		76D727E6187C597700F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D727E7187C597F00F3545E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		76D727FF187C5D3A00F3545E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				76D72800187C5D5600F3545E /* Accessibility.h */,
+				76D72801187C5D5600F3545E /* Constants.h */,
+				76D72802187C5D5600F3545E /* Fonts.h */,
+				76D72803187C5D5600F3545E /* Layout.h */,
+				76D72804187C5D5600F3545E /* Numbers.h */,
+				76D72805187C5D5600F3545E /* OSVersion.h */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		76D72812187C60F000F3545E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				76D72814187C612C00F3545E /* Controller */,
+				76D72813187C60FB00F3545E /* Model */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		76D72813187C60FB00F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D72819187C62D000F3545E /* TUIBaseMapAnnotationSpec.m */,
+				76D7281A187C62D000F3545E /* TUIBaseModelSpec.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D72814187C612C00F3545E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76D7281D187C62E100F3545E /* TUIBaseControllerSpec.m */,
+				76D7281E187C62E100F3545E /* TUIBaseViewControllerSpec.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		76D72815187C613F00F3545E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				76D72816187C615B00F3545E /* Model */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		76D72816187C615B00F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D72817187C62B600F3545E /* NSString+TUIStringSpec.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +399,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76D727D6187C523A00F3545E /* Build configuration list for PBXNativeTarget "Radar" */;
 			buildPhases = (
+				8591D5E6BA45414283AA931A /* Check Pods Manifest.lock */,
 				76D727A0187C523900F3545E /* Sources */,
 				76D727A1187C523900F3545E /* Frameworks */,
 				76D727A2187C523900F3545E /* Resources */,
+				BA4D423223734F6FAF3FAE71 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,9 +418,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76D727D9187C523A00F3545E /* Build configuration list for PBXNativeTarget "RadarTests" */;
 			buildPhases = (
+				1C3210E5D9994E558266D6E5 /* Check Pods Manifest.lock */,
 				76D727C1187C523A00F3545E /* Sources */,
 				76D727C2187C523A00F3545E /* Frameworks */,
 				76D727C3187C523A00F3545E /* Resources */,
+				0FE37CFEAA174AF8975B5B5E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,14 +489,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FE37CFEAA174AF8975B5B5E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-RadarTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C3210E5D9994E558266D6E5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8591D5E6BA45414283AA931A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA4D423223734F6FAF3FAE71 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		76D727A0187C523900F3545E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
+				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
+				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
 				76D727B4187C523A00F3545E /* main.m in Sources */,
+				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
+				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
 				76D727BE187C523A00F3545E /* TUIViewController.m in Sources */,
 				76D727B8187C523A00F3545E /* TUIAppDelegate.m in Sources */,
+				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
+				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
+				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
+				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
+				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +577,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76D727D3187C523A00F3545E /* RadarTests.m in Sources */,
+				76D72818187C62B600F3545E /* NSString+TUIStringSpec.m in Sources */,
+				76D7281B187C62D000F3545E /* TUIBaseMapAnnotationSpec.m in Sources */,
+				76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */,
+				76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */,
+				76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +697,7 @@
 		};
 		76D727D7187C523A00F3545E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13DA0B9C148D4F648817352A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -389,6 +711,7 @@
 		};
 		76D727D8187C523A00F3545E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13DA0B9C148D4F648817352A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -402,6 +725,7 @@
 		};
 		76D727DA187C523A00F3545E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Radar.app/Radar";
@@ -425,6 +749,7 @@
 		};
 		76D727DB187C523A00F3545E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Radar.app/Radar";
@@ -461,6 +786,7 @@
 				76D727D8187C523A00F3545E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76D727D9187C523A00F3545E /* Build configuration list for PBXNativeTarget "RadarTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +795,7 @@
 				76D727DB187C523A00F3545E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
