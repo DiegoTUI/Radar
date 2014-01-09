@@ -18,6 +18,8 @@
     #import "UIColor+TUIColors.h"
     #import "UIBarButtonItem+BackBarButtonItem.h"
     #import "NSString+TUIString.h"
+    #import "NSString+JSON.h"
+    #import "NSDictionary+JSON.h"
     //Frame accessor
     #import "FrameAccessor.h"
 #endif
