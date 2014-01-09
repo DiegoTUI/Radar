@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Tui Travel A&D. All rights reserved.
 //
 
-#import "TUIDeveloperSettingsViewController.h"
+#import "TUISettingsViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
 // Views
@@ -19,7 +19,7 @@ static const CGFloat kWeatherViewHeight      = 80.0;
 static const CGFloat kLocationViewHeight     = 160.0;
 static const CGFloat kTimeViewHeight        = 160.0;
 
-@interface TUIDeveloperSettingsViewController ()
+@interface TUISettingsViewController ()
 
 /**
  The navigation bar
@@ -53,7 +53,7 @@ static const CGFloat kTimeViewHeight        = 160.0;
 
 @end
 
-@implementation TUIDeveloperSettingsViewController
+@implementation TUISettingsViewController
 
 #pragma mark - Initilialize data -
 

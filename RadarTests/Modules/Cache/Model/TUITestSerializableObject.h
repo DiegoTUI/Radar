@@ -1,6 +1,6 @@
 //
 //  TUITestSerializableObject.h
-//  laterooms
+//  Radar
 //
 //  Created by Diego Lafuente Garcia on 9/17/13.
 //  Copyright (c) 2013 TUI Travel A&D. All rights reserved.

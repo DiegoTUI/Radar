@@ -37,7 +37,7 @@
 		76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7281E187C62E100F3545E /* TUIBaseViewControllerSpec.m */; };
 		76D72823187D440800F3545E /* TUISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72822187D440800F3545E /* TUISearchViewController.m */; };
 		76D7282E187D629C00F3545E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76D7282C187D629C00F3545E /* Localizable.strings */; };
-		76D72838187D98F200F3545E /* TUIDeveloperSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72837187D98F200F3545E /* TUIDeveloperSettingsViewController.m */; };
+		76D72838187D98F200F3545E /* TUISettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72837187D98F200F3545E /* TUISettingsViewController.m */; };
 		76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7283C187D990000F3545E /* TUISettingsWeatherView.m */; };
 		76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72840187DA84600F3545E /* TUISettingsLocationView.m */; };
 		76D72844187DBA2200F3545E /* TUISettingsTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72843187DBA2200F3545E /* TUISettingsTimeView.m */; };
@@ -48,6 +48,8 @@
 		76D72854187ECA8B00F3545E /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72852187ECA8B00F3545E /* NSString+JSON.m */; };
 		76D7285A187ECBE400F3545E /* TUICacheSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72857187ECBE400F3545E /* TUICacheSpec.m */; };
 		76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72859187ECBE400F3545E /* TUITestSerializableObject.m */; };
+		76D7285F187ECE0000F3545E /* TUISettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7285E187ECE0000F3545E /* TUISettings.m */; };
+		76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72864187EDA5900F3545E /* TUISettingsSpec.m */; };
 		CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */; };
 /* End PBXBuildFile section */
 
@@ -121,8 +123,8 @@
 		76D72822187D440800F3545E /* TUISearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISearchViewController.m; path = Modules/Search/Controller/TUISearchViewController.m; sourceTree = "<group>"; };
 		76D72824187D473C00F3545E /* Segue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Segue.h; path = Modules/Shared/Constants/Segue.h; sourceTree = "<group>"; };
 		76D7282D187D629C00F3545E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		76D72836187D98F200F3545E /* TUIDeveloperSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIDeveloperSettingsViewController.h; path = Modules/Settings/Controller/TUIDeveloperSettingsViewController.h; sourceTree = "<group>"; };
-		76D72837187D98F200F3545E /* TUIDeveloperSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIDeveloperSettingsViewController.m; path = Modules/Settings/Controller/TUIDeveloperSettingsViewController.m; sourceTree = "<group>"; };
+		76D72836187D98F200F3545E /* TUISettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISettingsViewController.h; path = Modules/Settings/Controller/TUISettingsViewController.h; sourceTree = "<group>"; };
+		76D72837187D98F200F3545E /* TUISettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettingsViewController.m; path = Modules/Settings/Controller/TUISettingsViewController.m; sourceTree = "<group>"; };
 		76D7283B187D990000F3545E /* TUISettingsWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISettingsWeatherView.h; path = Modules/Settings/View/TUISettingsWeatherView.h; sourceTree = "<group>"; };
 		76D7283C187D990000F3545E /* TUISettingsWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettingsWeatherView.m; path = Modules/Settings/View/TUISettingsWeatherView.m; sourceTree = "<group>"; };
 		76D7283F187DA84600F3545E /* TUISettingsLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISettingsLocationView.h; path = Modules/Settings/View/TUISettingsLocationView.h; sourceTree = "<group>"; };
@@ -141,6 +143,11 @@
 		76D72857187ECBE400F3545E /* TUICacheSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUICacheSpec.m; path = Modules/Cache/Model/TUICacheSpec.m; sourceTree = "<group>"; };
 		76D72858187ECBE400F3545E /* TUITestSerializableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUITestSerializableObject.h; path = Modules/Cache/Model/TUITestSerializableObject.h; sourceTree = "<group>"; };
 		76D72859187ECBE400F3545E /* TUITestSerializableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUITestSerializableObject.m; path = Modules/Cache/Model/TUITestSerializableObject.m; sourceTree = "<group>"; };
+		76D7285D187ECE0000F3545E /* TUISettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISettings.h; path = Modules/Settings/Model/TUISettings.h; sourceTree = "<group>"; };
+		76D7285E187ECE0000F3545E /* TUISettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettings.m; path = Modules/Settings/Model/TUISettings.m; sourceTree = "<group>"; };
+		76D72860187ED22400F3545E /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cache.h; path = Modules/Shared/Constants/Cache.h; sourceTree = "<group>"; };
+		76D72861187ED40200F3545E /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Modules/Shared/Constants/Settings.h; sourceTree = "<group>"; };
+		76D72864187EDA5900F3545E /* TUISettingsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettingsSpec.m; path = Modules/Settings/Model/TUISettingsSpec.m; sourceTree = "<group>"; };
 		EFEA3BF1EC8242E485E23BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -236,6 +243,7 @@
 		76D727CC187C523A00F3545E /* RadarTests */ = {
 			isa = PBXGroup;
 			children = (
+				76D72862187ED98B00F3545E /* Settings */,
 				76D72855187ECBBD00F3545E /* Cache */,
 				76D72815187C613F00F3545E /* Shared */,
 				76D72812187C60F000F3545E /* Base */,
@@ -390,6 +398,8 @@
 				76D72804187C5D5600F3545E /* Numbers.h */,
 				76D72805187C5D5600F3545E /* OSVersion.h */,
 				76D72824187D473C00F3545E /* Segue.h */,
+				76D72860187ED22400F3545E /* Cache.h */,
+				76D72861187ED40200F3545E /* Settings.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -441,6 +451,7 @@
 		76D72825187D479400F3545E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				76D7285C187ECDB700F3545E /* Model */,
 				76D7282F187D653300F3545E /* View */,
 				76D72826187D47A800F3545E /* Controller */,
 			);
@@ -450,8 +461,8 @@
 		76D72826187D47A800F3545E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				76D72836187D98F200F3545E /* TUIDeveloperSettingsViewController.h */,
-				76D72837187D98F200F3545E /* TUIDeveloperSettingsViewController.m */,
+				76D72836187D98F200F3545E /* TUISettingsViewController.h */,
+				76D72837187D98F200F3545E /* TUISettingsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -500,6 +511,31 @@
 		76D72856187ECBC300F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D7285C187ECDB700F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D7285D187ECE0000F3545E /* TUISettings.h */,
+				76D7285E187ECE0000F3545E /* TUISettings.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D72862187ED98B00F3545E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				76D72863187ED9A000F3545E /* Model */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		76D72863187ED9A000F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D72864187EDA5900F3545E /* TUISettingsSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -674,7 +710,7 @@
 				76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */,
 				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
-				76D72838187D98F200F3545E /* TUIDeveloperSettingsViewController.m in Sources */,
+				76D72838187D98F200F3545E /* TUISettingsViewController.m in Sources */,
 				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
 				76D72853187ECA8B00F3545E /* NSDictionary+JSON.m in Sources */,
 				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
@@ -685,6 +721,7 @@
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
 				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
+				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,
 				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
 				76D72854187ECA8B00F3545E /* NSString+JSON.m in Sources */,
 				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
@@ -699,6 +736,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76D7284E187EC91100F3545E /* TUIBaseCachedModelSpec.m in Sources */,
+				76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */,
 				76D72818187C62B600F3545E /* NSString+TUIStringSpec.m in Sources */,
 				76D7281B187C62D000F3545E /* TUIBaseMapAnnotationSpec.m in Sources */,
 				76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */,

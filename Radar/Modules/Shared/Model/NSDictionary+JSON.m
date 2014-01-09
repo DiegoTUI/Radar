@@ -1,6 +1,6 @@
 //
 //  NSDictionary+JSON.m
-//  laterooms
+//  Radar
 //
 //  Created by Diego Lafuente on 21/10/13.
 //  Copyright (c) 2013 ustwo. All rights reserved.

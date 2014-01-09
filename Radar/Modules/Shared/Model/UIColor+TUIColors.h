@@ -58,41 +58,41 @@
 
 /**
  @methodName lateroomsPurpleColor
- @abstract Returns the laterooms purple color
- @discussion This will return a UIColor object set to the laterooms purple color
+ @abstract Returns the Radar purple color
+ @discussion This will return a UIColor object set to the Radar purple color
  R65, G20, B133
  
- @return A UIColor calibrated to the laterooms purple color
+ @return A UIColor calibrated to the Radar purple color
  */
 + (UIColor *)lateroomsPurpleColor;
 
 /**
  @methodName lateroomsBlueColor
- @abstract Returns the laterooms blue color
- @discussion This will return a UIColor object set to the laterooms blue color
+ @abstract Returns the Radar blue color
+ @discussion This will return a UIColor object set to the Radar blue color
  R50, G160, B228
  
- @return A UIColor calibrated to the laterooms purple color
+ @return A UIColor calibrated to the Radar purple color
  */
 + (UIColor *)lateroomsBlueColor;
 
 /**
  @methodName lateroomsRedColor
- @abstract Returns the laterooms red color
- @discussion This will return a UIColor object set to the laterooms red color
+ @abstract Returns the Radar red color
+ @discussion This will return a UIColor object set to the Radar red color
  R230, G23, B92
  
- @return A UIColor calibrated to the laterooms red color
+ @return A UIColor calibrated to the Radar red color
  */
 + (UIColor *)lateroomsRedColor;
 
 /**
  @methodName lateroomsRedCacelledColor
- @abstract Returns the laterooms red cancelled color
- @discussion This will return a UIColor object set to the laterooms red cancelled color
+ @abstract Returns the Radar red cancelled color
+ @discussion This will return a UIColor object set to the Radar red cancelled color
  R251, G54, B54
  
- @return A UIColor calibrated to the laterooms red color
+ @return A UIColor calibrated to the Radar red color
  */
 + (UIColor *)lateroomsRedCancelledColor;
 

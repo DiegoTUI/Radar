@@ -1,6 +1,6 @@
 //
 //  TUIBaseViewControllerSpec.m
-//  laterooms
+//  Radar
 //
 //  Created by Diego Lafuente on 1/7/14.
 //  Copyright (c) 2013 Tui Travel A&D. All rights reserved.

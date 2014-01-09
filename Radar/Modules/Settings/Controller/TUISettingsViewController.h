@@ -1,5 +1,5 @@
 //
-//  TUIDeveloperSettingsViewController.h
+//  TUISettingsViewController.h
 //  Radar
 //
 //  Created by Diego Lafuente on 08/01/14.
@@ -8,6 +8,9 @@
 
 #import "TUIBaseViewController.h"
 
-@interface TUIDeveloperSettingsViewController : TUIBaseViewController
+/**
+ The view controller for the settings screen
+ */
+@interface TUISettingsViewController : TUIBaseViewController
 
 @end

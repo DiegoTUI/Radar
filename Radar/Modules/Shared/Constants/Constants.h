@@ -12,3 +12,5 @@
 #import "Fonts.h"
 #import "Accessibility.h"
 #import "Segue.h"
+#import "Cache.h"
+#import "Settings.h"

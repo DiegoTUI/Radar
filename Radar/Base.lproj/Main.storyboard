@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="702" y="-88"/>
         </scene>
-        <!--Developer Settings View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="rg1-2r-BIG">
             <objects>
-                <viewController id="7ZW-EO-xl3" customClass="TUIDeveloperSettingsViewController" sceneMemberID="viewController">
+                <viewController id="7ZW-EO-xl3" customClass="TUISettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kIP-ji-TP2"/>
                         <viewControllerLayoutGuide type="bottom" id="w1U-Jf-4H7"/>

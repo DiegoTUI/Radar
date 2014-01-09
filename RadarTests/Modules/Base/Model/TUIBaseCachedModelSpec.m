@@ -1,6 +1,6 @@
 //
 //  TUIBaseCachedModelSpec.m
-//  laterooms
+//  Radar
 //
 //  Created by Diego Lafuente Garcia on 1/9/14.
 //  Copyright (c) 2014 Tui Travel A&D. All rights reserved.

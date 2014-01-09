@@ -1,6 +1,6 @@
 //
 //  UIBarButtonItem+BackBarButtonItem.h
-//  laterooms
+//  Radar
 //
 //  Created by Alex Fish on 9/10/13.
 //  Copyright (c) 2013 ustwo. All rights reserved.
@@ -10,14 +10,14 @@
 
 /**
  UIBarButtonItem+BackBarButtonItem is a category on UIBarButtonItem which provides
- methods to create laterooms specific UIBarButtonItems
+ methods to create Radar specific UIBarButtonItems
  */
 @interface UIBarButtonItem (BackBarButtonItem)
 
 /**
  @methodName backBarButtonItemWithTarget:
  @abstract Return a new back bar button instance
- @discussion This method will return back bar button item with laterooms styling
+ @discussion This method will return back bar button item with Radar styling
  which should be used as a back button in a navigationItem
  
  @param target The target for the back button
