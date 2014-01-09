@@ -15,3 +15,7 @@
 
 // Animations
 #define DEFAULT_ANIMATION_SPEED 0.3f
+
+// Screen size
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)

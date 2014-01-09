@@ -25,8 +25,6 @@ static const CGFloat kFrameHeight                       = 44.0f;
 #define TUI_TITLE_VIEW_TITLE_LABEL_FRAME_TOP CGRectIntegral(CGRectMake(ZERO_ORIGIN, 5.0, 190.0, 20.0))
 #define TUI_TITLE_VIEW_SUBTITLE_LABEL_FRAME_TOP CGRectIntegral(CGRectMake(ZERO_ORIGIN, 21.0, 190.0, 16.0))
 
-#define SCREEN_WIDTH 320.0f
-
 
 /**
  TUITitleView class extension

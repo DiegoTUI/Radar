@@ -53,6 +53,23 @@ describe(@"NSString+TUIString", ^{
         });
     });
     
+    describe(@"when truncating strings using iOS 7 methods", ^{
+        
+        __block UIFont *font;
+        __block NSString *string;
+        
+        beforeAll(^{
+            font = [UIFont systemFontOfSize:12];
+            string = @"This is a long string to test truncation width claclacla";
+        });
+        
+        it(@"should do stuff", ^{
+            CGSize truncationSize = [string sizeWithFont:font];
+            CGSize truncationSize7 = [string sizeWithAttributes:@{NSFontAttributeName: font}];
+            NSLog(@"size: %@ - size7: %@", NSStringFromCGSize(truncationSize), NSStringFromCGSize(truncationSize7));
+        });
+    });
+    
     describe(@"when checking e-mail strings", ^{
         
         it(@"should return YES if the e-mail is valid", ^{

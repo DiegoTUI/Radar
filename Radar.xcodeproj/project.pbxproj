@@ -15,7 +15,6 @@
 		76D727B4187C523A00F3545E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727B3187C523A00F3545E /* main.m */; };
 		76D727B8187C523A00F3545E /* TUIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727B7187C523A00F3545E /* TUIAppDelegate.m */; };
 		76D727BB187C523A00F3545E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D727B9187C523A00F3545E /* Main.storyboard */; };
-		76D727BE187C523A00F3545E /* TUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D727BD187C523A00F3545E /* TUIViewController.m */; };
 		76D727C0187C523A00F3545E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76D727BF187C523A00F3545E /* Images.xcassets */; };
 		76D727C7187C523A00F3545E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727C6187C523A00F3545E /* XCTest.framework */; };
 		76D727C8187C523A00F3545E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A7187C523900F3545E /* Foundation.framework */; };
@@ -36,6 +35,12 @@
 		76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7281A187C62D000F3545E /* TUIBaseModelSpec.m */; };
 		76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7281D187C62E100F3545E /* TUIBaseControllerSpec.m */; };
 		76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7281E187C62E100F3545E /* TUIBaseViewControllerSpec.m */; };
+		76D72823187D440800F3545E /* TUISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72822187D440800F3545E /* TUISearchViewController.m */; };
+		76D7282E187D629C00F3545E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76D7282C187D629C00F3545E /* Localizable.strings */; };
+		76D72838187D98F200F3545E /* TUIDeveloperSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72837187D98F200F3545E /* TUIDeveloperSettingsViewController.m */; };
+		76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7283C187D990000F3545E /* TUISettingsWeatherView.m */; };
+		76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72840187DA84600F3545E /* TUISettingsLocationView.m */; };
+		76D72844187DBA2200F3545E /* TUISettingsTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72843187DBA2200F3545E /* TUISettingsTimeView.m */; };
 		CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +69,6 @@
 		76D727B6187C523A00F3545E /* TUIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TUIAppDelegate.h; sourceTree = "<group>"; };
 		76D727B7187C523A00F3545E /* TUIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TUIAppDelegate.m; sourceTree = "<group>"; };
 		76D727BA187C523A00F3545E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		76D727BC187C523A00F3545E /* TUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TUIViewController.h; sourceTree = "<group>"; };
-		76D727BD187C523A00F3545E /* TUIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TUIViewController.m; sourceTree = "<group>"; };
 		76D727BF187C523A00F3545E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		76D727C5187C523A00F3545E /* RadarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D727C6187C523A00F3545E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -107,6 +110,18 @@
 		76D7281A187C62D000F3545E /* TUIBaseModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseModelSpec.m; path = Modules/Base/Model/TUIBaseModelSpec.m; sourceTree = "<group>"; };
 		76D7281D187C62E100F3545E /* TUIBaseControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseControllerSpec.m; path = Modules/Base/Controller/TUIBaseControllerSpec.m; sourceTree = "<group>"; };
 		76D7281E187C62E100F3545E /* TUIBaseViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseViewControllerSpec.m; path = Modules/Base/Controller/TUIBaseViewControllerSpec.m; sourceTree = "<group>"; };
+		76D72821187D440800F3545E /* TUISearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISearchViewController.h; path = Modules/Search/Controller/TUISearchViewController.h; sourceTree = "<group>"; };
+		76D72822187D440800F3545E /* TUISearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISearchViewController.m; path = Modules/Search/Controller/TUISearchViewController.m; sourceTree = "<group>"; };
+		76D72824187D473C00F3545E /* Segue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Segue.h; path = Modules/Shared/Constants/Segue.h; sourceTree = "<group>"; };
+		76D7282D187D629C00F3545E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76D72836187D98F200F3545E /* TUIDeveloperSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIDeveloperSettingsViewController.h; path = Modules/Settings/Controller/TUIDeveloperSettingsViewController.h; sourceTree = "<group>"; };
+		76D72837187D98F200F3545E /* TUIDeveloperSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIDeveloperSettingsViewController.m; path = Modules/Settings/Controller/TUIDeveloperSettingsViewController.m; sourceTree = "<group>"; };
+		76D7283B187D990000F3545E /* TUISettingsWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISettingsWeatherView.h; path = Modules/Settings/View/TUISettingsWeatherView.h; sourceTree = "<group>"; };
+		76D7283C187D990000F3545E /* TUISettingsWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettingsWeatherView.m; path = Modules/Settings/View/TUISettingsWeatherView.m; sourceTree = "<group>"; };
+		76D7283F187DA84600F3545E /* TUISettingsLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISettingsLocationView.h; path = Modules/Settings/View/TUISettingsLocationView.h; sourceTree = "<group>"; };
+		76D72840187DA84600F3545E /* TUISettingsLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettingsLocationView.m; path = Modules/Settings/View/TUISettingsLocationView.m; sourceTree = "<group>"; };
+		76D72842187DBA2200F3545E /* TUISettingsTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISettingsTimeView.h; path = Modules/Settings/View/TUISettingsTimeView.h; sourceTree = "<group>"; };
+		76D72843187DBA2200F3545E /* TUISettingsTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettingsTimeView.m; path = Modules/Settings/View/TUISettingsTimeView.m; sourceTree = "<group>"; };
 		EFEA3BF1EC8242E485E23BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -173,14 +188,13 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
+				76D72825187D479400F3545E /* Settings */,
 				76D727E4187C596600F3545E /* Search */,
 				76D727DD187C58F100F3545E /* Shared */,
 				76D727DC187C58E400F3545E /* Base */,
 				76D727B6187C523A00F3545E /* TUIAppDelegate.h */,
 				76D727B7187C523A00F3545E /* TUIAppDelegate.m */,
 				76D727B9187C523A00F3545E /* Main.storyboard */,
-				76D727BC187C523A00F3545E /* TUIViewController.h */,
-				76D727BD187C523A00F3545E /* TUIViewController.m */,
 				76D727BF187C523A00F3545E /* Images.xcassets */,
 				76D727AE187C523A00F3545E /* Supporting Files */,
 			);
@@ -194,6 +208,7 @@
 				76D727B0187C523A00F3545E /* InfoPlist.strings */,
 				76D727B3187C523A00F3545E /* main.m */,
 				76D727B5187C523A00F3545E /* Radar-Prefix.pch */,
+				76D7282C187D629C00F3545E /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -332,6 +347,8 @@
 		76D727E7187C597F00F3545E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76D72821187D440800F3545E /* TUISearchViewController.h */,
+				76D72822187D440800F3545E /* TUISearchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -345,6 +362,7 @@
 				76D72803187C5D5600F3545E /* Layout.h */,
 				76D72804187C5D5600F3545E /* Numbers.h */,
 				76D72805187C5D5600F3545E /* OSVersion.h */,
+				76D72824187D473C00F3545E /* Segue.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -390,6 +408,37 @@
 				76D72817187C62B600F3545E /* NSString+TUIStringSpec.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		76D72825187D479400F3545E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				76D7282F187D653300F3545E /* View */,
+				76D72826187D47A800F3545E /* Controller */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		76D72826187D47A800F3545E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76D72836187D98F200F3545E /* TUIDeveloperSettingsViewController.h */,
+				76D72837187D98F200F3545E /* TUIDeveloperSettingsViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		76D7282F187D653300F3545E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76D7283B187D990000F3545E /* TUISettingsWeatherView.h */,
+				76D7283C187D990000F3545E /* TUISettingsWeatherView.m */,
+				76D7283F187DA84600F3545E /* TUISettingsLocationView.h */,
+				76D72840187DA84600F3545E /* TUISettingsLocationView.m */,
+				76D72842187DBA2200F3545E /* TUISettingsTimeView.h */,
+				76D72843187DBA2200F3545E /* TUISettingsTimeView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76D727C0187C523A00F3545E /* Images.xcassets in Resources */,
+				76D7282E187D629C00F3545E /* Localizable.strings in Resources */,
 				76D727B2187C523A00F3545E /* InfoPlist.strings in Resources */,
 				76D727BB187C523A00F3545E /* Main.storyboard in Resources */,
 			);
@@ -558,18 +608,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
+				76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */,
 				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
+				76D72838187D98F200F3545E /* TUIDeveloperSettingsViewController.m in Sources */,
+				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
 				76D727B4187C523A00F3545E /* main.m in Sources */,
 				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
 				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
-				76D727BE187C523A00F3545E /* TUIViewController.m in Sources */,
 				76D727B8187C523A00F3545E /* TUIAppDelegate.m in Sources */,
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
 				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
 				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
 				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
+				76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */,
+				76D72844187DBA2200F3545E /* TUISettingsTimeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +672,14 @@
 				76D727D0187C523A00F3545E /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		76D7282C187D629C00F3545E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76D7282D187D629C00F3545E /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -39,7 +39,7 @@ NSString *const kTruncationString = @"...";
     
     // Reduce the string until it fits
     NSString *truncationString = @"...";
-    CGSize truncationSize = [truncationString sizeWithFont:font];
+    CGSize truncationSize = [truncationString sizeWithAttributes:@{NSFontAttributeName: font}];
     while ([truncatedString sizeWithFont:font forWidth:INT16_MAX lineBreakMode:NSLineBreakByTruncatingTail].width + truncationSize.width > width) {
         truncatedString = [truncatedString substringToIndex:truncatedString.length - 1];
         hasTruncated = YES;

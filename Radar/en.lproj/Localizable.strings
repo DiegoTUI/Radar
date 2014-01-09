@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Radar
+
+  Created by Diego Lafuente on 08/01/14.
+  Copyright (c) 2014 Tui Travel A&D. All rights reserved.
+*/
+
+// Settings
+"SETTINGS_TITLE" = "Settings";
+"WEATHER_VIEW_TITLE" = "Weather";
+"WEATHER_VIEW_SUNNY" = "Sunny";
+"WEATHER_VIEW_CLOUDY" = "Cloudy";
+"LOCATION_VIEW_TITLE" = "Location";
+"AUTOLOCATION_LABEL" = "Use Auto-Location";
+"LATITUDE_LABEL" = "Latitude";
+"LONGITUDE_LABEL" = "Longitude";
+"TIME_VIEW_TITLE" = "Time";
+"AUTOTIME_LABEL" = "Use Auto-Time";
+"TIME_LABEL" = "Time (hh:mm)";
+"SAVE_BUTTON" = "Save";
+"CANCEL_BUTTON" = "Cancel";

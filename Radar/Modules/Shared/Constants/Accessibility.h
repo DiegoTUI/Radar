@@ -10,3 +10,5 @@
 #define ACCESSIBILITY_BACK_BUTTON                                   @"BackButton"
 #define ACCESSIBILITY_SCREEN_TITLE                                  @"ScreenTitle"
 #define ACCESSIBILITY_SCREEN_SUBTITLE                               @"ScreenSubtitle"
+// Weather view
+#define ACCESSIBILITY_WEATHER_SEGMENTED_CONTROL                     @"WeatherSegmentedControl"
