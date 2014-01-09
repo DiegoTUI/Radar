@@ -7,8 +7,10 @@
 //
 
 #import "TUISearchViewController.h"
+// Controllers
+#import "TUISettingsViewController.h"
 
-@interface TUISearchViewController ()
+@interface TUISearchViewController () <TUISettingsViewControllerDelegate>
 
 @end
 
@@ -35,12 +37,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Shaking -
+
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (motion == UIEventSubtypeMotionShake)
     {
         [self performSegueWithIdentifier:DEVELOPER_SETTINGS_SEGUE sender:self];
+    }
+}
+
+#pragma mark - TUISettingsViewController delegate -
+
+- (void)saveButtonPressed
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        //TODO: add reload logic here with the new criteria
+    }];
+}
+
+- (void)cancelButtonPressed
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - Segue -
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:DEVELOPER_SETTINGS_SEGUE])
+    {
+        TUISettingsViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.delegate = self;
     }
 }
 

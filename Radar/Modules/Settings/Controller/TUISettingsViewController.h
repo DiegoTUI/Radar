@@ -8,9 +8,37 @@
 
 #import "TUIBaseViewController.h"
 
+// Forward declarations
+@protocol TUISettingsViewControllerDelegate;
+
 /**
  The view controller for the settings screen
  */
 @interface TUISettingsViewController : TUIBaseViewController
+
+/**
+ The LRSettingsViewController delegate
+ */
+@property (nonatomic, weak) id<TUISettingsViewControllerDelegate> delegate;
+
+@end
+
+
+/**
+ The delegate for LRSettingsViewController to dispatch when the Save/Cancel buttons have been pressed.
+ */
+@protocol TUISettingsViewControllerDelegate <NSObject>
+
+@required
+
+/**
+ Inform about pressed Save button
+ */
+- (void)saveButtonPressed;
+
+/**
+ Inform about pressed Cancel button
+ */
+- (void)cancelButtonPressed;
 
 @end

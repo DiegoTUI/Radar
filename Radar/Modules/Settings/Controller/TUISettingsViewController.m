@@ -13,6 +13,9 @@
 #import "TUISettingsWeatherView.h"
 #import "TUISettingsLocationView.h"
 #import "TUISettingsTimeView.h"
+// Models
+#import "TUISettings.h"
+#import "TUICache.h"
 
 // Layout
 static const CGFloat kWeatherViewHeight      = 80.0;
@@ -39,17 +42,22 @@ static const CGFloat kTimeViewHeight        = 160.0;
 /**
  The weather view
  */
-@property (nonatomic, strong, readonly) TUISettingsWeatherView *weatherView;
+@property (nonatomic, strong) TUISettingsWeatherView *weatherView;
 
 /**
  The location view
  */
-@property (nonatomic, strong, readonly) TUISettingsLocationView *locationView;
+@property (nonatomic, strong) TUISettingsLocationView *locationView;
 
 /**
  The time view
  */
-@property (nonatomic, strong, readonly) TUISettingsTimeView *timeView;
+@property (nonatomic, strong) TUISettingsTimeView *timeView;
+
+/**
+ The settings object
+ */
+@property (nonatomic, strong) TUISettings *settings;
 
 @end
 
@@ -60,6 +68,8 @@ static const CGFloat kTimeViewHeight        = 160.0;
 - (void)initData
 {
     [super initData];
+    
+    _settings = [[TUISettings alloc] initWithCache];
 }
 
 
@@ -82,20 +92,40 @@ static const CGFloat kTimeViewHeight        = 160.0;
 - (void)addWeatherView
 {
     _weatherView = [[TUISettingsWeatherView alloc] initWithFrame:CGRectMake(ZERO_FLOAT, NAVIGATION_BAR_HEIGHT_IOS6, SCREEN_WIDTH, kWeatherViewHeight)];
+    //Get weather from settings
+    for (NSUInteger i=0; i<_weatherView.weatherSegmentedControl.numberOfSegments; i++)
+    {
+        if ([[_weatherView.weatherSegmentedControl titleForSegmentAtIndex:i] isEqualToString:_settings.weather])
+        {
+            _weatherView.weatherSegmentedControl.selectedSegmentIndex = i;
+        }
+    }
+    
     [self.view addSubview:_weatherView];
 }
 
 - (void)addLocationView
 {
     _locationView = [[TUISettingsLocationView alloc] initWithFrame:CGRectMake(ZERO_FLOAT, _weatherView.y + _weatherView.height, SCREEN_WIDTH, kLocationViewHeight)];
+    // Get data from settings
+    _locationView.automaticLocationSwitch.on = [_settings.autolocation boolValue];
+    _locationView.latitudeTextField.text = [_settings.latitude stringValue];
+    _locationView.longitudeTextField.text = [_settings.longitude stringValue];
+    // Add targets and actions
     [_locationView.automaticLocationSwitch addTarget:self action:@selector(autolocationSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    
     [self.view addSubview:_locationView];
 }
 
 - (void)addTimeView
 {
     _timeView = [[TUISettingsTimeView alloc] initWithFrame:CGRectMake(ZERO_FLOAT, _locationView.y + _locationView.height, SCREEN_WIDTH, kTimeViewHeight)];
+    // Get data from settings
+    _timeView.automaticTimeSwitch.on = [_settings.autotime boolValue];
+    _timeView.timeTextField.text = _settings.time;
+    // Add targets and actions
     [_timeView.automaticTimeSwitch addTarget:self action:@selector(autotimeSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+    
     [self.view addSubview:_timeView];
 }
 
@@ -136,12 +166,27 @@ static const CGFloat kTimeViewHeight        = 160.0;
 
 - (void)saveButtonClicked:(id)sender
 {
+    [self updateSettings];
+    [_delegate saveButtonPressed];
 }
 
 - (void)cancelButtonClicked:(id)sender
 {
+    [_delegate cancelButtonPressed];
 }
 
+#pragma mark - Update Settings -
+- (void)updateSettings
+{
+    _settings.weather = [_weatherView.weatherSegmentedControl titleForSegmentAtIndex:_weatherView.weatherSegmentedControl.selectedSegmentIndex];
+    _settings.autolocation = [NSNumber numberWithBool:_locationView.automaticLocationSwitch.on];
+    _settings.latitude = [NSNumber numberWithDouble:[_locationView.latitudeTextField.text doubleValue]];
+    _settings.longitude = [NSNumber numberWithDouble:[_locationView.longitudeTextField.text doubleValue]];
+    _settings.autotime = [NSNumber numberWithBool:_timeView.automaticTimeSwitch.on];
+    _settings.time = _timeView.timeTextField.text;
+    
+    [TUICache storeObject:_settings forKey:CACHED_SETTINGS_KEY];
+}
 
 #pragma mark - Update Views -
 
