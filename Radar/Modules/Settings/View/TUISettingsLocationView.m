@@ -103,6 +103,7 @@ static const CGFloat kBodyLabelFontSize    = 14;
                                                                        kTextFieldWidth,
                                                                        kTextFieldHeight)];
     _latitudeTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _latitudeTextField.keyboardType = UIKeyboardTypeDecimalPad;
     [self addSubview:_latitudeTextField];
     // Longitude Label
     _longitudeLabel = [[TUIBaseLabel alloc] initWithFrame:CGRectMake(TWO_INT * DEFAULT_MARGIN,
@@ -118,6 +119,7 @@ static const CGFloat kBodyLabelFontSize    = 14;
                                                                        kTextFieldWidth,
                                                                        kTextFieldHeight)];
     _longitudeTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _longitudeTextField.keyboardType = UIKeyboardTypeDecimalPad;
     [self addSubview:_longitudeTextField];
 }
 

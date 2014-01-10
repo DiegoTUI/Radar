@@ -17,6 +17,6 @@
 "LONGITUDE_LABEL" = "Longitude";
 "TIME_VIEW_TITLE" = "Time";
 "AUTOTIME_LABEL" = "Use Auto-Time";
-"TIME_LABEL" = "Time (hh:mm)";
+"TIME_LABEL" = "Time (hh.mm)";
 "SAVE_BUTTON" = "Save";
 "CANCEL_BUTTON" = "Cancel";

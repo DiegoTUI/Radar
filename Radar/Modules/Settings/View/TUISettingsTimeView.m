@@ -97,6 +97,7 @@ static const CGFloat kBodyLabelFontSize    = 14;
                                                                        _timeLabel.y,
                                                                        kTextFieldWidth,
                                                                        kTextFieldHeight)];
+    _timeTextField.keyboardType = UIKeyboardTypeDecimalPad;
     _timeTextField.borderStyle = UITextBorderStyleRoundedRect;
     [self addSubview:_timeTextField];
     

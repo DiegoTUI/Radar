@@ -18,9 +18,10 @@
 #import "TUICache.h"
 
 // Layout
-static const CGFloat kWeatherViewHeight      = 80.0;
-static const CGFloat kLocationViewHeight     = 160.0;
+static const CGFloat kWeatherViewHeight     = 80.0;
+static const CGFloat kLocationViewHeight    = 160.0;
 static const CGFloat kTimeViewHeight        = 160.0;
+static const CGFloat kKeyboardShownRatio    = 0.7;
 
 @interface TUISettingsViewController ()
 
@@ -87,6 +88,8 @@ static const CGFloat kTimeViewHeight        = 160.0;
     // Update views
     [self updateLocationView];
     [self updateTimeView];
+    // Register for keyboard notifications
+    [self registerForKeyboardNotifications];
 }
 
 - (void)addWeatherView
@@ -173,6 +176,77 @@ static const CGFloat kTimeViewHeight        = 160.0;
 - (void)cancelButtonClicked:(id)sender
 {
     [_delegate cancelButtonPressed];
+}
+
+
+#pragma mark - Keyboard -
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    // Animate the current view out of the way
+    if (self.view.y >= ZERO_INT)
+    {
+        [self setViewMovedUp:YES withKeyboardSize:keyboardSize];
+    }
+    else if (self.view.y < ZERO_INT)
+    {
+        [self setViewMovedUp:NO withKeyboardSize:keyboardSize];
+    }
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    if (self.view.frame.origin.y >= ZERO_INT)
+    {
+        [self setViewMovedUp:YES withKeyboardSize:keyboardSize];
+    }
+    else if (self.view.frame.origin.y < ZERO_INT)
+    {
+        [self setViewMovedUp:NO withKeyboardSize:keyboardSize];
+    }
+}
+
+- (void)setViewMovedUp:(BOOL)movedUp withKeyboardSize:(CGSize)keyboardSize
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:DEFAULT_ANIMATION_SPEED]; // if you want to slide up the view
+    
+    CGFloat scrollup = kKeyboardShownRatio * keyboardSize.height;
+    
+    CGRect rect = self.view.frame;
+    if (movedUp)
+    {
+        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
+        // 2. increase the size of the view so that the area behind the keyboard is covered up.
+        rect.origin.y -= scrollup;
+        rect.size.height += scrollup;
+    }
+    else
+    {
+        // revert back to the normal state.
+        rect.origin.y += scrollup;
+        rect.size.height -= scrollup;
+    }
+    self.view.frame = rect;
+    
+    [UIView commitAnimations];
 }
 
 #pragma mark - Update Settings -
