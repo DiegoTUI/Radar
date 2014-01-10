@@ -7,7 +7,6 @@
 //
 
 #import "Kiwi.h"
-#import "NSString+JSON.h"
 
 
 SPEC_BEGIN(NSString_JSONSpec)
