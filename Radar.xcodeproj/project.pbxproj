@@ -163,9 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				76D727AA187C523900F3545E /* CoreGraphics.framework in Frameworks */,
-				76D727AC187C523900F3545E /* UIKit.framework in Frameworks */,
 				76D727A8187C523900F3545E /* Foundation.framework in Frameworks */,
 				38B136DFD47540C18913D650 /* libPods.a in Frameworks */,
+				76D727AC187C523900F3545E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,10 +173,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76D727C7187C523A00F3545E /* XCTest.framework in Frameworks */,
-				76D727C9187C523A00F3545E /* UIKit.framework in Frameworks */,
 				76D727C8187C523A00F3545E /* Foundation.framework in Frameworks */,
 				CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */,
+				76D727C9187C523A00F3545E /* UIKit.framework in Frameworks */,
+				76D727C7187C523A00F3545E /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,12 +186,12 @@
 		76D7279B187C523900F3545E = {
 			isa = PBXGroup;
 			children = (
-				76D727AD187C523A00F3545E /* Radar */,
-				76D727CC187C523A00F3545E /* RadarTests */,
 				76D727A6187C523900F3545E /* Frameworks */,
 				76D727A5187C523900F3545E /* Products */,
-				13DA0B9C148D4F648817352A /* Pods.xcconfig */,
+				76D727AD187C523A00F3545E /* Radar */,
+				76D727CC187C523A00F3545E /* RadarTests */,
 				6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */,
+				13DA0B9C148D4F648817352A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,12 +207,12 @@
 		76D727A6187C523900F3545E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				76D727A7187C523900F3545E /* Foundation.framework */,
 				76D727A9187C523900F3545E /* CoreGraphics.framework */,
+				76D727A7187C523900F3545E /* Foundation.framework */,
+				477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */,
+				EFEA3BF1EC8242E485E23BF5 /* libPods.a */,
 				76D727AB187C523900F3545E /* UIKit.framework */,
 				76D727C6187C523A00F3545E /* XCTest.framework */,
-				EFEA3BF1EC8242E485E23BF5 /* libPods.a */,
-				477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,16 +220,16 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
-				76D72845187EC77100F3545E /* Cache */,
-				76D72825187D479400F3545E /* Settings */,
-				76D727E4187C596600F3545E /* Search */,
-				76D727DD187C58F100F3545E /* Shared */,
 				76D727DC187C58E400F3545E /* Base */,
+				76D72845187EC77100F3545E /* Cache */,
+				76D727E4187C596600F3545E /* Search */,
+				76D72825187D479400F3545E /* Settings */,
+				76D727DD187C58F100F3545E /* Shared */,
+				76D727AE187C523A00F3545E /* Supporting Files */,
+				76D727BF187C523A00F3545E /* Images.xcassets */,
+				76D727B9187C523A00F3545E /* Main.storyboard */,
 				76D727B6187C523A00F3545E /* TUIAppDelegate.h */,
 				76D727B7187C523A00F3545E /* TUIAppDelegate.m */,
-				76D727B9187C523A00F3545E /* Main.storyboard */,
-				76D727BF187C523A00F3545E /* Images.xcassets */,
-				76D727AE187C523A00F3545E /* Supporting Files */,
 			);
 			path = Radar;
 			sourceTree = "<group>";
@@ -237,11 +237,11 @@
 		76D727AE187C523A00F3545E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				76D727AF187C523A00F3545E /* Radar-Info.plist */,
 				76D727B0187C523A00F3545E /* InfoPlist.strings */,
-				76D727B3187C523A00F3545E /* main.m */,
-				76D727B5187C523A00F3545E /* Radar-Prefix.pch */,
 				76D7282C187D629C00F3545E /* Localizable.strings */,
+				76D727B3187C523A00F3545E /* main.m */,
+				76D727AF187C523A00F3545E /* Radar-Info.plist */,
+				76D727B5187C523A00F3545E /* Radar-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,10 +249,10 @@
 		76D727CC187C523A00F3545E /* RadarTests */ = {
 			isa = PBXGroup;
 			children = (
-				76D72862187ED98B00F3545E /* Settings */,
-				76D72855187ECBBD00F3545E /* Cache */,
-				76D72815187C613F00F3545E /* Shared */,
 				76D72812187C60F000F3545E /* Base */,
+				76D72855187ECBBD00F3545E /* Cache */,
+				76D72862187ED98B00F3545E /* Settings */,
+				76D72815187C613F00F3545E /* Shared */,
 				76D727CD187C523A00F3545E /* Supporting Files */,
 			);
 			path = RadarTests;
@@ -261,8 +261,8 @@
 		76D727CD187C523A00F3545E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				76D727CE187C523A00F3545E /* RadarTests-Info.plist */,
 				76D727CF187C523A00F3545E /* InfoPlist.strings */,
+				76D727CE187C523A00F3545E /* RadarTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -291,13 +291,13 @@
 		76D727DE187C58FA00F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76D7284A187EC87F00F3545E /* TUIBaseCachedModel.h */,
+				76D7284B187EC87F00F3545E /* TUIBaseCachedModel.m */,
 				76D727F0187C5CDB00F3545E /* TUIBaseMapAnnotation.h */,
 				76D727F1187C5CDB00F3545E /* TUIBaseMapAnnotation.m */,
 				76D727F2187C5CDB00F3545E /* TUIBaseModel.h */,
 				76D727F3187C5CDB00F3545E /* TUIBaseModel.m */,
 				76D727F4187C5CDB00F3545E /* TUISerializable.h */,
-				76D7284A187EC87F00F3545E /* TUIBaseCachedModel.h */,
-				76D7284B187EC87F00F3545E /* TUIBaseCachedModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,12 +305,12 @@
 		76D727DF187C590400F3545E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76D727F7187C5CF000F3545E /* TUIBaseLabel_Private.h */,
 				76D727F8187C5CF000F3545E /* TUIBaseLabel.h */,
 				76D727F9187C5CF000F3545E /* TUIBaseLabel.m */,
-				76D727FA187C5CF000F3545E /* TUIBaseView_Private.h */,
+				76D727F7187C5CF000F3545E /* TUIBaseLabel_Private.h */,
 				76D727FB187C5CF000F3545E /* TUIBaseView.h */,
 				76D727FC187C5CF000F3545E /* TUIBaseView.m */,
+				76D727FA187C5CF000F3545E /* TUIBaseView_Private.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -318,12 +318,12 @@
 		76D727E0187C590E00F3545E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				76D727E8187C5CC500F3545E /* TUIBaseController_Private.h */,
 				76D727E9187C5CC500F3545E /* TUIBaseController.h */,
 				76D727EA187C5CC500F3545E /* TUIBaseController.m */,
-				76D727EB187C5CC500F3545E /* TUIBaseViewController_Private.h */,
+				76D727E8187C5CC500F3545E /* TUIBaseController_Private.h */,
 				76D727EC187C5CC500F3545E /* TUIBaseViewController.h */,
 				76D727ED187C5CC500F3545E /* TUIBaseViewController.m */,
+				76D727EB187C5CC500F3545E /* TUIBaseViewController_Private.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -398,13 +398,13 @@
 			isa = PBXGroup;
 			children = (
 				76D72800187C5D5600F3545E /* Accessibility.h */,
+				76D72860187ED22400F3545E /* Cache.h */,
 				76D72801187C5D5600F3545E /* Constants.h */,
 				76D72802187C5D5600F3545E /* Fonts.h */,
 				76D72803187C5D5600F3545E /* Layout.h */,
 				76D72804187C5D5600F3545E /* Numbers.h */,
 				76D72805187C5D5600F3545E /* OSVersion.h */,
 				76D72824187D473C00F3545E /* Segue.h */,
-				76D72860187ED22400F3545E /* Cache.h */,
 				76D72861187ED40200F3545E /* Settings.h */,
 			);
 			name = Constants;
@@ -422,9 +422,9 @@
 		76D72813187C60FB00F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76D7284D187EC91100F3545E /* TUIBaseCachedModelSpec.m */,
 				76D72819187C62D000F3545E /* TUIBaseMapAnnotationSpec.m */,
 				76D7281A187C62D000F3545E /* TUIBaseModelSpec.m */,
-				76D7284D187EC91100F3545E /* TUIBaseCachedModelSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -449,9 +449,9 @@
 		76D72816187C615B00F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				76D72817187C62B600F3545E /* NSString+TUIStringSpec.m */,
-				76D72866187FF5B100F3545E /* NSString+JSONSpec.m */,
 				76D72868187FF9CB00F3545E /* NSDictionary+JSONSpec.m */,
+				76D72866187FF5B100F3545E /* NSString+JSONSpec.m */,
+				76D72817187C62B600F3545E /* NSString+TUIStringSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -459,9 +459,9 @@
 		76D72825187D479400F3545E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				76D72826187D47A800F3545E /* Controller */,
 				76D7285C187ECDB700F3545E /* Model */,
 				76D7282F187D653300F3545E /* View */,
-				76D72826187D47A800F3545E /* Controller */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -478,12 +478,12 @@
 		76D7282F187D653300F3545E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76D7283B187D990000F3545E /* TUISettingsWeatherView.h */,
-				76D7283C187D990000F3545E /* TUISettingsWeatherView.m */,
 				76D7283F187DA84600F3545E /* TUISettingsLocationView.h */,
 				76D72840187DA84600F3545E /* TUISettingsLocationView.m */,
 				76D72842187DBA2200F3545E /* TUISettingsTimeView.h */,
 				76D72843187DBA2200F3545E /* TUISettingsTimeView.m */,
+				76D7283B187D990000F3545E /* TUISettingsWeatherView.h */,
+				76D7283C187D990000F3545E /* TUISettingsWeatherView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -639,8 +639,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76D727C0187C523A00F3545E /* Images.xcassets in Resources */,
-				76D7282E187D629C00F3545E /* Localizable.strings in Resources */,
 				76D727B2187C523A00F3545E /* InfoPlist.strings in Resources */,
+				76D7282E187D629C00F3545E /* Localizable.strings in Resources */,
 				76D727BB187C523A00F3545E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,28 +723,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
-				76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */,
-				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
-				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
-				76D72838187D98F200F3545E /* TUISettingsViewController.m in Sources */,
-				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
-				76D72853187ECA8B00F3545E /* NSDictionary+JSON.m in Sources */,
-				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
 				76D727B4187C523A00F3545E /* main.m in Sources */,
-				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
-				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
-				76D727B8187C523A00F3545E /* TUIAppDelegate.m in Sources */,
-				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
-				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
-				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
-				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,
-				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
+				76D72853187ECA8B00F3545E /* NSDictionary+JSON.m in Sources */,
 				76D72854187ECA8B00F3545E /* NSString+JSON.m in Sources */,
 				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
+				76D727B8187C523A00F3545E /* TUIAppDelegate.m in Sources */,
+				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
+				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
+				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
+				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
+				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
+				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
+				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
+				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
+				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,
 				76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */,
 				76D72844187DBA2200F3545E /* TUISettingsTimeView.m in Sources */,
+				76D72838187D98F200F3545E /* TUISettingsViewController.m in Sources */,
+				76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */,
+				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
+				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
+				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,18 +752,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76D7284E187EC91100F3545E /* TUIBaseCachedModelSpec.m in Sources */,
-				76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */,
+				76D72869187FF9CB00F3545E /* NSDictionary+JSONSpec.m in Sources */,
+				76D72867187FF5B100F3545E /* NSString+JSONSpec.m in Sources */,
 				76D72818187C62B600F3545E /* NSString+TUIStringSpec.m in Sources */,
+				76D7284E187EC91100F3545E /* TUIBaseCachedModelSpec.m in Sources */,
+				76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */,
 				76D7281B187C62D000F3545E /* TUIBaseMapAnnotationSpec.m in Sources */,
 				76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */,
-				76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */,
-				76D72867187FF5B100F3545E /* NSString+JSONSpec.m in Sources */,
-				76D7286C1880003C00F3545E /* TUISettingsViewControllerSpec.m in Sources */,
-				76D72869187FF9CB00F3545E /* NSDictionary+JSONSpec.m in Sources */,
-				76D7285A187ECBE400F3545E /* TUICacheSpec.m in Sources */,
-				76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */,
 				76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */,
+				76D7285A187ECBE400F3545E /* TUICacheSpec.m in Sources */,
+				76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */,
+				76D7286C1880003C00F3545E /* TUISettingsViewControllerSpec.m in Sources */,
+				76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
