@@ -121,4 +121,19 @@
     return result;
 }
 
+
+#pragma mark - Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%p> Weather:%@, Autolocation: %@, Latitude: %@, Longitude: %@, Autotime: %@, Time: %@",
+            self,
+            self.weather,
+            self.autolocation,
+            self.latitude,
+            self.longitude,
+            self.autotime,
+            self.time];
+}
+
 @end
