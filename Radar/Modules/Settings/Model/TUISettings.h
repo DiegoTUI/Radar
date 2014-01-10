@@ -45,13 +45,31 @@
 @property (nonatomic, copy) NSString *time;
 
 /**
- @methodName initWithCache
- @abstract Inits the object with the contents of the cache
- @discussion This method inits a TUISettings object with the contents of the cache.
- Returns the default object if unable to retrieve from cache
+ @methodName cachedSettings
+ @abstract Creates a TUISettings object with the contents of the cache
+ @discussion This method creates and returns a TUISettings object with the
+ contents of the cache. Returns nil if no settings were found in the cache
  
- @return A valid TUISettings object
+ @return A TUISettings object parsed from the cache. Nil if nothing is found.
  */
-- (id)initWithCache;
++ (TUISettings *)cachedSettings;
+
+/**
+ @methodName defaultSettings
+ @abstract Creates a default TUISettings object
+ @discussion This method creates and returns a default TUISettings object
+ 
+ @return A default TUISettings object.
+ */
++ (TUISettings *)defaultSettings;
+
+/**
+ @methodName persist
+ @abstract Stores the current TUISetting in the cache
+ @discussion This method stores the current TUISetting in the cache, overwriting
+ what was there before.
+ 
+ */
+- (void)persist;
 
 @end

@@ -70,7 +70,7 @@ static const CGFloat kKeyboardShownRatio    = 0.7;
 {
     [super initData];
     
-    _settings = [[TUISettings alloc] initWithCache];
+    _settings = [TUISettings cachedSettings] == nil ? [TUISettings defaultSettings] : [TUISettings cachedSettings];
 }
 
 
@@ -170,6 +170,7 @@ static const CGFloat kKeyboardShownRatio    = 0.7;
 - (void)saveButtonClicked:(id)sender
 {
     [self updateSettings];
+    [_settings persist];
     [_delegate saveButtonPressed];
 }
 
@@ -258,8 +259,6 @@ static const CGFloat kKeyboardShownRatio    = 0.7;
     _settings.longitude = [NSNumber numberWithDouble:[_locationView.longitudeTextField.text doubleValue]];
     _settings.autotime = [NSNumber numberWithBool:_timeView.automaticTimeSwitch.on];
     _settings.time = _timeView.timeTextField.text;
-    
-    [TUICache storeObject:_settings forKey:CACHED_SETTINGS_KEY];
 }
 
 #pragma mark - Update Views -

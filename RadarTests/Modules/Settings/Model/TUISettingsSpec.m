@@ -56,7 +56,23 @@ describe(@"When calling init", ^{
         settings = [[TUISettings alloc] init];
     });
     
-    it(@"should create the default values", ^{
+    it(@"should create an empty object", ^{
+        [[settings.weather should] beNil];
+        [[settings.autolocation should] beNil];
+        [[settings.latitude should] beNil];
+        [[settings.longitude should] beNil];
+        [[settings.autotime should] beNil];
+        [[settings.time should] beNil];
+    });
+});
+
+describe(@"When calling defaultSettings", ^{
+    
+    beforeEach(^{
+        settings = [TUISettings defaultSettings];
+    });
+    
+    it(@"should create an default object", ^{
         [[settings.weather should] equal:DEFAULT_WEATHER];
         [[settings.autolocation should] equal:[NSNumber numberWithBool:DEFAULT_AUTOLOCATION]];
         [[settings.latitude should] equal:[NSNumber numberWithDouble:DEFAULT_LATITUDE]];
@@ -66,12 +82,12 @@ describe(@"When calling init", ^{
     });
 });
 
-describe(@"When calling initWithCache", ^{
+describe(@"When calling cachedSettings", ^{
     
     it(@"should return the cached object", ^{
         TUISettings *mockSettings = [TUISettings mock];
         [TUICache stub:@selector(readObjectOfClass:forKey:) andReturn:mockSettings];
-        settings = [[TUISettings alloc] initWithCache];
+        settings = [TUISettings cachedSettings];
         [[settings should] equal:mockSettings];
     });
 });
@@ -79,7 +95,7 @@ describe(@"When calling initWithCache", ^{
 describe(@"When serializing", ^{
     
     beforeEach(^{
-        settings = [[TUISettings alloc] init];
+        settings = [TUISettings defaultSettings];
     });
     
     it(@"should create the right dictionary", ^{
@@ -108,9 +124,9 @@ describe(@"When parsing", ^{
         settings = (TUISettings *)[TUISettings objectFromDictionary:serialized];
         [[settings.weather should] equal:serialized[@"weather"]];
         [[settings.autolocation should] equal:serialized[@"autolocation"]];
-        [[settings.latitude should] equal:[NSNumber numberWithDouble:DEFAULT_LATITUDE]];
-        [[settings.longitude should] equal:[NSNumber numberWithDouble:DEFAULT_LONGITUDE]];
-        [[settings.autotime should] equal:[NSNumber numberWithBool:DEFAULT_AUTOTIME]];
+        [[settings.latitude should] beNil];
+        [[settings.longitude should] beNil];
+        [[settings.autotime should] beNil];
         [[settings.time should] equal:serialized[@"time"]];
     });
 });

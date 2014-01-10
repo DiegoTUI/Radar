@@ -19,44 +19,31 @@
 
 #pragma mark - Init -
 
-- (id)init
++ (TUISettings *)cachedSettings;
 {
-    self = [super init];
-    if (self)
-    {
-        [self setDefaultSettings];
-    }
-    return self;
+    return (TUISettings *)[TUICache readObjectOfClass:[TUISettings class] forKey:CACHED_SETTINGS_KEY];
 }
 
-- (id)initWithCache
++ (TUISettings *)defaultSettings
 {
-    self = [super init];
-    if (self)
-    {
-        // try to read the settings from the cache
-        TUISettings *settings = (TUISettings *)[TUICache readObjectOfClass:[TUISettings class] forKey:CACHED_SETTINGS_KEY];
-        if (settings)
-        {
-            self = settings;
-        }
-        else
-        {
-            [self setDefaultSettings];
-        }
-        
-    }
-    return self;
+    TUISettings *result = [[TUISettings alloc] init];
+    
+    result.weather = DEFAULT_WEATHER;
+    result.autolocation = [NSNumber numberWithBool:DEFAULT_AUTOLOCATION];
+    result.latitude = [NSNumber numberWithDouble:DEFAULT_LATITUDE];
+    result.longitude = [NSNumber numberWithDouble:DEFAULT_LONGITUDE];
+    result.autotime = [NSNumber numberWithBool:DEFAULT_AUTOTIME];
+    result.time = DEFAULT_TIME;
+    
+    return result;
 }
 
-- (void)setDefaultSettings
+
+#pragma mark - Persist -
+
+- (void)persist
 {
-    self.weather = DEFAULT_WEATHER;
-    self.autolocation = [NSNumber numberWithBool:DEFAULT_AUTOLOCATION];
-    self.latitude = [NSNumber numberWithDouble:DEFAULT_LATITUDE];
-    self.longitude = [NSNumber numberWithDouble:DEFAULT_LONGITUDE];
-    self.autotime = [NSNumber numberWithBool:DEFAULT_AUTOTIME];
-    self.time = DEFAULT_TIME;
+    [TUICache storeObject:self forKey:CACHED_SETTINGS_KEY];
 }
 
 
