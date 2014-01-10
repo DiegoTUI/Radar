@@ -50,6 +50,7 @@
 		76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72859187ECBE400F3545E /* TUITestSerializableObject.m */; };
 		76D7285F187ECE0000F3545E /* TUISettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7285E187ECE0000F3545E /* TUISettings.m */; };
 		76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72864187EDA5900F3545E /* TUISettingsSpec.m */; };
+		76D72867187FF5B100F3545E /* NSString+JSONSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72866187FF5B100F3545E /* NSString+JSONSpec.m */; };
 		CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +149,7 @@
 		76D72860187ED22400F3545E /* Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Cache.h; path = Modules/Shared/Constants/Cache.h; sourceTree = "<group>"; };
 		76D72861187ED40200F3545E /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Modules/Shared/Constants/Settings.h; sourceTree = "<group>"; };
 		76D72864187EDA5900F3545E /* TUISettingsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettingsSpec.m; path = Modules/Settings/Model/TUISettingsSpec.m; sourceTree = "<group>"; };
+		76D72866187FF5B100F3545E /* NSString+JSONSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+JSONSpec.m"; path = "Modules/Shared/Model/NSString+JSONSpec.m"; sourceTree = "<group>"; };
 		EFEA3BF1EC8242E485E23BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -444,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				76D72817187C62B600F3545E /* NSString+TUIStringSpec.m */,
+				76D72866187FF5B100F3545E /* NSString+JSONSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -500,9 +503,6 @@
 		76D72855187ECBBD00F3545E /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				76D72857187ECBE400F3545E /* TUICacheSpec.m */,
-				76D72858187ECBE400F3545E /* TUITestSerializableObject.h */,
-				76D72859187ECBE400F3545E /* TUITestSerializableObject.m */,
 				76D72856187ECBC300F3545E /* Model */,
 			);
 			name = Cache;
@@ -511,6 +511,9 @@
 		76D72856187ECBC300F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76D72857187ECBE400F3545E /* TUICacheSpec.m */,
+				76D72858187ECBE400F3545E /* TUITestSerializableObject.h */,
+				76D72859187ECBE400F3545E /* TUITestSerializableObject.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				76D7281B187C62D000F3545E /* TUIBaseMapAnnotationSpec.m in Sources */,
 				76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */,
 				76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */,
+				76D72867187FF5B100F3545E /* NSString+JSONSpec.m in Sources */,
 				76D7285A187ECBE400F3545E /* TUICacheSpec.m in Sources */,
 				76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */,
 				76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */,
