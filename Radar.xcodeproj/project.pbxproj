@@ -53,6 +53,12 @@
 		76D72867187FF5B100F3545E /* NSString+JSONSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72866187FF5B100F3545E /* NSString+JSONSpec.m */; };
 		76D72869187FF9CB00F3545E /* NSDictionary+JSONSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D72868187FF9CB00F3545E /* NSDictionary+JSONSpec.m */; };
 		76D7286C1880003C00F3545E /* TUISettingsViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7286B1880003C00F3545E /* TUISettingsViewControllerSpec.m */; };
+		76D728711880197E00F3545E /* TUINetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728701880197E00F3545E /* TUINetworkClient.m */; };
+		76D728781883DBA000F3545E /* TUIServerError.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728771883DBA000F3545E /* TUIServerError.m */; };
+		76D7287B1883DC3C00F3545E /* TUIServerErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7287A1883DC3C00F3545E /* TUIServerErrorParser.m */; };
+		76D7287F1883DEF700F3545E /* TUIServerErrorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7287E1883DEF700F3545E /* TUIServerErrorSpec.m */; };
+		76D728811883E06800F3545E /* TUIServerErrorParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728801883E06800F3545E /* TUIServerErrorParserSpec.m */; };
+		76D728851883E80D00F3545E /* TUINetworkClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728841883E80D00F3545E /* TUINetworkClientSpec.m */; };
 		CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +160,19 @@
 		76D72866187FF5B100F3545E /* NSString+JSONSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+JSONSpec.m"; path = "Modules/Shared/Model/NSString+JSONSpec.m"; sourceTree = "<group>"; };
 		76D72868187FF9CB00F3545E /* NSDictionary+JSONSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+JSONSpec.m"; path = "Modules/Shared/Model/NSDictionary+JSONSpec.m"; sourceTree = "<group>"; };
 		76D7286B1880003C00F3545E /* TUISettingsViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISettingsViewControllerSpec.m; path = Modules/Settings/Controller/TUISettingsViewControllerSpec.m; sourceTree = "<group>"; };
+		76D7286F1880197E00F3545E /* TUINetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUINetworkClient.h; path = Modules/Network/Model/TUINetworkClient.h; sourceTree = "<group>"; };
+		76D728701880197E00F3545E /* TUINetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUINetworkClient.m; path = Modules/Network/Model/TUINetworkClient.m; sourceTree = "<group>"; };
+		76D728721880270D00F3545E /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Network.h; path = Modules/Shared/Constants/Network.h; sourceTree = "<group>"; };
+		76D728731883DA3B00F3545E /* TUIParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUIParser.h; path = Modules/Network/Model/TUIParser.h; sourceTree = "<group>"; };
+		76D728761883DBA000F3545E /* TUIServerError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIServerError.h; path = Modules/Error/Model/TUIServerError.h; sourceTree = "<group>"; };
+		76D728771883DBA000F3545E /* TUIServerError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIServerError.m; path = Modules/Error/Model/TUIServerError.m; sourceTree = "<group>"; };
+		76D728791883DC3C00F3545E /* TUIServerErrorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIServerErrorParser.h; path = Modules/Error/Model/TUIServerErrorParser.h; sourceTree = "<group>"; };
+		76D7287A1883DC3C00F3545E /* TUIServerErrorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIServerErrorParser.m; path = Modules/Error/Model/TUIServerErrorParser.m; sourceTree = "<group>"; };
+		76D7287E1883DEF700F3545E /* TUIServerErrorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIServerErrorSpec.m; path = Modules/Error/Model/TUIServerErrorSpec.m; sourceTree = "<group>"; };
+		76D728801883E06800F3545E /* TUIServerErrorParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIServerErrorParserSpec.m; path = Modules/Error/Model/TUIServerErrorParserSpec.m; sourceTree = "<group>"; };
+		76D728841883E80D00F3545E /* TUINetworkClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUINetworkClientSpec.m; path = Modules/Network/Model/TUINetworkClientSpec.m; sourceTree = "<group>"; };
+		76D728871883FFF000F3545E /* TUINetworkClient_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUINetworkClient_Private.h; path = Modules/Network/Model/TUINetworkClient_Private.h; sourceTree = "<group>"; };
+		76D728881884018600F3545E /* TUISettingsViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUISettingsViewController_Private.h; path = Modules/Settings/Controller/TUISettingsViewController_Private.h; sourceTree = "<group>"; };
 		EFEA3BF1EC8242E485E23BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -220,6 +239,8 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
+				76D728741883DAA300F3545E /* Error */,
+				76D7286D188018F700F3545E /* Network */,
 				76D727DC187C58E400F3545E /* Base */,
 				76D72845187EC77100F3545E /* Cache */,
 				76D727E4187C596600F3545E /* Search */,
@@ -249,6 +270,8 @@
 		76D727CC187C523A00F3545E /* RadarTests */ = {
 			isa = PBXGroup;
 			children = (
+				76D728821883E7C100F3545E /* Network */,
+				76D7287C1883DE9900F3545E /* Error */,
 				76D72812187C60F000F3545E /* Base */,
 				76D72855187ECBBD00F3545E /* Cache */,
 				76D72862187ED98B00F3545E /* Settings */,
@@ -406,6 +429,7 @@
 				76D72805187C5D5600F3545E /* OSVersion.h */,
 				76D72824187D473C00F3545E /* Segue.h */,
 				76D72861187ED40200F3545E /* Settings.h */,
+				76D728721880270D00F3545E /* Network.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -471,6 +495,7 @@
 			children = (
 				76D72836187D98F200F3545E /* TUISettingsViewController.h */,
 				76D72837187D98F200F3545E /* TUISettingsViewController.m */,
+				76D728881884018600F3545E /* TUISettingsViewController_Private.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -555,6 +580,77 @@
 				76D7286B1880003C00F3545E /* TUISettingsViewControllerSpec.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		76D7286D188018F700F3545E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				76D7286E1880190600F3545E /* Model */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		76D7286E1880190600F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D7286F1880197E00F3545E /* TUINetworkClient.h */,
+				76D728701880197E00F3545E /* TUINetworkClient.m */,
+				76D728731883DA3B00F3545E /* TUIParser.h */,
+				76D728871883FFF000F3545E /* TUINetworkClient_Private.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D728741883DAA300F3545E /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				76D728751883DAB400F3545E /* Model */,
+			);
+			name = Error;
+			sourceTree = "<group>";
+		};
+		76D728751883DAB400F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D728761883DBA000F3545E /* TUIServerError.h */,
+				76D728771883DBA000F3545E /* TUIServerError.m */,
+				76D728791883DC3C00F3545E /* TUIServerErrorParser.h */,
+				76D7287A1883DC3C00F3545E /* TUIServerErrorParser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D7287C1883DE9900F3545E /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				76D7287D1883DEA100F3545E /* Model */,
+			);
+			name = Error;
+			sourceTree = "<group>";
+		};
+		76D7287D1883DEA100F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D7287E1883DEF700F3545E /* TUIServerErrorSpec.m */,
+				76D728801883E06800F3545E /* TUIServerErrorParserSpec.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D728821883E7C100F3545E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				76D728831883E7CC00F3545E /* Model */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		76D728831883E7CC00F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D728841883E80D00F3545E /* TUINetworkClientSpec.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -723,6 +819,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D7287B1883DC3C00F3545E /* TUIServerErrorParser.m in Sources */,
 				76D727B4187C523A00F3545E /* main.m in Sources */,
 				76D72853187ECA8B00F3545E /* NSDictionary+JSON.m in Sources */,
 				76D72854187ECA8B00F3545E /* NSString+JSON.m in Sources */,
@@ -734,8 +831,10 @@
 				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
 				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
+				76D728711880197E00F3545E /* TUINetworkClient.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
+				76D728781883DBA000F3545E /* TUIServerError.m in Sources */,
 				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
 				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,
 				76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */,
@@ -754,16 +853,19 @@
 			files = (
 				76D72869187FF9CB00F3545E /* NSDictionary+JSONSpec.m in Sources */,
 				76D72867187FF5B100F3545E /* NSString+JSONSpec.m in Sources */,
+				76D728811883E06800F3545E /* TUIServerErrorParserSpec.m in Sources */,
 				76D72818187C62B600F3545E /* NSString+TUIStringSpec.m in Sources */,
 				76D7284E187EC91100F3545E /* TUIBaseCachedModelSpec.m in Sources */,
 				76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */,
 				76D7281B187C62D000F3545E /* TUIBaseMapAnnotationSpec.m in Sources */,
 				76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */,
 				76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */,
+				76D728851883E80D00F3545E /* TUINetworkClientSpec.m in Sources */,
 				76D7285A187ECBE400F3545E /* TUICacheSpec.m in Sources */,
 				76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */,
 				76D7286C1880003C00F3545E /* TUISettingsViewControllerSpec.m in Sources */,
 				76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */,
+				76D7287F1883DEF700F3545E /* TUIServerErrorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

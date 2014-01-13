@@ -8,6 +8,7 @@
 
 #import "Kiwi.h"
 #import "TUISettingsViewController.h"
+#import "TUISettingsViewController_Private.h"
 #import "TUISettings.h"
 
 SPEC_BEGIN(TUISettingsViewControllerSpec)

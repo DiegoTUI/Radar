@@ -3,7 +3,7 @@
 //  Radar
 //
 //  Created by Diego Lafuente on 21/10/13.
-//  Copyright (c) 2013 ustwo. All rights reserved.
+//  Copyright (c) 2014 TUI Travel A&D. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
