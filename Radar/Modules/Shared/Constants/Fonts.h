@@ -10,8 +10,6 @@
 #define TITLE_FONT_SIZE 14
 #define H1_FONT_SIZE 18
 #define H2_FONT_SIZE 16
-#define BOLD_FONT @"Lato-Bold"
-#define BOLD_FONT_UNDERLINE @"Lato-Bold-Underline"
-#define NORMAL_FONT @"Lato-Regular"
-#define BLACK_FONT @"Lato-Black"
+#define BOLD_FONT @"Arial-BoldMT"
+#define NORMAL_FONT @"ArialMT"
 #define BLUR_RADIUS 14

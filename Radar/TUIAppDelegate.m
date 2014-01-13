@@ -12,7 +12,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    _applicationController = [[TUIApplicationController alloc] initApplication:application withLaunchOptions:launchOptions];
+
     return YES;
 }
 							
