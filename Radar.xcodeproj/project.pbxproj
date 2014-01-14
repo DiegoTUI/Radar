@@ -60,6 +60,7 @@
 		76D728811883E06800F3545E /* TUIServerErrorParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728801883E06800F3545E /* TUIServerErrorParserSpec.m */; };
 		76D728851883E80D00F3545E /* TUINetworkClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728841883E80D00F3545E /* TUINetworkClientSpec.m */; };
 		76D7288D18841CF200F3545E /* TUIApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7288C18841CF200F3545E /* TUIApplicationController.m */; };
+		76D7289018854B4200F3545E /* images in Resources */ = {isa = PBXBuildFile; fileRef = 76D7288F18854B4200F3545E /* images */; };
 		CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +177,7 @@
 		76D728881884018600F3545E /* TUISettingsViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUISettingsViewController_Private.h; path = Modules/Settings/Controller/TUISettingsViewController_Private.h; sourceTree = "<group>"; };
 		76D7288B18841CF200F3545E /* TUIApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIApplicationController.h; path = Modules/Application/Controller/TUIApplicationController.h; sourceTree = "<group>"; };
 		76D7288C18841CF200F3545E /* TUIApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIApplicationController.m; path = Modules/Application/Controller/TUIApplicationController.m; sourceTree = "<group>"; };
+		76D7288F18854B4200F3545E /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Resources/images; sourceTree = "<group>"; };
 		EFEA3BF1EC8242E485E23BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -242,6 +244,7 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
+				76D7288E18854B2200F3545E /* Resources */,
 				76D7288918841C9400F3545E /* Application */,
 				76D727DC187C58E400F3545E /* Base */,
 				76D72845187EC77100F3545E /* Cache */,
@@ -674,6 +677,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		76D7288E18854B2200F3545E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				76D7288F18854B4200F3545E /* images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -755,6 +766,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D7289018854B4200F3545E /* images in Resources */,
 				76D727C0187C523A00F3545E /* Images.xcassets in Resources */,
 				76D727B2187C523A00F3545E /* InfoPlist.strings in Resources */,
 				76D7282E187D629C00F3545E /* Localizable.strings in Resources */,
