@@ -7,4 +7,5 @@
 //
 
 // Keys
-#define CACHED_SETTINGS_KEY     @"RadarSettings"
+#define CACHED_SETTINGS_KEY             @"RadarSettings"
+#define CACHED_USER_LOCATION_KEY        @"UserPosition"

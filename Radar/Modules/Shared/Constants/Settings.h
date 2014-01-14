@@ -8,7 +8,7 @@
 
 #define DEFAULT_WEATHER             (NSLocalizedString(@"WEATHER_VIEW_SUNNY",nil))
 #define DEFAULT_AUTOLOCATION        1
-#define DEFAULT_LATITUDE            0.0f
-#define DEFAULT_LONGITUDE           0.0f
+#define DEFAULT_LATITUDE            39.543276f
+#define DEFAULT_LONGITUDE           2.716187f
 #define DEFAULT_AUTOTIME            1
 #define DEFAULT_TIME                @""

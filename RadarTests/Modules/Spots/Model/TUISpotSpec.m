@@ -1,9 +1,9 @@
 //
 //  TUISpotSpec.m
-//  laterooms
+//  Radar
 //
-//  Created by Alex Fish on 8/14/13.
-//  Copyright 2013 ustwo. All rights reserved.
+//  Created by Diego Lafuente on 1/14/14.
+//  Copyright 2014 TUI Travel A&D. All rights reserved.
 //
 
 #import "Kiwi.h"
@@ -12,10 +12,10 @@
 
 SPEC_BEGIN(TUISpotSpec)
 
-__block TUISpot *hotel;
+__block TUISpot *spot;
 
 beforeAll(^{
-    hotel = [[TUISpot alloc] init];
+    spot = [[TUISpot alloc] init];
 });
 
 describe(@"TUISpot", ^{
@@ -24,23 +24,23 @@ describe(@"TUISpot", ^{
     });
     
     it(@"should have an id", ^{
-        [[hotel should] respondToSelector:@selector(_id)];
+        [[spot should] respondToSelector:@selector(_id)];
     });
     
     it(@"should have a name", ^{
-        [[hotel should] respondToSelector:@selector(name)];
+        [[spot should] respondToSelector:@selector(name)];
     });
     
     it(@"should have a description body", ^{
-        [[hotel should] respondToSelector:@selector(descriptionBody)];
+        [[spot should] respondToSelector:@selector(descriptionBody)];
     });
     
     it(@"should have a location", ^{
-        [[hotel should] respondToSelector:@selector(location)];
+        [[spot should] respondToSelector:@selector(location)];
     });
     
     it(@"should have images", ^{
-        [[hotel should] respondToSelector:@selector(imageURLs)];
+        [[spot should] respondToSelector:@selector(imageURLs)];
     });
 });
 
