@@ -53,12 +53,12 @@
 - (void)setGlobalBarButtonAppearance
 {
     NSDictionary *normalAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
-                                       NSFontAttributeName: [UIFont fontWithName:NORMAL_FONT size:TITLE_FONT_SIZE],
+                                       NSFontAttributeName: [UIFont fontWithName:REGULAR_FONT size:TITLE_SECTION_FONT_SIZE],
                                        NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                        };
     
     NSDictionary *highlightedAttributes = @{NSForegroundColorAttributeName: [UIColor lightPurpleColor],
-                                            NSFontAttributeName: [UIFont fontWithName:NORMAL_FONT size:TITLE_FONT_SIZE],
+                                            NSFontAttributeName: [UIFont fontWithName:REGULAR_FONT size:TITLE_SECTION_FONT_SIZE],
                                             NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                             };
     
@@ -78,8 +78,8 @@
 {
     // Modify navigation bar title appearance
     NSDictionary *textAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],
-                                     NSFontAttributeName:[UIFont fontWithName:BOLD_FONT size:TITLE_FONT_SIZE],
-                                     NSForegroundColorAttributeName:[NSValue valueWithUIOffset:UIOffsetZero],
+                                     NSFontAttributeName:[UIFont fontWithName:BOLD_FONT size:TITLE_SECTION_FONT_SIZE],
+                                     NSForegroundColorAttributeName:[UIColor redColor],
                                      };
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
     
