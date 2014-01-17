@@ -79,9 +79,10 @@
     // Modify navigation bar title appearance
     NSDictionary *textAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],
                                      NSFontAttributeName:[UIFont fontWithName:BOLD_FONT size:TITLE_SECTION_FONT_SIZE],
-                                     NSForegroundColorAttributeName:[UIColor redColor],
+                                     NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                      };
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
+    //self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
     
     if (SYSTEM_VERSION_LESS_THAN_7)
     {
