@@ -10,7 +10,7 @@
 // Controllers
 #import "TUISettingsViewController.h"
 
-@interface TUISearchViewController () <TUISettingsViewControllerDelegate>
+@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate>
 
 @end
 
@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.mapView setDelegate:self];
+    //[self addGestureRecogniserToMapView];
 }
 
 - (void)didReceiveMemoryWarning

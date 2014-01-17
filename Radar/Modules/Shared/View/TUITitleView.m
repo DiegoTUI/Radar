@@ -67,7 +67,7 @@ static const CGFloat kFrameHeight                       = 44.0f;
     _subtitleLabel = [[TUIBaseLabel alloc] initWithFrame:CGRectZero];
     _subtitleLabel.textColor = [UIColor whiteColor];
     _subtitleLabel.textAlignment = NSTextAlignmentCenter;
-    _subtitleLabel.font = [UIFont fontWithName:NORMAL_FONT size:kSubtitleLabelFontSize];
+    _subtitleLabel.font = [UIFont fontWithName:REGULAR_FONT size:kSubtitleLabelFontSize];
     [self addSubview:_subtitleLabel];
 }
 

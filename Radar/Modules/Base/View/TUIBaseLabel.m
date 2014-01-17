@@ -55,7 +55,7 @@
 
 - (void)setupAppearance
 {
-    self.font = [UIFont fontWithName:NORMAL_FONT size:BODY_FONT_SIZE];
+    self.font = [UIFont fontWithName:REGULAR_FONT size:REGULAR_FONT_SIZE];
     self.backgroundColor = [UIColor clearColor];
     self.textColor = [UIColor bodyTextColor];
 }

@@ -20,3 +20,5 @@
 "TIME_LABEL" = "Time (hh.mm)";
 "SAVE_BUTTON" = "Save";
 "CANCEL_BUTTON" = "Cancel";
+
+"ACTIVITY_VIEW_TITLE" = "Activity"; 
