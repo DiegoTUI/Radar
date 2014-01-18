@@ -74,12 +74,12 @@ describe(@"NSString+TUIString", ^{
         
         it(@"should return YES if the e-mail is valid", ^{
             NSString *validEmail = @"mg1987@gmail.com";
-            [[theValue([validEmail isValidEmail]) should] beTrue];
+            [[@([validEmail isValidEmail]) should] beTrue];
         });
         
         it(@"should return NO if the e-mail is not valid", ^{
             NSString *validEmail = @"mg1987@crap";
-            [[theValue([validEmail isValidEmail]) should] beFalse];
+            [[@([validEmail isValidEmail]) should] beFalse];
         });
         
     });
@@ -138,7 +138,7 @@ describe(@"NSString+TUIString", ^{
                     NSString *currentcharacter = [randomid substringWithRange:NSMakeRange(p, 1)];
                     NSRange position = [alphabet rangeOfString:currentcharacter];
                     NSNumber *number = (NSNumber *)[frecuencies objectAtIndex:position.location];
-                    [frecuencies replaceObjectAtIndex:position.location withObject:[NSNumber numberWithInt:[number integerValue]+1]];
+                    [frecuencies replaceObjectAtIndex:position.location withObject:[NSNumber numberWithLong:[number longValue]+1]];
                 }
             }
             
@@ -148,7 +148,9 @@ describe(@"NSString+TUIString", ^{
             
             for (int i=0; i<base; i++)
             {
-                NSInteger deviation = abs([(NSNumber *)[frecuencies objectAtIndex:i] integerValue] - average);
+                NSInteger int1 = [(NSNumber *)[frecuencies objectAtIndex:i] integerValue];
+    
+                NSInteger deviation = ABS(int1 - average);
                 [[theValue(deviation) should] beLessThan:theValue(sqrt)];
             }
         });

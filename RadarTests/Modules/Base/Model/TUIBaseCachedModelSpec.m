@@ -47,7 +47,7 @@ describe(@"TUIBaseCachedModel", ^{
     });
     
     it(@"Should never expire", ^{
-        [[theValue([cachedModel isExpired]) should] beFalse];
+        [[@([cachedModel isExpired]) should] beFalse];
     });
 });
 
