@@ -12,6 +12,7 @@
 		627960C0188804D900474BCE /* TUIListActivitiesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 627960BF188804D900474BCE /* TUIListActivitiesCell.m */; };
 		627A41851889390300926DB6 /* tmp in Resources */ = {isa = PBXBuildFile; fileRef = 627A41841889390300926DB6 /* tmp */; };
 		627A418918893CE600926DB6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627A418818893CE600926DB6 /* MapKit.framework */; };
+		6282BF0D18895E86005CC250 /* mapa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6282BF0C18895E86005CC250 /* mapa.plist */; };
 		76D727A8187C523900F3545E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A7187C523900F3545E /* Foundation.framework */; };
 		76D727AA187C523900F3545E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A9187C523900F3545E /* CoreGraphics.framework */; };
 		76D727AC187C523900F3545E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727AB187C523900F3545E /* UIKit.framework */; };
@@ -88,6 +89,7 @@
 		627960BF188804D900474BCE /* TUIListActivitiesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIListActivitiesCell.m; path = Modules/Search/View/TUIListActivitiesCell.m; sourceTree = "<group>"; };
 		627A41841889390300926DB6 /* tmp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tmp; path = Resources/tmp; sourceTree = "<group>"; };
 		627A418818893CE600926DB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6282BF0C18895E86005CC250 /* mapa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mapa.plist; path = Resources/mapa.plist; sourceTree = "<group>"; };
 		6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarTests.xcconfig"; path = "Pods/Pods-RadarTests.xcconfig"; sourceTree = "<group>"; };
 		76D727A4187C523900F3545E /* Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D727A7187C523900F3545E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -702,6 +704,7 @@
 			children = (
 				627A41841889390300926DB6 /* tmp */,
 				76D7288F18854B4200F3545E /* images */,
+				6282BF0C18895E86005CC250 /* mapa.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -809,6 +812,7 @@
 				76D727C0187C523A00F3545E /* Images.xcassets in Resources */,
 				76D727B2187C523A00F3545E /* InfoPlist.strings in Resources */,
 				76D7282E187D629C00F3545E /* Localizable.strings in Resources */,
+				6282BF0D18895E86005CC250 /* mapa.plist in Resources */,
 				76D727BB187C523A00F3545E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
