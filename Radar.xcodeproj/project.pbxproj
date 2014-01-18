@@ -10,8 +10,16 @@
 		38B136DFD47540C18913D650 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEA3BF1EC8242E485E23BF5 /* libPods.a */; };
 		627960BD1888047D00474BCE /* TUIListActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627960BC1888047D00474BCE /* TUIListActivitiesViewController.m */; };
 		627960C0188804D900474BCE /* TUIListActivitiesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 627960BF188804D900474BCE /* TUIListActivitiesCell.m */; };
-		627A41851889390300926DB6 /* tmp in Resources */ = {isa = PBXBuildFile; fileRef = 627A41841889390300926DB6 /* tmp */; };
 		627A418918893CE600926DB6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627A418818893CE600926DB6 /* MapKit.framework */; };
+		766CADC9188687B900E5C296 /* TUIAtlasTicketList.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */; };
+		766CADCC1886882A00E5C296 /* TUIFoursquareVenueList.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCB1886882A00E5C296 /* TUIFoursquareVenueList.m */; };
+		766CADCE1886895F00E5C296 /* TUIAtlasTicketSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */; };
+		766CADD0188689D100E5C296 /* TUIFoursquareVenueSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */; };
+		766CADD218868AFE00E5C296 /* TUIAtlasTicketListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADD118868AFE00E5C296 /* TUIAtlasTicketListSpec.m */; };
+		766CADD418868B2600E5C296 /* TUIFoursquareVenueListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADD318868B2600E5C296 /* TUIFoursquareVenueListSpec.m */; };
+		76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC335D1885A4EA003FDB48 /* TUILocationManager.m */; };
+		76CC33611885A82D003FDB48 /* TUILocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC33601885A82D003FDB48 /* TUILocation.m */; };
+		76CC33661885B149003FDB48 /* TUILocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC33651885B149003FDB48 /* TUILocationSpec.m */; };
 		6282BF0D18895E86005CC250 /* mapa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6282BF0C18895E86005CC250 /* mapa.plist */; };
 		76D727A8187C523900F3545E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A7187C523900F3545E /* Foundation.framework */; };
 		76D727AA187C523900F3545E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A9187C523900F3545E /* CoreGraphics.framework */; };
@@ -65,8 +73,97 @@
 		76D728811883E06800F3545E /* TUIServerErrorParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728801883E06800F3545E /* TUIServerErrorParserSpec.m */; };
 		76D728851883E80D00F3545E /* TUINetworkClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728841883E80D00F3545E /* TUINetworkClientSpec.m */; };
 		76D7288D18841CF200F3545E /* TUIApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7288C18841CF200F3545E /* TUIApplicationController.m */; };
-		76D7289018854B4200F3545E /* images in Resources */ = {isa = PBXBuildFile; fileRef = 76D7288F18854B4200F3545E /* images */; };
 		76D728951885585F00F3545E /* TUISpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728941885585F00F3545E /* TUISpot.m */; };
+		76D7289918855AB600F3545E /* TUISpotSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7289818855AB600F3545E /* TUISpotSpec.m */; };
+		76D7289C18855E2200F3545E /* TUIAtlasTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7289B18855E2200F3545E /* TUIAtlasTicket.m */; };
+		76D7289F18855E5A00F3545E /* TUIFoursquareVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D7289E18855E5A00F3545E /* TUIFoursquareVenue.m */; };
+		76D728A418855F6F00F3545E /* TUISpotList.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728A318855F6F00F3545E /* TUISpotList.m */; };
+		76D728A81885626700F3545E /* TUISpotListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728A71885626700F3545E /* TUISpotListSpec.m */; };
+		76F2629D188A9B9600B2EFEB /* actividadImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76F26298188A9B9600B2EFEB /* actividadImg.jpg */; };
+		76F2629E188A9B9600B2EFEB /* actividadImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26299188A9B9600B2EFEB /* actividadImg.png */; };
+		76F2629F188A9B9600B2EFEB /* actividadImg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2629A188A9B9600B2EFEB /* actividadImg2.png */; };
+		76F262A0188A9B9600B2EFEB /* actividadImg3.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2629B188A9B9600B2EFEB /* actividadImg3.png */; };
+		76F262A1188A9B9600B2EFEB /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2629C188A9B9600B2EFEB /* mask.png */; };
+		76F262A8188A9BB500B2EFEB /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262A2188A9BB500B2EFEB /* icon-58.png */; };
+		76F262A9188A9BB500B2EFEB /* icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262A3188A9BB500B2EFEB /* icon-76.png */; };
+		76F262AA188A9BB500B2EFEB /* icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262A4188A9BB500B2EFEB /* icon-80.png */; };
+		76F262AB188A9BB500B2EFEB /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262A5188A9BB500B2EFEB /* icon-120.png */; };
+		76F262AC188A9BB500B2EFEB /* icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262A6188A9BB500B2EFEB /* icon-152.png */; };
+		76F262AD188A9BB500B2EFEB /* icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262A7188A9BB500B2EFEB /* icon-512.png */; };
+		76F262B2188A9BC300B2EFEB /* default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262AE188A9BC300B2EFEB /* default-568h.png */; };
+		76F262B3188A9BC300B2EFEB /* default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262AF188A9BC300B2EFEB /* default-568h@2x.png */; };
+		76F262B4188A9BC300B2EFEB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262B0188A9BC300B2EFEB /* Default.png */; };
+		76F262B5188A9BC300B2EFEB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262B1188A9BC300B2EFEB /* Default@2x.png */; };
+		76F262B8188A9BD000B2EFEB /* ux-passbook-header.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262B6188A9BD000B2EFEB /* ux-passbook-header.png */; };
+		76F262B9188A9BD000B2EFEB /* ux-passbook-header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262B7188A9BD000B2EFEB /* ux-passbook-header@2x.png */; };
+		76F262D8188A9BE300B2EFEB /* filter-1km.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262BA188A9BE300B2EFEB /* filter-1km.png */; };
+		76F262D9188A9BE300B2EFEB /* filter-1km@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262BB188A9BE300B2EFEB /* filter-1km@2x.png */; };
+		76F262DA188A9BE300B2EFEB /* filter-300m.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262BC188A9BE300B2EFEB /* filter-300m.png */; };
+		76F262DB188A9BE300B2EFEB /* filter-300m@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262BD188A9BE300B2EFEB /* filter-300m@2x.png */; };
+		76F262DC188A9BE300B2EFEB /* filter-far.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262BE188A9BE300B2EFEB /* filter-far.png */; };
+		76F262DD188A9BE300B2EFEB /* filter-far@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262BF188A9BE300B2EFEB /* filter-far@2x.png */; };
+		76F262DE188A9BE300B2EFEB /* filter-indoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C0188A9BE300B2EFEB /* filter-indoor.png */; };
+		76F262DF188A9BE300B2EFEB /* filter-indoor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C1188A9BE300B2EFEB /* filter-indoor@2x.png */; };
+		76F262E0188A9BE300B2EFEB /* filter-now.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C2188A9BE300B2EFEB /* filter-now.png */; };
+		76F262E1188A9BE300B2EFEB /* filter-now@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C3188A9BE300B2EFEB /* filter-now@2x.png */; };
+		76F262E2188A9BE300B2EFEB /* filter-outdoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C4188A9BE300B2EFEB /* filter-outdoor.png */; };
+		76F262E3188A9BE300B2EFEB /* filter-outdoor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C5188A9BE300B2EFEB /* filter-outdoor@2x.png */; };
+		76F262E4188A9BE300B2EFEB /* filter-tomorrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C6188A9BE300B2EFEB /* filter-tomorrow.png */; };
+		76F262E5188A9BE300B2EFEB /* filter-tomorrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C7188A9BE300B2EFEB /* filter-tomorrow@2x.png */; };
+		76F262E6188A9BE300B2EFEB /* iconfilter-1km.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C8188A9BE300B2EFEB /* iconfilter-1km.png */; };
+		76F262E7188A9BE300B2EFEB /* iconfilter-1km@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262C9188A9BE300B2EFEB /* iconfilter-1km@2x.png */; };
+		76F262E8188A9BE300B2EFEB /* iconfilter-300m.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262CA188A9BE300B2EFEB /* iconfilter-300m.png */; };
+		76F262E9188A9BE300B2EFEB /* iconfilter-300m@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262CB188A9BE300B2EFEB /* iconfilter-300m@2x.png */; };
+		76F262EA188A9BE300B2EFEB /* iconfilter-far.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262CC188A9BE300B2EFEB /* iconfilter-far.png */; };
+		76F262EB188A9BE300B2EFEB /* iconfilter-far@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262CD188A9BE300B2EFEB /* iconfilter-far@2x.png */; };
+		76F262EC188A9BE300B2EFEB /* iconfilter-indoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262CE188A9BE300B2EFEB /* iconfilter-indoor.png */; };
+		76F262ED188A9BE300B2EFEB /* iconfilter-indoor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262CF188A9BE300B2EFEB /* iconfilter-indoor@2x.png */; };
+		76F262EE188A9BE300B2EFEB /* iconfilter-now.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262D0188A9BE300B2EFEB /* iconfilter-now.png */; };
+		76F262EF188A9BE300B2EFEB /* iconfilter-now@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262D1188A9BE300B2EFEB /* iconfilter-now@2x.png */; };
+		76F262F0188A9BE300B2EFEB /* iconfilter-outdoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262D2188A9BE300B2EFEB /* iconfilter-outdoor.png */; };
+		76F262F1188A9BE300B2EFEB /* iconfilter-outdoor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262D3188A9BE300B2EFEB /* iconfilter-outdoor@2x.png */; };
+		76F262F2188A9BE300B2EFEB /* iconfilter-tomorrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262D4188A9BE300B2EFEB /* iconfilter-tomorrow.png */; };
+		76F262F3188A9BE300B2EFEB /* iconfilter-tomorrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262D5188A9BE300B2EFEB /* iconfilter-tomorrow@2x.png */; };
+		76F262F4188A9BE300B2EFEB /* ux-filter-handle.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262D6188A9BE300B2EFEB /* ux-filter-handle.png */; };
+		76F262F5188A9BE300B2EFEB /* ux-filter-handle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262D7188A9BE300B2EFEB /* ux-filter-handle@2x.png */; };
+		76F26300188A9BFA00B2EFEB /* iconlist-check.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262F6188A9BFA00B2EFEB /* iconlist-check.png */; };
+		76F26301188A9BFA00B2EFEB /* iconlist-check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262F7188A9BFA00B2EFEB /* iconlist-check@2x.png */; };
+		76F26302188A9BFA00B2EFEB /* iconlist-fsq.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262F8188A9BFA00B2EFEB /* iconlist-fsq.png */; };
+		76F26303188A9BFA00B2EFEB /* iconlist-fsq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262F9188A9BFA00B2EFEB /* iconlist-fsq@2x.png */; };
+		76F26304188A9BFA00B2EFEB /* iconlist-tui.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262FA188A9BFA00B2EFEB /* iconlist-tui.png */; };
+		76F26305188A9BFA00B2EFEB /* iconlist-tui@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262FB188A9BFA00B2EFEB /* iconlist-tui@2x.png */; };
+		76F26306188A9BFA00B2EFEB /* ux-list-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262FC188A9BFA00B2EFEB /* ux-list-down.png */; };
+		76F26307188A9BFA00B2EFEB /* ux-list-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262FD188A9BFA00B2EFEB /* ux-list-down@2x.png */; };
+		76F26308188A9BFA00B2EFEB /* ux-list-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262FE188A9BFA00B2EFEB /* ux-list-up.png */; };
+		76F26309188A9BFA00B2EFEB /* ux-list-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F262FF188A9BFA00B2EFEB /* ux-list-up@2x.png */; };
+		76F2631E188A9C0A00B2EFEB /* iconmap-fsq-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2630A188A9C0A00B2EFEB /* iconmap-fsq-bar.png */; };
+		76F2631F188A9C0A00B2EFEB /* iconmap-fsq-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2630B188A9C0A00B2EFEB /* iconmap-fsq-bar@2x.png */; };
+		76F26320188A9C0A00B2EFEB /* iconmap-fsq-restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2630C188A9C0A00B2EFEB /* iconmap-fsq-restaurant.png */; };
+		76F26321188A9C0A00B2EFEB /* iconmap-fsq-restaurant@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2630D188A9C0A00B2EFEB /* iconmap-fsq-restaurant@2x.png */; };
+		76F26322188A9C0A00B2EFEB /* iconmap-me.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2630E188A9C0A00B2EFEB /* iconmap-me.png */; };
+		76F26323188A9C0A00B2EFEB /* iconmap-me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2630F188A9C0A00B2EFEB /* iconmap-me@2x.png */; };
+		76F26324188A9C0A00B2EFEB /* iconmap-tui-culture.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26310188A9C0A00B2EFEB /* iconmap-tui-culture.png */; };
+		76F26325188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26311188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png */; };
+		76F26326188A9C0A00B2EFEB /* iconmap-tui-outdoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26312188A9C0A00B2EFEB /* iconmap-tui-outdoor.png */; };
+		76F26327188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26313188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png */; };
+		76F26328188A9C0A00B2EFEB /* iconmap-tui-shows.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26314188A9C0A00B2EFEB /* iconmap-tui-shows.png */; };
+		76F26329188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26315188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png */; };
+		76F2632A188A9C0A00B2EFEB /* iconmap-tui-tours.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26316188A9C0A00B2EFEB /* iconmap-tui-tours.png */; };
+		76F2632B188A9C0A00B2EFEB /* iconmap-tui-tours@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26317188A9C0A00B2EFEB /* iconmap-tui-tours@2x.png */; };
+		76F2632C188A9C0A00B2EFEB /* ux-radar-ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26318188A9C0A00B2EFEB /* ux-radar-ring.png */; };
+		76F2632D188A9C0A00B2EFEB /* ux-radar-ring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26319188A9C0A00B2EFEB /* ux-radar-ring@2x.png */; };
+		76F2632E188A9C0A00B2EFEB /* ux-radar-rotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2631A188A9C0A00B2EFEB /* ux-radar-rotation.png */; };
+		76F2632F188A9C0A00B2EFEB /* ux-radar-rotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2631B188A9C0A00B2EFEB /* ux-radar-rotation@2x.png */; };
+		76F26330188A9C0A00B2EFEB /* ux-radar-scale.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2631C188A9C0A00B2EFEB /* ux-radar-scale.png */; };
+		76F26331188A9C0A00B2EFEB /* ux-radar-scale@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F2631D188A9C0A00B2EFEB /* ux-radar-scale@2x.png */; };
+		76F2633A188A9C1A00B2EFEB /* iconnav-basket.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26332188A9C1A00B2EFEB /* iconnav-basket.png */; };
+		76F2633B188A9C1A00B2EFEB /* iconnav-basket@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26333188A9C1A00B2EFEB /* iconnav-basket@2x.png */; };
+		76F2633C188A9C1A00B2EFEB /* iconnav-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26334188A9C1A00B2EFEB /* iconnav-info.png */; };
+		76F2633D188A9C1A00B2EFEB /* iconnav-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26335188A9C1A00B2EFEB /* iconnav-info@2x.png */; };
+		76F2633E188A9C1A00B2EFEB /* iconnav-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26336188A9C1A00B2EFEB /* iconnav-map.png */; };
+		76F2633F188A9C1A00B2EFEB /* iconnav-map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26337188A9C1A00B2EFEB /* iconnav-map@2x.png */; };
+		76F26340188A9C1A00B2EFEB /* iconnav-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26338188A9C1A00B2EFEB /* iconnav-menu.png */; };
+		76F26341188A9C1A00B2EFEB /* iconnav-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F26339188A9C1A00B2EFEB /* iconnav-menu@2x.png */; };
 		CBBCF2A1B6554BAAA61B6040 /* libPods-RadarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */; };
 /* End PBXBuildFile section */
 
@@ -87,10 +184,22 @@
 		627960BC1888047D00474BCE /* TUIListActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIListActivitiesViewController.m; path = Modules/Search/View/TUIListActivitiesViewController.m; sourceTree = "<group>"; };
 		627960BE188804D900474BCE /* TUIListActivitiesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIListActivitiesCell.h; path = Modules/Search/View/TUIListActivitiesCell.h; sourceTree = "<group>"; };
 		627960BF188804D900474BCE /* TUIListActivitiesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIListActivitiesCell.m; path = Modules/Search/View/TUIListActivitiesCell.m; sourceTree = "<group>"; };
-		627A41841889390300926DB6 /* tmp */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tmp; path = Resources/tmp; sourceTree = "<group>"; };
 		627A418818893CE600926DB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6282BF0C18895E86005CC250 /* mapa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mapa.plist; path = Resources/mapa.plist; sourceTree = "<group>"; };
 		6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarTests.xcconfig"; path = "Pods/Pods-RadarTests.xcconfig"; sourceTree = "<group>"; };
+		766CADC7188687B900E5C296 /* TUIAtlasTicketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicketList.h; path = Modules/SpotList/Model/TUIAtlasTicketList.h; sourceTree = "<group>"; };
+		766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketList.m; path = Modules/SpotList/Model/TUIAtlasTicketList.m; sourceTree = "<group>"; };
+		766CADCA1886882A00E5C296 /* TUIFoursquareVenueList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFoursquareVenueList.h; path = Modules/SpotList/Model/TUIFoursquareVenueList.h; sourceTree = "<group>"; };
+		766CADCB1886882A00E5C296 /* TUIFoursquareVenueList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFoursquareVenueList.m; path = Modules/SpotList/Model/TUIFoursquareVenueList.m; sourceTree = "<group>"; };
+		766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketSpec.m; path = Modules/Spots/Model/TUIAtlasTicketSpec.m; sourceTree = "<group>"; };
+		766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFoursquareVenueSpec.m; path = Modules/Spots/Model/TUIFoursquareVenueSpec.m; sourceTree = "<group>"; };
+		766CADD118868AFE00E5C296 /* TUIAtlasTicketListSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketListSpec.m; path = Modules/SpotList/Model/TUIAtlasTicketListSpec.m; sourceTree = "<group>"; };
+		766CADD318868B2600E5C296 /* TUIFoursquareVenueListSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFoursquareVenueListSpec.m; path = Modules/SpotList/Model/TUIFoursquareVenueListSpec.m; sourceTree = "<group>"; };
+		76CC335C1885A4EA003FDB48 /* TUILocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUILocationManager.h; path = Modules/Location/Model/TUILocationManager.h; sourceTree = "<group>"; };
+		76CC335D1885A4EA003FDB48 /* TUILocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUILocationManager.m; path = Modules/Location/Model/TUILocationManager.m; sourceTree = "<group>"; };
+		76CC335F1885A82D003FDB48 /* TUILocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUILocation.h; path = Modules/Location/Model/TUILocation.h; sourceTree = "<group>"; };
+		76CC33601885A82D003FDB48 /* TUILocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUILocation.m; path = Modules/Location/Model/TUILocation.m; sourceTree = "<group>"; };
+		76CC33651885B149003FDB48 /* TUILocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUILocationSpec.m; path = Modules/Location/Model/TUILocationSpec.m; sourceTree = "<group>"; };
 		76D727A4187C523900F3545E /* Radar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D727A7187C523900F3545E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		76D727A9187C523900F3545E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,9 +299,101 @@
 		76D728881884018600F3545E /* TUISettingsViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUISettingsViewController_Private.h; path = Modules/Settings/Controller/TUISettingsViewController_Private.h; sourceTree = "<group>"; };
 		76D7288B18841CF200F3545E /* TUIApplicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIApplicationController.h; path = Modules/Application/Controller/TUIApplicationController.h; sourceTree = "<group>"; };
 		76D7288C18841CF200F3545E /* TUIApplicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIApplicationController.m; path = Modules/Application/Controller/TUIApplicationController.m; sourceTree = "<group>"; };
-		76D7288F18854B4200F3545E /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = Resources/images; sourceTree = "<group>"; };
 		76D728931885585F00F3545E /* TUISpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpot.h; path = Modules/Spots/Model/TUISpot.h; sourceTree = "<group>"; };
 		76D728941885585F00F3545E /* TUISpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpot.m; path = Modules/Spots/Model/TUISpot.m; sourceTree = "<group>"; };
+		76D7289818855AB600F3545E /* TUISpotSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotSpec.m; path = Modules/Spots/Model/TUISpotSpec.m; sourceTree = "<group>"; };
+		76D7289A18855E2200F3545E /* TUIAtlasTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicket.h; path = Modules/Spots/Model/TUIAtlasTicket.h; sourceTree = "<group>"; };
+		76D7289B18855E2200F3545E /* TUIAtlasTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicket.m; path = Modules/Spots/Model/TUIAtlasTicket.m; sourceTree = "<group>"; };
+		76D7289D18855E5A00F3545E /* TUIFoursquareVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFoursquareVenue.h; path = Modules/Spots/Model/TUIFoursquareVenue.h; sourceTree = "<group>"; };
+		76D7289E18855E5A00F3545E /* TUIFoursquareVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFoursquareVenue.m; path = Modules/Spots/Model/TUIFoursquareVenue.m; sourceTree = "<group>"; };
+		76D728A218855F6F00F3545E /* TUISpotList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotList.h; path = Modules/SpotList/Model/TUISpotList.h; sourceTree = "<group>"; };
+		76D728A318855F6F00F3545E /* TUISpotList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotList.m; path = Modules/SpotList/Model/TUISpotList.m; sourceTree = "<group>"; };
+		76D728A71885626700F3545E /* TUISpotListSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListSpec.m; path = Modules/SpotList/Model/TUISpotListSpec.m; sourceTree = "<group>"; };
+		76F26298188A9B9600B2EFEB /* actividadImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = actividadImg.jpg; path = Resources/tmp/actividadImg.jpg; sourceTree = "<group>"; };
+		76F26299188A9B9600B2EFEB /* actividadImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = actividadImg.png; path = Resources/tmp/actividadImg.png; sourceTree = "<group>"; };
+		76F2629A188A9B9600B2EFEB /* actividadImg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = actividadImg2.png; path = Resources/tmp/actividadImg2.png; sourceTree = "<group>"; };
+		76F2629B188A9B9600B2EFEB /* actividadImg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = actividadImg3.png; path = Resources/tmp/actividadImg3.png; sourceTree = "<group>"; };
+		76F2629C188A9B9600B2EFEB /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mask.png; path = Resources/tmp/mask.png; sourceTree = "<group>"; };
+		76F262A2188A9BB500B2EFEB /* icon-58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-58.png"; path = "Resources/images/application/icon/icon-58.png"; sourceTree = "<group>"; };
+		76F262A3188A9BB500B2EFEB /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-76.png"; path = "Resources/images/application/icon/icon-76.png"; sourceTree = "<group>"; };
+		76F262A4188A9BB500B2EFEB /* icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-80.png"; path = "Resources/images/application/icon/icon-80.png"; sourceTree = "<group>"; };
+		76F262A5188A9BB500B2EFEB /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120.png"; path = "Resources/images/application/icon/icon-120.png"; sourceTree = "<group>"; };
+		76F262A6188A9BB500B2EFEB /* icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-152.png"; path = "Resources/images/application/icon/icon-152.png"; sourceTree = "<group>"; };
+		76F262A7188A9BB500B2EFEB /* icon-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-512.png"; path = "Resources/images/application/icon/icon-512.png"; sourceTree = "<group>"; };
+		76F262AE188A9BC300B2EFEB /* default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-568h.png"; path = "Resources/images/application/launch/default-568h.png"; sourceTree = "<group>"; };
+		76F262AF188A9BC300B2EFEB /* default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-568h@2x.png"; path = "Resources/images/application/launch/default-568h@2x.png"; sourceTree = "<group>"; };
+		76F262B0188A9BC300B2EFEB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/images/application/launch/Default.png; sourceTree = "<group>"; };
+		76F262B1188A9BC300B2EFEB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/images/application/launch/Default@2x.png"; sourceTree = "<group>"; };
+		76F262B6188A9BD000B2EFEB /* ux-passbook-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-passbook-header.png"; path = "Resources/images/booking_confirmation/ux-passbook-header.png"; sourceTree = "<group>"; };
+		76F262B7188A9BD000B2EFEB /* ux-passbook-header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-passbook-header@2x.png"; path = "Resources/images/booking_confirmation/ux-passbook-header@2x.png"; sourceTree = "<group>"; };
+		76F262BA188A9BE300B2EFEB /* filter-1km.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-1km.png"; path = "Resources/images/filter/filter-1km.png"; sourceTree = "<group>"; };
+		76F262BB188A9BE300B2EFEB /* filter-1km@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-1km@2x.png"; path = "Resources/images/filter/filter-1km@2x.png"; sourceTree = "<group>"; };
+		76F262BC188A9BE300B2EFEB /* filter-300m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-300m.png"; path = "Resources/images/filter/filter-300m.png"; sourceTree = "<group>"; };
+		76F262BD188A9BE300B2EFEB /* filter-300m@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-300m@2x.png"; path = "Resources/images/filter/filter-300m@2x.png"; sourceTree = "<group>"; };
+		76F262BE188A9BE300B2EFEB /* filter-far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-far.png"; path = "Resources/images/filter/filter-far.png"; sourceTree = "<group>"; };
+		76F262BF188A9BE300B2EFEB /* filter-far@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-far@2x.png"; path = "Resources/images/filter/filter-far@2x.png"; sourceTree = "<group>"; };
+		76F262C0188A9BE300B2EFEB /* filter-indoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-indoor.png"; path = "Resources/images/filter/filter-indoor.png"; sourceTree = "<group>"; };
+		76F262C1188A9BE300B2EFEB /* filter-indoor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-indoor@2x.png"; path = "Resources/images/filter/filter-indoor@2x.png"; sourceTree = "<group>"; };
+		76F262C2188A9BE300B2EFEB /* filter-now.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-now.png"; path = "Resources/images/filter/filter-now.png"; sourceTree = "<group>"; };
+		76F262C3188A9BE300B2EFEB /* filter-now@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-now@2x.png"; path = "Resources/images/filter/filter-now@2x.png"; sourceTree = "<group>"; };
+		76F262C4188A9BE300B2EFEB /* filter-outdoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-outdoor.png"; path = "Resources/images/filter/filter-outdoor.png"; sourceTree = "<group>"; };
+		76F262C5188A9BE300B2EFEB /* filter-outdoor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-outdoor@2x.png"; path = "Resources/images/filter/filter-outdoor@2x.png"; sourceTree = "<group>"; };
+		76F262C6188A9BE300B2EFEB /* filter-tomorrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-tomorrow.png"; path = "Resources/images/filter/filter-tomorrow.png"; sourceTree = "<group>"; };
+		76F262C7188A9BE300B2EFEB /* filter-tomorrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-tomorrow@2x.png"; path = "Resources/images/filter/filter-tomorrow@2x.png"; sourceTree = "<group>"; };
+		76F262C8188A9BE300B2EFEB /* iconfilter-1km.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-1km.png"; path = "Resources/images/filter/iconfilter-1km.png"; sourceTree = "<group>"; };
+		76F262C9188A9BE300B2EFEB /* iconfilter-1km@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-1km@2x.png"; path = "Resources/images/filter/iconfilter-1km@2x.png"; sourceTree = "<group>"; };
+		76F262CA188A9BE300B2EFEB /* iconfilter-300m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-300m.png"; path = "Resources/images/filter/iconfilter-300m.png"; sourceTree = "<group>"; };
+		76F262CB188A9BE300B2EFEB /* iconfilter-300m@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-300m@2x.png"; path = "Resources/images/filter/iconfilter-300m@2x.png"; sourceTree = "<group>"; };
+		76F262CC188A9BE300B2EFEB /* iconfilter-far.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-far.png"; path = "Resources/images/filter/iconfilter-far.png"; sourceTree = "<group>"; };
+		76F262CD188A9BE300B2EFEB /* iconfilter-far@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-far@2x.png"; path = "Resources/images/filter/iconfilter-far@2x.png"; sourceTree = "<group>"; };
+		76F262CE188A9BE300B2EFEB /* iconfilter-indoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-indoor.png"; path = "Resources/images/filter/iconfilter-indoor.png"; sourceTree = "<group>"; };
+		76F262CF188A9BE300B2EFEB /* iconfilter-indoor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-indoor@2x.png"; path = "Resources/images/filter/iconfilter-indoor@2x.png"; sourceTree = "<group>"; };
+		76F262D0188A9BE300B2EFEB /* iconfilter-now.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-now.png"; path = "Resources/images/filter/iconfilter-now.png"; sourceTree = "<group>"; };
+		76F262D1188A9BE300B2EFEB /* iconfilter-now@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-now@2x.png"; path = "Resources/images/filter/iconfilter-now@2x.png"; sourceTree = "<group>"; };
+		76F262D2188A9BE300B2EFEB /* iconfilter-outdoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-outdoor.png"; path = "Resources/images/filter/iconfilter-outdoor.png"; sourceTree = "<group>"; };
+		76F262D3188A9BE300B2EFEB /* iconfilter-outdoor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-outdoor@2x.png"; path = "Resources/images/filter/iconfilter-outdoor@2x.png"; sourceTree = "<group>"; };
+		76F262D4188A9BE300B2EFEB /* iconfilter-tomorrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-tomorrow.png"; path = "Resources/images/filter/iconfilter-tomorrow.png"; sourceTree = "<group>"; };
+		76F262D5188A9BE300B2EFEB /* iconfilter-tomorrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconfilter-tomorrow@2x.png"; path = "Resources/images/filter/iconfilter-tomorrow@2x.png"; sourceTree = "<group>"; };
+		76F262D6188A9BE300B2EFEB /* ux-filter-handle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-filter-handle.png"; path = "Resources/images/filter/ux-filter-handle.png"; sourceTree = "<group>"; };
+		76F262D7188A9BE300B2EFEB /* ux-filter-handle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-filter-handle@2x.png"; path = "Resources/images/filter/ux-filter-handle@2x.png"; sourceTree = "<group>"; };
+		76F262F6188A9BFA00B2EFEB /* iconlist-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconlist-check.png"; path = "Resources/images/list/iconlist-check.png"; sourceTree = "<group>"; };
+		76F262F7188A9BFA00B2EFEB /* iconlist-check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconlist-check@2x.png"; path = "Resources/images/list/iconlist-check@2x.png"; sourceTree = "<group>"; };
+		76F262F8188A9BFA00B2EFEB /* iconlist-fsq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconlist-fsq.png"; path = "Resources/images/list/iconlist-fsq.png"; sourceTree = "<group>"; };
+		76F262F9188A9BFA00B2EFEB /* iconlist-fsq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconlist-fsq@2x.png"; path = "Resources/images/list/iconlist-fsq@2x.png"; sourceTree = "<group>"; };
+		76F262FA188A9BFA00B2EFEB /* iconlist-tui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconlist-tui.png"; path = "Resources/images/list/iconlist-tui.png"; sourceTree = "<group>"; };
+		76F262FB188A9BFA00B2EFEB /* iconlist-tui@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconlist-tui@2x.png"; path = "Resources/images/list/iconlist-tui@2x.png"; sourceTree = "<group>"; };
+		76F262FC188A9BFA00B2EFEB /* ux-list-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-list-down.png"; path = "Resources/images/list/ux-list-down.png"; sourceTree = "<group>"; };
+		76F262FD188A9BFA00B2EFEB /* ux-list-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-list-down@2x.png"; path = "Resources/images/list/ux-list-down@2x.png"; sourceTree = "<group>"; };
+		76F262FE188A9BFA00B2EFEB /* ux-list-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-list-up.png"; path = "Resources/images/list/ux-list-up.png"; sourceTree = "<group>"; };
+		76F262FF188A9BFA00B2EFEB /* ux-list-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-list-up@2x.png"; path = "Resources/images/list/ux-list-up@2x.png"; sourceTree = "<group>"; };
+		76F2630A188A9C0A00B2EFEB /* iconmap-fsq-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-fsq-bar.png"; path = "Resources/images/map/iconmap-fsq-bar.png"; sourceTree = "<group>"; };
+		76F2630B188A9C0A00B2EFEB /* iconmap-fsq-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-fsq-bar@2x.png"; path = "Resources/images/map/iconmap-fsq-bar@2x.png"; sourceTree = "<group>"; };
+		76F2630C188A9C0A00B2EFEB /* iconmap-fsq-restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-fsq-restaurant.png"; path = "Resources/images/map/iconmap-fsq-restaurant.png"; sourceTree = "<group>"; };
+		76F2630D188A9C0A00B2EFEB /* iconmap-fsq-restaurant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-fsq-restaurant@2x.png"; path = "Resources/images/map/iconmap-fsq-restaurant@2x.png"; sourceTree = "<group>"; };
+		76F2630E188A9C0A00B2EFEB /* iconmap-me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-me.png"; path = "Resources/images/map/iconmap-me.png"; sourceTree = "<group>"; };
+		76F2630F188A9C0A00B2EFEB /* iconmap-me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-me@2x.png"; path = "Resources/images/map/iconmap-me@2x.png"; sourceTree = "<group>"; };
+		76F26310188A9C0A00B2EFEB /* iconmap-tui-culture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-tui-culture.png"; path = "Resources/images/map/iconmap-tui-culture.png"; sourceTree = "<group>"; };
+		76F26311188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-tui-culture@2x.png"; path = "Resources/images/map/iconmap-tui-culture@2x.png"; sourceTree = "<group>"; };
+		76F26312188A9C0A00B2EFEB /* iconmap-tui-outdoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-tui-outdoor.png"; path = "Resources/images/map/iconmap-tui-outdoor.png"; sourceTree = "<group>"; };
+		76F26313188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-tui-outdoor@2x.png"; path = "Resources/images/map/iconmap-tui-outdoor@2x.png"; sourceTree = "<group>"; };
+		76F26314188A9C0A00B2EFEB /* iconmap-tui-shows.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-tui-shows.png"; path = "Resources/images/map/iconmap-tui-shows.png"; sourceTree = "<group>"; };
+		76F26315188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-tui-shows@2x.png"; path = "Resources/images/map/iconmap-tui-shows@2x.png"; sourceTree = "<group>"; };
+		76F26316188A9C0A00B2EFEB /* iconmap-tui-tours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-tui-tours.png"; path = "Resources/images/map/iconmap-tui-tours.png"; sourceTree = "<group>"; };
+		76F26317188A9C0A00B2EFEB /* iconmap-tui-tours@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconmap-tui-tours@2x.png"; path = "Resources/images/map/iconmap-tui-tours@2x.png"; sourceTree = "<group>"; };
+		76F26318188A9C0A00B2EFEB /* ux-radar-ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-radar-ring.png"; path = "Resources/images/map/ux-radar-ring.png"; sourceTree = "<group>"; };
+		76F26319188A9C0A00B2EFEB /* ux-radar-ring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-radar-ring@2x.png"; path = "Resources/images/map/ux-radar-ring@2x.png"; sourceTree = "<group>"; };
+		76F2631A188A9C0A00B2EFEB /* ux-radar-rotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-radar-rotation.png"; path = "Resources/images/map/ux-radar-rotation.png"; sourceTree = "<group>"; };
+		76F2631B188A9C0A00B2EFEB /* ux-radar-rotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-radar-rotation@2x.png"; path = "Resources/images/map/ux-radar-rotation@2x.png"; sourceTree = "<group>"; };
+		76F2631C188A9C0A00B2EFEB /* ux-radar-scale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-radar-scale.png"; path = "Resources/images/map/ux-radar-scale.png"; sourceTree = "<group>"; };
+		76F2631D188A9C0A00B2EFEB /* ux-radar-scale@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-radar-scale@2x.png"; path = "Resources/images/map/ux-radar-scale@2x.png"; sourceTree = "<group>"; };
+		76F26332188A9C1A00B2EFEB /* iconnav-basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnav-basket.png"; path = "Resources/images/navigation/iconnav-basket.png"; sourceTree = "<group>"; };
+		76F26333188A9C1A00B2EFEB /* iconnav-basket@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnav-basket@2x.png"; path = "Resources/images/navigation/iconnav-basket@2x.png"; sourceTree = "<group>"; };
+		76F26334188A9C1A00B2EFEB /* iconnav-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnav-info.png"; path = "Resources/images/navigation/iconnav-info.png"; sourceTree = "<group>"; };
+		76F26335188A9C1A00B2EFEB /* iconnav-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnav-info@2x.png"; path = "Resources/images/navigation/iconnav-info@2x.png"; sourceTree = "<group>"; };
+		76F26336188A9C1A00B2EFEB /* iconnav-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnav-map.png"; path = "Resources/images/navigation/iconnav-map.png"; sourceTree = "<group>"; };
+		76F26337188A9C1A00B2EFEB /* iconnav-map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnav-map@2x.png"; path = "Resources/images/navigation/iconnav-map@2x.png"; sourceTree = "<group>"; };
+		76F26338188A9C1A00B2EFEB /* iconnav-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnav-menu.png"; path = "Resources/images/navigation/iconnav-menu.png"; sourceTree = "<group>"; };
+		76F26339188A9C1A00B2EFEB /* iconnav-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconnav-menu@2x.png"; path = "Resources/images/navigation/iconnav-menu@2x.png"; sourceTree = "<group>"; };
 		EFEA3BF1EC8242E485E23BF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -223,6 +424,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76CC335A1885A4A4003FDB48 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				76CC335B1885A4AE003FDB48 /* Model */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		76CC335B1885A4AE003FDB48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76CC335F1885A82D003FDB48 /* TUILocation.h */,
+				76CC33601885A82D003FDB48 /* TUILocation.m */,
+				76CC335C1885A4EA003FDB48 /* TUILocationManager.h */,
+				76CC335D1885A4EA003FDB48 /* TUILocationManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76CC33631885B110003FDB48 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				76CC33641885B117003FDB48 /* Model */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		76CC33641885B117003FDB48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76CC33651885B149003FDB48 /* TUILocationSpec.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		76D7279B187C523900F3545E = {
 			isa = PBXGroup;
 			children = (
@@ -265,11 +501,13 @@
 				76D727DC187C58E400F3545E /* Base */,
 				76D72845187EC77100F3545E /* Cache */,
 				76D728741883DAA300F3545E /* Error */,
+				76CC335A1885A4A4003FDB48 /* Location */,
 				76D7286D188018F700F3545E /* Network */,
 				76D7288E18854B2200F3545E /* Resources */,
 				76D727E4187C596600F3545E /* Search */,
 				76D72825187D479400F3545E /* Settings */,
 				76D727DD187C58F100F3545E /* Shared */,
+				76D728A018855F2200F3545E /* SpotList */,
 				76D728911885580600F3545E /* Spots */,
 				76D727AE187C523A00F3545E /* Supporting Files */,
 				76D727BF187C523A00F3545E /* Images.xcassets */,
@@ -298,9 +536,12 @@
 				76D72812187C60F000F3545E /* Base */,
 				76D72855187ECBBD00F3545E /* Cache */,
 				76D7287C1883DE9900F3545E /* Error */,
+				76CC33631885B110003FDB48 /* Location */,
 				76D728821883E7C100F3545E /* Network */,
 				76D72862187ED98B00F3545E /* Settings */,
 				76D72815187C613F00F3545E /* Shared */,
+				76D728A51885621100F3545E /* SpotList */,
+				76D7289618855A6300F3545E /* Spots */,
 				76D727CD187C523A00F3545E /* Supporting Files */,
 			);
 			path = RadarTests;
@@ -702,8 +943,8 @@
 		76D7288E18854B2200F3545E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				627A41841889390300926DB6 /* tmp */,
-				76D7288F18854B4200F3545E /* images */,
+				76F2628F188A9B1600B2EFEB /* images */,
+				76F2628E188A9AFD00B2EFEB /* tmp */,
 				6282BF0C18895E86005CC250 /* mapa.plist */,
 			);
 			name = Resources;
@@ -720,10 +961,234 @@
 		76D728921885581D00F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76D7289A18855E2200F3545E /* TUIAtlasTicket.h */,
+				76D7289B18855E2200F3545E /* TUIAtlasTicket.m */,
+				76D7289D18855E5A00F3545E /* TUIFoursquareVenue.h */,
+				76D7289E18855E5A00F3545E /* TUIFoursquareVenue.m */,
 				76D728931885585F00F3545E /* TUISpot.h */,
 				76D728941885585F00F3545E /* TUISpot.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		76D7289618855A6300F3545E /* Spots */ = {
+			isa = PBXGroup;
+			children = (
+				76D7289718855A7400F3545E /* Model */,
+			);
+			name = Spots;
+			sourceTree = "<group>";
+		};
+		76D7289718855A7400F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D7289818855AB600F3545E /* TUISpotSpec.m */,
+				766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */,
+				766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D728A018855F2200F3545E /* SpotList */ = {
+			isa = PBXGroup;
+			children = (
+				76D728A118855F3500F3545E /* Model */,
+			);
+			name = SpotList;
+			sourceTree = "<group>";
+		};
+		76D728A118855F3500F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				766CADC7188687B900E5C296 /* TUIAtlasTicketList.h */,
+				766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */,
+				766CADCA1886882A00E5C296 /* TUIFoursquareVenueList.h */,
+				766CADCB1886882A00E5C296 /* TUIFoursquareVenueList.m */,
+				76D728A218855F6F00F3545E /* TUISpotList.h */,
+				76D728A318855F6F00F3545E /* TUISpotList.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76D728A51885621100F3545E /* SpotList */ = {
+			isa = PBXGroup;
+			children = (
+				76D728A61885622500F3545E /* Model */,
+			);
+			name = SpotList;
+			sourceTree = "<group>";
+		};
+		76D728A61885622500F3545E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76D728A71885626700F3545E /* TUISpotListSpec.m */,
+				766CADD118868AFE00E5C296 /* TUIAtlasTicketListSpec.m */,
+				766CADD318868B2600E5C296 /* TUIFoursquareVenueListSpec.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		76F2628E188A9AFD00B2EFEB /* tmp */ = {
+			isa = PBXGroup;
+			children = (
+				76F26298188A9B9600B2EFEB /* actividadImg.jpg */,
+				76F26299188A9B9600B2EFEB /* actividadImg.png */,
+				76F2629A188A9B9600B2EFEB /* actividadImg2.png */,
+				76F2629B188A9B9600B2EFEB /* actividadImg3.png */,
+				76F2629C188A9B9600B2EFEB /* mask.png */,
+			);
+			name = tmp;
+			sourceTree = "<group>";
+		};
+		76F2628F188A9B1600B2EFEB /* images */ = {
+			isa = PBXGroup;
+			children = (
+				76F26295188A9B5800B2EFEB /* application */,
+				76F26294188A9B4600B2EFEB /* booking_confirmation */,
+				76F26293188A9B3C00B2EFEB /* filter */,
+				76F26292188A9B3400B2EFEB /* list */,
+				76F26291188A9B2A00B2EFEB /* map */,
+				76F26290188A9B2000B2EFEB /* navigation */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		76F26290188A9B2000B2EFEB /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				76F26332188A9C1A00B2EFEB /* iconnav-basket.png */,
+				76F26333188A9C1A00B2EFEB /* iconnav-basket@2x.png */,
+				76F26334188A9C1A00B2EFEB /* iconnav-info.png */,
+				76F26335188A9C1A00B2EFEB /* iconnav-info@2x.png */,
+				76F26336188A9C1A00B2EFEB /* iconnav-map.png */,
+				76F26337188A9C1A00B2EFEB /* iconnav-map@2x.png */,
+				76F26338188A9C1A00B2EFEB /* iconnav-menu.png */,
+				76F26339188A9C1A00B2EFEB /* iconnav-menu@2x.png */,
+			);
+			name = navigation;
+			sourceTree = "<group>";
+		};
+		76F26291188A9B2A00B2EFEB /* map */ = {
+			isa = PBXGroup;
+			children = (
+				76F2630A188A9C0A00B2EFEB /* iconmap-fsq-bar.png */,
+				76F2630B188A9C0A00B2EFEB /* iconmap-fsq-bar@2x.png */,
+				76F2630C188A9C0A00B2EFEB /* iconmap-fsq-restaurant.png */,
+				76F2630D188A9C0A00B2EFEB /* iconmap-fsq-restaurant@2x.png */,
+				76F2630E188A9C0A00B2EFEB /* iconmap-me.png */,
+				76F2630F188A9C0A00B2EFEB /* iconmap-me@2x.png */,
+				76F26310188A9C0A00B2EFEB /* iconmap-tui-culture.png */,
+				76F26311188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png */,
+				76F26312188A9C0A00B2EFEB /* iconmap-tui-outdoor.png */,
+				76F26313188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png */,
+				76F26314188A9C0A00B2EFEB /* iconmap-tui-shows.png */,
+				76F26315188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png */,
+				76F26316188A9C0A00B2EFEB /* iconmap-tui-tours.png */,
+				76F26317188A9C0A00B2EFEB /* iconmap-tui-tours@2x.png */,
+				76F26318188A9C0A00B2EFEB /* ux-radar-ring.png */,
+				76F26319188A9C0A00B2EFEB /* ux-radar-ring@2x.png */,
+				76F2631A188A9C0A00B2EFEB /* ux-radar-rotation.png */,
+				76F2631B188A9C0A00B2EFEB /* ux-radar-rotation@2x.png */,
+				76F2631C188A9C0A00B2EFEB /* ux-radar-scale.png */,
+				76F2631D188A9C0A00B2EFEB /* ux-radar-scale@2x.png */,
+			);
+			name = map;
+			sourceTree = "<group>";
+		};
+		76F26292188A9B3400B2EFEB /* list */ = {
+			isa = PBXGroup;
+			children = (
+				76F262F6188A9BFA00B2EFEB /* iconlist-check.png */,
+				76F262F7188A9BFA00B2EFEB /* iconlist-check@2x.png */,
+				76F262F8188A9BFA00B2EFEB /* iconlist-fsq.png */,
+				76F262F9188A9BFA00B2EFEB /* iconlist-fsq@2x.png */,
+				76F262FA188A9BFA00B2EFEB /* iconlist-tui.png */,
+				76F262FB188A9BFA00B2EFEB /* iconlist-tui@2x.png */,
+				76F262FC188A9BFA00B2EFEB /* ux-list-down.png */,
+				76F262FD188A9BFA00B2EFEB /* ux-list-down@2x.png */,
+				76F262FE188A9BFA00B2EFEB /* ux-list-up.png */,
+				76F262FF188A9BFA00B2EFEB /* ux-list-up@2x.png */,
+			);
+			name = list;
+			sourceTree = "<group>";
+		};
+		76F26293188A9B3C00B2EFEB /* filter */ = {
+			isa = PBXGroup;
+			children = (
+				76F262BA188A9BE300B2EFEB /* filter-1km.png */,
+				76F262BB188A9BE300B2EFEB /* filter-1km@2x.png */,
+				76F262BC188A9BE300B2EFEB /* filter-300m.png */,
+				76F262BD188A9BE300B2EFEB /* filter-300m@2x.png */,
+				76F262BE188A9BE300B2EFEB /* filter-far.png */,
+				76F262BF188A9BE300B2EFEB /* filter-far@2x.png */,
+				76F262C0188A9BE300B2EFEB /* filter-indoor.png */,
+				76F262C1188A9BE300B2EFEB /* filter-indoor@2x.png */,
+				76F262C2188A9BE300B2EFEB /* filter-now.png */,
+				76F262C3188A9BE300B2EFEB /* filter-now@2x.png */,
+				76F262C4188A9BE300B2EFEB /* filter-outdoor.png */,
+				76F262C5188A9BE300B2EFEB /* filter-outdoor@2x.png */,
+				76F262C6188A9BE300B2EFEB /* filter-tomorrow.png */,
+				76F262C7188A9BE300B2EFEB /* filter-tomorrow@2x.png */,
+				76F262C8188A9BE300B2EFEB /* iconfilter-1km.png */,
+				76F262C9188A9BE300B2EFEB /* iconfilter-1km@2x.png */,
+				76F262CA188A9BE300B2EFEB /* iconfilter-300m.png */,
+				76F262CB188A9BE300B2EFEB /* iconfilter-300m@2x.png */,
+				76F262CC188A9BE300B2EFEB /* iconfilter-far.png */,
+				76F262CD188A9BE300B2EFEB /* iconfilter-far@2x.png */,
+				76F262CE188A9BE300B2EFEB /* iconfilter-indoor.png */,
+				76F262CF188A9BE300B2EFEB /* iconfilter-indoor@2x.png */,
+				76F262D0188A9BE300B2EFEB /* iconfilter-now.png */,
+				76F262D1188A9BE300B2EFEB /* iconfilter-now@2x.png */,
+				76F262D2188A9BE300B2EFEB /* iconfilter-outdoor.png */,
+				76F262D3188A9BE300B2EFEB /* iconfilter-outdoor@2x.png */,
+				76F262D4188A9BE300B2EFEB /* iconfilter-tomorrow.png */,
+				76F262D5188A9BE300B2EFEB /* iconfilter-tomorrow@2x.png */,
+				76F262D6188A9BE300B2EFEB /* ux-filter-handle.png */,
+				76F262D7188A9BE300B2EFEB /* ux-filter-handle@2x.png */,
+			);
+			name = filter;
+			sourceTree = "<group>";
+		};
+		76F26294188A9B4600B2EFEB /* booking_confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				76F262B6188A9BD000B2EFEB /* ux-passbook-header.png */,
+				76F262B7188A9BD000B2EFEB /* ux-passbook-header@2x.png */,
+			);
+			name = booking_confirmation;
+			sourceTree = "<group>";
+		};
+		76F26295188A9B5800B2EFEB /* application */ = {
+			isa = PBXGroup;
+			children = (
+				76F26297188A9B6F00B2EFEB /* icon */,
+				76F26296188A9B6800B2EFEB /* launch */,
+			);
+			name = application;
+			sourceTree = "<group>";
+		};
+		76F26296188A9B6800B2EFEB /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				76F262AE188A9BC300B2EFEB /* default-568h.png */,
+				76F262AF188A9BC300B2EFEB /* default-568h@2x.png */,
+				76F262B0188A9BC300B2EFEB /* Default.png */,
+				76F262B1188A9BC300B2EFEB /* Default@2x.png */,
+			);
+			name = launch;
+			sourceTree = "<group>";
+		};
+		76F26297188A9B6F00B2EFEB /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				76F262A2188A9BB500B2EFEB /* icon-58.png */,
+				76F262A3188A9BB500B2EFEB /* icon-76.png */,
+				76F262A4188A9BB500B2EFEB /* icon-80.png */,
+				76F262A5188A9BB500B2EFEB /* icon-120.png */,
+				76F262A6188A9BB500B2EFEB /* icon-152.png */,
+				76F262A7188A9BB500B2EFEB /* icon-512.png */,
+			);
+			name = icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -807,13 +1272,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627A41851889390300926DB6 /* tmp in Resources */,
-				76D7289018854B4200F3545E /* images in Resources */,
+				76F262EF188A9BE300B2EFEB /* iconfilter-now@2x.png in Resources */,
+				76F26331188A9C0A00B2EFEB /* ux-radar-scale@2x.png in Resources */,
+				76F262B2188A9BC300B2EFEB /* default-568h.png in Resources */,
+				76F26340188A9C1A00B2EFEB /* iconnav-menu.png in Resources */,
+				76F262B4188A9BC300B2EFEB /* Default.png in Resources */,
+				76F262EA188A9BE300B2EFEB /* iconfilter-far.png in Resources */,
+				76F2629E188A9B9600B2EFEB /* actividadImg.png in Resources */,
 				76D727C0187C523A00F3545E /* Images.xcassets in Resources */,
+				76F26307188A9BFA00B2EFEB /* ux-list-down@2x.png in Resources */,
+				76F262E2188A9BE300B2EFEB /* filter-outdoor.png in Resources */,
+				76F26301188A9BFA00B2EFEB /* iconlist-check@2x.png in Resources */,
+				76F262F5188A9BE300B2EFEB /* ux-filter-handle@2x.png in Resources */,
+				76F262E7188A9BE300B2EFEB /* iconfilter-1km@2x.png in Resources */,
+				76F262ED188A9BE300B2EFEB /* iconfilter-indoor@2x.png in Resources */,
+				76F262A1188A9B9600B2EFEB /* mask.png in Resources */,
+				76F262E9188A9BE300B2EFEB /* iconfilter-300m@2x.png in Resources */,
+				76F26330188A9C0A00B2EFEB /* ux-radar-scale.png in Resources */,
+				76F262AC188A9BB500B2EFEB /* icon-152.png in Resources */,
+				76F262E0188A9BE300B2EFEB /* filter-now.png in Resources */,
+				76F26304188A9BFA00B2EFEB /* iconlist-tui.png in Resources */,
+				76F262A8188A9BB500B2EFEB /* icon-58.png in Resources */,
+				76F2633A188A9C1A00B2EFEB /* iconnav-basket.png in Resources */,
+				76F262E3188A9BE300B2EFEB /* filter-outdoor@2x.png in Resources */,
+				76F2633F188A9C1A00B2EFEB /* iconnav-map@2x.png in Resources */,
+				76F262F2188A9BE300B2EFEB /* iconfilter-tomorrow.png in Resources */,
+				76F26309188A9BFA00B2EFEB /* ux-list-up@2x.png in Resources */,
+				76F26326188A9C0A00B2EFEB /* iconmap-tui-outdoor.png in Resources */,
+				76F262B8188A9BD000B2EFEB /* ux-passbook-header.png in Resources */,
+				76F262B9188A9BD000B2EFEB /* ux-passbook-header@2x.png in Resources */,
+				76F2632A188A9C0A00B2EFEB /* iconmap-tui-tours.png in Resources */,
+				76F2632C188A9C0A00B2EFEB /* ux-radar-ring.png in Resources */,
+				76F2632B188A9C0A00B2EFEB /* iconmap-tui-tours@2x.png in Resources */,
+				76F262F0188A9BE300B2EFEB /* iconfilter-outdoor.png in Resources */,
 				76D727B2187C523A00F3545E /* InfoPlist.strings in Resources */,
+				76F26305188A9BFA00B2EFEB /* iconlist-tui@2x.png in Resources */,
+				76F262EE188A9BE300B2EFEB /* iconfilter-now.png in Resources */,
+				76F262DB188A9BE300B2EFEB /* filter-300m@2x.png in Resources */,
+				76F2633B188A9C1A00B2EFEB /* iconnav-basket@2x.png in Resources */,
+				76F26323188A9C0A00B2EFEB /* iconmap-me@2x.png in Resources */,
+				76F262DC188A9BE300B2EFEB /* filter-far.png in Resources */,
+				76F262E8188A9BE300B2EFEB /* iconfilter-300m.png in Resources */,
+				76F2629F188A9B9600B2EFEB /* actividadImg2.png in Resources */,
+				76F262D8188A9BE300B2EFEB /* filter-1km.png in Resources */,
+				76F262E5188A9BE300B2EFEB /* filter-tomorrow@2x.png in Resources */,
+				76F2633C188A9C1A00B2EFEB /* iconnav-info.png in Resources */,
+				76F26320188A9C0A00B2EFEB /* iconmap-fsq-restaurant.png in Resources */,
+				76F262D9188A9BE300B2EFEB /* filter-1km@2x.png in Resources */,
+				76F262DA188A9BE300B2EFEB /* filter-300m.png in Resources */,
+				76F26324188A9C0A00B2EFEB /* iconmap-tui-culture.png in Resources */,
+				76F2633D188A9C1A00B2EFEB /* iconnav-info@2x.png in Resources */,
+				76F26325188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png in Resources */,
+				76F262A9188A9BB500B2EFEB /* icon-76.png in Resources */,
 				76D7282E187D629C00F3545E /* Localizable.strings in Resources */,
+				76F262E6188A9BE300B2EFEB /* iconfilter-1km.png in Resources */,
+				76F262F3188A9BE300B2EFEB /* iconfilter-tomorrow@2x.png in Resources */,
+				76F262EB188A9BE300B2EFEB /* iconfilter-far@2x.png in Resources */,
+				76F26322188A9C0A00B2EFEB /* iconmap-me.png in Resources */,
+				76F26341188A9C1A00B2EFEB /* iconnav-menu@2x.png in Resources */,
+				76F2632E188A9C0A00B2EFEB /* ux-radar-rotation.png in Resources */,
+				76F2632F188A9C0A00B2EFEB /* ux-radar-rotation@2x.png in Resources */,
+				76F262AB188A9BB500B2EFEB /* icon-120.png in Resources */,
+				76F26328188A9C0A00B2EFEB /* iconmap-tui-shows.png in Resources */,
+				76F2632D188A9C0A00B2EFEB /* ux-radar-ring@2x.png in Resources */,
+				76F262EC188A9BE300B2EFEB /* iconfilter-indoor.png in Resources */,
+				76F262E4188A9BE300B2EFEB /* filter-tomorrow.png in Resources */,
+				76F262AA188A9BB500B2EFEB /* icon-80.png in Resources */,
+				76F262A0188A9B9600B2EFEB /* actividadImg3.png in Resources */,
 				6282BF0D18895E86005CC250 /* mapa.plist in Resources */,
 				76D727BB187C523A00F3545E /* Main.storyboard in Resources */,
+				76F2633E188A9C1A00B2EFEB /* iconnav-map.png in Resources */,
+				76F2631F188A9C0A00B2EFEB /* iconmap-fsq-bar@2x.png in Resources */,
+				76F262F4188A9BE300B2EFEB /* ux-filter-handle.png in Resources */,
+				76F26302188A9BFA00B2EFEB /* iconlist-fsq.png in Resources */,
+				76F26306188A9BFA00B2EFEB /* ux-list-down.png in Resources */,
+				76F262DF188A9BE300B2EFEB /* filter-indoor@2x.png in Resources */,
+				76F262DE188A9BE300B2EFEB /* filter-indoor.png in Resources */,
+				76F2629D188A9B9600B2EFEB /* actividadImg.jpg in Resources */,
+				76F262B5188A9BC300B2EFEB /* Default@2x.png in Resources */,
+				76F262DD188A9BE300B2EFEB /* filter-far@2x.png in Resources */,
+				76F262B3188A9BC300B2EFEB /* default-568h@2x.png in Resources */,
+				76F262E1188A9BE300B2EFEB /* filter-now@2x.png in Resources */,
+				76F26327188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png in Resources */,
+				76F26303188A9BFA00B2EFEB /* iconlist-fsq@2x.png in Resources */,
+				76F26321188A9C0A00B2EFEB /* iconmap-fsq-restaurant@2x.png in Resources */,
+				76F26300188A9BFA00B2EFEB /* iconlist-check.png in Resources */,
+				76F26308188A9BFA00B2EFEB /* ux-list-up.png in Resources */,
+				76F262F1188A9BE300B2EFEB /* iconfilter-outdoor@2x.png in Resources */,
+				76F26329188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png in Resources */,
+				76F2631E188A9C0A00B2EFEB /* iconmap-fsq-bar.png in Resources */,
+				76F262AD188A9BB500B2EFEB /* icon-512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +1449,8 @@
 				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
 				76D727B8187C523A00F3545E /* TUIAppDelegate.m in Sources */,
 				76D7288D18841CF200F3545E /* TUIApplicationController.m in Sources */,
+				76D7289C18855E2200F3545E /* TUIAtlasTicket.m in Sources */,
+				766CADC9188687B900E5C296 /* TUIAtlasTicketList.m in Sources */,
 				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
 				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
@@ -909,6 +1459,10 @@
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
+				76D7289F18855E5A00F3545E /* TUIFoursquareVenue.m in Sources */,
+				766CADCC1886882A00E5C296 /* TUIFoursquareVenueList.m in Sources */,
+				76CC33611885A82D003FDB48 /* TUILocation.m in Sources */,
+				76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */,
 				76D728711880197E00F3545E /* TUINetworkClient.m in Sources */,
 				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
 				76D728781883DBA000F3545E /* TUIServerError.m in Sources */,
@@ -921,6 +1475,7 @@
 				627960BD1888047D00474BCE /* TUIListActivitiesViewController.m in Sources */,
 				76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */,
 				76D728951885585F00F3545E /* TUISpot.m in Sources */,
+				76D728A418855F6F00F3545E /* TUISpotList.m in Sources */,
 				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
 				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
 				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
@@ -938,13 +1493,20 @@
 				76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */,
 				76D7281B187C62D000F3545E /* TUIBaseMapAnnotationSpec.m in Sources */,
 				76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */,
+				766CADD218868AFE00E5C296 /* TUIAtlasTicketListSpec.m in Sources */,
 				76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */,
 				76D7285A187ECBE400F3545E /* TUICacheSpec.m in Sources */,
+				76CC33661885B149003FDB48 /* TUILocationSpec.m in Sources */,
 				76D728851883E80D00F3545E /* TUINetworkClientSpec.m in Sources */,
+				766CADCE1886895F00E5C296 /* TUIAtlasTicketSpec.m in Sources */,
 				76D728811883E06800F3545E /* TUIServerErrorParserSpec.m in Sources */,
+				766CADD418868B2600E5C296 /* TUIFoursquareVenueListSpec.m in Sources */,
 				76D7287F1883DEF700F3545E /* TUIServerErrorSpec.m in Sources */,
 				76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */,
 				76D7286C1880003C00F3545E /* TUISettingsViewControllerSpec.m in Sources */,
+				766CADD0188689D100E5C296 /* TUIFoursquareVenueSpec.m in Sources */,
+				76D728A81885626700F3545E /* TUISpotListSpec.m in Sources */,
+				76D7289918855AB600F3545E /* TUISpotSpec.m in Sources */,
 				76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

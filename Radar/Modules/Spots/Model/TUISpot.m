@@ -10,4 +10,11 @@
 
 @implementation TUISpot
 
+#pragma mark - Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%p> Id:%@, Name: %@", self , self._id, self.name];
+}
+
 @end
