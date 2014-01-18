@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New item</key>
+	<dict>
+		<key>name</key>
+		<string>Soho promade</string>
+		<key>tags</key>
+		<array>
+			<string>street</string>
+			<string>walk</string>
+			<string>outside</string>
+			<string>city</string>
+		</array>
+		<key>price</key>
+		<string>100 €</string>
+		<key>thumb</key>
+		<string>activitiesImg.png</string>
+		<key>description</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis. Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis, ante ipsum cursus augue.</string>
+		<key>indoor</key>
+		<false/>
+		<key>feed</key>
+		<string>tui</string>
+	</dict>
+	<key>New item - 2</key>
+	<dict>
+		<key>name</key>
+		<string>Market café</string>
+		<key>tags</key>
+		<array>
+			<string>street</string>
+			<string>walk</string>
+			<string>outside</string>
+			<string>city</string>
+		</array>
+		<key>price</key>
+		<string></string>
+		<key>thumb</key>
+		<string>activitiesImg.png</string>
+		<key>description</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis. Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis, ante ipsum cursus augue.</string>
+		<key>indoor</key>
+		<true/>
+		<key>feed</key>
+		<string>fsq</string>
+	</dict>
+	<key>New item - 3</key>
+	<dict>
+		<key>name</key>
+		<string>Bike riding</string>
+		<key>tags</key>
+		<array>
+			<string>street</string>
+			<string>walk</string>
+			<string>outside</string>
+			<string>city</string>
+		</array>
+		<key>price</key>
+		<string>25 €</string>
+		<key>thumb</key>
+		<string>activitiesImg.png</string>
+		<key>description</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis. Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis, ante ipsum cursus augue.</string>
+		<key>indoor</key>
+		<false/>
+		<key>feed</key>
+		<string>tui</string>
+	</dict>
+	<key>New item - 4</key>
+	<dict>
+		<key>name</key>
+		<string>VIctoria Restaurant</string>
+		<key>tags</key>
+		<array>
+			<string>street</string>
+			<string>walk</string>
+			<string>outside</string>
+			<string>city</string>
+		</array>
+		<key>price</key>
+		<string>-</string>
+		<key>thumb</key>
+		<string>activitiesImg.png</string>
+		<key>description</key>
+		<string>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis lectus metus, at posuere neque. Sed pharetra nibh eget orci convallis at posuere leo convallis. Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis, ante ipsum cursus augue.</string>
+		<key>indoor</key>
+		<true/>
+		<key>feed</key>
+		<string>fsq</string>
+	</dict>
+</dict>
+</plist>

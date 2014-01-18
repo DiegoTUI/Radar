@@ -20,6 +20,7 @@
 		76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC335D1885A4EA003FDB48 /* TUILocationManager.m */; };
 		76CC33611885A82D003FDB48 /* TUILocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC33601885A82D003FDB48 /* TUILocation.m */; };
 		76CC33661885B149003FDB48 /* TUILocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC33651885B149003FDB48 /* TUILocationSpec.m */; };
+		6282BF0D18895E86005CC250 /* mapa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6282BF0C18895E86005CC250 /* mapa.plist */; };
 		76D727A8187C523900F3545E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A7187C523900F3545E /* Foundation.framework */; };
 		76D727AA187C523900F3545E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727A9187C523900F3545E /* CoreGraphics.framework */; };
 		76D727AC187C523900F3545E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D727AB187C523900F3545E /* UIKit.framework */; };
@@ -184,6 +185,7 @@
 		627960BE188804D900474BCE /* TUIListActivitiesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIListActivitiesCell.h; path = Modules/Search/View/TUIListActivitiesCell.h; sourceTree = "<group>"; };
 		627960BF188804D900474BCE /* TUIListActivitiesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIListActivitiesCell.m; path = Modules/Search/View/TUIListActivitiesCell.m; sourceTree = "<group>"; };
 		627A418818893CE600926DB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6282BF0C18895E86005CC250 /* mapa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mapa.plist; path = Resources/mapa.plist; sourceTree = "<group>"; };
 		6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarTests.xcconfig"; path = "Pods/Pods-RadarTests.xcconfig"; sourceTree = "<group>"; };
 		766CADC7188687B900E5C296 /* TUIAtlasTicketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicketList.h; path = Modules/SpotList/Model/TUIAtlasTicketList.h; sourceTree = "<group>"; };
 		766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketList.m; path = Modules/SpotList/Model/TUIAtlasTicketList.m; sourceTree = "<group>"; };
@@ -943,6 +945,7 @@
 			children = (
 				76F2628F188A9B1600B2EFEB /* images */,
 				76F2628E188A9AFD00B2EFEB /* tmp */,
+				6282BF0C18895E86005CC250 /* mapa.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1336,6 +1339,7 @@
 				76F262E4188A9BE300B2EFEB /* filter-tomorrow.png in Resources */,
 				76F262AA188A9BB500B2EFEB /* icon-80.png in Resources */,
 				76F262A0188A9B9600B2EFEB /* actividadImg3.png in Resources */,
+				6282BF0D18895E86005CC250 /* mapa.plist in Resources */,
 				76D727BB187C523A00F3545E /* Main.storyboard in Resources */,
 				76F2633E188A9C1A00B2EFEB /* iconnav-map.png in Resources */,
 				76F2631F188A9C0A00B2EFEB /* iconmap-fsq-bar@2x.png in Resources */,
