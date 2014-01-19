@@ -11,37 +11,32 @@
 #import "TUIBaseViewController_Private.h"
 // Controllers
 #import "TUISettingsViewController.h"
+#import "TUISpotsViewController.h"
+
+static NSInteger kNumberOfElementsShownInTheList = 4;
+static CGFloat kRowHeight = 89.0f;
 
 @interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *containerListView;
+@property (strong, nonatomic) TUISpotsViewController *spotsViewController;
 
 @end
 
 @implementation TUISearchViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+#pragma mark - Data
+- (void)initData
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    for (UIViewController *viewController in self.childViewControllers)
+    {
+        if ([viewController isKindOfClass:[TUISpotsViewController class]])
+        {
+            _spotsViewController = (TUISpotsViewController *)viewController;
+        }
     }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    [self.mapView setDelegate:self];
-    //[self addGestureRecogniserToMapView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark - User interface
@@ -49,9 +44,33 @@
 - (void)initUserInterface
 {
     [super initUserInterface];
+    
+    [self initMapView];
+    [self initContainerListView];
+    [self initContainerFilterView];
+}
+
+- (void)initMapView
+{
+    _mapView.x = ZERO_FLOAT;
+    _mapView.y = ZERO_FLOAT;
+    _mapView.width = self.view.width;
+    _mapView.height = self.view.height - _spotsViewController.handlerImageView.height;
+    // delegate
+    _mapView.delegate = self;
+}
+
+- (void)initContainerListView
+{
+    _containerListView.x = ZERO_FLOAT;
+    _containerListView.y = _mapView.height;
+    _containerListView.width = self.view.width;
+    _containerListView.height = _spotsViewController.handlerImageView.height + kNumberOfElementsShownInTheList*kRowHeight;
+}
+
+- (void)initContainerFilterView
+{
     // TODO: set filterView position
-    // Set map position
-    // Set spotList position
 }
 
 

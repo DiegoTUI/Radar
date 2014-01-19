@@ -18,12 +18,13 @@
 		766CADD0188689D100E5C296 /* TUIFoursquareVenueSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */; };
 		766CADD218868AFE00E5C296 /* TUIAtlasTicketListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADD118868AFE00E5C296 /* TUIAtlasTicketListSpec.m */; };
 		766CADD418868B2600E5C296 /* TUIFoursquareVenueListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADD318868B2600E5C296 /* TUIFoursquareVenueListSpec.m */; };
-		7672093F188BF446007CAE17 /* TUISpotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672093E188BF446007CAE17 /* TUISpotListViewController.m */; };
 		76720946188BF5D5007CAE17 /* TUISpotListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720945188BF5D5007CAE17 /* TUISpotListCell.m */; };
 		76720949188BF615007CAE17 /* TUIAtlasTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720948188BF615007CAE17 /* TUIAtlasTicketCell.m */; };
 		7672094C188BF689007CAE17 /* TUIFoursquareVenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672094B188BF689007CAE17 /* TUIFoursquareVenueCell.m */; };
 		7672094F188BFCDA007CAE17 /* TUIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672094E188BFCDA007CAE17 /* TUIBaseTableViewController.m */; };
 		76720952188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720951188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m */; };
+		76720955188C1119007CAE17 /* TUISpotListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720954188C1119007CAE17 /* TUISpotListTableViewController.m */; };
+		7672095B188C2635007CAE17 /* TUISpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672095A188C2635007CAE17 /* TUISpotsViewController.m */; };
 		76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC335D1885A4EA003FDB48 /* TUILocationManager.m */; };
 		76CC33611885A82D003FDB48 /* TUILocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC33601885A82D003FDB48 /* TUILocation.m */; };
 		76CC33661885B149003FDB48 /* TUILocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC33651885B149003FDB48 /* TUILocationSpec.m */; };
@@ -201,8 +202,6 @@
 		766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFoursquareVenueSpec.m; path = Modules/Spots/Model/TUIFoursquareVenueSpec.m; sourceTree = "<group>"; };
 		766CADD118868AFE00E5C296 /* TUIAtlasTicketListSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketListSpec.m; path = Modules/SpotList/Model/TUIAtlasTicketListSpec.m; sourceTree = "<group>"; };
 		766CADD318868B2600E5C296 /* TUIFoursquareVenueListSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFoursquareVenueListSpec.m; path = Modules/SpotList/Model/TUIFoursquareVenueListSpec.m; sourceTree = "<group>"; };
-		7672093D188BF446007CAE17 /* TUISpotListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotListViewController.h; path = Modules/SpotList/Controller/TUISpotListViewController.h; sourceTree = "<group>"; };
-		7672093E188BF446007CAE17 /* TUISpotListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListViewController.m; path = Modules/SpotList/Controller/TUISpotListViewController.m; sourceTree = "<group>"; };
 		76720944188BF5D5007CAE17 /* TUISpotListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotListCell.h; path = Modules/SpotList/View/TUISpotListCell.h; sourceTree = "<group>"; };
 		76720945188BF5D5007CAE17 /* TUISpotListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListCell.m; path = Modules/SpotList/View/TUISpotListCell.m; sourceTree = "<group>"; };
 		76720947188BF615007CAE17 /* TUIAtlasTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicketCell.h; path = Modules/SpotList/View/TUIAtlasTicketCell.h; sourceTree = "<group>"; };
@@ -213,6 +212,10 @@
 		7672094E188BFCDA007CAE17 /* TUIBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseTableViewController.m; path = Modules/Base/Controller/TUIBaseTableViewController.m; sourceTree = "<group>"; };
 		76720950188BFD23007CAE17 /* TUIBaseTableViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUIBaseTableViewController_Private.h; path = Modules/Base/Controller/TUIBaseTableViewController_Private.h; sourceTree = "<group>"; };
 		76720951188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseTableViewControllerSpec.m; path = Modules/Base/Controller/TUIBaseTableViewControllerSpec.m; sourceTree = "<group>"; };
+		76720953188C1119007CAE17 /* TUISpotListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotListTableViewController.h; path = Modules/SpotList/Controller/TUISpotListTableViewController.h; sourceTree = "<group>"; };
+		76720954188C1119007CAE17 /* TUISpotListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListTableViewController.m; path = Modules/SpotList/Controller/TUISpotListTableViewController.m; sourceTree = "<group>"; };
+		76720959188C2635007CAE17 /* TUISpotsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotsViewController.h; path = Modules/SpotList/Controller/TUISpotsViewController.h; sourceTree = "<group>"; };
+		7672095A188C2635007CAE17 /* TUISpotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotsViewController.m; path = Modules/SpotList/Controller/TUISpotsViewController.m; sourceTree = "<group>"; };
 		76CC335C1885A4EA003FDB48 /* TUILocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUILocationManager.h; path = Modules/Location/Model/TUILocationManager.h; sourceTree = "<group>"; };
 		76CC335D1885A4EA003FDB48 /* TUILocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUILocationManager.m; path = Modules/Location/Model/TUILocationManager.m; sourceTree = "<group>"; };
 		76CC335F1885A82D003FDB48 /* TUILocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUILocation.h; path = Modules/Location/Model/TUILocation.h; sourceTree = "<group>"; };
@@ -445,8 +448,10 @@
 		7672093C188BF419007CAE17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7672093D188BF446007CAE17 /* TUISpotListViewController.h */,
-				7672093E188BF446007CAE17 /* TUISpotListViewController.m */,
+				76720953188C1119007CAE17 /* TUISpotListTableViewController.h */,
+				76720954188C1119007CAE17 /* TUISpotListTableViewController.m */,
+				76720959188C2635007CAE17 /* TUISpotsViewController.h */,
+				7672095A188C2635007CAE17 /* TUISpotsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1503,9 +1508,9 @@
 				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
 				76720946188BF5D5007CAE17 /* TUISpotListCell.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
+				76720955188C1119007CAE17 /* TUISpotListTableViewController.m in Sources */,
 				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
 				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
-				7672093F188BF446007CAE17 /* TUISpotListViewController.m in Sources */,
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
@@ -1518,6 +1523,7 @@
 				76D728781883DBA000F3545E /* TUIServerError.m in Sources */,
 				76D7287B1883DC3C00F3545E /* TUIServerErrorParser.m in Sources */,
 				7672094F188BFCDA007CAE17 /* TUIBaseTableViewController.m in Sources */,
+				7672095B188C2635007CAE17 /* TUISpotsViewController.m in Sources */,
 				627960C0188804D900474BCE /* TUIListActivitiesCell.m in Sources */,
 				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,
 				76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */,
