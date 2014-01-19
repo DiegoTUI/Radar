@@ -17,7 +17,7 @@
 @interface TUISettingsViewController : TUIBaseViewController
 
 /**
- The LRSettingsViewController delegate
+ The TUISettingsViewController delegate
  */
 @property (nonatomic, weak) id<TUISettingsViewControllerDelegate> delegate;
 
@@ -25,7 +25,7 @@
 
 
 /**
- The delegate for LRSettingsViewController to dispatch when the Save/Cancel buttons have been pressed.
+ The delegate for TUISettingsViewController to dispatch when the Save/Cancel buttons have been pressed.
  */
 @protocol TUISettingsViewControllerDelegate <NSObject>
 

@@ -16,17 +16,21 @@
 static NSInteger kNumberOfElementsShownInTheList = 4;
 static CGFloat kRowHeight = 89.0f;
 
-@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate>
+@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate, TUISpotsViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *containerListView;
 @property (strong, nonatomic) TUISpotsViewController *spotsViewController;
 
+
+
 @end
 
 @implementation TUISearchViewController
 
+
 #pragma mark - Data
+
 - (void)initData
 {
     for (UIViewController *viewController in self.childViewControllers)
@@ -34,10 +38,12 @@ static CGFloat kRowHeight = 89.0f;
         if ([viewController isKindOfClass:[TUISpotsViewController class]])
         {
             _spotsViewController = (TUISpotsViewController *)viewController;
+            _spotsViewController.delegate = self;
         }
     }
     
 }
+
 
 #pragma mark - User interface
 
@@ -55,7 +61,7 @@ static CGFloat kRowHeight = 89.0f;
     _mapView.x = ZERO_FLOAT;
     _mapView.y = ZERO_FLOAT;
     _mapView.width = self.view.width;
-    _mapView.height = self.view.height - _spotsViewController.handlerImageView.height;
+    _mapView.height = self.view.height - _spotsViewController.handlerButton.height;
     // delegate
     _mapView.delegate = self;
 }
@@ -65,7 +71,7 @@ static CGFloat kRowHeight = 89.0f;
     _containerListView.x = ZERO_FLOAT;
     _containerListView.y = _mapView.height;
     _containerListView.width = self.view.width;
-    _containerListView.height = _spotsViewController.handlerImageView.height + kNumberOfElementsShownInTheList*kRowHeight;
+    _containerListView.height = _spotsViewController.handlerButton.height + kNumberOfElementsShownInTheList*kRowHeight;
 }
 
 - (void)initContainerFilterView
@@ -84,6 +90,59 @@ static CGFloat kRowHeight = 89.0f;
     }
 }
 
+
+#pragma mark - Hide/display list -
+
+- (void)hideList
+{
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_SPEED
+                     animations:^
+     {
+         typeof(self) __strong strongSelf = weakSelf;
+         if (!strongSelf) return;
+         
+         strongSelf.mapView.height = strongSelf.view.height - strongSelf.spotsViewController.handlerButton.height;
+         strongSelf.containerListView.y = strongSelf.mapView.height;
+         
+     }
+                     completion:^(BOOL finished)
+     {
+         typeof(self) __strong strongSelf = weakSelf;
+         if (!strongSelf) return;
+         
+         if (finished)
+         {
+             strongSelf.spotsViewController.displayed = NO;
+         }
+     }];
+}
+
+- (void)displayList
+{
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_SPEED
+                     animations:^
+     {
+         typeof(self) __strong strongSelf = weakSelf;
+         if (!strongSelf) return;
+         
+         strongSelf.mapView.height = strongSelf.view.height - strongSelf.containerListView.height;
+         strongSelf.containerListView.y = strongSelf.mapView.height;
+     }
+                     completion:^(BOOL finished)
+    {
+        typeof(self) __strong strongSelf = weakSelf;
+        if (!strongSelf) return;
+        
+        if (finished)
+        {
+            strongSelf.spotsViewController.displayed = YES;
+        }
+    }];
+}
+
+
 #pragma mark - TUISettingsViewController delegate -
 
 - (void)saveButtonPressed
@@ -100,6 +159,7 @@ static CGFloat kRowHeight = 89.0f;
 
 
 #pragma mark - Segue -
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:DEVELOPER_SETTINGS_SEGUE])

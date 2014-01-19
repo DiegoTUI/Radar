@@ -8,15 +8,47 @@
 
 #import "TUIBaseViewController.h"
 
+// Forward declarations
+@protocol TUISpotsViewControllerDelegate;
+
 @interface TUISpotsViewController : TUIBaseViewController
 
 /**
- @methodName handlerImageView
- @abstract Returns the handler image view
- @discussion This method returns the handler image view
- 
- @return The handler image view
+ The TUISpotsViewController delegate
  */
-- (UIImageView *)handlerImageView;
+@property (nonatomic, weak) id<TUISpotsViewControllerDelegate> delegate;
+
+/**
+ Indicates if the list is displayed
+ */
+@property (nonatomic) BOOL displayed;
+
+/**
+ @methodName handlerButton
+ @abstract Returns the handler button
+ @discussion This method returns the handler button
+ 
+ @return The handler button
+ */
+- (UIButton *)handlerButton;
+
+@end
+
+/**
+ The delegate for TUISpotsViewController to dispatch when the handler button has been pressed
+ */
+@protocol TUISpotsViewControllerDelegate <NSObject>
+
+@required
+
+/**
+ Tell the delegate to display the list
+ */
+- (void)displayList;
+
+/**
+ Tell the delegate to hide the list
+ */
+- (void)hideList;
 
 @end
