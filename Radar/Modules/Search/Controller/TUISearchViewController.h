@@ -14,7 +14,4 @@
  */
 @interface TUISearchViewController : TUIBaseViewController
 
-
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
 @end

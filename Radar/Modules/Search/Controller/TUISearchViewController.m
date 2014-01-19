@@ -7,10 +7,15 @@
 //
 
 #import "TUISearchViewController.h"
+// Extensions
+#import "TUIBaseViewController_Private.h"
 // Controllers
 #import "TUISettingsViewController.h"
 
 @interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *containerListView;
 
 @end
 
@@ -37,6 +42,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - User interface
+
+- (void)initUserInterface
+{
+    [super initUserInterface];
+    // TODO: set filterView position
+    // Set map position
+    // Set spotList position
 }
 
 
