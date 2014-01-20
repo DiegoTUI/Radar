@@ -24,12 +24,15 @@ static CGFloat kHandlerHeight = 22.0f;
 
 @implementation TUISpotsViewController
 
+
 #pragma mark - Data
+
 - (void)initData
 {
     [super initData];
     _displayed = NO;
 }
+
 
 #pragma mark - User interface
 

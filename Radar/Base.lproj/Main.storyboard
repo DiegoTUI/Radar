@@ -45,6 +45,13 @@
                                     <segue destination="6Um-q8-O0d" kind="embed" id="lvt-V6-rb0"/>
                                 </connections>
                             </containerView>
+                            <containerView contentMode="scaleToFill" id="lvt-lC-O1N">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="344"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="Qkc-Or-fEK" kind="embed" id="DOy-g4-oMU"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -55,6 +62,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="containerFilterView" destination="lvt-lC-O1N" id="rK3-cZ-4qO"/>
                         <outlet property="containerListView" destination="qgj-79-FZa" id="5R6-pQ-eD2"/>
                         <outlet property="mapView" destination="5nT-gq-qbe" id="1hD-PX-bbd"/>
                         <segue destination="7ZW-EO-xl3" kind="modal" identifier="DeveloperSettingsSegue" id="f0x-K6-oP1"/>
@@ -94,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y36-f0-zfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="-88"/>
+            <point key="canvasLocation" x="774" y="-765"/>
         </scene>
         <!--Spot List Table View Controller-->
         <scene sceneID="VPW-aR-n0b">
@@ -197,14 +205,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" id="vjw-CW-44n">
-                                <rect key="frame" x="0.0" y="20" width="320" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="HDr-4M-4zr" kind="embed" id="8Eg-Kf-ybK"/>
-                                </connections>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dqz-tk-VWQ">
                                 <rect key="frame" x="0.0" y="-1" width="320" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -216,6 +216,14 @@
                                     <action selector="handlerButtonClicked:" destination="6Um-q8-O0d" eventType="touchUpInside" id="gcG-ZN-DIF"/>
                                 </connections>
                             </button>
+                            <containerView contentMode="scaleToFill" id="vjw-CW-44n">
+                                <rect key="frame" x="0.0" y="20" width="320" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="HDr-4M-4zr" kind="embed" id="8Eg-Kf-ybK"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -228,8 +236,75 @@
             </objects>
             <point key="canvasLocation" x="769" y="597"/>
         </scene>
+        <!--Filter List View Controller-->
+        <scene sceneID="Kf4-0B-3I1">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Qkc-Or-fEK" customClass="TUIFilterListViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6fZ-EP-KMe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="344"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" id="Wl1-yK-fps">
+                                <rect key="frame" x="0.0" y="206" width="320" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="SBh-bl-791" kind="embed" identifier="filterViewContainerSegue" id="a3t-NC-suL"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" id="Kbd-Xk-pLz">
+                                <rect key="frame" x="0.0" y="103" width="320" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" id="0cg-FY-c4q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C12-Xh-SMH">
+                                <rect key="frame" x="0.0" y="309" width="320" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="ux-filter-handle.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handlerButtonClicked:" destination="Qkc-Or-fEK" eventType="touchUpInside" id="lzT-sG-oMo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="distanceFilterContainerView" destination="Kbd-Xk-pLz" id="x6Q-fh-KlH"/>
+                        <outlet property="handlerButton" destination="C12-Xh-SMH" id="lKm-iT-cFf"/>
+                        <outlet property="timeFilterContainerView" destination="Wl1-yK-fps" id="SAq-Ve-sU0"/>
+                        <outlet property="weatherFilterContainerView" destination="0cg-FY-c4q" id="7nL-aQ-xob"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FaN-v0-Ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1186" y="-88"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="ceo-xj-m25">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SBh-bl-791" customClass="TUIFilterViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cE8-gF-hTl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAp-Dh-Quj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621" y="158"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ux-filter-handle.png" width="320" height="35"/>
         <image name="ux-list-up.png" width="320" height="22"/>
     </resources>
     <color key="tintColor" red="0.62745098040000002" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

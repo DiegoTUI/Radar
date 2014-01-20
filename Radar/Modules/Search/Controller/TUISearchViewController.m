@@ -12,17 +12,18 @@
 // Controllers
 #import "TUISettingsViewController.h"
 #import "TUISpotsViewController.h"
+#import "TUIFilterListViewController.h"
 
 static NSInteger kNumberOfElementsShownInTheList = 4;
 static CGFloat kRowHeight = 89.0f;
 
-@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate, TUISpotsViewControllerDelegate>
+@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *containerListView;
+@property (weak, nonatomic) IBOutlet UIView *containerFilterView;
 @property (strong, nonatomic) TUISpotsViewController *spotsViewController;
-
-
+@property (strong, nonatomic) TUIFilterListViewController *filterListViewController;
 
 @end
 
@@ -40,8 +41,12 @@ static CGFloat kRowHeight = 89.0f;
             _spotsViewController = (TUISpotsViewController *)viewController;
             _spotsViewController.delegate = self;
         }
+        else if ([viewController isKindOfClass:[TUIFilterListViewController class]])
+        {
+            _filterListViewController = (TUIFilterListViewController *)viewController;
+            _filterListViewController.delegate = self;
+        }
     }
-    
 }
 
 
@@ -76,7 +81,11 @@ static CGFloat kRowHeight = 89.0f;
 
 - (void)initContainerFilterView
 {
-    // TODO: set filterView position
+    _containerFilterView.x = ZERO_FLOAT;
+    _containerFilterView.y = -[_filterListViewController numberOfFilters] * [_filterListViewController filterHeight];
+    _containerFilterView.width = self.view.width;
+    _containerFilterView.height = [_filterListViewController numberOfFilters] * [_filterListViewController filterHeight] + [_filterListViewController handlerButton].height;
+    
 }
 
 
@@ -126,6 +135,11 @@ static CGFloat kRowHeight = 89.0f;
      {
          typeof(self) __strong strongSelf = weakSelf;
          if (!strongSelf) return;
+         // hide filters if displayed
+         if (_filterListViewController.displayed)
+         {
+             [strongSelf hideFilters];
+         }
          
          strongSelf.mapView.height = strongSelf.view.height - strongSelf.containerListView.height;
          strongSelf.containerListView.y = strongSelf.mapView.height;
@@ -140,6 +154,59 @@ static CGFloat kRowHeight = 89.0f;
             strongSelf.spotsViewController.displayed = YES;
         }
     }];
+}
+
+#pragma mark - Hide/display filters -
+
+- (void)hideFilters
+{
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_SPEED
+                     animations:^
+     {
+         typeof(self) __strong strongSelf = weakSelf;
+         if (!strongSelf) return;
+         
+         strongSelf.containerFilterView.y = -[_filterListViewController numberOfFilters] * [_filterListViewController filterHeight];
+         
+     }
+                     completion:^(BOOL finished)
+     {
+         typeof(self) __strong strongSelf = weakSelf;
+         if (!strongSelf) return;
+         
+         if (finished)
+         {
+             strongSelf.filterListViewController.displayed = NO;
+         }
+     }];
+}
+
+- (void)displayFilters
+{
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_SPEED
+                     animations:^
+     {
+         typeof(self) __strong strongSelf = weakSelf;
+         if (!strongSelf) return;
+         // hide list if displayed
+         if (_spotsViewController.displayed)
+         {
+             [strongSelf hideList];
+         }
+         strongSelf.containerFilterView.y = ZERO_FLOAT;
+     }
+                     completion:^(BOOL finished)
+     {
+         typeof(self) __strong strongSelf = weakSelf;
+         if (!strongSelf) return;
+         
+         if (finished)
+         {
+             strongSelf.filterListViewController.displayed = YES;
+         }
+     }];
 }
 
 

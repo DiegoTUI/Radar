@@ -32,7 +32,7 @@
 }
 
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableViewDataSource delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -47,6 +47,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TUISpotListCell *cell = [tableView dequeueReusableCellWithIdentifier:[TUISpotListCell reuseIdentifier]];
+    
     TUISpot *spot = self.spotList.spots[indexPath.row];
     // Check for TUI and Foursquare spots
     if ([spot isKindOfClass:[TUIAtlasTicket class]])

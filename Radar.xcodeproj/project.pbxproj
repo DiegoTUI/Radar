@@ -23,6 +23,9 @@
 		7672095B188C2635007CAE17 /* TUISpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672095A188C2635007CAE17 /* TUISpotsViewController.m */; };
 		7672095E188C48DC007CAE17 /* TUIBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672095D188C48DC007CAE17 /* TUIBaseTableViewCell.m */; };
 		76720962188C51D5007CAE17 /* TUISpotListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720961188C51D5007CAE17 /* TUISpotListTableViewDataSource.m */; };
+		7672096B188D309A007CAE17 /* TUIFilterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672096A188D309A007CAE17 /* TUIFilterListViewController.m */; };
+		7672096E188D37D3007CAE17 /* TUIFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672096D188D37D3007CAE17 /* TUIFilterViewController.m */; };
+		76720971188D384D007CAE17 /* TUIBasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720970188D384D007CAE17 /* TUIBasePageViewController.m */; };
 		76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC335D1885A4EA003FDB48 /* TUILocationManager.m */; };
 		76CC33611885A82D003FDB48 /* TUILocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC33601885A82D003FDB48 /* TUILocation.m */; };
 		76CC33661885B149003FDB48 /* TUILocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC33651885B149003FDB48 /* TUILocationSpec.m */; };
@@ -212,6 +215,13 @@
 		76720960188C51D5007CAE17 /* TUISpotListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotListTableViewDataSource.h; path = Modules/SpotList/Controller/TUISpotListTableViewDataSource.h; sourceTree = "<group>"; };
 		76720961188C51D5007CAE17 /* TUISpotListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListTableViewDataSource.m; path = Modules/SpotList/Controller/TUISpotListTableViewDataSource.m; sourceTree = "<group>"; };
 		76720963188C60A1007CAE17 /* TUISpotListTableViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUISpotListTableViewController_Private.h; path = Modules/SpotList/Controller/TUISpotListTableViewController_Private.h; sourceTree = "<group>"; };
+		76720969188D309A007CAE17 /* TUIFilterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilterListViewController.h; path = Modules/Filter/Controller/TUIFilterListViewController.h; sourceTree = "<group>"; };
+		7672096A188D309A007CAE17 /* TUIFilterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilterListViewController.m; path = Modules/Filter/Controller/TUIFilterListViewController.m; sourceTree = "<group>"; };
+		7672096C188D37D3007CAE17 /* TUIFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilterViewController.h; path = Modules/Filter/Controller/TUIFilterViewController.h; sourceTree = "<group>"; };
+		7672096D188D37D3007CAE17 /* TUIFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilterViewController.m; path = Modules/Filter/Controller/TUIFilterViewController.m; sourceTree = "<group>"; };
+		7672096F188D384D007CAE17 /* TUIBasePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBasePageViewController.h; path = Modules/Base/Controller/TUIBasePageViewController.h; sourceTree = "<group>"; };
+		76720970188D384D007CAE17 /* TUIBasePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBasePageViewController.m; path = Modules/Base/Controller/TUIBasePageViewController.m; sourceTree = "<group>"; };
+		76720972188D3901007CAE17 /* TUIBasePageViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUIBasePageViewController_Private.h; path = Modules/Base/Controller/TUIBasePageViewController_Private.h; sourceTree = "<group>"; };
 		76CC335C1885A4EA003FDB48 /* TUILocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUILocationManager.h; path = Modules/Location/Model/TUILocationManager.h; sourceTree = "<group>"; };
 		76CC335D1885A4EA003FDB48 /* TUILocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUILocationManager.m; path = Modules/Location/Model/TUILocationManager.m; sourceTree = "<group>"; };
 		76CC335F1885A82D003FDB48 /* TUILocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUILocation.h; path = Modules/Location/Model/TUILocation.h; sourceTree = "<group>"; };
@@ -464,6 +474,25 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		76720967188D3047007CAE17 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				76720968188D3055007CAE17 /* Controller */,
+			);
+			name = Filter;
+			sourceTree = "<group>";
+		};
+		76720968188D3055007CAE17 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76720969188D309A007CAE17 /* TUIFilterListViewController.h */,
+				7672096A188D309A007CAE17 /* TUIFilterListViewController.m */,
+				7672096C188D37D3007CAE17 /* TUIFilterViewController.h */,
+				7672096D188D37D3007CAE17 /* TUIFilterViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		76CC335A1885A4A4003FDB48 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +566,7 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
+				76720967188D3047007CAE17 /* Filter */,
 				76D7288918841C9400F3545E /* Application */,
 				76D727DC187C58E400F3545E /* Base */,
 				76D72845187EC77100F3545E /* Cache */,
@@ -659,6 +689,9 @@
 				7672094D188BFCDA007CAE17 /* TUIBaseTableViewController.h */,
 				7672094E188BFCDA007CAE17 /* TUIBaseTableViewController.m */,
 				76720950188BFD23007CAE17 /* TUIBaseTableViewController_Private.h */,
+				7672096F188D384D007CAE17 /* TUIBasePageViewController.h */,
+				76720970188D384D007CAE17 /* TUIBasePageViewController.m */,
+				76720972188D3901007CAE17 /* TUIBasePageViewController_Private.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1491,6 +1524,7 @@
 				76D727B4187C523A00F3545E /* main.m in Sources */,
 				76D72853187ECA8B00F3545E /* NSDictionary+JSON.m in Sources */,
 				76D72854187ECA8B00F3545E /* NSString+JSON.m in Sources */,
+				7672096B188D309A007CAE17 /* TUIFilterListViewController.m in Sources */,
 				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
 				76D727B8187C523A00F3545E /* TUIAppDelegate.m in Sources */,
 				76D7288D18841CF200F3545E /* TUIApplicationController.m in Sources */,
@@ -1521,11 +1555,13 @@
 				76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */,
 				7672095E188C48DC007CAE17 /* TUIBaseTableViewCell.m in Sources */,
 				76D72844187DBA2200F3545E /* TUISettingsTimeView.m in Sources */,
+				76720971188D384D007CAE17 /* TUIBasePageViewController.m in Sources */,
 				76D72838187D98F200F3545E /* TUISettingsViewController.m in Sources */,
 				76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */,
 				76D728951885585F00F3545E /* TUISpot.m in Sources */,
 				76D728A418855F6F00F3545E /* TUISpotList.m in Sources */,
 				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
+				7672096E188D37D3007CAE17 /* TUIFilterViewController.m in Sources */,
 				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
 				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
 			);

@@ -10,6 +10,7 @@
 #define ZERO_INT 0
 #define ONE_INT 1
 #define TWO_INT 2
+#define THREE_INT 3
 
 // Floats
 #define ZERO_FLOAT 0.0f
