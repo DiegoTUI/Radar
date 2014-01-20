@@ -18,4 +18,6 @@
  */
 @property (nonatomic, strong) NSOrderedSet *spots;
 
++ (TUISpotList *)testSpotList;
+
 @end

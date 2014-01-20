@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="89" id="cLO-xa-bNj" customClass="TUISpotListCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TUISpotListCell" rowHeight="89" id="cLO-xa-bNj" customClass="TUISpotListCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLO-xa-bNj" id="BLU-73-Cmc">
@@ -125,14 +125,6 @@
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.62745098040000002" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1j4-4t-j56">
-                                            <rect key="frame" x="241" y="49" width="70" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" red="0.40784313729999999" green="0.7725490196" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="pq3-ba-bzv">
                                             <rect key="frame" x="10" y="10" width="69" height="69"/>
@@ -154,12 +146,37 @@
                                             <color key="highlightedColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.3999999762" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         </label>
                                         <view contentMode="scaleToFill" id="VSR-1O-bjo">
-                                            <rect key="frame" x="321" y="0.0" width="4" height="89"/>
+                                            <rect key="frame" x="316" y="0.0" width="4" height="89"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.62745098040000002" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kdS-TQ-kLz">
+                                            <rect key="frame" x="265" y="39" width="46" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                            <state key="normal" title="100€">
+                                                <color key="titleColor" red="0.40784313729999999" green="0.7725490196" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oJz-2Y-bmZ">
+                                            <rect key="frame" x="101" y="58" width="62" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cornerImageView" destination="dGR-se-JJ6" id="OZN-zU-mU3"/>
+                                    <outlet property="cornerLabel" destination="L05-aQ-v67" id="pSj-b1-o8G"/>
+                                    <outlet property="descriptionLabel" destination="oJz-2Y-bmZ" id="Fcm-DC-nJm"/>
+                                    <outlet property="imageView" destination="pq3-ba-bzv" id="DDG-Tg-UwQ"/>
+                                    <outlet property="priceButton" destination="kdS-TQ-kLz" id="gqM-OX-n70"/>
+                                    <outlet property="sideView" destination="VSR-1O-bjo" id="WLo-bz-1m1"/>
+                                    <outlet property="subtitleLabel" destination="2QV-eu-g1w" id="36v-Jt-42r"/>
+                                    <outlet property="titleLabel" destination="KdB-iA-kUs" id="GaE-nj-VsA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -8,33 +8,47 @@
 
 #import "TUISpotListTableViewController.h"
 // Extensions
+#import "TUISpotListTableViewController_Private.h"
 #import "TUIBaseTableViewController_Private.h"
+// Controllers
+#import "TUISpotListTableViewDataSource.h"
 
-@interface TUISpotListTableViewController ()
+
+@interface TUISpotListTableViewController () <UITableViewDelegate>
 
 @end
 
+#define STANDARD_CELL_HEIGHT    89.0f
+
 @implementation TUISpotListTableViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+#pragma mark - Init
+
+- (void)initData
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    self.dataSource = [[TUISpotListTableViewDataSource alloc] init];
+    self.tableView.dataSource = _dataSource;
 }
 
-- (void)viewDidLoad
+- (void)initUserInterface
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [super initUserInterface];
+    
+    [self registerTableViewCells];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)registerTableViewCells
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // If we did register the cells programmatically, we would do it here - [self.tableView registerClass:[TUISpotListCell class] forCellReuseIdentifier:[TUISpotListCell reuseIdentifier]];
+
+}
+
+#pragma mark - UITableViewDelegate -
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return STANDARD_CELL_HEIGHT;
 }
 
 @end

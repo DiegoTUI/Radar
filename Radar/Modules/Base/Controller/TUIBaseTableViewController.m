@@ -61,7 +61,7 @@
 
 - (void)initUserInterface
 {
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
 - (void)updateUserInterface

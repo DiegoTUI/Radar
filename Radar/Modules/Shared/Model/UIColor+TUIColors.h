@@ -47,24 +47,24 @@
 + (UIColor *)whiteBackgroundColor;
 
 /**
- @methodName lateroomsDownStateWhiteColor
- @abstract Returns a UIColor for white text's down states
- @discussion This method will return a UIColor object designed for white text's down states
- R255, G255, B255, A80%
+ @methodName tuiLightGreenColor
+ @abstract Returns a UIColor for TUI pins in maps and side views in cells
+ @discussion This method will return a UIColor object designed for TUI pins in maps and side views in cells
+ R160, G200, B0
  
  @return A UIColor instance for white backgrounds
  */
-+ (UIColor *)lateroomsDownStateWhiteColor;
++ (UIColor *)tuiLightGreenColor;
 
 /**
- @methodName lateroomsPurpleColor
- @abstract Returns the Radar purple color
- @discussion This will return a UIColor object set to the Radar purple color
- R65, G20, B133
+ @methodName tuiLightBlueColor
+ @abstract Returns the foursquare light blue
+ @discussion This will return a UIColor object set to the foursquare light blue
+ R72, G190, B240
  
  @return A UIColor calibrated to the Radar purple color
  */
-+ (UIColor *)lateroomsPurpleColor;
++ (UIColor *)tuiLightBlueColor;
 
 /**
  @methodName lateroomsBlueColor

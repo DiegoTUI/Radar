@@ -7,23 +7,60 @@
 //
 
 #import "TUISpotListCell.h"
+#import <QuartzCore/QuartzCore.h>
+// Extensions
+#import "TUIBaseTableViewCell_Private.h"
+
+static NSInteger kPriceButtonCornerRadius = 5;
 
 @implementation TUISpotListCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+#pragma mark - Setup -
+
+- (void)setup
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    [super setup];
+    
+    [self setupPriceButton];
+    [self setupDescriptionLabel];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)setupPriceButton
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    _priceButton.layer.borderWidth = ONE_FLOAT;
+    _priceButton.layer.borderColor=[[UIColor tuiLightBlueColor] CGColor];
+    _priceButton.layer.cornerRadius = kPriceButtonCornerRadius; // this value vary as per your desire
+    _priceButton.clipsToBounds = YES;
 }
+
+- (void)setupDescriptionLabel
+{
+    _descriptionLabel.hidden = YES;
+}
+
+#pragma mark - Cell types
+
+- (void)atlasTicketCell;
+{
+    // setup
+    [self setup];
+    // set icon
+    UIImage *icon = [UIImage imageNamed:@"iconlist-tui.png"];
+    self.cornerImageView.image = icon;
+    // set side bar
+    self.sideView.backgroundColor = [UIColor tuiLightGreenColor];
+}
+
+- (void)foursquareVenueCell
+{
+    // setup
+    [self setup];
+    // set icon
+    UIImage *icon = [UIImage imageNamed:@"iconlist-fsq.png"];
+    self.cornerImageView.image = icon;
+    // set side bar
+    self.sideView.backgroundColor = [UIColor tuiLightBlueColor];
+}
+
 
 @end

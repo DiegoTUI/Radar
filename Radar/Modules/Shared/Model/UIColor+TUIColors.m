@@ -24,14 +24,14 @@
     return RGB(251.0, 251.0, 251.0);
 }
 
-+ (UIColor *)lateroomsDownStateWhiteColor
++ (UIColor *)tuiLightGreenColor
 {
-    return RGBA(255.0, 255.0, 255.0, 0.8);
+    return RGB(160.0, 200.0, 0.0);
 }
 
-+ (UIColor *)lateroomsPurpleColor
++ (UIColor *)tuiLightBlueColor
 {
-    return RGB(65.0, 20.0, 133.0);
+    return RGB(72.0, 190.0, 240.0);
 }
 
 + (UIColor *)lateroomsRedColor
