@@ -66,10 +66,7 @@ static CGFloat kFilterContainerHeight = 103.0f;
 {
     [super initData];
     // set view controllers from containers
-    for (UIViewController *viewController in self.childViewControllers)
-    {
-        
-    }
+    [_weatherFilterViewController weatherViewController];
     // set displayed to false
     _displayed = NO;
 }
@@ -151,7 +148,17 @@ static CGFloat kFilterContainerHeight = 103.0f;
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString * segueName = segue.identifier;
-    if ([segueName isEqualToString: @"filterViewContainerSegue"]) {
+    if ([segueName isEqualToString: @"weatherFilterContainerSegue"])
+    {
+        _weatherFilterViewController = [segue destinationViewController];
+    }
+    else if ([segueName isEqualToString: @"distanceFilterContainerSegue"])
+    {
+        _distanceFilterViewController = [segue destinationViewController];
+    }
+    else if ([segueName isEqualToString: @"timeFilterContainerSegue"])
+    {
+        _timeFilterViewController = [segue destinationViewController];
     }
 }
 

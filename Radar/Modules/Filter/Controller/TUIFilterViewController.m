@@ -16,4 +16,7 @@
 
 @implementation TUIFilterViewController
 
+- (void)weatherViewController
+{}
+
 @end
