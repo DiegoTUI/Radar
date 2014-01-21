@@ -16,6 +16,8 @@
 		760B4F5A188ED78500AB65F5 /* TUIAtlasTicketParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F59188ED78500AB65F5 /* TUIAtlasTicketParserSpec.m */; };
 		760B4F5D188EE34800AB65F5 /* TUIFoursquareVenueParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F5C188EE34800AB65F5 /* TUIFoursquareVenueParser.m */; };
 		760B4F5F188EE59C00AB65F5 /* TuiFoursquareVenueParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F5E188EE59C00AB65F5 /* TuiFoursquareVenueParserSpec.m */; };
+		760B4F62188EE77500AB65F5 /* TUISpotListParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F61188EE77500AB65F5 /* TUISpotListParser.m */; };
+		760B4F66188EED1000AB65F5 /* TUISpotListParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F65188EED1000AB65F5 /* TUISpotListParserSpec.m */; };
 		766CADC9188687B900E5C296 /* TUIAtlasTicketList.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */; };
 		766CADCC1886882A00E5C296 /* TUIFoursquareVenueList.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCB1886882A00E5C296 /* TUIFoursquareVenueList.m */; };
 		766CADCE1886895F00E5C296 /* TUIAtlasTicketSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */; };
@@ -207,6 +209,9 @@
 		760B4F5B188EE34800AB65F5 /* TUIFoursquareVenueParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFoursquareVenueParser.h; path = Modules/Spots/Model/TUIFoursquareVenueParser.h; sourceTree = "<group>"; };
 		760B4F5C188EE34800AB65F5 /* TUIFoursquareVenueParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFoursquareVenueParser.m; path = Modules/Spots/Model/TUIFoursquareVenueParser.m; sourceTree = "<group>"; };
 		760B4F5E188EE59C00AB65F5 /* TuiFoursquareVenueParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TuiFoursquareVenueParserSpec.m; path = Modules/Spots/Model/TuiFoursquareVenueParserSpec.m; sourceTree = "<group>"; };
+		760B4F60188EE77500AB65F5 /* TUISpotListParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotListParser.h; path = Modules/SpotList/Model/TUISpotListParser.h; sourceTree = "<group>"; };
+		760B4F61188EE77500AB65F5 /* TUISpotListParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListParser.m; path = Modules/SpotList/Model/TUISpotListParser.m; sourceTree = "<group>"; };
+		760B4F65188EED1000AB65F5 /* TUISpotListParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListParserSpec.m; path = Modules/SpotList/Model/TUISpotListParserSpec.m; sourceTree = "<group>"; };
 		766CADC7188687B900E5C296 /* TUIAtlasTicketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicketList.h; path = Modules/SpotList/Model/TUIAtlasTicketList.h; sourceTree = "<group>"; };
 		766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketList.m; path = Modules/SpotList/Model/TUIAtlasTicketList.m; sourceTree = "<group>"; };
 		766CADCA1886882A00E5C296 /* TUIFoursquareVenueList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFoursquareVenueList.h; path = Modules/SpotList/Model/TUIFoursquareVenueList.h; sourceTree = "<group>"; };
@@ -1110,6 +1115,8 @@
 				76D728A318855F6F00F3545E /* TUISpotList.m */,
 				760B4F53188EC7C000AB65F5 /* TUISpotList+Proxy.h */,
 				760B4F54188EC7C000AB65F5 /* TUISpotList+Proxy.m */,
+				760B4F60188EE77500AB65F5 /* TUISpotListParser.h */,
+				760B4F61188EE77500AB65F5 /* TUISpotListParser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1128,6 +1135,7 @@
 				76D728A71885626700F3545E /* TUISpotListSpec.m */,
 				766CADD118868AFE00E5C296 /* TUIAtlasTicketListSpec.m */,
 				766CADD318868B2600E5C296 /* TUIFoursquareVenueListSpec.m */,
+				760B4F65188EED1000AB65F5 /* TUISpotListParserSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1550,6 +1558,7 @@
 				76D727B4187C523A00F3545E /* main.m in Sources */,
 				76D72853187ECA8B00F3545E /* NSDictionary+JSON.m in Sources */,
 				76D72854187ECA8B00F3545E /* NSString+JSON.m in Sources */,
+				760B4F62188EE77500AB65F5 /* TUISpotListParser.m in Sources */,
 				760B4F55188EC7C000AB65F5 /* TUISpotList+Proxy.m in Sources */,
 				7672096B188D309A007CAE17 /* TUIFilterListViewController.m in Sources */,
 				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
@@ -1620,6 +1629,7 @@
 				76720952188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m in Sources */,
 				76D7287F1883DEF700F3545E /* TUIServerErrorSpec.m in Sources */,
 				76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */,
+				760B4F66188EED1000AB65F5 /* TUISpotListParserSpec.m in Sources */,
 				76D7286C1880003C00F3545E /* TUISettingsViewControllerSpec.m in Sources */,
 				766CADD0188689D100E5C296 /* TUIFoursquareVenueSpec.m in Sources */,
 				76D728A81885626700F3545E /* TUISpotListSpec.m in Sources */,

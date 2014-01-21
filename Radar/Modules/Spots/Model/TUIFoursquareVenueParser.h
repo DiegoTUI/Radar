@@ -9,7 +9,7 @@
 #import "TUIParser.h"
 
 /**
- TUIAtlasTicketParser parses ms-venues API responses into valid TUIFourSquareVenue objects
+ TUIFoursquareVenueParser parses ms-venues API responses into valid TUIFourSquareVenue objects
  */
 @interface TUIFoursquareVenueParser : NSObject <TUIParser>
 
