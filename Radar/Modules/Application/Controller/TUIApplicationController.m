@@ -57,7 +57,7 @@
                                        NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                        };
     
-    NSDictionary *highlightedAttributes = @{NSForegroundColorAttributeName: [UIColor lightPurpleColor],
+    NSDictionary *highlightedAttributes = @{NSForegroundColorAttributeName: [UIColor tuiLightBlueColor],
                                             NSFontAttributeName: [UIFont fontWithName:REGULAR_FONT size:TITLE_SECTION_FONT_SIZE],
                                             NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                             };
