@@ -20,6 +20,7 @@
     #import "NSString+TUIString.h"
     #import "NSString+JSON.h"
     #import "NSDictionary+JSON.h"
+    #import "NSURL+TUIURL.h"
     //Frame accessor
     #import "FrameAccessor.h"
 #endif

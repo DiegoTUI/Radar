@@ -7,6 +7,8 @@
 //
 
 #import "TUISpotList+Proxy.h"
+// Models
+#import "TUINetworkClient.h"
 
 static NSMutableSet *spotListURLs;
 
@@ -28,13 +30,13 @@ static NSMutableSet *spotListURLs;
 
 + (void)cancelNetworkRequests
 {
-    /*for(NSURL *url in hotelURLs)
+    for(NSURL *url in spotListURLs)
     {
         NSString *path = [url path];
-        [[LRClient sharedClient] cancelAllHTTPOperationsWithMethod:GET_REQUEST_METHOD path:path];
+        [[TUINetworkClient sharedClient] cancelAllHTTPOperationsWithMethod:GET_REQUEST_METHOD path:path];
     }
     
-    [hotelURLs removeAllObjects];*/
+    [spotListURLs removeAllObjects];
 }
 
 @end
