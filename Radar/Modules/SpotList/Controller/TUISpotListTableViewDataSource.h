@@ -8,6 +8,9 @@
 
 #import "TUISpotList.h"
 
+/**
+ Data source for TUISpotListTableView
+ */
 @interface TUISpotListTableViewDataSource : NSObject <UITableViewDataSource>
 
 /**

@@ -249,7 +249,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="SBh-bl-791" kind="embed" identifier="timeFilterContainerSegue" id="a3t-NC-suL"/>
+                                    <segue destination="11X-gJ-uQj" kind="embed" identifier="timeFilterContainerSegue" id="uTB-if-W0W"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C12-Xh-SMH">
@@ -268,7 +268,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Qc6-b8-EpH" kind="embed" identifier="distanceFilterContainerSegue" id="kVD-JN-2Nb"/>
+                                    <segue destination="fP3-pL-I0e" kind="embed" identifier="distanceFilterContainerSegue" id="WiU-e7-0Cy"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" id="dZ8-Km-NrP">
@@ -276,7 +276,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="bcm-xm-5vJ" kind="embed" identifier="weatherFilterContainerSegue" id="VLk-Wq-09J"/>
+                                    <segue destination="Xcx-Sj-szi" kind="embed" identifier="weatherFilterContainerSegue" id="tnk-I5-JLE"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -293,53 +293,65 @@
             </objects>
             <point key="canvasLocation" x="1186" y="-88"/>
         </scene>
-        <!--Filter View Controller-->
-        <scene sceneID="ceo-xj-m25">
+        <!--Page View Controller-->
+        <scene sceneID="W17-dM-GpV">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SBh-bl-791" customClass="TUIFilterViewController" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cE8-gF-hTl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eAp-Dh-Quj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="11X-gJ-uQj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TEf-XH-wIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="228"/>
+            <point key="canvasLocation" x="1688" y="211"/>
         </scene>
-        <!--Filter View Controller-->
-        <scene sceneID="5Eq-vO-7n8">
+        <!--Page View Controller-->
+        <scene sceneID="Hcb-sl-Yrh">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="Qc6-b8-EpH" customClass="TUIFilterViewController" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wzs-q6-w5W">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RUr-wH-V4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="fP3-pL-I0e" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8JP-mM-5is" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="32"/>
+            <point key="canvasLocation" x="1688" y="18"/>
         </scene>
-        <!--Filter View Controller-->
-        <scene sceneID="JGe-9W-mDw">
+        <!--Page View Controller-->
+        <scene sceneID="JGc-Kx-X2U">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="bcm-xm-5vJ" customClass="TUIFilterViewController" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="C2x-bF-66v">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BzR-TC-75W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Xcx-Sj-szi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxV-hT-f30" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="-162"/>
+            <point key="canvasLocation" x="1688" y="-173"/>
+        </scene>
+        <!--Filter Content View Controller-->
+        <scene sceneID="QyS-77-LSU">
+            <objects>
+                <viewController storyboardIdentifier="TUIFilterContentViewController" id="YgH-qr-0cd" customClass="TUIFilterContentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r6S-B7-k4X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iconfilter-indoor.png" id="AnF-4y-Jcg">
+                                <rect key="frame" x="148" y="22" width="25" height="23"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outdoor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NDb-MJ-OM3">
+                                <rect key="frame" x="118" y="45" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="iconView" destination="AnF-4y-Jcg" id="gtm-dS-2EE"/>
+                        <outlet property="label" destination="NDb-MJ-OM3" id="tJb-Be-12B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTh-6k-MFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657" y="-376"/>
         </scene>
     </scenes>
     <resources>
+        <image name="iconfilter-indoor.png" width="25" height="23"/>
         <image name="ux-filter-handle.png" width="320" height="35"/>
         <image name="ux-list-up.png" width="320" height="22"/>
     </resources>
