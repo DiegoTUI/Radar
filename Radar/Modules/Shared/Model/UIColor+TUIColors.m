@@ -24,6 +24,11 @@
     return RGB(251.0, 251.0, 251.0);
 }
 
++ (UIColor *)tuiLightGrayColor
+{
+    return RGB(216.0, 216.0, 216.0);
+}
+
 + (UIColor *)tuiLightGreenColor
 {
     return RGB(160.0, 200.0, 0.0);

@@ -46,6 +46,18 @@
  */
 + (UIColor *)whiteBackgroundColor;
 
+
+/**
+ @methodName tuiLightGrayColor
+ @abstract Returns a UIColor for TUI pins in maps and side views in cells
+ @discussion This method will return a UIColor object designed for TUI pins in maps and side views in cells
+ R216, G216, B216
+ 
+ @return A UIColor instance for white backgrounds
+ */
++ (UIColor *)tuiLightGrayColor;
+
+
 /**
  @methodName tuiLightGreenColor
  @abstract Returns a UIColor for TUI pins in maps and side views in cells

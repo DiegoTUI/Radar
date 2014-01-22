@@ -19,11 +19,11 @@
 {
     NSUInteger index = ((TUIFilterContentViewController*) viewController).pageIndex;
     
-    if ((index == 0) || (index == NSNotFound)) {
+    if ((index == _viewControllers.count-1) || (index == NSNotFound)) {
         return nil;
     }
     
-    index--;
+    index++;
     return _viewControllers[index];
 }
 

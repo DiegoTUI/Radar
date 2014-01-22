@@ -25,13 +25,19 @@
     if (self)
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        TUIFilterContentViewController *viewController1 = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
-        viewController1.pageIndex = 0;
-        TUIFilterContentViewController *viewController2 = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
-        viewController1.pageIndex = 1;
-        TUIFilterContentViewController *viewController3 = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
-        viewController1.pageIndex = 2;
-        self.viewControllers = @[viewController1, viewController2, viewController3];
+        
+        TUIFilterContentViewController *indoorFilterView = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
+        [indoorFilterView.label setText:@"Indoor"];
+        indoorFilterView.pageIndex = 0;
+        
+        //indoorFilterView.iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iconfilter-indoor.png"]];
+        
+        TUIFilterContentViewController *outdoorFilterView = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
+        outdoorFilterView.pageIndex = 1;
+        [indoorFilterView.label setText:@"Outdoor"];
+        //indoorFilterView.iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iconfilter-outdoor.png"]];
+        
+        self.viewControllers = @[indoorFilterView, outdoorFilterView];
     }
     return self;
 }

@@ -205,12 +205,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dqz-tk-VWQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="dqz-tk-VWQ">
                                 <rect key="frame" x="0.0" y="-1" width="320" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="ux-list-up.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleShadowColor" red="0.62745098040000002" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="handlerButtonClicked:" destination="6Um-q8-O0d" eventType="touchUpInside" id="gcG-ZN-DIF"/>
@@ -244,6 +247,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="344"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView contentMode="scaleToFill" id="dZ8-Km-NrP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Xcx-Sj-szi" kind="embed" identifier="weatherFilterContainerSegue" id="tnk-I5-JLE"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" id="rJI-7Y-CgI">
+                                <rect key="frame" x="0.0" y="103" width="320" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="fP3-pL-I0e" kind="embed" identifier="distanceFilterContainerSegue" id="WiU-e7-0Cy"/>
+                                </connections>
+                            </containerView>
                             <containerView contentMode="scaleToFill" id="Wl1-yK-fps">
                                 <rect key="frame" x="0.0" y="206" width="320" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -252,7 +271,7 @@
                                     <segue destination="11X-gJ-uQj" kind="embed" identifier="timeFilterContainerSegue" id="uTB-if-W0W"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C12-Xh-SMH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="C12-Xh-SMH">
                                 <rect key="frame" x="0.0" y="309" width="320" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -263,22 +282,18 @@
                                     <action selector="handlerButtonClicked:" destination="Qkc-Or-fEK" eventType="touchUpInside" id="lzT-sG-oMo"/>
                                 </connections>
                             </button>
-                            <containerView contentMode="scaleToFill" id="rJI-7Y-CgI">
-                                <rect key="frame" x="0.0" y="103" width="320" height="103"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-now.png" id="aDY-3i-VUc">
+                                <rect key="frame" x="133" y="320" width="14" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="fP3-pL-I0e" kind="embed" identifier="distanceFilterContainerSegue" id="WiU-e7-0Cy"/>
-                                </connections>
-                            </containerView>
-                            <containerView contentMode="scaleToFill" id="dZ8-Km-NrP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-indoor.png" id="0WT-RE-Ate">
+                                <rect key="frame" x="153" y="320" width="14" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="Xcx-Sj-szi" kind="embed" identifier="weatherFilterContainerSegue" id="tnk-I5-JLE"/>
-                                </connections>
-                            </containerView>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-1km.png" id="iZ5-dg-shA">
+                                <rect key="frame" x="173" y="320" width="14" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <toolbarItems/>
@@ -325,15 +340,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iconfilter-indoor.png" id="AnF-4y-Jcg">
+                            <imageView autoresizesSubviews="NO" opaque="NO" multipleTouchEnabled="YES" contentMode="center" image="iconfilter-indoor.png" id="AnF-4y-Jcg">
                                 <rect key="frame" x="148" y="22" width="25" height="23"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outdoor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NDb-MJ-OM3">
-                                <rect key="frame" x="118" y="45" width="85" height="21"/>
+                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NDb-MJ-OM3">
+                                <rect key="frame" x="118" y="48" width="85" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="0.62745098040000002" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -347,10 +362,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTh-6k-MFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="-376"/>
+            <point key="canvasLocation" x="1418" y="-378"/>
         </scene>
     </scenes>
     <resources>
+        <image name="filter-1km.png" width="14" height="14"/>
+        <image name="filter-indoor.png" width="16" height="16"/>
+        <image name="filter-now.png" width="13" height="13"/>
         <image name="iconfilter-indoor.png" width="25" height="23"/>
         <image name="ux-filter-handle.png" width="320" height="35"/>
         <image name="ux-list-up.png" width="320" height="22"/>
