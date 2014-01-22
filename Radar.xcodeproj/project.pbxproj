@@ -10,6 +10,8 @@
 		38B136DFD47540C18913D650 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEA3BF1EC8242E485E23BF5 /* libPods.a */; };
 		627A418918893CE600926DB6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627A418818893CE600926DB6 /* MapKit.framework */; };
 		6282BF0D18895E86005CC250 /* mapa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6282BF0C18895E86005CC250 /* mapa.plist */; };
+		62C0A3E1188FB67600E5CCF4 /* filtersOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62C0A3E0188FB67600E5CCF4 /* filtersOptions.plist */; };
+		62C0A3E4188FBA8500E5CCF4 /* TUIFilterSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C0A3E3188FBA8500E5CCF4 /* TUIFilterSubViewController.m */; };
 		766CADC9188687B900E5C296 /* TUIAtlasTicketList.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */; };
 		766CADCC1886882A00E5C296 /* TUIFoursquareVenueList.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCB1886882A00E5C296 /* TUIFoursquareVenueList.m */; };
 		766CADCE1886895F00E5C296 /* TUIAtlasTicketSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */; };
@@ -190,6 +192,9 @@
 		477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627A418818893CE600926DB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6282BF0C18895E86005CC250 /* mapa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mapa.plist; path = Resources/mapa.plist; sourceTree = "<group>"; };
+		62C0A3E0188FB67600E5CCF4 /* filtersOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = filtersOptions.plist; path = Resources/filtersOptions.plist; sourceTree = "<group>"; };
+		62C0A3E2188FBA8500E5CCF4 /* TUIFilterSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilterSubViewController.h; path = Modules/Filter/Controller/TUIFilterSubViewController.h; sourceTree = "<group>"; };
+		62C0A3E3188FBA8500E5CCF4 /* TUIFilterSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilterSubViewController.m; path = Modules/Filter/Controller/TUIFilterSubViewController.m; sourceTree = "<group>"; };
 		6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarTests.xcconfig"; path = "Pods/Pods-RadarTests.xcconfig"; sourceTree = "<group>"; };
 		766CADC7188687B900E5C296 /* TUIAtlasTicketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicketList.h; path = Modules/SpotList/Model/TUIAtlasTicketList.h; sourceTree = "<group>"; };
 		766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketList.m; path = Modules/SpotList/Model/TUIAtlasTicketList.m; sourceTree = "<group>"; };
@@ -489,6 +494,8 @@
 				7672096A188D309A007CAE17 /* TUIFilterListViewController.m */,
 				7672096C188D37D3007CAE17 /* TUIFilterViewController.h */,
 				7672096D188D37D3007CAE17 /* TUIFilterViewController.m */,
+				62C0A3E2188FBA8500E5CCF4 /* TUIFilterSubViewController.h */,
+				62C0A3E3188FBA8500E5CCF4 /* TUIFilterSubViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1022,6 +1029,7 @@
 				76F2628F188A9B1600B2EFEB /* images */,
 				76F2628E188A9AFD00B2EFEB /* tmp */,
 				6282BF0C18895E86005CC250 /* mapa.plist */,
+				62C0A3E0188FB67600E5CCF4 /* filtersOptions.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1408,6 +1416,7 @@
 				76F262EB188A9BE300B2EFEB /* iconfilter-far@2x.png in Resources */,
 				76F26322188A9C0A00B2EFEB /* iconmap-me.png in Resources */,
 				76F26341188A9C1A00B2EFEB /* iconnav-menu@2x.png in Resources */,
+				62C0A3E1188FB67600E5CCF4 /* filtersOptions.plist in Resources */,
 				76F2632E188A9C0A00B2EFEB /* ux-radar-rotation.png in Resources */,
 				76F2632F188A9C0A00B2EFEB /* ux-radar-rotation@2x.png in Resources */,
 				76F262AB188A9BB500B2EFEB /* icon-120.png in Resources */,
@@ -1533,6 +1542,7 @@
 				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
 				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
 				76720946188BF5D5007CAE17 /* TUISpotListCell.m in Sources */,
+				62C0A3E4188FBA8500E5CCF4 /* TUIFilterSubViewController.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
 				76720955188C1119007CAE17 /* TUISpotListTableViewController.m in Sources */,
 				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,

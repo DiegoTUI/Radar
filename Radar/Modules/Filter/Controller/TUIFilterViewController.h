@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TUIBasePageViewController.h"
 
-@interface TUIFilterViewController : TUIBasePageViewController
+@interface TUIFilterViewController : TUIBasePageViewController <UIPageViewControllerDataSource>
 
 - (void)weatherViewController;
 
