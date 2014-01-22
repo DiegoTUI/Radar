@@ -193,6 +193,8 @@ static CGFloat kRowHeight = 89.0f;
          // hide list if displayed
          if (_spotsViewController.displayed)
          {
+             UIImage *listUpImage = [UIImage imageNamed:@"ux-list-up.png"];
+             [_spotsViewController.handlerButton setImage:listUpImage forState:UIControlStateNormal];
              [strongSelf hideList];
          }
          strongSelf.containerFilterView.y = ZERO_FLOAT;
