@@ -23,8 +23,9 @@
     {
         serverError = [[TUIServerError alloc] init];
         
-        serverError.code = response[@"error"];
-        serverError.message = response[@"description"];
+        serverError.title = response[@"title"];
+        serverError.code = response[@"code"];
+        serverError.message = response[@"message"];
     }
     
     return serverError;
@@ -38,10 +39,12 @@
     BOOL isValid = NO;
     
     if([response isKindOfClass:[NSDictionary class]] &&
-       [response objectForKey:@"error"] &&
-       [response objectForKey:@"description"] &&
-       [response[@"error"] isKindOfClass:[NSString class]] &&
-       [response[@"description"] isKindOfClass:[NSString class]])
+       [response objectForKey:@"title"] &&
+       [response objectForKey:@"code"] &&
+       [response objectForKey:@"message"] &&
+       [response[@"title"] isKindOfClass:[NSString class]] &&
+       [response[@"code"] isKindOfClass:[NSNumber class]] &&
+       [response[@"message"] isKindOfClass:[NSString class]])
     {
         isValid = YES;
     }

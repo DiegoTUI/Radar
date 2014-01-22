@@ -25,6 +25,7 @@
 		760B4F75188FEAC400AB65F5 /* UIAlertView+TUIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F74188FEAC400AB65F5 /* UIAlertView+TUIError.m */; };
 		760B4F77188FF1DB00AB65F5 /* NSError+TUIErrorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F76188FF1DB00AB65F5 /* NSError+TUIErrorSpec.m */; };
 		760B4F79188FF35000AB65F5 /* TUIErrorHandlerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F78188FF35000AB65F5 /* TUIErrorHandlerSpec.m */; };
+		760B4F7B188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F7A188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m */; };
 		766CADC9188687B900E5C296 /* TUIAtlasTicketList.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */; };
 		766CADCC1886882A00E5C296 /* TUIFoursquareVenueList.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCB1886882A00E5C296 /* TUIFoursquareVenueList.m */; };
 		766CADCE1886895F00E5C296 /* TUIAtlasTicketSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */; };
@@ -231,6 +232,7 @@
 		760B4F74188FEAC400AB65F5 /* UIAlertView+TUIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+TUIError.m"; path = "Modules/Shared/View/UIAlertView+TUIError.m"; sourceTree = "<group>"; };
 		760B4F76188FF1DB00AB65F5 /* NSError+TUIErrorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+TUIErrorSpec.m"; path = "Modules/Shared/Model/NSError+TUIErrorSpec.m"; sourceTree = "<group>"; };
 		760B4F78188FF35000AB65F5 /* TUIErrorHandlerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIErrorHandlerSpec.m; path = Modules/Error/Model/TUIErrorHandlerSpec.m; sourceTree = "<group>"; };
+		760B4F7A188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TUISpotList+ProxySpec.m"; path = "Modules/SpotList/Model/TUISpotList+ProxySpec.m"; sourceTree = "<group>"; };
 		766CADC7188687B900E5C296 /* TUIAtlasTicketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicketList.h; path = Modules/SpotList/Model/TUIAtlasTicketList.h; sourceTree = "<group>"; };
 		766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketList.m; path = Modules/SpotList/Model/TUIAtlasTicketList.m; sourceTree = "<group>"; };
 		766CADCA1886882A00E5C296 /* TUIFoursquareVenueList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFoursquareVenueList.h; path = Modules/SpotList/Model/TUIFoursquareVenueList.h; sourceTree = "<group>"; };
@@ -469,10 +471,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627A418918893CE600926DB6 /* MapKit.framework in Frameworks */,
 				76D727AA187C523900F3545E /* CoreGraphics.framework in Frameworks */,
 				76D727A8187C523900F3545E /* Foundation.framework in Frameworks */,
 				38B136DFD47540C18913D650 /* libPods.a in Frameworks */,
+				627A418918893CE600926DB6 /* MapKit.framework in Frameworks */,
 				76D727AC187C523900F3545E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,10 +499,10 @@
 				76720953188C1119007CAE17 /* TUISpotListTableViewController.h */,
 				76720954188C1119007CAE17 /* TUISpotListTableViewController.m */,
 				76720963188C60A1007CAE17 /* TUISpotListTableViewController_Private.h */,
-				76720959188C2635007CAE17 /* TUISpotsViewController.h */,
-				7672095A188C2635007CAE17 /* TUISpotsViewController.m */,
 				76720960188C51D5007CAE17 /* TUISpotListTableViewDataSource.h */,
 				76720961188C51D5007CAE17 /* TUISpotListTableViewDataSource.m */,
+				76720959188C2635007CAE17 /* TUISpotsViewController.h */,
+				7672095A188C2635007CAE17 /* TUISpotsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -592,11 +594,11 @@
 		76D727A6187C523900F3545E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				627A418818893CE600926DB6 /* MapKit.framework */,
 				76D727A9187C523900F3545E /* CoreGraphics.framework */,
 				76D727A7187C523900F3545E /* Foundation.framework */,
 				477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */,
 				EFEA3BF1EC8242E485E23BF5 /* libPods.a */,
+				627A418818893CE600926DB6 /* MapKit.framework */,
 				76D727AB187C523900F3545E /* UIKit.framework */,
 				76D727C6187C523A00F3545E /* XCTest.framework */,
 			);
@@ -606,11 +608,11 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
-				76720967188D3047007CAE17 /* Filter */,
 				76D7288918841C9400F3545E /* Application */,
 				76D727DC187C58E400F3545E /* Base */,
 				76D72845187EC77100F3545E /* Cache */,
 				76D728741883DAA300F3545E /* Error */,
+				76720967188D3047007CAE17 /* Filter */,
 				76CC335A1885A4A4003FDB48 /* Location */,
 				76D7286D188018F700F3545E /* Network */,
 				76D7288E18854B2200F3545E /* Resources */,
@@ -707,12 +709,12 @@
 				76D727F8187C5CF000F3545E /* TUIBaseLabel.h */,
 				76D727F9187C5CF000F3545E /* TUIBaseLabel.m */,
 				76D727F7187C5CF000F3545E /* TUIBaseLabel_Private.h */,
-				76D727FB187C5CF000F3545E /* TUIBaseView.h */,
-				76D727FC187C5CF000F3545E /* TUIBaseView.m */,
-				76D727FA187C5CF000F3545E /* TUIBaseView_Private.h */,
 				7672095C188C48DC007CAE17 /* TUIBaseTableViewCell.h */,
 				7672095D188C48DC007CAE17 /* TUIBaseTableViewCell.m */,
 				7672095F188C4912007CAE17 /* TUIBaseTableViewCell_Private.h */,
+				76D727FB187C5CF000F3545E /* TUIBaseView.h */,
+				76D727FC187C5CF000F3545E /* TUIBaseView.m */,
+				76D727FA187C5CF000F3545E /* TUIBaseView_Private.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -723,15 +725,15 @@
 				76D727E9187C5CC500F3545E /* TUIBaseController.h */,
 				76D727EA187C5CC500F3545E /* TUIBaseController.m */,
 				76D727E8187C5CC500F3545E /* TUIBaseController_Private.h */,
-				76D727EC187C5CC500F3545E /* TUIBaseViewController.h */,
-				76D727ED187C5CC500F3545E /* TUIBaseViewController.m */,
-				76D727EB187C5CC500F3545E /* TUIBaseViewController_Private.h */,
-				7672094D188BFCDA007CAE17 /* TUIBaseTableViewController.h */,
-				7672094E188BFCDA007CAE17 /* TUIBaseTableViewController.m */,
-				76720950188BFD23007CAE17 /* TUIBaseTableViewController_Private.h */,
 				7672096F188D384D007CAE17 /* TUIBasePageViewController.h */,
 				76720970188D384D007CAE17 /* TUIBasePageViewController.m */,
 				76720972188D3901007CAE17 /* TUIBasePageViewController_Private.h */,
+				7672094D188BFCDA007CAE17 /* TUIBaseTableViewController.h */,
+				7672094E188BFCDA007CAE17 /* TUIBaseTableViewController.m */,
+				76720950188BFD23007CAE17 /* TUIBaseTableViewController_Private.h */,
+				76D727EC187C5CC500F3545E /* TUIBaseViewController.h */,
+				76D727ED187C5CC500F3545E /* TUIBaseViewController.m */,
+				76D727EB187C5CC500F3545E /* TUIBaseViewController_Private.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -748,16 +750,16 @@
 			children = (
 				76D7284F187ECA8B00F3545E /* NSDictionary+JSON.h */,
 				76D72850187ECA8B00F3545E /* NSDictionary+JSON.m */,
+				760B4F6D188FE6FD00AB65F5 /* NSError+TUIError.h */,
+				760B4F6E188FE6FD00AB65F5 /* NSError+TUIError.m */,
 				76D72851187ECA8B00F3545E /* NSString+JSON.h */,
 				76D72852187ECA8B00F3545E /* NSString+JSON.m */,
 				76D72806187C5D6F00F3545E /* NSString+TUIString.h */,
 				76D72807187C5D6F00F3545E /* NSString+TUIString.m */,
-				76D72808187C5D6F00F3545E /* UIColor+TUIColors.h */,
-				76D72809187C5D6F00F3545E /* UIColor+TUIColors.m */,
 				760B4F68188FD9C500AB65F5 /* NSURL+TUIURL.h */,
 				760B4F69188FD9C500AB65F5 /* NSURL+TUIURL.m */,
-				760B4F6D188FE6FD00AB65F5 /* NSError+TUIError.h */,
-				760B4F6E188FE6FD00AB65F5 /* NSError+TUIError.m */,
+				76D72808187C5D6F00F3545E /* UIColor+TUIColors.h */,
+				76D72809187C5D6F00F3545E /* UIColor+TUIColors.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -767,10 +769,10 @@
 			children = (
 				76D7280C187C5D8400F3545E /* TUITitleView.h */,
 				76D7280D187C5D8400F3545E /* TUITitleView.m */,
-				76D7280E187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.h */,
-				76D7280F187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m */,
 				760B4F73188FEAC400AB65F5 /* UIAlertView+TUIError.h */,
 				760B4F74188FEAC400AB65F5 /* UIAlertView+TUIError.m */,
+				76D7280E187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.h */,
+				76D7280F187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -812,6 +814,7 @@
 			isa = PBXGroup;
 			children = (
 				76D72800187C5D5600F3545E /* Accessibility.h */,
+				760B4F52188EC60E00AB65F5 /* API.h */,
 				76D72860187ED22400F3545E /* Cache.h */,
 				76D72801187C5D5600F3545E /* Constants.h */,
 				76D72802187C5D5600F3545E /* Fonts.h */,
@@ -821,7 +824,6 @@
 				76D72805187C5D5600F3545E /* OSVersion.h */,
 				76D72824187D473C00F3545E /* Segue.h */,
 				76D72861187ED40200F3545E /* Settings.h */,
-				760B4F52188EC60E00AB65F5 /* API.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -849,9 +851,9 @@
 			isa = PBXGroup;
 			children = (
 				76D7281D187C62E100F3545E /* TUIBaseControllerSpec.m */,
-				76D7281E187C62E100F3545E /* TUIBaseViewControllerSpec.m */,
-				76720951188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m */,
 				760B4F50188EC28500AB65F5 /* TUIBasePageViewControllerSpec.m */,
+				76720951188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m */,
+				76D7281E187C62E100F3545E /* TUIBaseViewControllerSpec.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -868,10 +870,10 @@
 			isa = PBXGroup;
 			children = (
 				76D72868187FF9CB00F3545E /* NSDictionary+JSONSpec.m */,
+				760B4F76188FF1DB00AB65F5 /* NSError+TUIErrorSpec.m */,
 				76D72866187FF5B100F3545E /* NSString+JSONSpec.m */,
 				76D72817187C62B600F3545E /* NSString+TUIStringSpec.m */,
 				760B4F6B188FDD9400AB65F5 /* NSURL+TUIURLSpec.m */,
-				760B4F76188FF1DB00AB65F5 /* NSError+TUIErrorSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1009,12 +1011,12 @@
 		76D728751883DAB400F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				760B4F70188FE9D400AB65F5 /* TUIErrorHandler.h */,
+				760B4F71188FE9D400AB65F5 /* TUIErrorHandler.m */,
 				76D728761883DBA000F3545E /* TUIServerError.h */,
 				76D728771883DBA000F3545E /* TUIServerError.m */,
 				76D728791883DC3C00F3545E /* TUIServerErrorParser.h */,
 				76D7287A1883DC3C00F3545E /* TUIServerErrorParser.m */,
-				760B4F70188FE9D400AB65F5 /* TUIErrorHandler.h */,
-				760B4F71188FE9D400AB65F5 /* TUIErrorHandler.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1030,9 +1032,9 @@
 		76D7287D1883DEA100F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				760B4F78188FF35000AB65F5 /* TUIErrorHandlerSpec.m */,
 				76D728801883E06800F3545E /* TUIServerErrorParserSpec.m */,
 				76D7287E1883DEF700F3545E /* TUIServerErrorSpec.m */,
-				760B4F78188FF35000AB65F5 /* TUIErrorHandlerSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1093,14 +1095,14 @@
 			children = (
 				76D7289A18855E2200F3545E /* TUIAtlasTicket.h */,
 				76D7289B18855E2200F3545E /* TUIAtlasTicket.m */,
-				76D7289D18855E5A00F3545E /* TUIFoursquareVenue.h */,
-				76D7289E18855E5A00F3545E /* TUIFoursquareVenue.m */,
-				76D728931885585F00F3545E /* TUISpot.h */,
-				76D728941885585F00F3545E /* TUISpot.m */,
 				760B4F56188EC8D500AB65F5 /* TUIAtlasTicketParser.h */,
 				760B4F57188EC8D500AB65F5 /* TUIAtlasTicketParser.m */,
+				76D7289D18855E5A00F3545E /* TUIFoursquareVenue.h */,
+				76D7289E18855E5A00F3545E /* TUIFoursquareVenue.m */,
 				760B4F5B188EE34800AB65F5 /* TUIFoursquareVenueParser.h */,
 				760B4F5C188EE34800AB65F5 /* TUIFoursquareVenueParser.m */,
+				76D728931885585F00F3545E /* TUISpot.h */,
+				76D728941885585F00F3545E /* TUISpot.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1116,11 +1118,11 @@
 		76D7289718855A7400F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				76D7289818855AB600F3545E /* TUISpotSpec.m */,
-				766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */,
-				766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */,
 				760B4F59188ED78500AB65F5 /* TUIAtlasTicketParserSpec.m */,
+				766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */,
 				760B4F5E188EE59C00AB65F5 /* TuiFoursquareVenueParserSpec.m */,
+				766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */,
+				76D7289818855AB600F3545E /* TUISpotSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1128,9 +1130,9 @@
 		76D728A018855F2200F3545E /* SpotList */ = {
 			isa = PBXGroup;
 			children = (
-				76720940188BF4AA007CAE17 /* View */,
 				7672093C188BF419007CAE17 /* Controller */,
 				76D728A118855F3500F3545E /* Model */,
+				76720940188BF4AA007CAE17 /* View */,
 			);
 			name = SpotList;
 			sourceTree = "<group>";
@@ -1142,10 +1144,10 @@
 				766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */,
 				766CADCA1886882A00E5C296 /* TUIFoursquareVenueList.h */,
 				766CADCB1886882A00E5C296 /* TUIFoursquareVenueList.m */,
-				76D728A218855F6F00F3545E /* TUISpotList.h */,
-				76D728A318855F6F00F3545E /* TUISpotList.m */,
 				760B4F53188EC7C000AB65F5 /* TUISpotList+Proxy.h */,
 				760B4F54188EC7C000AB65F5 /* TUISpotList+Proxy.m */,
+				76D728A218855F6F00F3545E /* TUISpotList.h */,
+				76D728A318855F6F00F3545E /* TUISpotList.m */,
 				760B4F60188EE77500AB65F5 /* TUISpotListParser.h */,
 				760B4F61188EE77500AB65F5 /* TUISpotListParser.m */,
 			);
@@ -1163,10 +1165,11 @@
 		76D728A61885622500F3545E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				76D728A71885626700F3545E /* TUISpotListSpec.m */,
 				766CADD118868AFE00E5C296 /* TUIAtlasTicketListSpec.m */,
 				766CADD318868B2600E5C296 /* TUIFoursquareVenueListSpec.m */,
+				760B4F7A188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m */,
 				760B4F65188EED1000AB65F5 /* TUISpotListParserSpec.m */,
+				76D728A71885626700F3545E /* TUISpotListSpec.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1324,12 +1327,12 @@
 		76F26297188A9B6F00B2EFEB /* icon */ = {
 			isa = PBXGroup;
 			children = (
-				76F262A2188A9BB500B2EFEB /* icon-58.png */,
-				76F262A3188A9BB500B2EFEB /* icon-76.png */,
-				76F262A4188A9BB500B2EFEB /* icon-80.png */,
 				76F262A5188A9BB500B2EFEB /* icon-120.png */,
 				76F262A6188A9BB500B2EFEB /* icon-152.png */,
 				76F262A7188A9BB500B2EFEB /* icon-512.png */,
+				76F262A2188A9BB500B2EFEB /* icon-58.png */,
+				76F262A3188A9BB500B2EFEB /* icon-76.png */,
+				76F262A4188A9BB500B2EFEB /* icon-80.png */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -1415,96 +1418,96 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F262EF188A9BE300B2EFEB /* iconfilter-now@2x.png in Resources */,
-				76F26331188A9C0A00B2EFEB /* ux-radar-scale@2x.png in Resources */,
-				76F262B2188A9BC300B2EFEB /* default-568h.png in Resources */,
-				76F26340188A9C1A00B2EFEB /* iconnav-menu.png in Resources */,
-				76F262B4188A9BC300B2EFEB /* Default.png in Resources */,
-				76F262EA188A9BE300B2EFEB /* iconfilter-far.png in Resources */,
+				76F2629D188A9B9600B2EFEB /* actividadImg.jpg in Resources */,
 				76F2629E188A9B9600B2EFEB /* actividadImg.png in Resources */,
-				76D727C0187C523A00F3545E /* Images.xcassets in Resources */,
-				76F26307188A9BFA00B2EFEB /* ux-list-down@2x.png in Resources */,
-				76F262E2188A9BE300B2EFEB /* filter-outdoor.png in Resources */,
-				76F26301188A9BFA00B2EFEB /* iconlist-check@2x.png in Resources */,
-				76F262F5188A9BE300B2EFEB /* ux-filter-handle@2x.png in Resources */,
-				76F262E7188A9BE300B2EFEB /* iconfilter-1km@2x.png in Resources */,
-				76F262ED188A9BE300B2EFEB /* iconfilter-indoor@2x.png in Resources */,
-				76F262A1188A9B9600B2EFEB /* mask.png in Resources */,
-				76F262E9188A9BE300B2EFEB /* iconfilter-300m@2x.png in Resources */,
-				76F26330188A9C0A00B2EFEB /* ux-radar-scale.png in Resources */,
-				76F262AC188A9BB500B2EFEB /* icon-152.png in Resources */,
-				76F262E0188A9BE300B2EFEB /* filter-now.png in Resources */,
-				76F26304188A9BFA00B2EFEB /* iconlist-tui.png in Resources */,
-				76F262A8188A9BB500B2EFEB /* icon-58.png in Resources */,
-				76F2633A188A9C1A00B2EFEB /* iconnav-basket.png in Resources */,
-				76F262E3188A9BE300B2EFEB /* filter-outdoor@2x.png in Resources */,
-				76F2633F188A9C1A00B2EFEB /* iconnav-map@2x.png in Resources */,
-				76F262F2188A9BE300B2EFEB /* iconfilter-tomorrow.png in Resources */,
-				76F26309188A9BFA00B2EFEB /* ux-list-up@2x.png in Resources */,
-				76F26326188A9C0A00B2EFEB /* iconmap-tui-outdoor.png in Resources */,
-				76F262B8188A9BD000B2EFEB /* ux-passbook-header.png in Resources */,
-				76F262B9188A9BD000B2EFEB /* ux-passbook-header@2x.png in Resources */,
-				76F2632A188A9C0A00B2EFEB /* iconmap-tui-tours.png in Resources */,
-				76F2632C188A9C0A00B2EFEB /* ux-radar-ring.png in Resources */,
-				76F2632B188A9C0A00B2EFEB /* iconmap-tui-tours@2x.png in Resources */,
-				76F262F0188A9BE300B2EFEB /* iconfilter-outdoor.png in Resources */,
-				76D727B2187C523A00F3545E /* InfoPlist.strings in Resources */,
-				76F26305188A9BFA00B2EFEB /* iconlist-tui@2x.png in Resources */,
-				76F262EE188A9BE300B2EFEB /* iconfilter-now.png in Resources */,
-				76F262DB188A9BE300B2EFEB /* filter-300m@2x.png in Resources */,
-				76F2633B188A9C1A00B2EFEB /* iconnav-basket@2x.png in Resources */,
-				76F26323188A9C0A00B2EFEB /* iconmap-me@2x.png in Resources */,
-				76F262DC188A9BE300B2EFEB /* filter-far.png in Resources */,
-				76F262E8188A9BE300B2EFEB /* iconfilter-300m.png in Resources */,
 				76F2629F188A9B9600B2EFEB /* actividadImg2.png in Resources */,
+				76F262A0188A9B9600B2EFEB /* actividadImg3.png in Resources */,
+				76F262B2188A9BC300B2EFEB /* default-568h.png in Resources */,
+				76F262B3188A9BC300B2EFEB /* default-568h@2x.png in Resources */,
+				76F262B4188A9BC300B2EFEB /* Default.png in Resources */,
+				76F262B5188A9BC300B2EFEB /* Default@2x.png in Resources */,
 				76F262D8188A9BE300B2EFEB /* filter-1km.png in Resources */,
-				76F262E5188A9BE300B2EFEB /* filter-tomorrow@2x.png in Resources */,
-				76F2633C188A9C1A00B2EFEB /* iconnav-info.png in Resources */,
-				76F26320188A9C0A00B2EFEB /* iconmap-fsq-restaurant.png in Resources */,
 				76F262D9188A9BE300B2EFEB /* filter-1km@2x.png in Resources */,
 				76F262DA188A9BE300B2EFEB /* filter-300m.png in Resources */,
-				76F26324188A9C0A00B2EFEB /* iconmap-tui-culture.png in Resources */,
-				76F2633D188A9C1A00B2EFEB /* iconnav-info@2x.png in Resources */,
-				76F26325188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png in Resources */,
+				76F262DB188A9BE300B2EFEB /* filter-300m@2x.png in Resources */,
+				76F262DC188A9BE300B2EFEB /* filter-far.png in Resources */,
+				76F262DD188A9BE300B2EFEB /* filter-far@2x.png in Resources */,
+				76F262DE188A9BE300B2EFEB /* filter-indoor.png in Resources */,
+				76F262DF188A9BE300B2EFEB /* filter-indoor@2x.png in Resources */,
+				76F262E0188A9BE300B2EFEB /* filter-now.png in Resources */,
+				76F262E1188A9BE300B2EFEB /* filter-now@2x.png in Resources */,
+				76F262E2188A9BE300B2EFEB /* filter-outdoor.png in Resources */,
+				76F262E3188A9BE300B2EFEB /* filter-outdoor@2x.png in Resources */,
+				76F262E4188A9BE300B2EFEB /* filter-tomorrow.png in Resources */,
+				76F262E5188A9BE300B2EFEB /* filter-tomorrow@2x.png in Resources */,
+				76F262AB188A9BB500B2EFEB /* icon-120.png in Resources */,
+				76F262AC188A9BB500B2EFEB /* icon-152.png in Resources */,
+				76F262AD188A9BB500B2EFEB /* icon-512.png in Resources */,
+				76F262A8188A9BB500B2EFEB /* icon-58.png in Resources */,
 				76F262A9188A9BB500B2EFEB /* icon-76.png in Resources */,
-				76D7282E187D629C00F3545E /* Localizable.strings in Resources */,
+				76F262AA188A9BB500B2EFEB /* icon-80.png in Resources */,
 				76F262E6188A9BE300B2EFEB /* iconfilter-1km.png in Resources */,
-				76F262F3188A9BE300B2EFEB /* iconfilter-tomorrow@2x.png in Resources */,
+				76F262E7188A9BE300B2EFEB /* iconfilter-1km@2x.png in Resources */,
+				76F262E8188A9BE300B2EFEB /* iconfilter-300m.png in Resources */,
+				76F262E9188A9BE300B2EFEB /* iconfilter-300m@2x.png in Resources */,
+				76F262EA188A9BE300B2EFEB /* iconfilter-far.png in Resources */,
 				76F262EB188A9BE300B2EFEB /* iconfilter-far@2x.png in Resources */,
+				76F262EC188A9BE300B2EFEB /* iconfilter-indoor.png in Resources */,
+				76F262ED188A9BE300B2EFEB /* iconfilter-indoor@2x.png in Resources */,
+				76F262EE188A9BE300B2EFEB /* iconfilter-now.png in Resources */,
+				76F262EF188A9BE300B2EFEB /* iconfilter-now@2x.png in Resources */,
+				76F262F0188A9BE300B2EFEB /* iconfilter-outdoor.png in Resources */,
+				76F262F1188A9BE300B2EFEB /* iconfilter-outdoor@2x.png in Resources */,
+				76F262F2188A9BE300B2EFEB /* iconfilter-tomorrow.png in Resources */,
+				76F262F3188A9BE300B2EFEB /* iconfilter-tomorrow@2x.png in Resources */,
+				76F26300188A9BFA00B2EFEB /* iconlist-check.png in Resources */,
+				76F26301188A9BFA00B2EFEB /* iconlist-check@2x.png in Resources */,
+				76F26302188A9BFA00B2EFEB /* iconlist-fsq.png in Resources */,
+				76F26303188A9BFA00B2EFEB /* iconlist-fsq@2x.png in Resources */,
+				76F26304188A9BFA00B2EFEB /* iconlist-tui.png in Resources */,
+				76F26305188A9BFA00B2EFEB /* iconlist-tui@2x.png in Resources */,
+				76F2631E188A9C0A00B2EFEB /* iconmap-fsq-bar.png in Resources */,
+				76F2631F188A9C0A00B2EFEB /* iconmap-fsq-bar@2x.png in Resources */,
+				76F26320188A9C0A00B2EFEB /* iconmap-fsq-restaurant.png in Resources */,
+				76F26321188A9C0A00B2EFEB /* iconmap-fsq-restaurant@2x.png in Resources */,
 				76F26322188A9C0A00B2EFEB /* iconmap-me.png in Resources */,
+				76F26323188A9C0A00B2EFEB /* iconmap-me@2x.png in Resources */,
+				76F26324188A9C0A00B2EFEB /* iconmap-tui-culture.png in Resources */,
+				76F26325188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png in Resources */,
+				76F26326188A9C0A00B2EFEB /* iconmap-tui-outdoor.png in Resources */,
+				76F26327188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png in Resources */,
+				76F26328188A9C0A00B2EFEB /* iconmap-tui-shows.png in Resources */,
+				76F26329188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png in Resources */,
+				76F2632A188A9C0A00B2EFEB /* iconmap-tui-tours.png in Resources */,
+				76F2632B188A9C0A00B2EFEB /* iconmap-tui-tours@2x.png in Resources */,
+				76F2633A188A9C1A00B2EFEB /* iconnav-basket.png in Resources */,
+				76F2633B188A9C1A00B2EFEB /* iconnav-basket@2x.png in Resources */,
+				76F2633C188A9C1A00B2EFEB /* iconnav-info.png in Resources */,
+				76F2633D188A9C1A00B2EFEB /* iconnav-info@2x.png in Resources */,
+				76F2633E188A9C1A00B2EFEB /* iconnav-map.png in Resources */,
+				76F2633F188A9C1A00B2EFEB /* iconnav-map@2x.png in Resources */,
+				76F26340188A9C1A00B2EFEB /* iconnav-menu.png in Resources */,
 				76F26341188A9C1A00B2EFEB /* iconnav-menu@2x.png in Resources */,
+				76D727C0187C523A00F3545E /* Images.xcassets in Resources */,
+				76D727B2187C523A00F3545E /* InfoPlist.strings in Resources */,
+				76D7282E187D629C00F3545E /* Localizable.strings in Resources */,
+				76D727BB187C523A00F3545E /* Main.storyboard in Resources */,
+				6282BF0D18895E86005CC250 /* mapa.plist in Resources */,
+				76F262A1188A9B9600B2EFEB /* mask.png in Resources */,
+				76F262F4188A9BE300B2EFEB /* ux-filter-handle.png in Resources */,
+				76F262F5188A9BE300B2EFEB /* ux-filter-handle@2x.png in Resources */,
+				76F26306188A9BFA00B2EFEB /* ux-list-down.png in Resources */,
+				76F26307188A9BFA00B2EFEB /* ux-list-down@2x.png in Resources */,
+				76F26308188A9BFA00B2EFEB /* ux-list-up.png in Resources */,
+				76F26309188A9BFA00B2EFEB /* ux-list-up@2x.png in Resources */,
+				76F262B8188A9BD000B2EFEB /* ux-passbook-header.png in Resources */,
+				76F262B9188A9BD000B2EFEB /* ux-passbook-header@2x.png in Resources */,
+				76F2632C188A9C0A00B2EFEB /* ux-radar-ring.png in Resources */,
+				76F2632D188A9C0A00B2EFEB /* ux-radar-ring@2x.png in Resources */,
 				76F2632E188A9C0A00B2EFEB /* ux-radar-rotation.png in Resources */,
 				76F2632F188A9C0A00B2EFEB /* ux-radar-rotation@2x.png in Resources */,
-				76F262AB188A9BB500B2EFEB /* icon-120.png in Resources */,
-				76F26328188A9C0A00B2EFEB /* iconmap-tui-shows.png in Resources */,
-				76F2632D188A9C0A00B2EFEB /* ux-radar-ring@2x.png in Resources */,
-				76F262EC188A9BE300B2EFEB /* iconfilter-indoor.png in Resources */,
-				76F262E4188A9BE300B2EFEB /* filter-tomorrow.png in Resources */,
-				76F262AA188A9BB500B2EFEB /* icon-80.png in Resources */,
-				76F262A0188A9B9600B2EFEB /* actividadImg3.png in Resources */,
-				6282BF0D18895E86005CC250 /* mapa.plist in Resources */,
-				76D727BB187C523A00F3545E /* Main.storyboard in Resources */,
-				76F2633E188A9C1A00B2EFEB /* iconnav-map.png in Resources */,
-				76F2631F188A9C0A00B2EFEB /* iconmap-fsq-bar@2x.png in Resources */,
-				76F262F4188A9BE300B2EFEB /* ux-filter-handle.png in Resources */,
-				76F26302188A9BFA00B2EFEB /* iconlist-fsq.png in Resources */,
-				76F26306188A9BFA00B2EFEB /* ux-list-down.png in Resources */,
-				76F262DF188A9BE300B2EFEB /* filter-indoor@2x.png in Resources */,
-				76F262DE188A9BE300B2EFEB /* filter-indoor.png in Resources */,
-				76F2629D188A9B9600B2EFEB /* actividadImg.jpg in Resources */,
-				76F262B5188A9BC300B2EFEB /* Default@2x.png in Resources */,
-				76F262DD188A9BE300B2EFEB /* filter-far@2x.png in Resources */,
-				76F262B3188A9BC300B2EFEB /* default-568h@2x.png in Resources */,
-				76F262E1188A9BE300B2EFEB /* filter-now@2x.png in Resources */,
-				76F26327188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png in Resources */,
-				76F26303188A9BFA00B2EFEB /* iconlist-fsq@2x.png in Resources */,
-				76F26321188A9C0A00B2EFEB /* iconmap-fsq-restaurant@2x.png in Resources */,
-				76F26300188A9BFA00B2EFEB /* iconlist-check.png in Resources */,
-				76F26308188A9BFA00B2EFEB /* ux-list-up.png in Resources */,
-				76F262F1188A9BE300B2EFEB /* iconfilter-outdoor@2x.png in Resources */,
-				76F26329188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png in Resources */,
-				76F2631E188A9C0A00B2EFEB /* iconmap-fsq-bar.png in Resources */,
-				76F262AD188A9BB500B2EFEB /* icon-512.png in Resources */,
+				76F26330188A9C0A00B2EFEB /* ux-radar-scale.png in Resources */,
+				76F26331188A9C0A00B2EFEB /* ux-radar-scale@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1588,53 +1591,53 @@
 			files = (
 				76D727B4187C523A00F3545E /* main.m in Sources */,
 				76D72853187ECA8B00F3545E /* NSDictionary+JSON.m in Sources */,
+				760B4F6F188FE6FD00AB65F5 /* NSError+TUIError.m in Sources */,
 				76D72854187ECA8B00F3545E /* NSString+JSON.m in Sources */,
-				760B4F62188EE77500AB65F5 /* TUISpotListParser.m in Sources */,
-				760B4F55188EC7C000AB65F5 /* TUISpotList+Proxy.m in Sources */,
-				7672096B188D309A007CAE17 /* TUIFilterListViewController.m in Sources */,
 				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
+				760B4F6A188FD9C500AB65F5 /* NSURL+TUIURL.m in Sources */,
 				76D727B8187C523A00F3545E /* TUIAppDelegate.m in Sources */,
 				76D7288D18841CF200F3545E /* TUIApplicationController.m in Sources */,
-				760B4F75188FEAC400AB65F5 /* UIAlertView+TUIError.m in Sources */,
 				76D7289C18855E2200F3545E /* TUIAtlasTicket.m in Sources */,
 				766CADC9188687B900E5C296 /* TUIAtlasTicketList.m in Sources */,
-				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
 				760B4F58188EC8D500AB65F5 /* TUIAtlasTicketParser.m in Sources */,
+				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
 				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
-				760B4F72188FE9D400AB65F5 /* TUIErrorHandler.m in Sources */,
-				76720946188BF5D5007CAE17 /* TUISpotListCell.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
-				76720955188C1119007CAE17 /* TUISpotListTableViewController.m in Sources */,
 				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
 				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
-				760B4F5D188EE34800AB65F5 /* TUIFoursquareVenueParser.m in Sources */,
+				76720971188D384D007CAE17 /* TUIBasePageViewController.m in Sources */,
+				7672095E188C48DC007CAE17 /* TUIBaseTableViewCell.m in Sources */,
+				7672094F188BFCDA007CAE17 /* TUIBaseTableViewController.m in Sources */,
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
+				760B4F72188FE9D400AB65F5 /* TUIErrorHandler.m in Sources */,
+				7672096B188D309A007CAE17 /* TUIFilterListViewController.m in Sources */,
+				7672096E188D37D3007CAE17 /* TUIFilterViewController.m in Sources */,
 				76D7289F18855E5A00F3545E /* TUIFoursquareVenue.m in Sources */,
 				766CADCC1886882A00E5C296 /* TUIFoursquareVenueList.m in Sources */,
+				760B4F5D188EE34800AB65F5 /* TUIFoursquareVenueParser.m in Sources */,
 				76CC33611885A82D003FDB48 /* TUILocation.m in Sources */,
 				76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */,
 				76D728711880197E00F3545E /* TUINetworkClient.m in Sources */,
 				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
-				760B4F6A188FD9C500AB65F5 /* NSURL+TUIURL.m in Sources */,
-				76720962188C51D5007CAE17 /* TUISpotListTableViewDataSource.m in Sources */,
 				76D728781883DBA000F3545E /* TUIServerError.m in Sources */,
 				76D7287B1883DC3C00F3545E /* TUIServerErrorParser.m in Sources */,
-				7672094F188BFCDA007CAE17 /* TUIBaseTableViewController.m in Sources */,
-				7672095B188C2635007CAE17 /* TUISpotsViewController.m in Sources */,
 				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,
 				76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */,
-				7672095E188C48DC007CAE17 /* TUIBaseTableViewCell.m in Sources */,
 				76D72844187DBA2200F3545E /* TUISettingsTimeView.m in Sources */,
-				76720971188D384D007CAE17 /* TUIBasePageViewController.m in Sources */,
 				76D72838187D98F200F3545E /* TUISettingsViewController.m in Sources */,
 				76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */,
 				76D728951885585F00F3545E /* TUISpot.m in Sources */,
+				760B4F55188EC7C000AB65F5 /* TUISpotList+Proxy.m in Sources */,
 				76D728A418855F6F00F3545E /* TUISpotList.m in Sources */,
+				76720946188BF5D5007CAE17 /* TUISpotListCell.m in Sources */,
+				760B4F62188EE77500AB65F5 /* TUISpotListParser.m in Sources */,
+				76720955188C1119007CAE17 /* TUISpotListTableViewController.m in Sources */,
+				76720962188C51D5007CAE17 /* TUISpotListTableViewDataSource.m in Sources */,
+				7672095B188C2635007CAE17 /* TUISpotsViewController.m in Sources */,
 				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
-				7672096E188D37D3007CAE17 /* TUIFilterViewController.m in Sources */,
-				760B4F6F188FE6FD00AB65F5 /* NSError+TUIError.m in Sources */,
+				760B4F75188FEAC400AB65F5 /* UIAlertView+TUIError.m in Sources */,
 				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
 				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
 			);
@@ -1645,34 +1648,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				76D72869187FF9CB00F3545E /* NSDictionary+JSONSpec.m in Sources */,
+				760B4F77188FF1DB00AB65F5 /* NSError+TUIErrorSpec.m in Sources */,
 				76D72867187FF5B100F3545E /* NSString+JSONSpec.m in Sources */,
 				76D72818187C62B600F3545E /* NSString+TUIStringSpec.m in Sources */,
+				760B4F6C188FDD9400AB65F5 /* NSURL+TUIURLSpec.m in Sources */,
+				766CADD218868AFE00E5C296 /* TUIAtlasTicketListSpec.m in Sources */,
+				760B4F5A188ED78500AB65F5 /* TUIAtlasTicketParserSpec.m in Sources */,
+				766CADCE1886895F00E5C296 /* TUIAtlasTicketSpec.m in Sources */,
 				76D7284E187EC91100F3545E /* TUIBaseCachedModelSpec.m in Sources */,
 				76D7281F187C62E100F3545E /* TUIBaseControllerSpec.m in Sources */,
 				76D7281B187C62D000F3545E /* TUIBaseMapAnnotationSpec.m in Sources */,
 				76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */,
-				766CADD218868AFE00E5C296 /* TUIAtlasTicketListSpec.m in Sources */,
-				760B4F77188FF1DB00AB65F5 /* NSError+TUIErrorSpec.m in Sources */,
-				760B4F6C188FDD9400AB65F5 /* NSURL+TUIURLSpec.m in Sources */,
+				760B4F51188EC28500AB65F5 /* TUIBasePageViewControllerSpec.m in Sources */,
+				76720952188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m in Sources */,
 				76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */,
 				76D7285A187ECBE400F3545E /* TUICacheSpec.m in Sources */,
-				76CC33661885B149003FDB48 /* TUILocationSpec.m in Sources */,
 				760B4F79188FF35000AB65F5 /* TUIErrorHandlerSpec.m in Sources */,
-				76D728851883E80D00F3545E /* TUINetworkClientSpec.m in Sources */,
-				760B4F5A188ED78500AB65F5 /* TUIAtlasTicketParserSpec.m in Sources */,
-				766CADCE1886895F00E5C296 /* TUIAtlasTicketSpec.m in Sources */,
-				76D728811883E06800F3545E /* TUIServerErrorParserSpec.m in Sources */,
-				760B4F5F188EE59C00AB65F5 /* TuiFoursquareVenueParserSpec.m in Sources */,
 				766CADD418868B2600E5C296 /* TUIFoursquareVenueListSpec.m in Sources */,
-				76720952188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m in Sources */,
+				760B4F5F188EE59C00AB65F5 /* TuiFoursquareVenueParserSpec.m in Sources */,
+				766CADD0188689D100E5C296 /* TUIFoursquareVenueSpec.m in Sources */,
+				76CC33661885B149003FDB48 /* TUILocationSpec.m in Sources */,
+				76D728851883E80D00F3545E /* TUINetworkClientSpec.m in Sources */,
+				76D728811883E06800F3545E /* TUIServerErrorParserSpec.m in Sources */,
 				76D7287F1883DEF700F3545E /* TUIServerErrorSpec.m in Sources */,
 				76D72865187EDA5900F3545E /* TUISettingsSpec.m in Sources */,
-				760B4F66188EED1000AB65F5 /* TUISpotListParserSpec.m in Sources */,
 				76D7286C1880003C00F3545E /* TUISettingsViewControllerSpec.m in Sources */,
-				766CADD0188689D100E5C296 /* TUIFoursquareVenueSpec.m in Sources */,
+				760B4F7B188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m in Sources */,
+				760B4F66188EED1000AB65F5 /* TUISpotListParserSpec.m in Sources */,
 				76D728A81885626700F3545E /* TUISpotListSpec.m in Sources */,
 				76D7289918855AB600F3545E /* TUISpotSpec.m in Sources */,
-				760B4F51188EC28500AB65F5 /* TUIBasePageViewControllerSpec.m in Sources */,
 				76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
