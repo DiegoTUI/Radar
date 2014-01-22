@@ -27,7 +27,7 @@
  */
 + (void)spotsForLatitude:(CGFloat)latitude
                longitude:(CGFloat)longitude
-                  radius:(CGFloat)radius
+                  radius:(NSInteger)radius
               completion:(void(^)(TUISpotList *spotList))completion
                  failure:(void(^)(NSError *error))failure;
 
