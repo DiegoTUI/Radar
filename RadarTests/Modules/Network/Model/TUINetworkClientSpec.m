@@ -24,24 +24,31 @@ describe(@"TUINetworkClient", ^{
         __block KWCaptureSpy *requestCompletionSpy;
         __block KWCaptureSpy *requestFailureSpy;
         __block AFHTTPRequestOperation *requestOperation;
+        __block AFHTTPRequestOperationManager *operationManager;
+        __block NSOperationQueue *operationQueue;
         __block NSURLRequest *request;
         __block NSError *mockError;
         
-        beforeEach(^{
+        beforeAll(^{
             request = [[NSURLRequest alloc] init];
             requestOperation = [AFHTTPRequestOperation mock];
-            [AFHTTPRequestOperation stub:@selector(alloc) andReturn:requestOperation];
+            operationManager = [AFHTTPRequestOperationManager mock];
+            operationQueue = [NSOperationQueue mock];
             [requestOperation stub:@selector(initWithRequest:) andReturn:requestOperation];
-            [requestOperation stub:@selector(setResponseSerializer:)];
-            [requestOperation stub:@selector(start)];
+            [AFHTTPRequestOperationManager stub:@selector(manager) andReturn:operationManager];
+            [operationManager stub:@selector(setResponseSerializer:)];
+            [operationManager stub:@selector(operationQueue) andReturn:operationQueue];
+            [operationQueue stub:@selector(addOperation:)];
+            [AFHTTPRequestOperation stub:@selector(alloc) andReturn:requestOperation];
+            [operationManager stub:@selector(HTTPRequestOperationWithRequest:success:failure:) andReturn:requestOperation];
             mockError = [NSError errorWithDomain:@"mockDomain" code:0 userInfo:nil];
             
-            requestCompletionSpy = [requestOperation captureArgument:@selector(setCompletionBlockWithSuccess:failure:) atIndex:0];
-            requestFailureSpy = [requestOperation captureArgument:@selector(setCompletionBlockWithSuccess:failure:) atIndex:1];
+            requestCompletionSpy = [operationManager captureArgument:@selector(HTTPRequestOperationWithRequest:success:failure:) atIndex:1];
+            requestFailureSpy = [operationManager captureArgument:@selector(HTTPRequestOperationWithRequest:success:failure:) atIndex:2];
         });
         
         it(@"should enqueue a new request operation", ^{
-            [[requestOperation should] receive:@selector(start)];
+            [[operationQueue should] receive:@selector(addOperation:)];
             [[TUINetworkClient sharedClient] sendRequest:request completion:nil];
         });
         

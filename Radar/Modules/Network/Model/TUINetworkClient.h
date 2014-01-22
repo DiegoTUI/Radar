@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, TUIInternetMediaType)
 
 /**
  @methodName requestWithURL:usingMethod:withBody:andInternetMediaType:authenticated:completion:
- @abstract Sends a POST request
+ @abstract Sends a request
  @discussion This method will send a POST request to a specified URL with the supplied body and return a success or failure paramter
  in a completion block.
  
@@ -57,5 +57,16 @@ typedef NS_ENUM(NSInteger, TUIInternetMediaType)
          authenticated:(BOOL)authenticated
             completion:(void(^)(id response, NSDictionary *responseHeaders, NSError *error))completion;
 
+/**
+ @methodName cancelAllHTTPOperationsWithMethod:path:
+ @abstract Cancels all the operations with a certain method and path
+ @discussion This method will look at the shared manager's operation queue and cancel
+ all the operations with the given method and path.
+ 
+ @param method The method of the operations to cancel
+ @param path The path of the operations to cancel
+ */
+- (void)cancelAllHTTPOperationsWithMethod:(NSString *)method
+                                     path:(NSString *)path;
 
 @end

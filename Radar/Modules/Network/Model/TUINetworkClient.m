@@ -16,11 +16,12 @@
 
 static NSString *kLRHTTPHeaderContentType       = @"Content-Type";
 static NSString *kLRHTTPHeaderContentTypeValue  = @"application/json";
+static AFHTTPRequestOperationManager *operationManager;
 
 @implementation TUINetworkClient
 
 
-#pragma mark - Singleton
+#pragma mark - Singleton -
 
 + (id)sharedClient
 {
@@ -28,21 +29,19 @@ static NSString *kLRHTTPHeaderContentTypeValue  = @"application/json";
     __strong static TUINetworkClient *_sharedObject = nil;
     dispatch_once(&onceToken, ^{
         _sharedObject = [[TUINetworkClient alloc] init];
+        operationManager = [AFHTTPRequestOperationManager manager];
+        operationManager.responseSerializer = [AFJSONResponseSerializer serializer];
     });
     return _sharedObject;
 }
 
 
-#pragma mark - Request
+#pragma mark - Request -
 
 - (void)sendRequest:(NSURLRequest *)request
          completion:(void(^)(id response, NSDictionary *responseHeaders, NSError *error))completion
 {
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]
-                                         initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPRequestOperation *operation = [operationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if(completion)
         {
             completion(responseObject, operation.response.allHeaderFields, nil);
@@ -63,10 +62,10 @@ static NSString *kLRHTTPHeaderContentTypeValue  = @"application/json";
         }
     }];
     
-    [operation start];
+    [operationManager.operationQueue addOperation:operation];
 }
 
-#pragma mark - HTTP calls
+#pragma mark - HTTP calls -
 
 - (void)requestWithURL:(NSURL *)URL
            usingMethod:(NSString *)method
@@ -103,7 +102,28 @@ static NSString *kLRHTTPHeaderContentTypeValue  = @"application/json";
 }
 
 
-#pragma mark - Internet media types
+#pragma mark - Cancel requests -
+
+- (void)cancelAllHTTPOperationsWithMethod:(NSString *)method
+                                     path:(NSString *)path
+{
+    for (NSOperation *operation in [operationManager.operationQueue operations]) {
+        if (![operation isKindOfClass:[AFHTTPRequestOperation class]]) {
+            continue;
+        }
+        
+        NSString *operationMethod = [[(AFHTTPRequestOperation *)operation request] HTTPMethod];
+        NSString *operationPath = [[[(AFHTTPRequestOperation *)operation request] URL] path] ;
+        
+        if ([operationMethod isEqualToString:method] &&
+            [operationPath isEqualToString:path])
+        {
+            [operation cancel];
+        }
+    }
+}
+
+#pragma mark - Internet media types -
 
 - (NSString *)stringFromInternetMediaType:(TUIInternetMediaType)type
 {
