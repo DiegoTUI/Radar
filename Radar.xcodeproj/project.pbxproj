@@ -212,6 +212,7 @@
 		760B4F60188EE77500AB65F5 /* TUISpotListParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotListParser.h; path = Modules/SpotList/Model/TUISpotListParser.h; sourceTree = "<group>"; };
 		760B4F61188EE77500AB65F5 /* TUISpotListParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListParser.m; path = Modules/SpotList/Model/TUISpotListParser.m; sourceTree = "<group>"; };
 		760B4F65188EED1000AB65F5 /* TUISpotListParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotListParserSpec.m; path = Modules/SpotList/Model/TUISpotListParserSpec.m; sourceTree = "<group>"; };
+		760B4F67188FADDE00AB65F5 /* TUIProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUIProxy.h; path = Modules/Network/Model/TUIProxy.h; sourceTree = "<group>"; };
 		766CADC7188687B900E5C296 /* TUIAtlasTicketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicketList.h; path = Modules/SpotList/Model/TUIAtlasTicketList.h; sourceTree = "<group>"; };
 		766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketList.m; path = Modules/SpotList/Model/TUIAtlasTicketList.m; sourceTree = "<group>"; };
 		766CADCA1886882A00E5C296 /* TUIFoursquareVenueList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFoursquareVenueList.h; path = Modules/SpotList/Model/TUIFoursquareVenueList.h; sourceTree = "<group>"; };
@@ -966,6 +967,7 @@
 				76D728701880197E00F3545E /* TUINetworkClient.m */,
 				76D728871883FFF000F3545E /* TUINetworkClient_Private.h */,
 				76D728731883DA3B00F3545E /* TUIParser.h */,
+				760B4F67188FADDE00AB65F5 /* TUIProxy.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
