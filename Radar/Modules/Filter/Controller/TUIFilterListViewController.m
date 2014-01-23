@@ -11,6 +11,8 @@
 #import "TUIBaseViewController_Private.h"
 // Controllers
 #import "TUIWeatherPageViewControllerDataSource.h"
+#import "TUITimePageViewControllerDataSource.h"
+#import "TUIDistancePageViewControllerDataSource.h"
 
 static CGFloat kHandlerButtonHeight = 35.0f;
 static CGFloat kFilterContainerHeight = 103.0f;
@@ -53,6 +55,8 @@ static CGFloat kFilterContainerHeight = 103.0f;
 @property (strong, nonatomic) UIPageViewController *weatherFilterViewController;
 
 @property (strong, nonatomic) TUIWeatherPageViewControllerDataSource *weatherDataSource;
+@property (strong, nonatomic) TUITimePageViewControllerDataSource *timeDataSource;
+@property (strong, nonatomic) TUIDistancePageViewControllerDataSource *distanceDataSource;
 
 
 - (IBAction)handlerButtonClicked:(UIButton *)sender;
@@ -72,6 +76,17 @@ static CGFloat kFilterContainerHeight = 103.0f;
     _weatherFilterViewController.dataSource = _weatherDataSource;
     _weatherFilterViewController.view.height =  _weatherFilterViewController.view.height;
     [_weatherFilterViewController setViewControllers:@[_weatherDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    _timeDataSource = [[TUITimePageViewControllerDataSource alloc] init];
+    _timeFilterViewController.dataSource = _timeDataSource;
+    _timeFilterViewController.view.height =  _timeFilterViewController.view.height;
+    [_timeFilterViewController setViewControllers:@[_timeDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    _distanceDataSource = [[TUIDistancePageViewControllerDataSource alloc] init];
+    _distanceFilterViewController.dataSource = _distanceDataSource;
+    _distanceFilterViewController.view.height =  _distanceFilterViewController.view.height;
+    [_distanceFilterViewController setViewControllers:@[_distanceDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
     // set displayed to false
     _displayed = NO;
 }

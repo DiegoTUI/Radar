@@ -7,6 +7,8 @@
 //
 
 #import "TUIFilterContentViewController.h"
+// Extensions
+#import "TUIBaseViewController_Private.h"
 
 @interface TUIFilterContentViewController ()
 
@@ -14,5 +16,22 @@
 
 @implementation TUIFilterContentViewController
 
+- (void)initData
+{
+    [super initData];
+    
+    
+}
+
+
+#pragma mark - User interface -
+
+- (void)initUserInterface
+{
+    [super initUserInterface];
+    
+    self.label.text = self.labelString;
+    [self.iconView setImage:[UIImage imageNamed:self.iconNameString]];
+}
 
 @end

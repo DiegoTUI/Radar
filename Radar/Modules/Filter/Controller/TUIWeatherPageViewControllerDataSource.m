@@ -27,15 +27,16 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
         TUIFilterContentViewController *indoorFilterView = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
-        [indoorFilterView.label setText:@"Indoor"];
+        
+        indoorFilterView.labelString = @"Indoor";
+        indoorFilterView.iconNameString = @"iconfilter-indoor";
         indoorFilterView.pageIndex = 0;
         
-        //indoorFilterView.iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iconfilter-indoor.png"]];
         
         TUIFilterContentViewController *outdoorFilterView = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
         outdoorFilterView.pageIndex = 1;
-        [indoorFilterView.label setText:@"Outdoor"];
-        //indoorFilterView.iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iconfilter-outdoor.png"]];
+        outdoorFilterView.labelString = @"Outdoor";
+        outdoorFilterView.iconNameString = @"iconfilter-outdoor";
         
         self.viewControllers = @[indoorFilterView, outdoorFilterView];
     }
