@@ -10,13 +10,26 @@
 #import <QuartzCore/QuartzCore.h>
 // Extensions
 #import "TUIBaseTableViewCell_Private.h"
+// Models
+#import "TUIAtlasTicket.h"
+#import "TUIFoursquareVenue.h"
 
-static NSInteger kPriceButtonCornerRadius   = 5;
-static NSInteger kImageViewXPadding         = 44;
-static NSInteger kImageViewYPadding         = 10;
-static NSInteger kImageViewHeight           = 69;
-static NSInteger kImageViewWidth            = 69;
+static NSInteger kPriceButtonCornerRadius           = 5;
+static NSInteger kImageViewXPadding                 = 22;
+static NSInteger kImageViewYPadding                 = 10;
+static NSInteger kImageViewHeight                   = 69;
+static NSInteger kImageViewWidth                    = 69;
+static NSInteger kCornerImageViewXPadding           = 72;
+static NSInteger kCornerImageViewYPadding           = 6;
+static NSInteger kCornerImageViewHeight             = 22;
+static NSInteger kCornerImageViewWidth              = 22;
 
+
+@interface TUISpotListCell()
+
+
+
+@end
 
 @implementation TUISpotListCell
 
@@ -26,21 +39,28 @@ static NSInteger kImageViewWidth            = 69;
 {
     [super setup];
     
-    //[self setupImage];
-    //[self setupCornerImage];
+    //[self setupMainImage];
+    [self setupCornerImage];
     //[self setupTitleLabel];
     //[self setupSubtitleLabel];
     //[self setupCornerLabel];
     [self setupPriceButton];
     [self setupDescriptionLabel];
+
 }
 
-- (void)setupImage
+- (void)setupMainImage
 {
-    self.imageView.x = kImageViewXPadding;
-    self.imageView.y = kImageViewYPadding;
-    self.imageView.width = kImageViewWidth;
-    self.imageView.height = kImageViewHeight;
+    _mainImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kImageViewXPadding, kImageViewYPadding, kImageViewWidth, kImageViewHeight)];
+    
+    [self addSubview:_mainImageView];
+}
+
+- (void)setupCornerImage
+{
+    _cornerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kCornerImageViewXPadding, kCornerImageViewYPadding, kCornerImageViewWidth, kCornerImageViewHeight)];
+    
+    [self addSubview:_cornerImageView];
 }
 
 - (void)setupPriceButton
@@ -56,33 +76,72 @@ static NSInteger kImageViewWidth            = 69;
     _descriptionLabel.hidden = YES;
 }
 
-#pragma mark - Cell types
+#pragma mark - Cell types -
 
-- (void)atlasTicketCell;
+- (void)atlasTicketCellWithSpot:(TUIAtlasTicket *)spot
 {
     // setup
-    [self setup];
+    [self setupMainImage];
+    [self setupCornerImage];
     // set icon
     UIImage *icon = [UIImage imageNamed:@"iconlist-tui.png"];
-    self.cornerImageView.image = icon;
+    _cornerImageView.image = icon;
+    // main image
+    [self setMainImage:spot.imageURLs[0]];
+    // title
+    _titleLabel.text = spot.name;
+    // description
+    _descriptionLabel.text = spot.descriptionBody;
+    // corner label
+    _cornerLabel.text = [spot.indoor boolValue] ? NSLocalizedString(@"INDOOR", nil) : NSLocalizedString(@"OUTDOOR", nil);
     // set side bar
-    self.sideView.backgroundColor = [UIColor tuiLightGreenColor];
+    _sideView.backgroundColor = [UIColor tuiLightGreenColor];
     // set subtitle
-    self.subtitleLabel.text = NSLocalizedString(@"ATLAS_GENERIC_SUBTITLE", nil);
+    _subtitleLabel.text = NSLocalizedString(@"ATLAS_GENERIC_SUBTITLE", nil);
+    // show price button
+    _priceButton.hidden = NO;
 }
 
-- (void)foursquareVenueCell
+- (void)foursquareVenueCellWithSpot:(TUIFoursquareVenue *)spot
 {
     // setup
-    [self setup];
+    [self setupCornerImage];
     // set icon
     UIImage *icon = [UIImage imageNamed:@"iconlist-fsq.png"];
-    self.cornerImageView.image = icon;
+    _cornerImageView.image = icon;
+    _mainImageView.image = nil;
+    // title
+    _titleLabel.text = spot.name;
+    // description
+    _descriptionLabel.text = spot.descriptionBody;
     // set side bar
-    self.sideView.backgroundColor = [UIColor tuiLightBlueColor];
+    _sideView.backgroundColor = [UIColor tuiLightBlueColor];
     // set subtitle
-    self.subtitleLabel.text = NSLocalizedString(@"FOURSQUARE_GENERIC_SUBTITLE", nil);
+    _subtitleLabel.text = NSLocalizedString(@"FOURSQUARE_GENERIC_SUBTITLE", nil);
+    // hide corner label
+    _cornerLabel.hidden = YES;
+    // hide price button
+    _priceButton.hidden = YES;
 }
 
+
+#pragma mark - Main image -
+
+- (void)setMainImage:(NSString *)imageURL
+{
+    // Load Image
+    UIImage *thumbnail = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+    // Shrink image to fit the size of the image view
+    CGSize imageSize = CGSizeMake(_mainImageView.width, _mainImageView.height);
+    UIGraphicsBeginImageContext(imageSize);
+    CGRect imageRect = CGRectMake(0.0, 0.0, imageSize.width, imageSize.height);
+    [thumbnail drawInRect:imageRect];
+    _mainImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    // Make it circular
+    CALayer *imageLayer = _mainImageView.layer;
+    [imageLayer setCornerRadius:_mainImageView.width/TWO_INT];
+    [imageLayer setMasksToBounds:YES];
+}
 
 @end
