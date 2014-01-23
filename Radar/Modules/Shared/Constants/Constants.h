@@ -16,3 +16,4 @@
 #import "Cache.h"
 #import "Settings.h"
 #import "Network.h"
+#import "Filters.h"

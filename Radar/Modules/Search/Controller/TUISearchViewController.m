@@ -9,6 +9,9 @@
 #import "TUISearchViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+// Models
+#import "TUILocationManager.h"
+#import "TUISettings.h"
 // Controllers
 #import "TUISettingsViewController.h"
 #import "TUISpotsViewController.h"
@@ -17,7 +20,7 @@
 static NSInteger kNumberOfElementsShownInTheList = 4;
 static CGFloat kRowHeight = 89.0f;
 
-@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate>
+@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate, TUILocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *containerListView;
@@ -69,6 +72,19 @@ static CGFloat kRowHeight = 89.0f;
     _mapView.height = self.view.height - _spotsViewController.handlerButton.height;
     // delegate
     _mapView.delegate = self;
+    // get user location
+    TUISettings *settings = [TUISettings currentSettings];
+    // check if autolocation is on
+    if ([settings.autolocation boolValue])
+    {
+        // auto location
+        [[TUILocationManager sharedManager] setDelegate:self];
+        [[TUILocationManager sharedManager] startGettingUserLocation];
+    }
+    else
+    {
+        [self centerMapInLatitude:[settings.latitude doubleValue] longitude:[settings.longitude doubleValue] radius:DISTANCE_1000_M];
+    }
 }
 
 - (void)initContainerListView
@@ -236,6 +252,28 @@ static CGFloat kRowHeight = 89.0f;
         TUISettingsViewController *destinationViewController = segue.destinationViewController;
         destinationViewController.delegate = self;
     }
+}
+
+
+#pragma mark - TUILocationManagerDelegate delegate -
+
+- (void)userLocationReady:(TUILocation *)location
+{
+    [self centerMapInLatitude:[location.latitude doubleValue] longitude:[location.longitude doubleValue] radius:DISTANCE_1000_M];
+}
+
+
+#pragma mark - Map -
+
+- (void)centerMapInLatitude:(CLLocationDegrees)latitude
+                  longitude:(CLLocationDegrees)longitude
+                     radius:(NSInteger)radius
+{
+    CLLocation *userLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, radius, radius);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES];
+    self.mapView.showsUserLocation = YES;
 }
 
 @end

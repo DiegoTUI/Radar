@@ -70,7 +70,7 @@ static const CGFloat kKeyboardShownRatio    = 0.7;
 {
     [super initData];
     
-    _settings = [TUISettings cachedSettings] == nil ? [TUISettings defaultSettings] : [TUISettings cachedSettings];
+    _settings = [TUISettings currentSettings];
 }
 
 

@@ -233,6 +233,7 @@
 		760B4F76188FF1DB00AB65F5 /* NSError+TUIErrorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+TUIErrorSpec.m"; path = "Modules/Shared/Model/NSError+TUIErrorSpec.m"; sourceTree = "<group>"; };
 		760B4F78188FF35000AB65F5 /* TUIErrorHandlerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIErrorHandlerSpec.m; path = Modules/Error/Model/TUIErrorHandlerSpec.m; sourceTree = "<group>"; };
 		760B4F7A188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TUISpotList+ProxySpec.m"; path = "Modules/SpotList/Model/TUISpotList+ProxySpec.m"; sourceTree = "<group>"; };
+		760B4F85189104A200AB65F5 /* Filters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Filters.h; path = Modules/Shared/Constants/Filters.h; sourceTree = "<group>"; };
 		766CADC7188687B900E5C296 /* TUIAtlasTicketList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIAtlasTicketList.h; path = Modules/SpotList/Model/TUIAtlasTicketList.h; sourceTree = "<group>"; };
 		766CADC8188687B900E5C296 /* TUIAtlasTicketList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketList.m; path = Modules/SpotList/Model/TUIAtlasTicketList.m; sourceTree = "<group>"; };
 		766CADCA1886882A00E5C296 /* TUIFoursquareVenueList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFoursquareVenueList.h; path = Modules/SpotList/Model/TUIFoursquareVenueList.h; sourceTree = "<group>"; };
@@ -817,6 +818,7 @@
 				760B4F52188EC60E00AB65F5 /* API.h */,
 				76D72860187ED22400F3545E /* Cache.h */,
 				76D72801187C5D5600F3545E /* Constants.h */,
+				760B4F85189104A200AB65F5 /* Filters.h */,
 				76D72802187C5D5600F3545E /* Fonts.h */,
 				76D72803187C5D5600F3545E /* Layout.h */,
 				76D728721880270D00F3545E /* Network.h */,

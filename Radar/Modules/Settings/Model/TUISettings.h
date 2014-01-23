@@ -64,6 +64,17 @@
 + (TUISettings *)defaultSettings;
 
 /**
+ @methodName currentSettings
+ @abstract Creates a TUISettings object with the current settings
+ @discussion This method creates and returns a TUISettings object with the
+ current settings. It tries cached settings first. If they are not nil it returns
+ them. If they are nil, it returns the default settings
+ 
+ @return A TUISettings object containing the current settings.
+ */
++ (TUISettings *)currentSettings;
+
+/**
  @methodName persist
  @abstract Stores the current TUISetting in the cache
  @discussion This method stores the current TUISetting in the cache, overwriting
