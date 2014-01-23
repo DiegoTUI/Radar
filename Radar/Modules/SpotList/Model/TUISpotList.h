@@ -18,6 +18,13 @@
  */
 @property (nonatomic, strong) NSOrderedSet *spots;
 
-+ (TUISpotList *)testSpotList;
+/**
+ @methodName shuffle
+ @abstract Shuffles the spotlist to maximize the "entropy" fo the list
+ @discussion Normally the server will return all the ATLAS results first and all
+ the Foursquare results after (AAAAFFFFFFF). This methos will shuffle the list 
+ to make it look like (AFAFAFAFFFF).
+ */
+- (void)shuffle;
 
 @end

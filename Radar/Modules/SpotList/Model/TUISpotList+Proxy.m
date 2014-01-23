@@ -58,6 +58,7 @@ static NSMutableSet *spotListURLs;
                                {
                                    if(completion)
                                    {
+                                       [spotList shuffle];
                                        completion(spotList);
                                    }
                                }

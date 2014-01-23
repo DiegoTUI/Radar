@@ -39,7 +39,7 @@ static NSInteger kCornerImageViewWidth              = 22;
 {
     [super setup];
     
-    //[self setupMainImage];
+    [self setupMainImage];
     [self setupCornerImage];
     //[self setupTitleLabel];
     //[self setupSubtitleLabel];
@@ -81,8 +81,7 @@ static NSInteger kCornerImageViewWidth              = 22;
 - (void)atlasTicketCellWithSpot:(TUIAtlasTicket *)spot
 {
     // setup
-    [self setupMainImage];
-    [self setupCornerImage];
+    [self setup];
     // set icon
     UIImage *icon = [UIImage imageNamed:@"iconlist-tui.png"];
     _cornerImageView.image = icon;
@@ -98,6 +97,8 @@ static NSInteger kCornerImageViewWidth              = 22;
     _sideView.backgroundColor = [UIColor tuiLightGreenColor];
     // set subtitle
     _subtitleLabel.text = NSLocalizedString(@"ATLAS_GENERIC_SUBTITLE", nil);
+    // show corner label
+    _cornerLabel.hidden = NO;
     // show price button
     _priceButton.hidden = NO;
 }
@@ -105,11 +106,12 @@ static NSInteger kCornerImageViewWidth              = 22;
 - (void)foursquareVenueCellWithSpot:(TUIFoursquareVenue *)spot
 {
     // setup
-    [self setupCornerImage];
+    [self setup];
     // set icon
     UIImage *icon = [UIImage imageNamed:@"iconlist-fsq.png"];
     _cornerImageView.image = icon;
-    _mainImageView.image = nil;
+    // main image
+    [self setMainImage:@"http://www.digitaltrends.com/wp-content/uploads/2012/08/restaurant.jpeg"];
     // title
     _titleLabel.text = spot.name;
     // description
