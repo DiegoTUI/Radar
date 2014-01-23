@@ -67,7 +67,7 @@ static CGFloat kHandlerHeight = 22.0f;
 - (void)initHandlerButton
 {
     _handlerButton.x = ZERO_FLOAT;
-    _handlerButton.y = -ONE_FLOAT;
+    _handlerButton.y = ZERO_FLOAT;
     _handlerButton.width = self.view.width;
     _handlerButton.height = kHandlerHeight;
     // set image
