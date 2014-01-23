@@ -24,8 +24,21 @@
     
     if (self)
     {
-        //TODO: extra initialization here
-        self.spotList = [TUISpotList testSpotList];
+        // create an empty spotlist
+        self.spotList = [[TUISpotList alloc] init];
+    }
+    
+    return self;
+}
+
+- (TUISpotListTableViewDataSource *)initWithSpotList:(TUISpotList *)spotList
+{
+    self = [super init];
+    
+    if (self)
+    {
+        // create an empty spotlist
+        self.spotList = spotList;
     }
     
     return self;

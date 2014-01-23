@@ -10,6 +10,7 @@
 
 // Forward declarations
 @protocol TUISpotsViewControllerDelegate;
+@class TUISpotList;
 
 @interface TUISpotsViewController : TUIBaseViewController
 
@@ -31,6 +32,15 @@
  @return The handler button
  */
 - (UIButton *)handlerButton;
+
+/**
+ @methodName handlerButton
+ @abstract Returns the handler button
+ @discussion This method returns the handler button
+ 
+ @return The handler button
+ */
+- (void)reloadSpotsWithSpotList:(TUISpotList *)spotList;
 
 @end
 

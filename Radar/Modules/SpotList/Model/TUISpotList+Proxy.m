@@ -19,8 +19,8 @@ static NSMutableSet *spotListURLs;
 
 #pragma mark - Requests -
 
-+ (void)spotsForLatitude:(CGFloat)latitude
-               longitude:(CGFloat)longitude
++ (void)spotsForLatitude:(double)latitude
+               longitude:(double)longitude
                   radius:(NSInteger)radius
               completion:(void(^)(TUISpotList *spotList))completion
                  failure:(void(^)(NSError *error))failure

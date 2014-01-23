@@ -7,6 +7,9 @@
 //
 
 #import "TUISpotListTableViewController.h"
+// Extensions
+#import "TUIBaseTableViewController_Private.h"
+
 // Forward declarations
 @class TUISpotListTableViewDataSource;
 

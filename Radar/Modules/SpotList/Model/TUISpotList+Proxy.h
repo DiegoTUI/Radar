@@ -25,8 +25,8 @@
  @param completion The compleition block containing the LRHotel object
  @param failure The failure block containg the NSError that occured
  */
-+ (void)spotsForLatitude:(CGFloat)latitude
-               longitude:(CGFloat)longitude
++ (void)spotsForLatitude:(double)latitude
+               longitude:(double)longitude
                   radius:(NSInteger)radius
               completion:(void(^)(TUISpotList *spotList))completion
                  failure:(void(^)(NSError *error))failure;
