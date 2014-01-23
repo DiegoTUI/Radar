@@ -16,7 +16,7 @@
 
 @implementation TUISpotListTableViewDataSource
 
-#pragma mark - Init
+#pragma mark - Init -
 
 - (id)init
 {
@@ -45,7 +45,7 @@
 }
 
 
-#pragma mark - UITableViewDataSource delegate
+#pragma mark - UITableViewDataSource delegate -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -66,12 +66,39 @@
     if ([spot isKindOfClass:[TUIAtlasTicket class]])
     {
         [cell atlasTicketCell];
+        [self setImage:spot.imageURLs[0] inCell:cell];
+        cell.cornerLabel.text = [[(TUIAtlasTicket *)spot indoor] boolValue] ? NSLocalizedString(@"INDOOR", nil) : NSLocalizedString(@"OUTDOOR", nil);
     }
     else if ([spot isKindOfClass:[TUIFoursquareVenue class]])
     {
         [cell foursquareVenueCell];
     }
+    
+    cell.titleLabel.text = spot.name;
+    cell.descriptionLabel.text = spot.descriptionBody;
+    
     return cell;
+}
+
+
+#pragma mark - Thumbnail -
+
+- (void)setImage:(NSString *)imageURL
+          inCell:(TUISpotListCell *)cell
+{
+    // Load Image
+    UIImage *thumbnail = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
+    // Shrink image to fit the size of the image view
+    CGSize imageSize = CGSizeMake(cell.imageView.width, cell.imageView.height);
+    UIGraphicsBeginImageContext(imageSize);
+    CGRect imageRect = CGRectMake(0.0, 0.0, imageSize.width, imageSize.height);
+    [thumbnail drawInRect:imageRect];
+    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    // Make it circular
+    CALayer *imageLayer = cell.imageView.layer;
+    [imageLayer setCornerRadius:cell.imageView.width/TWO_INT];
+    [imageLayer setMasksToBounds:YES];
 }
 
 @end

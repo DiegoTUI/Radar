@@ -33,3 +33,9 @@
 "ERROR_TIMEOUT" = "The connection timed out.\nPlease, try again later";
 "ERROR_NO_CONNECTION_TITLE" = "Oops, no internet!";
 "ERROR_NO_CONNECTION" = "It seems you currently have no connection. Try again when you\nare connected.";
+
+// Spot list
+"ATLAS_GENERIC_SUBTITLE" = "ATLAS Ticket";
+"FOURSQUARE_GENERIC_SUBTITLE" = "Foursquare Venue";
+"INDOOR" = "INDOOR";
+"OUTDOOR" = "OUTDOOR";

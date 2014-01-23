@@ -11,7 +11,12 @@
 // Extensions
 #import "TUIBaseTableViewCell_Private.h"
 
-static NSInteger kPriceButtonCornerRadius = 5;
+static NSInteger kPriceButtonCornerRadius   = 5;
+static NSInteger kImageViewXPadding         = 44;
+static NSInteger kImageViewYPadding         = 10;
+static NSInteger kImageViewHeight           = 69;
+static NSInteger kImageViewWidth            = 69;
+
 
 @implementation TUISpotListCell
 
@@ -21,8 +26,21 @@ static NSInteger kPriceButtonCornerRadius = 5;
 {
     [super setup];
     
+    //[self setupImage];
+    //[self setupCornerImage];
+    //[self setupTitleLabel];
+    //[self setupSubtitleLabel];
+    //[self setupCornerLabel];
     [self setupPriceButton];
     [self setupDescriptionLabel];
+}
+
+- (void)setupImage
+{
+    self.imageView.x = kImageViewXPadding;
+    self.imageView.y = kImageViewYPadding;
+    self.imageView.width = kImageViewWidth;
+    self.imageView.height = kImageViewHeight;
 }
 
 - (void)setupPriceButton
@@ -49,6 +67,8 @@ static NSInteger kPriceButtonCornerRadius = 5;
     self.cornerImageView.image = icon;
     // set side bar
     self.sideView.backgroundColor = [UIColor tuiLightGreenColor];
+    // set subtitle
+    self.subtitleLabel.text = NSLocalizedString(@"ATLAS_GENERIC_SUBTITLE", nil);
 }
 
 - (void)foursquareVenueCell
@@ -60,6 +80,8 @@ static NSInteger kPriceButtonCornerRadius = 5;
     self.cornerImageView.image = icon;
     // set side bar
     self.sideView.backgroundColor = [UIColor tuiLightBlueColor];
+    // set subtitle
+    self.subtitleLabel.text = NSLocalizedString(@"FOURSQUARE_GENERIC_SUBTITLE", nil);
 }
 
 
