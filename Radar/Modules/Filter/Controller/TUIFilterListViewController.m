@@ -14,6 +14,7 @@
 #import "TUITimePageViewControllerDataSource.h"
 #import "TUIDistancePageViewControllerDataSource.h"
 #import "TUIPageViewControllerDataSource.h"
+#import "TUIFilterContentViewController.h"
 
 static CGFloat kHandlerButtonHeight = 35.0f;
 static CGFloat kFilterContainerHeight = 103.0f;
@@ -75,21 +76,26 @@ static CGFloat kFilterContainerHeight = 103.0f;
     // set view controllers from containers
     _weatherDataSource = [[TUIWeatherPageViewControllerDataSource alloc] init];
     _weatherFilterViewController.dataSource = _weatherDataSource;
+    _weatherFilterViewController.delegate = self;
     _weatherFilterViewController.view.height =  _weatherFilterViewController.view.height;
     [_weatherFilterViewController setViewControllers:@[_weatherDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     _timeDataSource = [[TUITimePageViewControllerDataSource alloc] init];
     _timeFilterViewController.dataSource = _timeDataSource;
+    _timeFilterViewController.delegate = self;
     _timeFilterViewController.view.height =  _timeFilterViewController.view.height;
     [_timeFilterViewController setViewControllers:@[_timeDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     _distanceDataSource = [[TUIDistancePageViewControllerDataSource alloc] init];
     _distanceFilterViewController.dataSource = _distanceDataSource;
+    _distanceFilterViewController.delegate = self;
     _distanceFilterViewController.view.height =  _distanceFilterViewController.view.height;
     [_distanceFilterViewController setViewControllers:@[_distanceDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // set displayed to false
     _displayed = NO;
+    
+    
 }
 
 
@@ -167,12 +173,41 @@ static CGFloat kFilterContainerHeight = 103.0f;
 
 #pragma mark - Changed filter
 
-- (void)pageViewController:(TUIPageViewControllerDataSource *)pageViewController
+- (void)pageViewController:(UIPageViewController *)pageViewController
         didFinishAnimating:(BOOL)finished
    previousViewControllers:(NSArray *)previousViewControllers
        transitionCompleted:(BOOL)completed
 {
-    NSLog(@"Cambio el filtro");
+    TUIFilterContentViewController *previousViewController = previousViewControllers[ZERO_INT];
+    
+    NSLog(@"Cambio el filtro: %d", previousViewControllers.count);
+    
+ if(  pageViewController == _weatherFilterViewController)
+ {
+    NSLog(@"Cambio weather");
+     TUIPageViewControllerDataSource *weatherDataSource = _weatherFilterViewController.dataSource;
+     if(previousViewController == weatherDataSource.viewControllers[ZERO_INT]){
+         NSLog(@"outdoor");
+     }
+ }
+    else if(pageViewController == _distanceFilterViewController)
+    {
+        NSLog(@"Cambio distance");
+        TUIPageViewControllerDataSource *distanceDataSource = _distanceFilterViewController.dataSource;
+        if(previousViewController == distanceDataSource.viewControllers[ZERO_INT] ||
+           previousViewController == distanceDataSource.viewControllers[TWO_INT]){
+            NSLog(@"1km");
+        }else if(previousViewController == distanceDataSource.viewControllers[ONE_INT])
+        {
+            NSLog(@"previousViewCOntroller Title: %@", pageViewController.dataSource);
+            NSLog(@"+1km");
+        }
+    }
+}
+- (void)pageViewController:(UIPageViewController *)pageViewController
+willTransitionToViewControllers:(NSArray *)pendingViewControllers
+{
+    
 }
 
 #pragma mark - Segue -
