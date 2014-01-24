@@ -13,6 +13,7 @@
 		62C0A3E1188FB67600E5CCF4 /* filtersOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62C0A3E0188FB67600E5CCF4 /* filtersOptions.plist */; };
 		62EFE2C218919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EFE2C118919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m */; };
 		62EFE2C518919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EFE2C418919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m */; };
+		62EFE2C91892905400F5EBD9 /* TUIFIlters.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EFE2C81892905400F5EBD9 /* TUIFIlters.m */; };
 		760B4F7E1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F7D1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.m */; };
 		760B4F81189021AF00AB65F5 /* TUIFilterContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F80189021AF00AB65F5 /* TUIFilterContentViewController.m */; };
 		760B4F841890260C00AB65F5 /* TUIPageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F831890260C00AB65F5 /* TUIPageViewControllerDataSource.m */; };
@@ -199,6 +200,8 @@
 		62EFE2C118919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUITimePageViewControllerDataSource.m; path = Modules/Filter/Controller/TUITimePageViewControllerDataSource.m; sourceTree = "<group>"; };
 		62EFE2C318919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIDistancePageViewControllerDataSource.h; path = Modules/Filter/Controller/TUIDistancePageViewControllerDataSource.h; sourceTree = "<group>"; };
 		62EFE2C418919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIDistancePageViewControllerDataSource.m; path = Modules/Filter/Controller/TUIDistancePageViewControllerDataSource.m; sourceTree = "<group>"; };
+		62EFE2C71892905400F5EBD9 /* TUIFIlters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFIlters.h; path = Modules/Filter/Data/TUIFIlters.h; sourceTree = "<group>"; };
+		62EFE2C81892905400F5EBD9 /* TUIFIlters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFIlters.m; path = Modules/Filter/Data/TUIFIlters.m; sourceTree = "<group>"; };
 		6C704F2EBCBA4045A3C64B5A /* Pods-RadarTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadarTests.xcconfig"; path = "Pods/Pods-RadarTests.xcconfig"; sourceTree = "<group>"; };
 		760B4F7C1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIWeatherPageViewControllerDataSource.h; path = Modules/Filter/Controller/TUIWeatherPageViewControllerDataSource.h; sourceTree = "<group>"; };
 		760B4F7D1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIWeatherPageViewControllerDataSource.m; path = Modules/Filter/Controller/TUIWeatherPageViewControllerDataSource.m; sourceTree = "<group>"; };
@@ -461,6 +464,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62EFE2C618928FF600F5EBD9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				62EFE2C71892905400F5EBD9 /* TUIFIlters.h */,
+				62EFE2C81892905400F5EBD9 /* TUIFIlters.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		7672093C188BF419007CAE17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				76720968188D3055007CAE17 /* Controller */,
+				62EFE2C618928FF600F5EBD9 /* Data */,
 			);
 			name = Filter;
 			sourceTree = "<group>";
@@ -1552,6 +1565,7 @@
 				76720946188BF5D5007CAE17 /* TUISpotListCell.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
 				76720955188C1119007CAE17 /* TUISpotListTableViewController.m in Sources */,
+				62EFE2C91892905400F5EBD9 /* TUIFIlters.m in Sources */,
 				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
 				62EFE2C218919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m in Sources */,
 				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,

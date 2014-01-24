@@ -15,6 +15,7 @@
 #import "TUIDistancePageViewControllerDataSource.h"
 #import "TUIPageViewControllerDataSource.h"
 #import "TUIFilterContentViewController.h"
+#import "TUIFIlters.h"
 
 static CGFloat kHandlerButtonHeight = 35.0f;
 static CGFloat kFilterContainerHeight = 103.0f;
@@ -56,10 +57,20 @@ static CGFloat kFilterContainerHeight = 103.0f;
  */
 @property (strong, nonatomic) UIPageViewController *weatherFilterViewController;
 
+
 @property (strong, nonatomic) TUIWeatherPageViewControllerDataSource *weatherDataSource;
 @property (strong, nonatomic) TUITimePageViewControllerDataSource *timeDataSource;
 @property (strong, nonatomic) TUIDistancePageViewControllerDataSource *distanceDataSource;
 
+/**
+ The settings object
+ */
+@property (nonatomic, strong) TUIFIlters *settings;
+@property (nonatomic, strong) TUIFIlters *temporalSetings;
+
+@property (weak, nonatomic) IBOutlet UIImageView *timeStatusFilterImage;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherStatusFilterImage;
+@property (weak, nonatomic) IBOutlet UIImageView *distanceStatusFilterImage;
 
 - (IBAction)handlerButtonClicked:(UIButton *)sender;
 
@@ -95,6 +106,8 @@ static CGFloat kFilterContainerHeight = 103.0f;
     // set displayed to false
     _displayed = NO;
     
+    _settings = [TUIFIlters defaultSettings];
+    _temporalSetings = [TUIFIlters defaultSettings];
     
 }
 
@@ -178,35 +191,62 @@ static CGFloat kFilterContainerHeight = 103.0f;
    previousViewControllers:(NSArray *)previousViewControllers
        transitionCompleted:(BOOL)completed
 {
-    TUIFilterContentViewController *previousViewController = previousViewControllers[ZERO_INT];
     
-    NSLog(@"Cambio el filtro: %d", previousViewControllers.count);
-    
- if(  pageViewController == _weatherFilterViewController)
- {
-    NSLog(@"Cambio weather");
-     TUIPageViewControllerDataSource *weatherDataSource = _weatherFilterViewController.dataSource;
-     if(previousViewController == weatherDataSource.viewControllers[ZERO_INT]){
-         NSLog(@"outdoor");
-     }
- }
-    else if(pageViewController == _distanceFilterViewController)
-    {
-        NSLog(@"Cambio distance");
-        TUIPageViewControllerDataSource *distanceDataSource = _distanceFilterViewController.dataSource;
-        if(previousViewController == distanceDataSource.viewControllers[ZERO_INT] ||
-           previousViewController == distanceDataSource.viewControllers[TWO_INT]){
-            NSLog(@"1km");
-        }else if(previousViewController == distanceDataSource.viewControllers[ONE_INT])
-        {
-            NSLog(@"previousViewCOntroller Title: %@", pageViewController.dataSource);
-            NSLog(@"+1km");
+    if(completed){
+        
+        if(pageViewController == _weatherFilterViewController){
+            
+            _weatherStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.weatherFilterIconImage];
+            
+        }else if(pageViewController == _distanceFilterViewController){
+            
+            _distanceStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.distanceFilterIconImage];
+            
+        }else if(pageViewController == _timeFilterViewController){
+            
+            _timeStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.timeFilterIconImage];
+            
         }
+        
+        _settings = _temporalSetings;
     }
 }
+
+
 - (void)pageViewController:(UIPageViewController *)pageViewController
 willTransitionToViewControllers:(NSArray *)pendingViewControllers
 {
+    TUIFilterContentViewController *pending = pendingViewControllers[ZERO_INT];
+    NSString *lastChanged;
+    
+    if(  pageViewController == _weatherFilterViewController){
+    
+        _temporalSetings.weatherFilterIndex = pending.pageIndex;
+        _temporalSetings.weatherFilterIconImage = pending.smallIcoImage;
+        _temporalSetings.weatherFilterLabel = pending.labelString;
+        lastChanged = @"weatherFilter";
+    
+    }
+    
+    if(  pageViewController == _distanceFilterViewController){
+        
+        _temporalSetings.distanceFilterIndex = pending.pageIndex;
+        _temporalSetings.distanceFilterIconImage = pending.smallIcoImage;
+        _temporalSetings.distanceFilterLabel = pending.labelString;
+        lastChanged = @"distanceFilter";
+        
+    }
+    
+    if(  pageViewController == _timeFilterViewController){
+        
+        _temporalSetings.timeFilterIndex = pending.pageIndex;
+        _temporalSetings.timeFilterIconImage = pending.smallIcoImage;
+        _temporalSetings.timeFilterLabel = pending.labelString;
+        lastChanged = @"timeFilter";
+        
+    }
+    
+    _temporalSetings.lastPageViewCOntrollerChanged = lastChanged;
     
 }
 
@@ -226,6 +266,15 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
     {
         _timeFilterViewController = [segue destinationViewController];
     }
+}
+
+
+#pragma mark - Update Settings -
+
+- (void)updateSettings
+{
+   // _settings.weather = [_weatherView.weatherSegmentedControl titleForSegmentAtIndex:_weatherView.weatherSegmentedControl.selectedSegmentIndex];
+    //_settings.weatherFilterIndex =
 }
 
 @end

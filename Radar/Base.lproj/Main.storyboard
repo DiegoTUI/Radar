@@ -299,9 +299,12 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="distanceFilterContainerView" destination="rJI-7Y-CgI" id="di4-y9-GA4"/>
+                        <outlet property="distanceStatusFilterImage" destination="iZ5-dg-shA" id="dFn-3L-SJm"/>
                         <outlet property="handlerButton" destination="C12-Xh-SMH" id="lKm-iT-cFf"/>
                         <outlet property="timeFilterContainerView" destination="Wl1-yK-fps" id="SAq-Ve-sU0"/>
+                        <outlet property="timeStatusFilterImage" destination="aDY-3i-VUc" id="9KH-jv-gn5"/>
                         <outlet property="weatherFilterContainerView" destination="dZ8-Km-NrP" id="EN7-eK-6df"/>
+                        <outlet property="weatherStatusFilterImage" destination="0WT-RE-Ate" id="bXA-4O-JAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaN-v0-Ieg" userLabel="First Responder" sceneMemberID="firstResponder"/>
