@@ -61,7 +61,11 @@
 {
     TUISpotListCell *cell = [tableView dequeueReusableCellWithIdentifier:[TUISpotListCell reuseIdentifier]];
     
+    
     TUISpot *spot = self.spotList.spots[indexPath.row];
+    
+    NSLog(@"Getting cell for spot: %@", spot.name);
+    
     // Check for TUI and Foursquare spots
     if ([spot isKindOfClass:[TUIAtlasTicket class]])
     {

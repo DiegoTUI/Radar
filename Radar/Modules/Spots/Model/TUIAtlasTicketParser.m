@@ -83,6 +83,12 @@
         {
             atlasTicket.fullday = fullday;
         }
+        
+        id price = [response objectForKey:@"price"];
+        if([price isKindOfClass:[NSNumber class]])
+        {
+            atlasTicket.price = price;
+        }
     }
     
     return atlasTicket;

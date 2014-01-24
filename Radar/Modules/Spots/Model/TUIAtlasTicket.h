@@ -38,5 +38,10 @@
  */
 @property (nonatomic, strong) NSNumber *fullday;
 
+/**
+ The price
+ */
+@property (nonatomic, strong) NSNumber *price;
+
 
 @end

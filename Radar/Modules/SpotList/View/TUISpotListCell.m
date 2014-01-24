@@ -13,6 +13,8 @@
 // Models
 #import "TUIAtlasTicket.h"
 #import "TUIFoursquareVenue.h"
+// Categories
+#import "UIImageView+AFNetworking.h"
 
 static NSInteger kPriceButtonCornerRadius           = 5;
 static NSInteger kImageViewXPadding                 = 22;
@@ -69,6 +71,7 @@ static NSInteger kCornerImageViewWidth              = 22;
     _priceButton.layer.borderColor=[[UIColor tuiLightBlueColor] CGColor];
     _priceButton.layer.cornerRadius = kPriceButtonCornerRadius; // this value vary as per your desire
     _priceButton.clipsToBounds = YES;
+    [_priceButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
 }
 
 - (void)setupDescriptionLabel
@@ -99,6 +102,8 @@ static NSInteger kCornerImageViewWidth              = 22;
     _subtitleLabel.text = NSLocalizedString(@"ATLAS_GENERIC_SUBTITLE", nil);
     // show corner label
     _cornerLabel.hidden = NO;
+    // price
+    _priceButton.titleLabel.text = [NSString stringWithFormat:@"%d€", [spot.price integerValue]];
     // show price button
     _priceButton.hidden = NO;
 }
@@ -131,15 +136,8 @@ static NSInteger kCornerImageViewWidth              = 22;
 
 - (void)setMainImage:(NSString *)imageURL
 {
-    // Load Image
-    UIImage *thumbnail = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]]];
-    // Shrink image to fit the size of the image view
-    CGSize imageSize = CGSizeMake(_mainImageView.width, _mainImageView.height);
-    UIGraphicsBeginImageContext(imageSize);
-    CGRect imageRect = CGRectMake(0.0, 0.0, imageSize.width, imageSize.height);
-    [thumbnail drawInRect:imageRect];
-    _mainImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    // Load image asynchronously
+    [_mainImageView setImageWithURL:[NSURL URLWithString:imageURL]];
     // Make it circular
     CALayer *imageLayer = _mainImageView.layer;
     [imageLayer setCornerRadius:_mainImageView.width/TWO_INT];

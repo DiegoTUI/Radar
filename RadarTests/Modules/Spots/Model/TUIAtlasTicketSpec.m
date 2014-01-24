@@ -42,6 +42,10 @@ describe(@"TUIAtlasTicket", ^{
         [[spot should] respondToSelector:@selector(fullday)];
     });
     
+    it(@"should have a price", ^{
+        [[spot should] respondToSelector:@selector(price)];
+    });
+    
 });
 
 SPEC_END

@@ -28,7 +28,8 @@ describe(@"TUIAtlasTicketParser", ^{
                          @"morning": @(false),
                          @"afternoon": @(false),
                          @"evening": @(true),
-                         @"fullday": @(true)};
+                         @"fullday": @(true),
+                         @"price": @(16.78)};
     });
     
     it(@"should conform to the LRParser protocol", ^{
@@ -100,6 +101,11 @@ describe(@"TUIAtlasTicketParser", ^{
         it(@"should parse the ticket full day flag", ^{
             [[atlasTicket.fullday shouldNot] beNil];
             [[atlasTicket.fullday should] equal:mockResponse[@"fullday"]];
+        });
+        
+        it(@"should parse the price", ^{
+            [[atlasTicket.price shouldNot] beNil];
+            [[atlasTicket.price should] equal:mockResponse[@"price"]];
         });
     });
     
