@@ -35,7 +35,15 @@
 }
 - (void)setupViews
 {
+    UIImage *pinImage = [UIImage imageNamed:@"iconmap-me.png"];
+    _rotatingCircle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ux-radar-rotation.png"]];
+    UIImageView *pinImageView = [[UIImageView alloc] initWithImage:pinImage];
+    _rotatingCircle.center = pinImageView.center;
+    self.bounds = CGRectMake(ZERO_FLOAT, ZERO_FLOAT, pinImage.size.width, pinImage.size.height);
+    [self addSubview:_rotatingCircle];
+    [self addSubview:pinImageView];
     
+    [self rotate];
 }
 
 
@@ -56,6 +64,31 @@
 
 - (void)rotate
 {
+    if (_shouldStopAnimating)
+    {
+        return;
+    }
+    static CGFloat currentAngle = ZERO_FLOAT;
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_DURATION/TWO_INT
+                          delay:ZERO_FLOAT
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^
+     {
+         typeof(self) strongSelf = weakSelf;
+         if ( !strongSelf ) { return ;}
+         
+         strongSelf->_rotatingCircle.transform = CGAffineTransformMakeRotation(currentAngle + M_PI/TWO_INT);
+         
+     }
+                     completion:^(BOOL finished)
+     {
+         typeof(self) strongSelf = weakSelf;
+         if ( !strongSelf ) { return ;}
+         
+         currentAngle += M_PI/TWO_INT;
+         [strongSelf rotate];
+     }];
 }
 
 
