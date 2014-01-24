@@ -103,7 +103,7 @@ static NSInteger kCornerImageViewWidth              = 22;
     // show corner label
     _cornerLabel.hidden = NO;
     // price
-    _priceButton.titleLabel.text = [NSString stringWithFormat:@"%d€", [spot.price integerValue]];
+    _priceButton.titleLabel.text = [NSString stringWithFormat:@"%ld€", [spot.price integerValue]];
     // show price button
     _priceButton.hidden = NO;
 }
