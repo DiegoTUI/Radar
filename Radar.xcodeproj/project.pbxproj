@@ -27,6 +27,7 @@
 		760B4F79188FF35000AB65F5 /* TUIErrorHandlerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F78188FF35000AB65F5 /* TUIErrorHandlerSpec.m */; };
 		760B4F7B188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F7A188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m */; };
 		760B4F8618911A2E00AB65F5 /* TUINetworkClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D728841883E80D00F3545E /* TUINetworkClientSpec.m */; };
+		760B4F9518928B9600AB65F5 /* TUIUserLocationAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F9418928B9600AB65F5 /* TUIUserLocationAnnotationView.m */; };
 		766CADCE1886895F00E5C296 /* TUIAtlasTicketSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */; };
 		766CADD0188689D100E5C296 /* TUIFoursquareVenueSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */; };
 		76720946188BF5D5007CAE17 /* TUISpotListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720945188BF5D5007CAE17 /* TUISpotListCell.m */; };
@@ -230,6 +231,8 @@
 		760B4F78188FF35000AB65F5 /* TUIErrorHandlerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIErrorHandlerSpec.m; path = Modules/Error/Model/TUIErrorHandlerSpec.m; sourceTree = "<group>"; };
 		760B4F7A188FF5EA00AB65F5 /* TUISpotList+ProxySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TUISpotList+ProxySpec.m"; path = "Modules/SpotList/Model/TUISpotList+ProxySpec.m"; sourceTree = "<group>"; };
 		760B4F85189104A200AB65F5 /* Filters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Filters.h; path = Modules/Shared/Constants/Filters.h; sourceTree = "<group>"; };
+		760B4F9318928B9600AB65F5 /* TUIUserLocationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIUserLocationAnnotationView.h; path = Modules/Search/View/TUIUserLocationAnnotationView.h; sourceTree = "<group>"; };
+		760B4F9418928B9600AB65F5 /* TUIUserLocationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIUserLocationAnnotationView.m; path = Modules/Search/View/TUIUserLocationAnnotationView.m; sourceTree = "<group>"; };
 		766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketSpec.m; path = Modules/Spots/Model/TUIAtlasTicketSpec.m; sourceTree = "<group>"; };
 		766CADCF188689D100E5C296 /* TUIFoursquareVenueSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFoursquareVenueSpec.m; path = Modules/Spots/Model/TUIFoursquareVenueSpec.m; sourceTree = "<group>"; };
 		76720944188BF5D5007CAE17 /* TUISpotListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotListCell.h; path = Modules/SpotList/View/TUISpotListCell.h; sourceTree = "<group>"; };
@@ -781,6 +784,8 @@
 		76D727E5187C597000F3545E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				760B4F9318928B9600AB65F5 /* TUIUserLocationAnnotationView.h */,
+				760B4F9418928B9600AB65F5 /* TUIUserLocationAnnotationView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1621,6 +1626,7 @@
 				76720962188C51D5007CAE17 /* TUISpotListTableViewDataSource.m in Sources */,
 				7672095B188C2635007CAE17 /* TUISpotsViewController.m in Sources */,
 				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
+				760B4F9518928B9600AB65F5 /* TUIUserLocationAnnotationView.m in Sources */,
 				760B4F75188FEAC400AB65F5 /* UIAlertView+TUIError.m in Sources */,
 				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
 				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
