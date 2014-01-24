@@ -13,11 +13,12 @@
 #import "TUIWeatherPageViewControllerDataSource.h"
 #import "TUITimePageViewControllerDataSource.h"
 #import "TUIDistancePageViewControllerDataSource.h"
+#import "TUIPageViewControllerDataSource.h"
 
 static CGFloat kHandlerButtonHeight = 35.0f;
 static CGFloat kFilterContainerHeight = 103.0f;
 
-@interface TUIFilterListViewController ()
+@interface TUIFilterListViewController ()<UIPageViewControllerDelegate>
 
 /**
  The handler button
@@ -162,6 +163,16 @@ static CGFloat kFilterContainerHeight = 103.0f;
     {
         [_delegate displayFilters];
     }
+}
+
+#pragma mark - Changed filter
+
+- (void)pageViewController:(TUIPageViewControllerDataSource *)pageViewController
+        didFinishAnimating:(BOOL)finished
+   previousViewControllers:(NSArray *)previousViewControllers
+       transitionCompleted:(BOOL)completed
+{
+    NSLog(@"Cambio el filtro");
 }
 
 #pragma mark - Segue -

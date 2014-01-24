@@ -30,16 +30,19 @@
         distance300m.pageIndex = 0;
         distance300m.labelString = @"300 m";
         distance300m.iconNameString = @"iconfilter-300m";
+        distance300m.smallIcoImage = @"filter-300m";
         
         TUIFilterContentViewController *distance1km = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
         distance1km.pageIndex = 1;
         distance1km.labelString = @"1 km";
         distance1km.iconNameString = @"iconfilter-1km";
+        distance1km.smallIcoImage = @"filter-1km";
         
         TUIFilterContentViewController *distanceMore1km = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
         distanceMore1km.pageIndex = 2;
         distanceMore1km.labelString = @"+1 km";
         distanceMore1km.iconNameString = @"iconfilter-far";
+        distanceMore1km.smallIcoImage = @"filter-far";
         
         self.viewControllers = @[distance300m, distance1km, distanceMore1km];
     }

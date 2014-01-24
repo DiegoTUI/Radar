@@ -10,6 +10,14 @@
  Generic Page View Data Source
  */
 @interface TUIPageViewControllerDataSource : NSObject <UIPageViewControllerDataSource>
+{
+    id<UIPageViewControllerDelegate> filterStatusDelegate;
+}
+
+/**
+ The TUIPageViewControllerDataSource delegate
+ */
+@property(nonatomic, assign) id<UIPageViewControllerDelegate> filterStatusDelegate;
 
 /**
  The view controllers of the data source

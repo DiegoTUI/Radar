@@ -88,7 +88,11 @@
                                      NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                      };
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
-    //self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+
+    // Modify navigation bar apparance
+    [[UINavigationBar appearance] setBarTintColor:[UIColor tuiLightGreenColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     
     if (SYSTEM_VERSION_LESS_THAN_7)
     {

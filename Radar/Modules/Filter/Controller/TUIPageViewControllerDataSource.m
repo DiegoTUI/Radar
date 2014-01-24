@@ -11,6 +11,7 @@
 #import "TUIFilterContentViewController.h"
 
 @implementation TUIPageViewControllerDataSource
+@synthesize filterStatusDelegate = _filterStatusDelegate;
 
 #pragma mark - Data source delegate -
 
@@ -50,4 +51,13 @@
     return 0;
 }
 
+- (void)pageViewController:(UIPageViewController *)pageViewController
+        didFinishAnimating:(BOOL)finished
+   previousViewControllers:(NSArray *)previousViewControllers
+       transitionCompleted:(BOOL)completed
+{
+    if(completed){
+        
+    }
+}
 @end

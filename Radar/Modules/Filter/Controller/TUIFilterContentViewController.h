@@ -11,6 +11,8 @@
 @interface TUIFilterContentViewController : TUIBaseViewController
 
 @property (nonatomic) NSUInteger pageIndex;
+@property (nonatomic) NSString *smallIcoImage;
+
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 

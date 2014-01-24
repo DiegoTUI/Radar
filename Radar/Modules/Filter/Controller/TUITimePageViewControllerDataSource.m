@@ -30,11 +30,13 @@
         today.pageIndex = 0;
         today.labelString = @"Today";
         today.iconNameString = @"iconfilter-now";
+        today.smallIcoImage = @"filter-now";
         
         TUIFilterContentViewController *tomorrow = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
         tomorrow.pageIndex = 1;
         tomorrow.labelString = @"Tomorrow";
         tomorrow.iconNameString = @"iconfilter-tomorrow";
+        tomorrow.smallIcoImage = @"filter-tomorrow";
         
         self.viewControllers = @[today, tomorrow];
     }
