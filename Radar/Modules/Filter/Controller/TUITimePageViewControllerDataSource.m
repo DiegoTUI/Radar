@@ -28,13 +28,13 @@
         
         TUIFilterContentViewController *today = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
         today.pageIndex = 0;
-        today.labelString = @"Today";
+        today.labelString = NSLocalizedString(@"FILTERS_TIME_TODAY", nil);
         today.iconNameString = @"iconfilter-now";
         today.smallIcoImage = @"filter-now";
         
         TUIFilterContentViewController *tomorrow = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
         tomorrow.pageIndex = 1;
-        tomorrow.labelString = @"Tomorrow";
+        tomorrow.labelString = NSLocalizedString(@"FILTERS_TIME_TOMORROW", nil);
         tomorrow.iconNameString = @"iconfilter-tomorrow";
         tomorrow.smallIcoImage = @"filter-tomorrow";
         

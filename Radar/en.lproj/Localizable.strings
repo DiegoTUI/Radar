@@ -21,4 +21,14 @@
 "SAVE_BUTTON" = "Save";
 "CANCEL_BUTTON" = "Cancel";
 
-"ACTIVITY_VIEW_TITLE" = "Activity"; 
+"ACTIVITY_VIEW_TITLE" = "Activity";
+
+// Filters
+
+"FILTERS_WEATHER_INDOOR" = "Indoor";
+"FILTERS_WEATHER_OUTDOOR" = "Outdoor";
+"FILTERS_DISTANCE_300M" = "300 m";
+"FILTERS_DISTANCE_1KM" = "1 km";
+"FILTERS_DISTANCE_MORE1KM" = "+1 km";
+"FILTERS_TIME_TODAY" = "Today";
+"FILTERS_TIME_TOMORROW" = "Tomorrow";

@@ -28,14 +28,14 @@
         
         TUIFilterContentViewController *indoorFilterView = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
         indoorFilterView.pageIndex = 0;
-        indoorFilterView.labelString = @"Indoor";
+        indoorFilterView.labelString = NSLocalizedString(@"FILTERS_WEATHER_INDOOR", nil);
         indoorFilterView.iconNameString = @"iconfilter-indoor";
         indoorFilterView.smallIcoImage = @"filter-indoor";
         
         
         TUIFilterContentViewController *outdoorFilterView = [storyboard instantiateViewControllerWithIdentifier:@"TUIFilterContentViewController"];
         outdoorFilterView.pageIndex = 1;
-        outdoorFilterView.labelString = @"Outdoor";
+        outdoorFilterView.labelString = NSLocalizedString(@"FILTERS_WEATHER_OUTDOOR", nil);
         outdoorFilterView.iconNameString = @"iconfilter-outdoor";
         outdoorFilterView.smallIcoImage = @"filter-outdoor";
         
