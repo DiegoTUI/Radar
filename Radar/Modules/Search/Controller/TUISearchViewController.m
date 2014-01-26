@@ -17,6 +17,8 @@
 #import "TUISettingsViewController.h"
 #import "TUISpotsViewController.h"
 #import "TUIFilterListViewController.h"
+// Views
+#import "TUIUserLocationAnnotationView.h"
 
 static NSInteger kNumberOfElementsShownInTheList = 4;
 static CGFloat kRowHeight = 89.0f;
