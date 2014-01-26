@@ -62,7 +62,6 @@
     _pulsatingRing.transform = CGAffineTransformMakeScale(REDUCED_SIZE_RATIO, REDUCED_SIZE_RATIO);
     _pulsatingCircle2.transform = CGAffineTransformMakeScale(REDUCED_SIZE_RATIO, REDUCED_SIZE_RATIO);
     _pulsatingRing2.transform = CGAffineTransformMakeScale(REDUCED_SIZE_RATIO, REDUCED_SIZE_RATIO);
-    //_rotatingCircle.transform = CGAffineTransformMakeScale(REDUCED_SIZE_RATIO_ROTATING_CIRCLE, REDUCED_SIZE_RATIO_ROTATING_CIRCLE);
     // add subviews
     [self addSubview:_rotatingCircle];
     [self addSubview:_pulsatingCircle];
