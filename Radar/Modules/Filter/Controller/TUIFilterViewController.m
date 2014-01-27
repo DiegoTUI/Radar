@@ -7,8 +7,6 @@
 //
 
 #import "TUIFilterViewController.h"
-// Extensions
-#import "TUIBasePageViewController_Private.h"
 
 @interface TUIFilterViewController ()
 

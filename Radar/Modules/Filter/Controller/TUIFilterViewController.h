@@ -6,10 +6,8 @@
 //  Copyright (c) 2014 Tui Travel A&D. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "TUIBasePageViewController.h"
 
-@interface TUIFilterViewController : TUIBasePageViewController
+@interface TUIFilterViewController : UIPageViewController
 
 - (void)weatherViewController;
 
