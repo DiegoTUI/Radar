@@ -1,22 +1,22 @@
 //
-//  TUIFIlters.m
+//  TUIFilters.m
 //  Radar
 //
 //  Created by jmartin on 24/01/14.
 //  Copyright (c) 2014 Tui Travel A&D. All rights reserved.
 //
 
-#import "TUIFIlters.h"
+#import "TUIFilters.h"
 
-@implementation TUIFIlters
+@implementation TUIFilters
 
 
 #pragma mark - Init -
 
 
-+ (TUIFIlters *)defaultSettings
++ (TUIFilters *)defaultSettings
 {
-    TUIFIlters *result = [[TUIFIlters alloc] init];
+    TUIFilters *result = [[TUIFilters alloc] init];
     
     result.weatherFilterIndex = ZERO_INT;
     result.timeFilterIndex = ZERO_INT;
@@ -30,7 +30,7 @@
     result.distanceFilterIconImage = @"filter-300m";
     result.timeFilterIconImage = @"filter-now";
     
-    result.lastPageViewCOntrollerChanged = EMPTY_STRING;
+    result.lastPageViewControllerChanged = EMPTY_STRING;
     
     return result;
 }
@@ -38,7 +38,7 @@
 
 #pragma mark - Description
 
-- (NSString *)toString
+- (NSString *)description
 {
     return [NSString stringWithFormat:@"<%p> weatherFilterIndex:%d, weatherFilterLabel: %@, weatherFilterIconImage: %@ ----  distanceFilterIndex:%d, distanceFilterLabell: %@, distanceFilterIconImage: %@ ----  timeFilterIndex:%d, timeFilterLabe: %@, timeFilterIconImage: %@, ---> last: %@",
             self,
@@ -51,7 +51,7 @@
             self.timeFilterIndex,
             self.timeFilterLabel,
             self.timeFilterIconImage,
-            self.lastPageViewCOntrollerChanged];
+            self.lastPageViewControllerChanged];
 }
 
 @end

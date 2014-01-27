@@ -15,7 +15,7 @@
 #import "TUIDistancePageViewControllerDataSource.h"
 #import "TUIPageViewControllerDataSource.h"
 #import "TUIFilterContentViewController.h"
-#import "TUIFIlters.h"
+#import "TUIFilters.h"
 
 static CGFloat kHandlerButtonHeight = 35.0f;
 static CGFloat kFilterContainerHeight = 103.0f;
@@ -65,8 +65,8 @@ static CGFloat kFilterContainerHeight = 103.0f;
 /**
  The settings object
  */
-@property (nonatomic, strong) TUIFIlters *settings;
-@property (nonatomic, strong) TUIFIlters *temporalSetings;
+@property (nonatomic, strong) TUIFilters *settings;
+@property (nonatomic, strong) TUIFilters *temporalSetings;
 
 @property (weak, nonatomic) IBOutlet UIImageView *timeStatusFilterImage;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherStatusFilterImage;
@@ -106,8 +106,8 @@ static CGFloat kFilterContainerHeight = 103.0f;
     // set displayed to false
     _displayed = NO;
     
-    _settings = [TUIFIlters defaultSettings];
-    _temporalSetings = [TUIFIlters defaultSettings];
+    _settings = [TUIFilters defaultSettings];
+    _temporalSetings = [TUIFilters defaultSettings];
     
 }
 
@@ -198,11 +198,11 @@ static CGFloat kFilterContainerHeight = 103.0f;
             
             _weatherStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.weatherFilterIconImage];
             
-        }else if(pageViewController == _distanceFilterViewController){
+        } else if(pageViewController == _distanceFilterViewController){
             
             _distanceStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.distanceFilterIconImage];
             
-        }else if(pageViewController == _timeFilterViewController){
+        } else if(pageViewController == _timeFilterViewController){
             
             _timeStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.timeFilterIconImage];
             
@@ -219,8 +219,8 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
     TUIFilterContentViewController *pending = pendingViewControllers[ZERO_INT];
     NSString *lastChanged;
     
-    if(  pageViewController == _weatherFilterViewController){
-    
+    if (pageViewController == _weatherFilterViewController)
+    {
         _temporalSetings.weatherFilterIndex = pending.pageIndex;
         _temporalSetings.weatherFilterIconImage = pending.smallIcoImage;
         _temporalSetings.weatherFilterLabel = pending.labelString;
@@ -228,8 +228,8 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
     
     }
     
-    if(  pageViewController == _distanceFilterViewController){
-        
+    if (pageViewController == _distanceFilterViewController)
+    {
         _temporalSetings.distanceFilterIndex = pending.pageIndex;
         _temporalSetings.distanceFilterIconImage = pending.smallIcoImage;
         _temporalSetings.distanceFilterLabel = pending.labelString;
@@ -237,8 +237,8 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
         
     }
     
-    if(  pageViewController == _timeFilterViewController){
-        
+    if (pageViewController == _timeFilterViewController)
+    {
         _temporalSetings.timeFilterIndex = pending.pageIndex;
         _temporalSetings.timeFilterIconImage = pending.smallIcoImage;
         _temporalSetings.timeFilterLabel = pending.labelString;
@@ -246,7 +246,7 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
         
     }
     
-    _temporalSetings.lastPageViewCOntrollerChanged = lastChanged;
+    _temporalSetings.lastPageViewControllerChanged = lastChanged;
     
 }
 

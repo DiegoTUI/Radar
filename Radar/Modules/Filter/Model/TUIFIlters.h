@@ -1,5 +1,5 @@
 //
-//  TUIFIlters.h
+//  TUIFilters.h
 //  Radar
 //
 //  Created by jmartin on 24/01/14.
@@ -8,31 +8,31 @@
 
 #import "TUIBaseModel.h"
 
-@interface TUIFIlters : TUIBaseModel
+@interface TUIFilters : TUIBaseModel
 
 /**
- The autolocation switch.
+ The filter indexes
  */
 @property (nonatomic) NSUInteger weatherFilterIndex;
 @property (nonatomic) NSUInteger timeFilterIndex;
 @property (nonatomic) NSUInteger distanceFilterIndex;
 
 /**
- The latitude
+ The filter images
  */
 @property (nonatomic, strong) NSString *weatherFilterIconImage;
 @property (nonatomic, strong) NSString *timeFilterIconImage;
 @property (nonatomic, strong) NSString *distanceFilterIconImage;
 
 /**
- The longitude
+ The titles
  */
 @property (nonatomic, copy) NSString *weatherFilterLabel;
 @property (nonatomic, copy) NSString *timeFilterLabel;
 @property (nonatomic, copy) NSString *distanceFilterLabel;
 
 
-@property (nonatomic, copy) NSString *lastPageViewCOntrollerChanged;
+@property (nonatomic, copy) NSString *lastPageViewControllerChanged;
 
 
 /**
@@ -40,18 +40,9 @@
  @abstract Creates a default TUISettings object
  @discussion This method creates and returns a default TUISettings object
  
- @return A default TUIFIlters object.
+ @return A default TUIFilters object.
  */
-+ (TUIFIlters *)defaultSettings;
-
-/**
- @methodName description
- @abstract Return a string with all TUIFIlters object values
- @discussion This method returns a string with all TUIFIlters object values.
- 
- @return A string with all TUIFIlters object values.
- */
-- (NSString *)toString;
++ (TUIFilters *)defaultSettings;
 
 
 @end
