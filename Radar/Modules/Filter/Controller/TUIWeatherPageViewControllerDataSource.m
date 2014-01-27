@@ -7,6 +7,8 @@
 //
 
 #import "TUIWeatherPageViewControllerDataSource.h"
+// Models
+#import "TUIFilters.h"
 // Controllers
 #import "TUIFilterContentViewController.h"
 
@@ -42,6 +44,14 @@
         self.viewControllers = @[indoorFilterView, outdoorFilterView];
     }
     return self;
+}
+
+
+#pragma mark - Data source delegate -
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [TUIFilters currentFilters].weatherFilterIndex;
 }
 
 

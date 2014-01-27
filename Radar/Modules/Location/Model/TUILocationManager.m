@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 // Models
 #import "TUICache.h"
+#import "TUISettings.h"
 
 @interface TUILocationManager() <CLLocationManagerDelegate>
 
@@ -56,7 +57,20 @@
 
 - (void)startGettingUserLocation
 {
-    [_locationManager startUpdatingLocation];
+    TUISettings *currentSettings = [TUISettings currentSettings];
+    
+    if ([currentSettings.autolocation boolValue])
+    {
+        [_locationManager startUpdatingLocation];
+    }
+    else
+    {
+        TUILocation *userLocation = [[TUILocation alloc] init];
+        userLocation.latitude = currentSettings.latitude;
+        userLocation.longitude = currentSettings.longitude;
+        
+        [_delegate userLocationReady:userLocation];
+    }
 }
 
 

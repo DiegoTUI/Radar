@@ -7,28 +7,60 @@
 //
 
 #import "TUIFilters.h"
+// Models
+#import "TUIWeatherManager.h"
+#import "TUITimeManager.h"
+
+#define INDOOR_ICON     @"filter-indoor"
+#define OUTDOOR_ICON    @"filter-outdoor"
+#define NOW_ICON        @"filter-now"
+#define TOMORROW_ICON   @"filter-tomorrow"
+#define _300M_ICON      @"filter-300m"
+
 
 @implementation TUIFilters
 
 
 #pragma mark - Init -
 
-
-+ (TUIFilters *)defaultSettings
++ (TUIFilters *)currentFilters
 {
     TUIFilters *result = [[TUIFilters alloc] init];
     
-    result.weatherFilterIndex = ZERO_INT;
-    result.timeFilterIndex = ZERO_INT;
+    // Weather
+    if ([[TUIWeatherManager currentWeather] isEqualToString:WEATHER_SUNNY])
+    {
+        result.weatherFilterIndex = ONE_INT;
+        result.weatherFilterLabel = NSLocalizedString(@"FILTERS_WEATHER_OUTDOOR", nil);
+        result.weatherFilterIconImage = OUTDOOR_ICON;
+    }
+    else
+    {
+        result.weatherFilterIndex = ZERO_INT;
+        result.weatherFilterLabel = NSLocalizedString(@"FILTERS_WEATHER_INDOOR", nil);
+        result.weatherFilterIconImage = INDOOR_ICON;
+    }
+    
+    // Time
+    NSDate *currentTime = [TUITimeManager currentTime];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSHourCalendarUnit fromDate:currentTime];
+    if (components.hour >= TIME_THRESHOLD)
+    {
+        result.timeFilterIndex = ONE_INT;
+        result.timeFilterLabel = NSLocalizedString(@"FILTERS_TIME_TOMORROW", nil);
+        result.timeFilterIconImage = TOMORROW_ICON;
+    }
+    else
+    {
+        result.timeFilterIndex = ZERO_INT;
+        result.timeFilterLabel = NSLocalizedString(@"FILTERS_TIME_TODAY", nil);
+        result.timeFilterIconImage = NOW_ICON;
+    }
+    
+    // Distance
     result.distanceFilterIndex = ZERO_INT;
-    
-    result.weatherFilterLabel = NSLocalizedString(@"FILTERS_WEATHER_INDOOR", nil);
     result.distanceFilterLabel = NSLocalizedString(@"FILTERS_DISTANCE_300M", nil);
-    result.timeFilterLabel = NSLocalizedString(@"FILTERS_TIME_TODAY", nil);
-    
-    result.weatherFilterIconImage = @"filter-indoor";
     result.distanceFilterIconImage = @"filter-300m";
-    result.timeFilterIconImage = @"filter-now";
     
     result.lastPageViewControllerChanged = EMPTY_STRING;
     

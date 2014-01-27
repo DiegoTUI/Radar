@@ -7,6 +7,8 @@
 //
 
 #import "TUIDistancePageViewControllerDataSource.h"
+// Models
+#import "TUIFilters.h"
 // Controllers
 #import "TUIFilterContentViewController.h"
 
@@ -47,6 +49,13 @@
         self.viewControllers = @[distance300m, distance1km, distanceMore1km];
     }
     return self;
+}
+
+#pragma mark - Data source delegate -
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [TUIFilters currentFilters].distanceFilterIndex;
 }
 
 @end

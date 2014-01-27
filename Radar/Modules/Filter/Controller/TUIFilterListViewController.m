@@ -66,8 +66,8 @@ static CGFloat kFilterContainerHeight = 103.0f;
 /**
  The settings object
  */
-@property (nonatomic, strong) TUIFilters *settings;
-@property (nonatomic, strong) TUIFilters *temporalSetings;
+@property (nonatomic, strong) TUIFilters *filters;
+@property (nonatomic, strong) TUIFilters *temporalFilters;
 
 @property (weak, nonatomic) IBOutlet UIImageView *timeStatusFilterImage;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherStatusFilterImage;
@@ -85,30 +85,30 @@ static CGFloat kFilterContainerHeight = 103.0f;
 - (void)initData
 {
     [super initData];
+    // Get current filters
+    _filters = [TUIFilters currentFilters];
+    _temporalFilters = [TUIFilters currentFilters];
     // set view controllers from containers
     _weatherDataSource = [[TUIWeatherPageViewControllerDataSource alloc] init];
     _weatherFilterViewController.dataSource = _weatherDataSource;
     _weatherFilterViewController.delegate = self;
     _weatherFilterViewController.view.height =  _weatherFilterViewController.view.height;
-    [_weatherFilterViewController setViewControllers:@[_weatherDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [_weatherFilterViewController setViewControllers:@[_weatherDataSource.viewControllers[_filters.weatherFilterIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     _timeDataSource = [[TUITimePageViewControllerDataSource alloc] init];
     _timeFilterViewController.dataSource = _timeDataSource;
     _timeFilterViewController.delegate = self;
     _timeFilterViewController.view.height =  _timeFilterViewController.view.height;
-    [_timeFilterViewController setViewControllers:@[_timeDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [_timeFilterViewController setViewControllers:@[_timeDataSource.viewControllers[_filters.timeFilterIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     _distanceDataSource = [[TUIDistancePageViewControllerDataSource alloc] init];
     _distanceFilterViewController.dataSource = _distanceDataSource;
     _distanceFilterViewController.delegate = self;
     _distanceFilterViewController.view.height =  _distanceFilterViewController.view.height;
-    [_distanceFilterViewController setViewControllers:@[_distanceDataSource.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [_distanceFilterViewController setViewControllers:@[_distanceDataSource.viewControllers[_filters.distanceFilterIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // set displayed to false
     _displayed = NO;
-    
-    _settings = [TUIFilters defaultSettings];
-    _temporalSetings = [TUIFilters defaultSettings];
     
 }
 
@@ -120,6 +120,7 @@ static CGFloat kFilterContainerHeight = 103.0f;
     [super initUserInterface];
     
     [self initHandlerButton];
+    [self initFilterIcons];
     [self initTimeFilterContainerView];
     [self initDistanceFilterContainerView];
     [self initWeatherFilterContainerView];
@@ -132,6 +133,13 @@ static CGFloat kFilterContainerHeight = 103.0f;
     _handlerButton.y = THREE_INT * kFilterContainerHeight;
     _handlerButton.width = self.view.width;
     _handlerButton.height = kHandlerButtonHeight;
+}
+
+- (void)initFilterIcons
+{
+    _weatherStatusFilterImage.image = [UIImage imageNamed:_filters.weatherFilterIconImage];
+    _distanceStatusFilterImage.image = [UIImage imageNamed:_filters.distanceFilterIconImage];
+    _timeStatusFilterImage.image = [UIImage imageNamed:_filters.timeFilterIconImage];
 }
 
 - (void)initTimeFilterContainerView
@@ -197,19 +205,19 @@ static CGFloat kFilterContainerHeight = 103.0f;
         
         if(pageViewController == _weatherFilterViewController){
             
-            _weatherStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.weatherFilterIconImage];
+            _weatherStatusFilterImage.image = [UIImage imageNamed:_temporalFilters.weatherFilterIconImage];
             
         } else if(pageViewController == _distanceFilterViewController){
             
-            _distanceStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.distanceFilterIconImage];
+            _distanceStatusFilterImage.image = [UIImage imageNamed:_temporalFilters.distanceFilterIconImage];
             
         } else if(pageViewController == _timeFilterViewController){
             
-            _timeStatusFilterImage.image = [UIImage imageNamed:_temporalSetings.timeFilterIconImage];
+            _timeStatusFilterImage.image = [UIImage imageNamed:_temporalFilters.timeFilterIconImage];
             
         }
         
-        _settings = _temporalSetings;
+        _filters = _temporalFilters;
     }
 }
 
@@ -222,32 +230,32 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
     
     if (pageViewController == _weatherFilterViewController)
     {
-        _temporalSetings.weatherFilterIndex = pending.pageIndex;
-        _temporalSetings.weatherFilterIconImage = pending.smallIcoImage;
-        _temporalSetings.weatherFilterLabel = pending.labelString;
+        _temporalFilters.weatherFilterIndex = pending.pageIndex;
+        _temporalFilters.weatherFilterIconImage = pending.smallIcoImage;
+        _temporalFilters.weatherFilterLabel = pending.labelString;
         lastChanged = @"weatherFilter";
     
     }
     
     if (pageViewController == _distanceFilterViewController)
     {
-        _temporalSetings.distanceFilterIndex = pending.pageIndex;
-        _temporalSetings.distanceFilterIconImage = pending.smallIcoImage;
-        _temporalSetings.distanceFilterLabel = pending.labelString;
+        _temporalFilters.distanceFilterIndex = pending.pageIndex;
+        _temporalFilters.distanceFilterIconImage = pending.smallIcoImage;
+        _temporalFilters.distanceFilterLabel = pending.labelString;
         lastChanged = @"distanceFilter";
         
     }
     
     if (pageViewController == _timeFilterViewController)
     {
-        _temporalSetings.timeFilterIndex = pending.pageIndex;
-        _temporalSetings.timeFilterIconImage = pending.smallIcoImage;
-        _temporalSetings.timeFilterLabel = pending.labelString;
+        _temporalFilters.timeFilterIndex = pending.pageIndex;
+        _temporalFilters.timeFilterIconImage = pending.smallIcoImage;
+        _temporalFilters.timeFilterLabel = pending.labelString;
         lastChanged = @"timeFilter";
         
     }
     
-    _temporalSetings.lastPageViewControllerChanged = lastChanged;
+    _temporalFilters.lastPageViewControllerChanged = lastChanged;
     
 }
 
@@ -274,8 +282,8 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
 
 - (void)updateSettings
 {
-   // _settings.weather = [_weatherView.weatherSegmentedControl titleForSegmentAtIndex:_weatherView.weatherSegmentedControl.selectedSegmentIndex];
-    //_settings.weatherFilterIndex =
+   // _filters.weather = [_weatherView.weatherSegmentedControl titleForSegmentAtIndex:_weatherView.weatherSegmentedControl.selectedSegmentIndex];
+    //_filters.weatherFilterIndex =
 }
 
 @end

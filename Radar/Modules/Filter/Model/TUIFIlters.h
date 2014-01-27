@@ -36,13 +36,14 @@
 
 
 /**
- @methodName defaultSettings
- @abstract Creates a default TUISettings object
- @discussion This method creates and returns a default TUISettings object
+ @methodName currentSettings
+ @abstract Returns the filters corresponding to the current settings
+ @discussion This method creates reads the TUISettings singleton and creates
+ a set of filters based on it
  
- @return A default TUIFilters object.
+ @return The filters corresponding with the current settings.
  */
-+ (TUIFilters *)defaultSettings;
++ (TUIFilters *)currentFilters;
 
 
 @end

@@ -35,6 +35,8 @@
 		760BFF2C18965EFB007B1FE7 /* TUIFilterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672096A188D309A007CAE17 /* TUIFilterListViewController.m */; };
 		760BFF2D18965F1F007B1FE7 /* TUISpotListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720961188C51D5007CAE17 /* TUISpotListTableViewDataSource.m */; };
 		760BFF2E189661EC007B1FE7 /* TUISpotListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720954188C1119007CAE17 /* TUISpotListTableViewController.m */; };
+		760BFF3518967389007B1FE7 /* TUIWeatherManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF3418967389007B1FE7 /* TUIWeatherManager.m */; };
+		760BFF38189679E4007B1FE7 /* TUITimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF37189679E4007B1FE7 /* TUITimeManager.m */; };
 		7614223D18964AA9002AF91C /* TUIFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7614223C18964AA9002AF91C /* TUIFilters.m */; };
 		7614223E18965E31002AF91C /* TUISpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672095A188C2635007CAE17 /* TUISpotsViewController.m */; };
 		7614223F18965E3D002AF91C /* TUISpotListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720945188BF5D5007CAE17 /* TUISpotListCell.m */; };
@@ -247,6 +249,10 @@
 		760B4F85189104A200AB65F5 /* Filters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Filters.h; path = Modules/Shared/Constants/Filters.h; sourceTree = "<group>"; };
 		760B4F9318928B9600AB65F5 /* TUIUserLocationAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIUserLocationAnnotationView.h; path = Modules/Search/View/TUIUserLocationAnnotationView.h; sourceTree = "<group>"; };
 		760B4F9418928B9600AB65F5 /* TUIUserLocationAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIUserLocationAnnotationView.m; path = Modules/Search/View/TUIUserLocationAnnotationView.m; sourceTree = "<group>"; };
+		760BFF3318967389007B1FE7 /* TUIWeatherManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIWeatherManager.h; path = Modules/Weather/Model/TUIWeatherManager.h; sourceTree = "<group>"; };
+		760BFF3418967389007B1FE7 /* TUIWeatherManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIWeatherManager.m; path = Modules/Weather/Model/TUIWeatherManager.m; sourceTree = "<group>"; };
+		760BFF36189679E4007B1FE7 /* TUITimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUITimeManager.h; path = Modules/Time/Model/TUITimeManager.h; sourceTree = "<group>"; };
+		760BFF37189679E4007B1FE7 /* TUITimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUITimeManager.m; path = Modules/Time/Model/TUITimeManager.m; sourceTree = "<group>"; };
 		7614223B18964AA9002AF91C /* TUIFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilters.h; path = Modules/Filter/Model/TUIFilters.h; sourceTree = "<group>"; };
 		7614223C18964AA9002AF91C /* TUIFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilters.m; path = Modules/Filter/Model/TUIFilters.m; sourceTree = "<group>"; };
 		766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketSpec.m; path = Modules/Spots/Model/TUIAtlasTicketSpec.m; sourceTree = "<group>"; };
@@ -511,6 +517,40 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		760BFF2F189672FE007B1FE7 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				760BFF311896732C007B1FE7 /* Model */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		760BFF3018967314007B1FE7 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				760BFF3218967334007B1FE7 /* Model */,
+			);
+			name = Time;
+			sourceTree = "<group>";
+		};
+		760BFF311896732C007B1FE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				760BFF3318967389007B1FE7 /* TUIWeatherManager.h */,
+				760BFF3418967389007B1FE7 /* TUIWeatherManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		760BFF3218967334007B1FE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				760BFF36189679E4007B1FE7 /* TUITimeManager.h */,
+				760BFF37189679E4007B1FE7 /* TUITimeManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		7672093C188BF419007CAE17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +675,8 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
+				760BFF3018967314007B1FE7 /* Time */,
+				760BFF2F189672FE007B1FE7 /* Weather */,
 				76D7288918841C9400F3545E /* Application */,
 				76D727DC187C58E400F3545E /* Base */,
 				76D72845187EC77100F3545E /* Cache */,
@@ -1640,12 +1682,14 @@
 				7614223D18964AA9002AF91C /* TUIFilters.m in Sources */,
 				76D7289F18855E5A00F3545E /* TUIFoursquareVenue.m in Sources */,
 				760B4F5D188EE34800AB65F5 /* TUIFoursquareVenueParser.m in Sources */,
+				760BFF38189679E4007B1FE7 /* TUITimeManager.m in Sources */,
 				76CC33611885A82D003FDB48 /* TUILocation.m in Sources */,
 				76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */,
 				76D728711880197E00F3545E /* TUINetworkClient.m in Sources */,
 				760B4F841890260C00AB65F5 /* TUIPageViewControllerDataSource.m in Sources */,
 				767209781895A77E007CAE17 /* TUISearchMapViewDelegate.m in Sources */,
 				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
+				760BFF3518967389007B1FE7 /* TUIWeatherManager.m in Sources */,
 				76D728781883DBA000F3545E /* TUIServerError.m in Sources */,
 				76D7287B1883DC3C00F3545E /* TUIServerErrorParser.m in Sources */,
 				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,

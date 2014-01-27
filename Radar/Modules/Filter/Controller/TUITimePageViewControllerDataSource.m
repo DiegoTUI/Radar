@@ -7,6 +7,8 @@
 //
 
 #import "TUITimePageViewControllerDataSource.h"
+// Models
+#import "TUIFilters.h"
 // Controllers
 #import "TUIFilterContentViewController.h"
 
@@ -41,6 +43,14 @@
         self.viewControllers = @[today, tomorrow];
     }
     return self;
+}
+
+
+#pragma mark - Data source delegate -
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [TUIFilters currentFilters].timeFilterIndex;
 }
 
 @end
