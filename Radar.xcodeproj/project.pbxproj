@@ -37,7 +37,6 @@
 		7672095E188C48DC007CAE17 /* TUIBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672095D188C48DC007CAE17 /* TUIBaseTableViewCell.m */; };
 		76720962188C51D5007CAE17 /* TUISpotListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720961188C51D5007CAE17 /* TUISpotListTableViewDataSource.m */; };
 		7672096B188D309A007CAE17 /* TUIFilterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672096A188D309A007CAE17 /* TUIFilterListViewController.m */; };
-		7672096E188D37D3007CAE17 /* TUIFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672096D188D37D3007CAE17 /* TUIFilterViewController.m */; };
 		767209751895A047007CAE17 /* TUISpotAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 767209741895A047007CAE17 /* TUISpotAnnotationView.m */; };
 		767209781895A77E007CAE17 /* TUISearchMapViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 767209771895A77E007CAE17 /* TUISearchMapViewDelegate.m */; };
 		76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76CC335D1885A4EA003FDB48 /* TUILocationManager.m */; };
@@ -252,8 +251,6 @@
 		76720963188C60A1007CAE17 /* TUISpotListTableViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUISpotListTableViewController_Private.h; path = Modules/SpotList/Controller/TUISpotListTableViewController_Private.h; sourceTree = "<group>"; };
 		76720969188D309A007CAE17 /* TUIFilterListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilterListViewController.h; path = Modules/Filter/Controller/TUIFilterListViewController.h; sourceTree = "<group>"; };
 		7672096A188D309A007CAE17 /* TUIFilterListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilterListViewController.m; path = Modules/Filter/Controller/TUIFilterListViewController.m; sourceTree = "<group>"; };
-		7672096C188D37D3007CAE17 /* TUIFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilterViewController.h; path = Modules/Filter/Controller/TUIFilterViewController.h; sourceTree = "<group>"; };
-		7672096D188D37D3007CAE17 /* TUIFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilterViewController.m; path = Modules/Filter/Controller/TUIFilterViewController.m; sourceTree = "<group>"; };
 		767209731895A047007CAE17 /* TUISpotAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISpotAnnotationView.h; path = Modules/Search/View/TUISpotAnnotationView.h; sourceTree = "<group>"; };
 		767209741895A047007CAE17 /* TUISpotAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISpotAnnotationView.m; path = Modules/Search/View/TUISpotAnnotationView.m; sourceTree = "<group>"; };
 		767209761895A77E007CAE17 /* TUISearchMapViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUISearchMapViewDelegate.h; path = Modules/Search/Controller/TUISearchMapViewDelegate.h; sourceTree = "<group>"; };
@@ -523,8 +520,6 @@
 			children = (
 				76720969188D309A007CAE17 /* TUIFilterListViewController.h */,
 				7672096A188D309A007CAE17 /* TUIFilterListViewController.m */,
-				7672096C188D37D3007CAE17 /* TUIFilterViewController.h */,
-				7672096D188D37D3007CAE17 /* TUIFilterViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1602,7 +1597,6 @@
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
 				760B4F72188FE9D400AB65F5 /* TUIErrorHandler.m in Sources */,
 				7672096B188D309A007CAE17 /* TUIFilterListViewController.m in Sources */,
-				7672096E188D37D3007CAE17 /* TUIFilterViewController.m in Sources */,
 				76D7289F18855E5A00F3545E /* TUIFoursquareVenue.m in Sources */,
 				760B4F5D188EE34800AB65F5 /* TUIFoursquareVenueParser.m in Sources */,
 				76CC33611885A82D003FDB48 /* TUILocation.m in Sources */,

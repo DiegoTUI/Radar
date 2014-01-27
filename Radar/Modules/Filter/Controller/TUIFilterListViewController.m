@@ -9,8 +9,7 @@
 #import "TUIFilterListViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
-// Controllers
-#import "TUIFilterViewController.h"
+
 
 static CGFloat kHandlerButtonHeight = 35.0f;
 static CGFloat kFilterContainerHeight = 103.0f;
@@ -30,7 +29,7 @@ static CGFloat kFilterContainerHeight = 103.0f;
 /**
  The time filter view controller
  */
-@property (strong, nonatomic) TUIFilterViewController *timeFilterViewController;
+@property (strong, nonatomic) UIPageViewController *timeFilterViewController;
 
 /**
  The distance filter container view
@@ -40,7 +39,7 @@ static CGFloat kFilterContainerHeight = 103.0f;
 /**
  The distance filter view controller
  */
-@property (strong, nonatomic) TUIFilterViewController *distanceFilterViewController;
+@property (strong, nonatomic) UIPageViewController *distanceFilterViewController;
 
 /**
  The weather filter container view
@@ -50,7 +49,7 @@ static CGFloat kFilterContainerHeight = 103.0f;
 /**
  The weather filter view controller
  */
-@property (strong, nonatomic) TUIFilterViewController *weatherFilterViewController;
+@property (strong, nonatomic) UIPageViewController *weatherFilterViewController;
 
 
 - (IBAction)handlerButtonClicked:(UIButton *)sender;
@@ -66,7 +65,6 @@ static CGFloat kFilterContainerHeight = 103.0f;
 {
     [super initData];
     // set view controllers from containers
-    [_weatherFilterViewController weatherViewController];
     // set displayed to false
     _displayed = NO;
 }
