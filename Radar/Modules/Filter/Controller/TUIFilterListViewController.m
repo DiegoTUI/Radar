@@ -278,12 +278,12 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
 }
 
 
-#pragma mark - Update Settings -
+#pragma mark - Update Filters -
 
-- (void)updateSettings
+- (void)updateFilters
 {
-   // _filters.weather = [_weatherView.weatherSegmentedControl titleForSegmentAtIndex:_weatherView.weatherSegmentedControl.selectedSegmentIndex];
-    //_filters.weatherFilterIndex =
+    [self initData];
+    [self initFilterIcons];
 }
 
 @end

@@ -49,6 +49,16 @@
  */
 - (NSInteger)numberOfFilters;
 
+/**
+ @methodName updateFilters
+ @abstract Updates the filters according to the new settings
+ @discussion This method reloads the current filters and updates the UI
+ accordingly
+ 
+ @return The number of filters in the list
+ */
+- (void)updateFilters;
+
 @end
 
 

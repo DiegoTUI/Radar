@@ -285,7 +285,7 @@ static CGFloat kRowHeight = 89.0f;
 - (void)saveButtonPressed
 {
     [self dismissViewControllerAnimated:YES completion:^{
-        //TODO: add reload logic here with the new criteria
+        [_filterListViewController updateFilters];
     }];
 }
 
