@@ -10,7 +10,6 @@
 		38B136DFD47540C18913D650 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEA3BF1EC8242E485E23BF5 /* libPods.a */; };
 		627A418918893CE600926DB6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627A418818893CE600926DB6 /* MapKit.framework */; };
 		6282BF0D18895E86005CC250 /* mapa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6282BF0C18895E86005CC250 /* mapa.plist */; };
-		62C0A3E1188FB67600E5CCF4 /* filtersOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62C0A3E0188FB67600E5CCF4 /* filtersOptions.plist */; };
 		62EFE2C218919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EFE2C118919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m */; };
 		62EFE2C518919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EFE2C418919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m */; };
 		760B4F7E1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F7D1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.m */; };
@@ -191,7 +190,6 @@
 		477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		627A418818893CE600926DB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6282BF0C18895E86005CC250 /* mapa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mapa.plist; path = Resources/mapa.plist; sourceTree = "<group>"; };
-		62C0A3E0188FB67600E5CCF4 /* filtersOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = filtersOptions.plist; path = Resources/filtersOptions.plist; sourceTree = "<group>"; };
 		62EFE2C018919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUITimePageViewControllerDataSource.h; path = Modules/Filter/Controller/TUITimePageViewControllerDataSource.h; sourceTree = "<group>"; };
 		62EFE2C118919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUITimePageViewControllerDataSource.m; path = Modules/Filter/Controller/TUITimePageViewControllerDataSource.m; sourceTree = "<group>"; };
 		62EFE2C318919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIDistancePageViewControllerDataSource.h; path = Modules/Filter/Controller/TUIDistancePageViewControllerDataSource.h; sourceTree = "<group>"; };
@@ -1039,7 +1037,6 @@
 			children = (
 				76F2628F188A9B1600B2EFEB /* images */,
 				76F2628E188A9AFD00B2EFEB /* tmp */,
-				62C0A3E0188FB67600E5CCF4 /* filtersOptions.plist */,
 				6282BF0C18895E86005CC250 /* mapa.plist */,
 			);
 			name = Resources;
@@ -1385,7 +1382,6 @@
 				76F262E3188A9BE300B2EFEB /* filter-outdoor@2x.png in Resources */,
 				76F262E4188A9BE300B2EFEB /* filter-tomorrow.png in Resources */,
 				76F262E5188A9BE300B2EFEB /* filter-tomorrow@2x.png in Resources */,
-				62C0A3E1188FB67600E5CCF4 /* filtersOptions.plist in Resources */,
 				76F262AB188A9BB500B2EFEB /* icon-120.png in Resources */,
 				76F262AC188A9BB500B2EFEB /* icon-152.png in Resources */,
 				76F262AD188A9BB500B2EFEB /* icon-512.png in Resources */,
