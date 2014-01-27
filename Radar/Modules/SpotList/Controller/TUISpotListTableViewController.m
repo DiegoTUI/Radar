@@ -34,7 +34,6 @@
 - (void)initUserInterface
 {
     [super initUserInterface];
-    
     [self registerTableViewCells];
 }
 

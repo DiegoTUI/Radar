@@ -34,11 +34,18 @@
 - (UIButton *)handlerButton;
 
 /**
- @methodName handlerButton
- @abstract Returns the handler button
- @discussion This method returns the handler button
+ @methodName spotListContainerView
+ @abstract Returns the spot list container view
+ @discussion This method returns the spot list container view
  
- @return The handler button
+ @return The hspot list container view
+ */
+- (UIView *)spotListContainerView;
+
+/**
+ @methodName reloadSpotsWithSpotList:
+ @abstract Reloads the table view contents with the provided spot list
+ @discussion This method reloads the table view contents with the provided spot list
  */
 - (void)reloadSpotsWithSpotList:(TUISpotList *)spotList;
 

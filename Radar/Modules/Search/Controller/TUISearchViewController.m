@@ -20,8 +20,6 @@
 // Views
 #import "TUIUserLocationAnnotationView.h"
 
-static NSInteger kNumberOfElementsShownInTheList = 4;
-static CGFloat kRowHeight = 89.0f;
 
 @interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate, TUILocationManagerDelegate>
 
@@ -144,7 +142,7 @@ static CGFloat kRowHeight = 89.0f;
     _containerListView.x = ZERO_FLOAT;
     _containerListView.y = _mapView.height;
     _containerListView.width = self.view.width;
-    _containerListView.height = _spotsViewController.handlerButton.height + kNumberOfElementsShownInTheList*kRowHeight;
+    _containerListView.height = _spotsViewController.handlerButton.height + _spotsViewController.spotListContainerView.height;
 }
 
 - (void)initContainerFilterView

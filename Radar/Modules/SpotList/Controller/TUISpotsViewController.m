@@ -14,6 +14,8 @@
 #import "TUISpotListTableViewDataSource.h"
 
 static CGFloat kHandlerHeight = 22.0f;
+static NSInteger kNumberOfElementsShownInTheList = 4;
+static CGFloat kRowHeight = 89.0f;
 
 @interface TUISpotsViewController ()
 
@@ -80,7 +82,7 @@ static CGFloat kHandlerHeight = 22.0f;
     _spotListContainerView.x = ZERO_FLOAT;
     _spotListContainerView.y = _handlerButton.y + _handlerButton.height;
     _spotListContainerView.width = self.view.width;
-    _spotListContainerView.height = self.view.height - _spotListContainerView.y;
+    _spotListContainerView.height = kNumberOfElementsShownInTheList*kRowHeight;
 }
 
 
