@@ -7,18 +7,21 @@
 //
 
 #import "TUIBaseTableViewCell.h"
+// Forward declarations
+@class TUIAtlasTicket;
+@class TUIFoursquareVenue;
 
 @interface TUISpotListCell : TUIBaseTableViewCell
 
 /**
  The spot image
  */
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImageView *mainImageView;
 
 /**
  The spot type (TUI or Foursquare) image
  */
-@property (weak, nonatomic) IBOutlet UIImageView *cornerImageView;
+@property (strong, nonatomic) UIImageView *cornerImageView;
 
 /**
  The title label
@@ -51,17 +54,23 @@
 @property (weak, nonatomic) IBOutlet UIView *sideView;
 
 /**
- @methodName atlasTicketCell
+ @methodName atlasTicketCellWithSpot:
  @abstract Sets the appearance of the cell to an ATLAS ticket
  @discussion This method sets the appearance of the cell to an ATLAS ticket
+ and fills the different UI items with the provided spot
+ 
+ @param spot The TUIAtlasTicket to configure this cell
  */
-- (void)atlasTicketCell;
+- (void)atlasTicketCellWithSpot:(TUIAtlasTicket *)spot;
 
 /**
- @methodName foursquareVenueCell
+ @methodName foursquareVenueCellWithSpot:
  @abstract Sets the appearance of the cell to an Foursquare venue
  @discussion This method sets the appearance of the cell to an Foursquare venue
+ and fills the different UI items with the provided spot
+ 
+ @param spot The TUIFoursquareVenue to configure this cell
  */
-- (void)foursquareVenueCell;
+- (void)foursquareVenueCellWithSpot:(TUIFoursquareVenue *)spot;
 
 @end

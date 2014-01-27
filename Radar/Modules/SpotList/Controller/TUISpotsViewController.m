@@ -9,15 +9,32 @@
 #import "TUISpotsViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+#import "TUISpotListTableViewController_Private.h"
+// Controllers
+#import "TUISpotListTableViewDataSource.h"
 
 static CGFloat kHandlerHeight = 22.0f;
 
 @interface TUISpotsViewController ()
 
+/**
+ The handler button
+ */
 @property (weak, nonatomic) IBOutlet UIButton *handlerButton;
+
+/**
+ The container of the TUISpotListTableViewController
+ */
 @property (weak, nonatomic) IBOutlet UIView *spotListContainerView;
 
+/**
+ The TUISpotListTableViewController itself
+ */
+@property (strong, nonatomic) TUISpotListTableViewController *spotListTableViewController;
 
+/**
+ The handler button click event handler
+ */
 - (IBAction)handlerButtonClicked:(UIButton *)sender;
 
 @end
@@ -25,16 +42,19 @@ static CGFloat kHandlerHeight = 22.0f;
 @implementation TUISpotsViewController
 
 
-#pragma mark - Data
+#pragma mark - Data -
 
 - (void)initData
 {
     [super initData];
+    // default displayed flag
     _displayed = NO;
+    // spot list table view controller
+    _spotListTableViewController = (TUISpotListTableViewController *) self.childViewControllers[0];
 }
 
 
-#pragma mark - User interface
+#pragma mark - User interface -
 
 - (void)initUserInterface
 {
@@ -47,7 +67,7 @@ static CGFloat kHandlerHeight = 22.0f;
 - (void)initHandlerButton
 {
     _handlerButton.x = ZERO_FLOAT;
-    _handlerButton.y = -ONE_FLOAT;
+    _handlerButton.y = ZERO_FLOAT;
     _handlerButton.width = self.view.width;
     _handlerButton.height = kHandlerHeight;
     // set image
@@ -64,7 +84,7 @@ static CGFloat kHandlerHeight = 22.0f;
 }
 
 
-#pragma mark - Toggle list
+#pragma mark - Toggle list -
 
 - (IBAction)handlerButtonClicked:(UIButton *)sender
 {
@@ -85,5 +105,12 @@ static CGFloat kHandlerHeight = 22.0f;
 }
 
 
+#pragma mark - Reload spots -
+
+- (void)reloadSpotsWithSpotList:(TUISpotList *)spotList
+{
+    _spotListTableViewController.dataSource = [[TUISpotListTableViewDataSource alloc] initWithSpotList:spotList];
+    [_spotListTableViewController updateData];
+}
 
 @end

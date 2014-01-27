@@ -16,7 +16,7 @@
 
 @implementation TUISpotListTableViewDataSource
 
-#pragma mark - Init
+#pragma mark - Init -
 
 - (id)init
 {
@@ -24,15 +24,28 @@
     
     if (self)
     {
-        //TODO: extra initialization here
-        self.spotList = [TUISpotList testSpotList];
+        // create an empty spotlist
+        self.spotList = [[TUISpotList alloc] init];
+    }
+    
+    return self;
+}
+
+- (TUISpotListTableViewDataSource *)initWithSpotList:(TUISpotList *)spotList
+{
+    self = [super init];
+    
+    if (self)
+    {
+        // create an empty spotlist
+        self.spotList = spotList;
     }
     
     return self;
 }
 
 
-#pragma mark - UITableViewDataSource delegate
+#pragma mark - UITableViewDataSource delegate -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -48,17 +61,23 @@
 {
     TUISpotListCell *cell = [tableView dequeueReusableCellWithIdentifier:[TUISpotListCell reuseIdentifier]];
     
+    
     TUISpot *spot = self.spotList.spots[indexPath.row];
+    
+    NSLog(@"Getting cell for spot: %@", spot.name);
+    
     // Check for TUI and Foursquare spots
     if ([spot isKindOfClass:[TUIAtlasTicket class]])
     {
-        [cell atlasTicketCell];
+        [cell atlasTicketCellWithSpot:(TUIAtlasTicket *)spot];
     }
     else if ([spot isKindOfClass:[TUIFoursquareVenue class]])
     {
-        [cell foursquareVenueCell];
+        [cell foursquareVenueCellWithSpot:(TUIFoursquareVenue *)spot];
     }
+    
     return cell;
 }
+
 
 @end

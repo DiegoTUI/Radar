@@ -38,6 +38,13 @@
     return result;
 }
 
++ (TUISettings *)currentSettings
+{
+    TUISettings *currentSettings = [TUISettings cachedSettings] == nil ? [TUISettings defaultSettings] : [TUISettings cachedSettings];
+    
+    return currentSettings;
+}
+
 
 #pragma mark - Persist -
 

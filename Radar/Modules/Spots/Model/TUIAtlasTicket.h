@@ -13,4 +13,35 @@
  */
 @interface TUIAtlasTicket : TUISpot
 
+/**
+ The indoor flag
+ */
+@property (nonatomic, strong) NSNumber *indoor;
+
+/**
+ The morning flag
+ */
+@property (nonatomic, strong) NSNumber *morning;
+
+/**
+ The afternoon flag
+ */
+@property (nonatomic, strong) NSNumber *afternoon;
+
+/**
+ The evening flag
+ */
+@property (nonatomic, strong) NSNumber *evening;
+
+/**
+ The full day flag
+ */
+@property (nonatomic, strong) NSNumber *fullday;
+
+/**
+ The price
+ */
+@property (nonatomic, strong) NSNumber *price;
+
+
 @end

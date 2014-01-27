@@ -6,6 +6,9 @@
   Copyright (c) 2014 Tui Travel A&D. All rights reserved.
 */
 
+// Common
+"OK" = "Ok";
+
 // Settings
 "SETTINGS_TITLE" = "Settings";
 "WEATHER_VIEW_TITLE" = "Weather";
@@ -31,4 +34,18 @@
 "FILTERS_DISTANCE_1KM" = "1 km";
 "FILTERS_DISTANCE_MORE1KM" = "+1 km";
 "FILTERS_TIME_TODAY" = "Today";
-"FILTERS_TIME_TOMORROW" = "Tomorrow";
+"FILTERS_TIME_TOMORROW" = "Tomorrow";"ACTIVITY_VIEW_TITLE" = "Activity";
+
+// Errors
+"ERROR_GENERIC_TITLE" = "Error";
+"ERROR_GENERIC" = "Something went wrong.";
+"ERROR_TIMEOUT_TITLE" = "Timeout";
+"ERROR_TIMEOUT" = "The connection timed out.\nPlease, try again later";
+"ERROR_NO_CONNECTION_TITLE" = "Oops, no internet!";
+"ERROR_NO_CONNECTION" = "It seems you currently have no connection. Try again when you\nare connected.";
+
+// Spot list
+"ATLAS_GENERIC_SUBTITLE" = "ATLAS Ticket";
+"FOURSQUARE_GENERIC_SUBTITLE" = "Foursquare Venue";
+"INDOOR" = "INDOOR";
+"OUTDOOR" = "OUTDOOR";

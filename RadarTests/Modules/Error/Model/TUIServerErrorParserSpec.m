@@ -18,10 +18,11 @@ describe(@"TUIServerErrorParserSpec", ^{
     __block NSDictionary *mockResponse;
     
     beforeAll(^{
-        mockResponse = @{@"error": @"001-service-not-found",
-                         @"statusCode": @(404),
-                         @"description": @"The requested service fs-venu44e-search was not found in this server",
-                         @"contact": @"dlafuente@tuitravel-ad.com"};
+        mockResponse = @{@"title": @"Service not found",
+                         @"code": @(1001),
+                         @"message": @"The requested service fs-venue-search was not found in this server",
+                         @"contact": @"dlafuente@tuitravel-ad.com",
+                         @"stack": @"teststack"};
     });
     
     it(@"should conform to the TUIParser protocol", ^{
@@ -43,14 +44,19 @@ describe(@"TUIServerErrorParserSpec", ^{
             [[serverError shouldNot] beNil];
         });
         
+        it(@"should parse the title", ^{
+            [[serverError.title shouldNot] beNil];
+            [[serverError.title should] equal:mockResponse[@"title"]];
+        });
+        
         it(@"should parse the code", ^{
             [[serverError.code shouldNot] beNil];
-            [[serverError.code should] equal:mockResponse[@"error"]];
+            [[serverError.code should] equal:mockResponse[@"code"]];
         });
         
         it(@"should parse the message", ^{
             [[serverError.message shouldNot] beNil];
-            [[serverError.message should] equal:mockResponse[@"description"]];
+            [[serverError.message should] equal:mockResponse[@"message"]];
         });
         
     });

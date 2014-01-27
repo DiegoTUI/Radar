@@ -40,15 +40,15 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%p> weatherFilterIndex:%d, weatherFilterLabel: %@, weatherFilterIconImage: %@ ----  distanceFilterIndex:%d, distanceFilterLabell: %@, distanceFilterIconImage: %@ ----  timeFilterIndex:%d, timeFilterLabe: %@, timeFilterIconImage: %@, ---> last: %@",
+    return [NSString stringWithFormat:@"<%p> weatherFilterIndex:%lu, weatherFilterLabel: %@, weatherFilterIconImage: %@ ----  distanceFilterIndex:%lu, distanceFilterLabell: %@, distanceFilterIconImage: %@ ----  timeFilterIndex:%lu, timeFilterLabe: %@, timeFilterIconImage: %@, ---> last: %@",
             self,
-            self.weatherFilterIndex,
+            (unsigned long)self.weatherFilterIndex,
             self.weatherFilterLabel,
             self.weatherFilterIconImage,
-            self.distanceFilterIndex,
+            (unsigned long)self.distanceFilterIndex,
             self.distanceFilterLabel,
             self.distanceFilterIconImage,
-            self.timeFilterIndex,
+            (unsigned long)self.timeFilterIndex,
             self.timeFilterLabel,
             self.timeFilterIconImage,
             self.lastPageViewControllerChanged];

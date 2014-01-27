@@ -10,7 +10,8 @@
 #import "MapKit/Mapkit.h"
 
 /**
- The TUISearchViewController is the main controller for search and contains a map, the filters, the list and the basket sticky view.
+ The TUISearchViewController is the main controller for search and 
+ contains a map, the filters, the list and the basket sticky view.
  */
 @interface TUISearchViewController : TUIBaseViewController
 

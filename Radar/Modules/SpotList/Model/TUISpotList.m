@@ -26,27 +26,43 @@
     return self;
 }
 
-+ (TUISpotList *)testSpotList
+
+#pragma mark - Shuffle -
+
+- (void)shuffle
 {
-    TUISpotList *testList = [[TUISpotList alloc] init];
-    
-    NSMutableOrderedSet *spots = [NSMutableOrderedSet orderedSet];
-    
-    for (int i=0; i<8; i++)
+    NSMutableOrderedSet *shuffledSpots = [_spots mutableCopy];
+    NSUInteger firstFourSquareIndex = ZERO_INT;
+    TUISpot *firstFourSquareVenue = nil;
+    // find the first four square
+    while (firstFourSquareVenue == nil &&
+           firstFourSquareIndex < shuffledSpots.count)
     {
-        if (i % 2)
+        TUISpot *spot = shuffledSpots[firstFourSquareIndex];
+        if ([spot isKindOfClass:[TUIFoursquareVenue class]])
         {
-            [spots addObject:[[TUIAtlasTicket alloc] init]];
+            firstFourSquareVenue = spot;
         }
-        else
-        {
-            [spots addObject:[[TUIFoursquareVenue alloc] init]];
-        }
+        firstFourSquareIndex++;
     }
+    // shuffle
+    NSUInteger numberOfAtlasTickets = firstFourSquareIndex;
+    NSUInteger numberOfFourSquareVenues = shuffledSpots.count - firstFourSquareIndex;
+    NSUInteger timesToShuffle = numberOfAtlasTickets < numberOfFourSquareVenues ? numberOfAtlasTickets : numberOfFourSquareVenues;
+    NSUInteger shuffleIndex = ZERO_INT;
     
-    testList.spots = spots;
-    
-    return testList;
+    for (int i=0; i<timesToShuffle; i++)
+    {
+        //get the element pointed by firstFourSquareIndex and move it right below shuffleIndex
+        TUIFoursquareVenue *objectToShuffle = shuffledSpots[firstFourSquareIndex];
+        [shuffledSpots removeObjectAtIndex:firstFourSquareIndex];
+        [shuffledSpots insertObject:objectToShuffle atIndex:(shuffleIndex + ONE_INT)];
+        shuffleIndex += TWO_INT;
+    }
+    // update spot list
+    _spots = shuffledSpots;
 }
+
+
 
 @end

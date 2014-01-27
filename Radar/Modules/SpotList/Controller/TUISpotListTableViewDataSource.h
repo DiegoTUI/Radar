@@ -18,4 +18,16 @@
  */
 @property (nonatomic, strong) TUISpotList *spotList;
 
+/**
+ @methodName initWithSpotList:
+ @abstract Inits the data source with a given spot list
+ @discussion This method will return an instance of the data source with the
+ spotList property initialized.
+ 
+ @param spotList The given spot list
+ 
+ @return The singleton instance of TUILocationManager
+ */
+- (TUISpotListTableViewDataSource *)initWithSpotList:(TUISpotList *)spotList;
+
 @end
