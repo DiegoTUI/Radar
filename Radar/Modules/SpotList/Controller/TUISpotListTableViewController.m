@@ -95,6 +95,8 @@
         [cell showDescriptionLabelAnimated];
         // disable user interacion in all cells but this one
         [self disableUserInteractionForAllCellsExceptForRow:_selectedRow];
+        // scroll selected row to visible
+        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
         // disable scroll
         tableView.scrollEnabled = NO;
     }
@@ -106,11 +108,6 @@
         [self enableUserInteractionForAllCells];
         // enable scroll
         tableView.scrollEnabled = YES;
-    }
-    
-    
-    for (int i = 0; i < [tableView numberOfRowsInSection:ZERO_INT]; i++)
-    {
     }
 }
 
