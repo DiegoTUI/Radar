@@ -51,7 +51,10 @@
         if([latitude isKindOfClass:[NSNumber class]] &&
            [longitude isKindOfClass:[NSNumber class]])
         {
-            atlasTicket.location = [[CLLocation alloc] initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
+            CLLocationCoordinate2D coordinate;
+            coordinate.latitude = [latitude doubleValue];
+            coordinate.longitude = [longitude doubleValue];
+            atlasTicket.coordinate = coordinate;
         }
         
         id indoor = [response objectForKey:@"indoor"];

@@ -17,16 +17,22 @@
 #import "TUISettingsViewController.h"
 #import "TUISpotsViewController.h"
 #import "TUIFilterListViewController.h"
+#import "TUISearchMapViewDelegate.h"
 // Views
 #import "TUIUserLocationAnnotationView.h"
 
 
-@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate, TUILocationManagerDelegate>
+@interface TUISearchViewController () <TUISettingsViewControllerDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate, TUILocationManagerDelegate>
 
 /**
  The map view
  */
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+/**
+ The map view delegate
+ */
+@property (strong, nonatomic)  TUISearchMapViewDelegate *mapViewDelegate;
 
 /**
  The container view for the list of spots
@@ -93,10 +99,12 @@
         if (!strongSelf) return;
         
         strongSelf.spotList = spotList;
-        [_spotsViewController reloadSpotsWithSpotList:spotList];
+        [strongSelf.spotsViewController reloadSpotsWithSpotList:spotList];
+        strongSelf.mapViewDelegate.spotList = spotList;
+        [strongSelf.mapViewDelegate reloadData];
         
     } failure:^(NSError *error) {
-        
+        // TODO: handle errors
     }];
 }
 
@@ -120,7 +128,8 @@
     _mapView.width = self.view.width;
     _mapView.height = self.view.height - _spotsViewController.handlerButton.height;
     // delegate
-    _mapView.delegate = self;
+    _mapViewDelegate = [[TUISearchMapViewDelegate alloc] init];
+    _mapViewDelegate.mapView = _mapView;
     // get user location
     TUISettings *settings = [TUISettings currentSettings];
     // check if autolocation is on
@@ -132,8 +141,12 @@
     }
     else
     {
-        [self centerMapInLatitude:[settings.latitude doubleValue] longitude:[settings.longitude doubleValue] radius:DISTANCE_1000_M];
-        [self updateSpotListForLatitude:[settings.latitude doubleValue] longitude:[settings.longitude doubleValue] radius:DISTANCE_1000_M];
+        TUILocation *savedLocation = [[TUILocation alloc] init];
+        savedLocation.latitude = settings.latitude;
+        savedLocation.longitude = settings.longitude;
+        [self userLocationReady:savedLocation];
+        //[self centerMapInLatitude:[settings.latitude doubleValue] longitude:[settings.longitude doubleValue] radius:DISTANCE_1000_M];
+        //[self updateSpotListForLatitude:[settings.latitude doubleValue] longitude:[settings.longitude doubleValue] radius:DISTANCE_1000_M];
     }
 }
 
@@ -311,6 +324,7 @@
 {
     [self centerMapInLatitude:[location.latitude doubleValue] longitude:[location.longitude doubleValue] radius:DISTANCE_1000_M];
     [self updateSpotListForLatitude:[location.latitude doubleValue] longitude:[location.longitude doubleValue] radius:DISTANCE_1000_M];
+    [_mapViewDelegate userLocationUpdated:location];
 }
 
 
@@ -324,7 +338,6 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, radius, radius);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     [self.mapView setRegion:adjustedRegion animated:YES];
-    self.mapView.showsUserLocation = YES;
 }
 
 @end

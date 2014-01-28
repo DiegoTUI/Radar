@@ -40,7 +40,10 @@
         if([latitude isKindOfClass:[NSNumber class]] &&
            [longitude isKindOfClass:[NSNumber class]])
         {
-            foursquareVenue.location = [[CLLocation alloc] initWithLatitude:[latitude doubleValue] longitude:[longitude doubleValue]];
+            CLLocationCoordinate2D coordinate;
+            coordinate.latitude = [latitude doubleValue];
+            coordinate.longitude = [longitude doubleValue];
+            foursquareVenue.coordinate = coordinate;
         }
     }
     

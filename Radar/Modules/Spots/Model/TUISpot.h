@@ -26,6 +26,16 @@
 @property (nonatomic, copy) NSString *name;
 
 /**
+ The spots title
+ */
+@property (nonatomic, copy) NSString *title;
+
+/**
+ The spots subtitle
+ */
+@property (nonatomic, copy) NSString *subtitle;
+
+/**
  The spots description
  */
 @property (nonatomic, copy) NSString *descriptionBody;
@@ -33,7 +43,7 @@
 /**
  The spots location
  */
-@property (nonatomic, strong) CLLocation *location;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
 /**
  The spots images

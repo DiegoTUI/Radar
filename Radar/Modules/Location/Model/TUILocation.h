@@ -7,11 +7,12 @@
 //
 
 #import "TUIBaseCachedModel.h"
+#import <MapKit/MapKit.h>
 
 /**
  TUIUserLocation represent the user's position
  */
-@interface TUILocation : TUIBaseCachedModel
+@interface TUILocation : TUIBaseCachedModel <MKAnnotation>
 
 /**
  The latitude
@@ -22,6 +23,8 @@
  The longitude
  */
 @property (nonatomic, strong) NSNumber *longitude;
+
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
 /**
  @methodName defaultUserLocation
