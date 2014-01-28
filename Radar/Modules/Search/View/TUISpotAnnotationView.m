@@ -11,15 +11,19 @@
 #import "TUIAtlasTicket.h"
 #import "TUIFoursquareVenue.h"
 
-#define DEFAULT_ANIMATION_DURATION 0.05f
-#define DEFAULT_ANIMATION_DELAY 0.0f
-#define REDUCED_ALPHA 0.80f
-#define AUGMENTED_SIZE_RATIO 1.1f
+#define RANDOM_BASE                     500
+#define RANDOM_BASE_FLOAT               500.0f
+#define ANIMATION_DURATION              0.1f
+#define ANIMATION_ROTATE_DEGREES        0.1f
+#define ANIMATION_DEVIATION             10.0f
+#define ANIMATION_ANCHOR_POINT_X        0.5f
+#define ANIMATION_ANCHOR_POINT_Y        0.5f
+
+#define DEGREES_TO_RADIANS(x) (M_PI * (x) / 180.0)
 
 @interface TUISpotAnnotationView()
 {
-    UIImageView     *_pulsatingIcon;
-    BOOL            _shouldStopAnimating;
+    UIImageView     *_jigglingIcon;
 }
 @end
 
@@ -54,103 +58,38 @@
     // set bounds
     self.bounds = CGRectMake(ZERO_FLOAT, ZERO_FLOAT, iconImage.size.width, iconImage.size.height);
     // build image view
-    _pulsatingIcon = [[UIImageView alloc] initWithImage:iconImage];
+    _jigglingIcon = [[UIImageView alloc] initWithImage:iconImage];
     // add subview
-    [self addSubview:_pulsatingIcon];
+    [self addSubview:_jigglingIcon];
 }
 
 
 #pragma mark - Animation -
 
-- (void)startPulsating
-{
-    _shouldStopAnimating = NO;
-    [self pulsate];
-}
-
-- (void)stopPulsating
-{
-    _shouldStopAnimating = YES;
-}
-
-
-- (void)pulsate
-{
-    if ( _shouldStopAnimating )
-    {
-        return;
-    }
-    typeof(self) __weak weakSelf = self;
-    [UIView animateWithDuration:DEFAULT_ANIMATION_DURATION
-                          delay:DEFAULT_ANIMATION_DELAY
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^
-     {
-         typeof(self) strongSelf = weakSelf;
-         if ( !strongSelf ) { return ;}
-         
-         strongSelf->_pulsatingIcon.transform = CGAffineTransformMakeScale(AUGMENTED_SIZE_RATIO, AUGMENTED_SIZE_RATIO);
-         strongSelf->_pulsatingIcon.alpha = REDUCED_ALPHA;
-     }
-                     completion:^(BOOL finished)
-     {
-         typeof(self) strongSelf = weakSelf;
-         if ( !strongSelf ) { return ;}
-         
-         [strongSelf goBack];
-     }];
-}
-
-- (void)goBack
-{
-    typeof(self) __weak weakSelf = self;
-    [UIView animateWithDuration:DEFAULT_ANIMATION_DURATION
-                          delay:ZERO_FLOAT
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^
-     {
-         typeof(self) strongSelf = weakSelf;
-         if ( !strongSelf ) { return ;}
-         
-         strongSelf->_pulsatingIcon.transform = CGAffineTransformIdentity;
-         strongSelf->_pulsatingIcon.alpha = ONE_FLOAT;
-     }
-                     completion:^(BOOL finished)
-     {
-         typeof(self) strongSelf = weakSelf;
-         if ( !strongSelf ) { return ;}
-         
-         [strongSelf pulsate];
-     }];
-}
-
-#define degreesToRadians(x) (M_PI * (x) / 180.0)
-#define kAnimationRotateDeg 1.0
-
 - (void)startJiggling
 {
-    NSInteger randomInt = arc4random_uniform(500);
-    float r = (randomInt/500.0)+10;
+    NSInteger randomInt = arc4random_uniform(RANDOM_BASE);
+    float r = (randomInt/RANDOM_BASE_FLOAT) + ANIMATION_DEVIATION;
     
-    CGAffineTransform leftWobble = CGAffineTransformMakeRotation(degreesToRadians( (kAnimationRotateDeg * +10.0) - r ));
-    CGAffineTransform rightWobble = CGAffineTransformMakeRotation(degreesToRadians( kAnimationRotateDeg + r ));
+    CGAffineTransform leftWobble = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS( (ANIMATION_ROTATE_DEGREES * + ANIMATION_DEVIATION) - r ));
+    CGAffineTransform rightWobble = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS( ANIMATION_ROTATE_DEGREES + r ));
     
     self.transform = leftWobble;  // starting point
     
-    [[self layer] setAnchorPoint:CGPointMake(0.5, 0.5)];
+    [[self layer] setAnchorPoint:CGPointMake(ANIMATION_ANCHOR_POINT_X, ANIMATION_ANCHOR_POINT_Y)];
     
-    [UIView animateWithDuration:0.1
-                          delay:0
+    [UIView animateWithDuration:ANIMATION_DURATION
+                          delay:ZERO_FLOAT
                         options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse
                      animations:^{
                          [UIView setAnimationRepeatCount:NSNotFound];
-                         _pulsatingIcon.transform = rightWobble; }
+                         _jigglingIcon.transform = rightWobble; }
                      completion:nil];
 }
 
 - (void)stopJiggling {
-    [_pulsatingIcon.layer removeAllAnimations];
-    _pulsatingIcon.transform = CGAffineTransformIdentity;
+    [_jigglingIcon.layer removeAllAnimations];
+    _jigglingIcon.transform = CGAffineTransformIdentity;
 }
 
 @end

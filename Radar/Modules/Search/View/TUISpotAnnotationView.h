@@ -15,15 +15,13 @@
 @interface TUISpotAnnotationView : MKAnnotationView
 
 /**
- Start the pulsating animation.
+ Start the jiggling animation.
  */
-- (void)startPulsating;
 - (void)startJiggling;
 
 /**
- Stop the pulsating animation.
+ Stop the jiggling animation.
  */
-- (void)stopPulsating;
 - (void)stopJiggling;
 
 @end
