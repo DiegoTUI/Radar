@@ -10,6 +10,7 @@
 // Forward declarations
 @class TUISpotList;
 @class TUIUserLocation;
+@protocol TUIMapRegionDelegate;
 
 /**
  The TUISearchMapViewDelegate is in charge of controlling
@@ -26,6 +27,11 @@
  The mapView to display data on
  */
 @property (strong, nonatomic) MKMapView *mapView;
+
+/**
+ The region changed block. called when the region of the map changes
+ */
+@property (nonatomic,copy) void (^regionChangedBlock)(void);
 
 /**
  @methodName reloadData
@@ -45,3 +51,4 @@
                      radius:(NSUInteger)radius;
 
 @end
+

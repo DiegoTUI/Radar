@@ -19,7 +19,12 @@
 static CGFloat kUserLocationAnnotationWidth = 26;
 static CGFloat kUserLocationAnnotationHeight = 26;
 
+#define REGION_CHANGED_DISTANCE_THRESHOLD   300
+
 @interface TUISearchMapViewDelegate () <MKMapViewDelegate>
+{
+    CLLocationCoordinate2D _centerCoordinate;
+}
 
 @end
 
@@ -96,10 +101,12 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius);
     MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
     [_mapView setRegion:adjustedRegion animated:YES];
+    _centerCoordinate = location.coordinate;
+    
 }
 
 
-#pragma mark - Annotation View
+#pragma mark - Annotation View -
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -121,6 +128,25 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     
     return annotationView;
 }
+
+
+#pragma mark - Region changed -
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    // check if the distance has changed significantly
+    CLLocation *before = [[CLLocation alloc] initWithLatitude:_centerCoordinate.latitude longitude:_centerCoordinate.longitude];
+    CLLocation *after = [[CLLocation alloc] initWithLatitude:mapView.centerCoordinate.latitude longitude:mapView.centerCoordinate.longitude];
+    
+    if ([before distanceFromLocation:after] > REGION_CHANGED_DISTANCE_THRESHOLD)
+    {
+        _regionChangedBlock();
+        _centerCoordinate = mapView.centerCoordinate;
+    }
+}
+
+
+#pragma mark - User location - 
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {

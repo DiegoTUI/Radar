@@ -613,10 +613,10 @@
 		76CC335B1885A4AE003FDB48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				760BFF3B18979B85007B1FE7 /* TUIUserLocation.h */,
-				760BFF3C18979B85007B1FE7 /* TUIUserLocation.m */,
 				76CC335C1885A4EA003FDB48 /* TUILocationManager.h */,
 				76CC335D1885A4EA003FDB48 /* TUILocationManager.m */,
+				760BFF3B18979B85007B1FE7 /* TUIUserLocation.h */,
+				760BFF3C18979B85007B1FE7 /* TUIUserLocation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -675,8 +675,6 @@
 		76D727AD187C523A00F3545E /* Radar */ = {
 			isa = PBXGroup;
 			children = (
-				760BFF3018967314007B1FE7 /* Time */,
-				760BFF2F189672FE007B1FE7 /* Weather */,
 				76D7288918841C9400F3545E /* Application */,
 				76D727DC187C58E400F3545E /* Base */,
 				76D72845187EC77100F3545E /* Cache */,
@@ -691,6 +689,8 @@
 				76D728A018855F2200F3545E /* SpotList */,
 				76D728911885580600F3545E /* Spots */,
 				76D727AE187C523A00F3545E /* Supporting Files */,
+				760BFF3018967314007B1FE7 /* Time */,
+				760BFF2F189672FE007B1FE7 /* Weather */,
 				76D727BF187C523A00F3545E /* Images.xcassets */,
 				76D727B9187C523A00F3545E /* Main.storyboard */,
 				76D727B6187C523A00F3545E /* TUIAppDelegate.h */,
@@ -1665,7 +1665,6 @@
 				76D7288D18841CF200F3545E /* TUIApplicationController.m in Sources */,
 				76D7289C18855E2200F3545E /* TUIAtlasTicket.m in Sources */,
 				760B4F58188EC8D500AB65F5 /* TUIAtlasTicketParser.m in Sources */,
-				760BFF3D18979B85007B1FE7 /* TUIUserLocation.m in Sources */,
 				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
 				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
@@ -1683,13 +1682,11 @@
 				7614223D18964AA9002AF91C /* TUIFilters.m in Sources */,
 				76D7289F18855E5A00F3545E /* TUIFoursquareVenue.m in Sources */,
 				760B4F5D188EE34800AB65F5 /* TUIFoursquareVenueParser.m in Sources */,
-				760BFF38189679E4007B1FE7 /* TUITimeManager.m in Sources */,
 				76CC335E1885A4EA003FDB48 /* TUILocationManager.m in Sources */,
 				76D728711880197E00F3545E /* TUINetworkClient.m in Sources */,
 				760B4F841890260C00AB65F5 /* TUIPageViewControllerDataSource.m in Sources */,
 				767209781895A77E007CAE17 /* TUISearchMapViewDelegate.m in Sources */,
 				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
-				760BFF3518967389007B1FE7 /* TUIWeatherManager.m in Sources */,
 				76D728781883DBA000F3545E /* TUIServerError.m in Sources */,
 				76D7287B1883DC3C00F3545E /* TUIServerErrorParser.m in Sources */,
 				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,
@@ -1706,9 +1703,12 @@
 				760BFF2E189661EC007B1FE7 /* TUISpotListTableViewController.m in Sources */,
 				760BFF2D18965F1F007B1FE7 /* TUISpotListTableViewDataSource.m in Sources */,
 				7614223E18965E31002AF91C /* TUISpotsViewController.m in Sources */,
+				760BFF38189679E4007B1FE7 /* TUITimeManager.m in Sources */,
 				62EFE2C218919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m in Sources */,
 				76D72810187C5D8400F3545E /* TUITitleView.m in Sources */,
+				760BFF3D18979B85007B1FE7 /* TUIUserLocation.m in Sources */,
 				760B4F9518928B9600AB65F5 /* TUIUserLocationAnnotationView.m in Sources */,
+				760BFF3518967389007B1FE7 /* TUIWeatherManager.m in Sources */,
 				760B4F7E1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.m in Sources */,
 				760B4F75188FEAC400AB65F5 /* UIAlertView+TUIError.m in Sources */,
 				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
@@ -1733,7 +1733,6 @@
 				76D7281C187C62D000F3545E /* TUIBaseModelSpec.m in Sources */,
 				76720952188BFE16007CAE17 /* TUIBaseTableViewControllerSpec.m in Sources */,
 				76D72820187C62E100F3545E /* TUIBaseViewControllerSpec.m in Sources */,
-				760BFF3A18979B5F007B1FE7 /* TUIUserLocationSpec.m in Sources */,
 				76D7285A187ECBE400F3545E /* TUICacheSpec.m in Sources */,
 				760B4F79188FF35000AB65F5 /* TUIErrorHandlerSpec.m in Sources */,
 				760B4F5F188EE59C00AB65F5 /* TuiFoursquareVenueParserSpec.m in Sources */,
@@ -1748,6 +1747,7 @@
 				76D728A81885626700F3545E /* TUISpotListSpec.m in Sources */,
 				76D7289918855AB600F3545E /* TUISpotSpec.m in Sources */,
 				76D7285B187ECBE400F3545E /* TUITestSerializableObject.m in Sources */,
+				760BFF3A18979B5F007B1FE7 /* TUIUserLocationSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

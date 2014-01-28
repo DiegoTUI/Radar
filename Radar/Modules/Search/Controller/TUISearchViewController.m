@@ -93,6 +93,9 @@
 
 - (void)updateSpotListForLatitude:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude radius:(NSInteger)radius
 {
+    // cancel all previous requests
+    [TUISpotList cancelNetworkRequests];
+    
     typeof(self) __weak weakSelf = self;
     [TUISpotList spotsForLatitude:latitude longitude:longitude radius:radius completion:^(TUISpotList *spotList) {
         typeof(self) __strong strongSelf = weakSelf;
@@ -130,6 +133,22 @@
     // delegate
     _mapViewDelegate = [[TUISearchMapViewDelegate alloc] init];
     _mapViewDelegate.mapView = _mapView;
+    // region changed block
+    typeof(self) __weak weakSelf = self;
+    _mapViewDelegate.regionChangedBlock = ^
+    {
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        //update list if region changed.
+        MKMapRect mapRect = strongSelf.mapViewDelegate.mapView.visibleMapRect;
+        MKMapPoint northMapPoint = MKMapPointMake(MKMapRectGetMidX(mapRect), MKMapRectGetMinY(mapRect));
+        MKMapPoint southMapPoint = MKMapPointMake(MKMapRectGetMidX(mapRect), MKMapRectGetMaxY(mapRect));
+        NSUInteger radius = MKMetersBetweenMapPoints(northMapPoint, southMapPoint)/TWO_FLOAT;
+        
+        [strongSelf updateSpotListForLatitude:strongSelf.mapViewDelegate.mapView.centerCoordinate.latitude
+                                    longitude:strongSelf.mapViewDelegate.mapView.centerCoordinate.longitude
+                                       radius:radius];
+    };
     // get user location
     [[TUILocationManager sharedManager] setDelegate:self];
     [[TUILocationManager sharedManager] startGettingUserLocation];
