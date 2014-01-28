@@ -94,6 +94,8 @@ static CGFloat kRowHeight = 89.0f;
     {
         UIImage *listUpImage = [UIImage imageNamed:@"ux-list-up.png"];
         [_handlerButton setImage:listUpImage forState:UIControlStateNormal];
+        // deselect all rows in the spotlist
+        [self deselectAllRows];
         
         [_delegate hideList];
     }
@@ -113,6 +115,13 @@ static CGFloat kRowHeight = 89.0f;
 {
     _spotListTableViewController.dataSource = [[TUISpotListTableViewDataSource alloc] initWithSpotList:spotList];
     [_spotListTableViewController updateData];
+}
+
+#pragma mark - Deselect rows -
+
+- (void)deselectAllRows
+{
+    [_spotListTableViewController deselectAllRows];
 }
 
 @end

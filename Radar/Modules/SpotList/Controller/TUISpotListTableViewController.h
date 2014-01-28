@@ -10,4 +10,11 @@
 
 @interface TUISpotListTableViewController : TUIBaseTableViewController
 
+/**
+ @methodName deselectAllRows
+ @abstract Deselects all rows in the table
+ @discussion This method deselects all rows in the table
+ */
+- (void)deselectAllRows;
+
 @end

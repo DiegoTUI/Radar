@@ -137,4 +137,15 @@
     }
 }
 
+
+#pragma mark - Deselect all rows -
+
+- (void)deselectAllRows
+{
+    if (_selectedRow != -ONE_INT)
+    {
+        [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:_selectedRow inSection:ZERO_INT]];
+    }
+}
+
 @end

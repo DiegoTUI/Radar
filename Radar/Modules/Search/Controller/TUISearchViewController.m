@@ -212,6 +212,9 @@
 
 - (void)hideList
 {
+    // deselect all rows in the table
+    [_spotsViewController deselectAllRows];
+    
     typeof(self) __weak weakSelf = self;
     [UIView animateWithDuration:DEFAULT_ANIMATION_SPEED
                      animations:^
