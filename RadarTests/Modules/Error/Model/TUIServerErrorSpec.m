@@ -23,6 +23,10 @@ describe(@"TUIServerErrorSpec", ^{
         [[TUIServerError should] beSubclassOfClass:[TUIBaseModel class]];
     });
     
+    it(@"should have an title", ^{
+        [[serverError should] respondToSelector:@selector(title)];
+    });
+    
     it(@"should have an code", ^{
         [[serverError should] respondToSelector:@selector(code)];
     });

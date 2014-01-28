@@ -10,6 +10,7 @@
 
 // Forward declarations
 @protocol TUISpotsViewControllerDelegate;
+@class TUISpotList;
 
 @interface TUISpotsViewController : TUIBaseViewController
 
@@ -31,6 +32,22 @@
  @return The handler button
  */
 - (UIButton *)handlerButton;
+
+/**
+ @methodName spotListContainerView
+ @abstract Returns the spot list container view
+ @discussion This method returns the spot list container view
+ 
+ @return The hspot list container view
+ */
+- (UIView *)spotListContainerView;
+
+/**
+ @methodName reloadSpotsWithSpotList:
+ @abstract Reloads the table view contents with the provided spot list
+ @discussion This method reloads the table view contents with the provided spot list
+ */
+- (void)reloadSpotsWithSpotList:(TUISpotList *)spotList;
 
 @end
 

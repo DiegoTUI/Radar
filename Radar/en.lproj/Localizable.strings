@@ -6,6 +6,9 @@
   Copyright (c) 2014 Tui Travel A&D. All rights reserved.
 */
 
+// Common
+"OK" = "Ok";
+
 // Settings
 "SETTINGS_TITLE" = "Settings";
 "WEATHER_VIEW_TITLE" = "Weather";
@@ -17,8 +20,32 @@
 "LONGITUDE_LABEL" = "Longitude";
 "TIME_VIEW_TITLE" = "Time";
 "AUTOTIME_LABEL" = "Use Auto-Time";
-"TIME_LABEL" = "Time (hh.mm)";
+"TIME_LABEL" = "Time (hhmm)";
 "SAVE_BUTTON" = "Save";
 "CANCEL_BUTTON" = "Cancel";
 
-"ACTIVITY_VIEW_TITLE" = "Activity"; 
+"ACTIVITY_VIEW_TITLE" = "Activity";
+
+// Filters
+
+"FILTERS_WEATHER_CLOUDY" = "Indoor";
+"FILTERS_WEATHER_SUNNY" = "Outdoor";
+"FILTERS_DISTANCE_300M" = "300 m";
+"FILTERS_DISTANCE_1000M" = "1 km";
+"FILTERS_DISTANCE_FAR" = "+1 km";
+"FILTERS_TIME_TODAY" = "Today";
+"FILTERS_TIME_TOMORROW" = "Tomorrow";"ACTIVITY_VIEW_TITLE" = "Activity";
+
+// Errors
+"ERROR_GENERIC_TITLE" = "Error";
+"ERROR_GENERIC" = "Something went wrong.";
+"ERROR_TIMEOUT_TITLE" = "Timeout";
+"ERROR_TIMEOUT" = "The connection timed out.\nPlease, try again later";
+"ERROR_NO_CONNECTION_TITLE" = "Oops, no internet!";
+"ERROR_NO_CONNECTION" = "It seems you currently have no connection. Try again when you\nare connected.";
+
+// Spot list
+"ATLAS_GENERIC_SUBTITLE" = "ATLAS Ticket";
+"FOURSQUARE_GENERIC_SUBTITLE" = "Foursquare Venue";
+"INDOOR" = "INDOOR";
+"OUTDOOR" = "OUTDOOR";

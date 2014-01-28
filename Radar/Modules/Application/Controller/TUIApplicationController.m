@@ -48,6 +48,12 @@
 {
     [self setGlobalBarButtonAppearance];
     [self setGlobalNavigationBarTitleAppearance];
+    
+    // Override point for customization after application launch.
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor tuiLightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor tuiLightGreenColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)setGlobalBarButtonAppearance
@@ -57,7 +63,7 @@
                                        NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                        };
     
-    NSDictionary *highlightedAttributes = @{NSForegroundColorAttributeName: [UIColor lightPurpleColor],
+    NSDictionary *highlightedAttributes = @{NSForegroundColorAttributeName: [UIColor tuiLightBlueColor],
                                             NSFontAttributeName: [UIFont fontWithName:REGULAR_FONT size:TITLE_SECTION_FONT_SIZE],
                                             NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                             };
@@ -82,7 +88,11 @@
                                      NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
                                      };
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
-    //self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+
+    // Modify navigation bar apparance
+    [[UINavigationBar appearance] setBarTintColor:[UIColor tuiLightGreenColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     
     if (SYSTEM_VERSION_LESS_THAN_7)
     {

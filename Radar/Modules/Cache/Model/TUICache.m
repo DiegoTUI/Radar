@@ -19,7 +19,7 @@
         [type conformsToProtocol:@protocol(TUISerializable)])
     {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString *serializedObject = [userDefaults stringForKey:key];
+        NSString *serializedObject = [userDefaults objectForKey:key];
         if (serializedObject != nil)
         {
             NSDictionary *jsonObject = [serializedObject JSONDictionary];

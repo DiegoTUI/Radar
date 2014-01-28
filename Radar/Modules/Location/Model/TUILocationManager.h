@@ -8,7 +8,7 @@
 
 #import "TUIBaseModel.h"
 // Models
-#import "TUILocation.h"
+#import "TUIUserLocation.h"
 // Forward declarations
 @protocol TUILocationManagerDelegate;
 
@@ -53,6 +53,6 @@
  
  @param location The User's location
  */
-- (void)userLocationReady:(TUILocation *)location;
+- (void)userLocationReady:(TUIUserLocation *)location;
 
 @end

@@ -24,8 +24,9 @@ describe(@"TUISpotList", ^{
         [[TUISpotList should] beSubclassOfClass:[TUIBaseModel class]];
     });
     
-    it(@"should have a list of spots", ^{
+    it(@"should have an empty list of spots", ^{
         [[spotList should] respondToSelector:@selector(spots)];
+        [[spotList.spots should] haveCountOf:ZERO_INT];
     });
 });
 

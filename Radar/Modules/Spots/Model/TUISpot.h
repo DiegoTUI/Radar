@@ -8,11 +8,12 @@
 
 #import "TUIBaseModel.h"
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 /**
  The TUISpot model represents a spot in a map (activity, ticket, venue)
  */
-@interface TUISpot : TUIBaseModel
+@interface TUISpot : TUIBaseModel<MKAnnotation>
 
 /**
  The spots ID
@@ -32,7 +33,7 @@
 /**
  The spots location
  */
-@property (nonatomic, strong) CLLocation *location;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
 /**
  The spots images

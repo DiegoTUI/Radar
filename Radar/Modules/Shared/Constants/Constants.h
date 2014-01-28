@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Tui Travel A&D. All rights reserved.
 //
 
+#import "API.h"
 #import "Layout.h"
 #import "OSVersion.h"
 #import "Numbers.h"
@@ -15,3 +16,4 @@
 #import "Cache.h"
 #import "Settings.h"
 #import "Network.h"
+#import "Filters.h"

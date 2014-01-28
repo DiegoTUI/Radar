@@ -9,7 +9,6 @@
 #import "TUISpotListTableViewController.h"
 // Extensions
 #import "TUISpotListTableViewController_Private.h"
-#import "TUIBaseTableViewController_Private.h"
 // Controllers
 #import "TUISpotListTableViewDataSource.h"
 
@@ -26,6 +25,8 @@
 
 - (void)initData
 {
+    [super initData];
+    
     self.dataSource = [[TUISpotListTableViewDataSource alloc] init];
     self.tableView.dataSource = _dataSource;
 }
@@ -33,7 +34,6 @@
 - (void)initUserInterface
 {
     [super initUserInterface];
-    
     [self registerTableViewCells];
 }
 
@@ -41,6 +41,15 @@
 {
     // If we did register the cells programmatically, we would do it here - [self.tableView registerClass:[TUISpotListCell class] forCellReuseIdentifier:[TUISpotListCell reuseIdentifier]];
 
+}
+
+#pragma mark - Update
+- (void)updateData
+{
+    [super updateData];
+    
+    self.tableView.dataSource = _dataSource;
+    [self.tableView reloadData];
 }
 
 

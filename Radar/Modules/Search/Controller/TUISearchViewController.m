@@ -9,21 +9,56 @@
 #import "TUISearchViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+// Models
+#import "TUILocationManager.h"
+#import "TUISettings.h"
+#import "TUISpotList+Proxy.h"
+#import "TUIAtlasTicket.h"
 // Controllers
 #import "TUISettingsViewController.h"
 #import "TUISpotsViewController.h"
 #import "TUIFilterListViewController.h"
+#import "TUISearchMapViewDelegate.h"
+// Views
+#import "TUIUserLocationAnnotationView.h"
 
-static NSInteger kNumberOfElementsShownInTheList = 4;
-static CGFloat kRowHeight = 89.0f;
 
-@interface TUISearchViewController () <TUISettingsViewControllerDelegate, MKMapViewDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate>
+@interface TUISearchViewController () <TUISettingsViewControllerDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate, TUILocationManagerDelegate>
 
+/**
+ The map view
+ */
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+/**
+ The map view delegate
+ */
+@property (strong, nonatomic)  TUISearchMapViewDelegate *mapViewDelegate;
+
+/**
+ The container view for the list of spots
+ */
 @property (weak, nonatomic) IBOutlet UIView *containerListView;
+
+/**
+ The container view for the filters
+ */
 @property (weak, nonatomic) IBOutlet UIView *containerFilterView;
+
+/**
+ The spots view controller (contained in containerListView)
+ */
 @property (strong, nonatomic) TUISpotsViewController *spotsViewController;
+
+/**
+ The filter list view controller (contained in containerFilterView)
+ */
 @property (strong, nonatomic) TUIFilterListViewController *filterListViewController;
+
+/**
+ The current list of spots
+ */
+@property (strong, nonatomic) TUISpotList *spotList;
 
 @end
 
@@ -34,6 +69,14 @@ static CGFloat kRowHeight = 89.0f;
 
 - (void)initData
 {
+    [super initData];
+    
+    [self initViewControllers];
+}
+
+- (void)initViewControllers
+{
+    // get the filter and spot list view controllers
     for (UIViewController *viewController in self.childViewControllers)
     {
         if ([viewController isKindOfClass:[TUISpotsViewController class]])
@@ -49,16 +92,61 @@ static CGFloat kRowHeight = 89.0f;
     }
 }
 
+- (void)updateSpotListForLatitude:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude radius:(NSInteger)radius
+{
+    // cancel all previous requests
+    [TUISpotList cancelNetworkRequests];
+    
+    typeof(self) __weak weakSelf = self;
+    [TUISpotList spotsForLatitude:latitude longitude:longitude radius:radius completion:^(TUISpotList *spotList) {
+        typeof(self) __strong strongSelf = weakSelf;
+        if (!strongSelf) return;
+        
+        strongSelf.spotList = spotList;
+        [strongSelf reloadMapAndList];
+        
+    } failure:^(NSError *error) {
+        // TODO: handle errors
+    }];
+}
+
+- (void)reloadMapAndList
+{
+    [_spotsViewController reloadSpotsWithSpotList:[self filteredSpotList]];
+    _mapViewDelegate.spotList = [self filteredSpotList];
+    [_mapViewDelegate reloadData];
+}
+
+- (TUISpotList *)filteredSpotList
+{
+    TUISpotList * result = [[TUISpotList alloc] init];
+    // get the spots from the given list
+    NSMutableOrderedSet *filteredOrderedSet = [_spotList.spots mutableCopy];
+    // apply the filters
+    for (TUISpot *spot in _spotList.spots)
+    {
+        if ([spot isKindOfClass:[TUIAtlasTicket class]] &&
+            ![(TUIAtlasTicket *)spot compliesWithWeatherFilter:_filterListViewController.activeWeatherFilter timeFilter:_filterListViewController.activeTimeFilter])
+        {
+            [filteredOrderedSet removeObject:spot];
+        }
+    }
+    // assign the spots and return
+    result.spots = filteredOrderedSet;
+    return result;
+}
+
 
 #pragma mark - User interface
 
 - (void)initUserInterface
 {
     [super initUserInterface];
-    
+#ifndef TESTING
     [self initMapView];
     [self initContainerListView];
     [self initContainerFilterView];
+#endif
 }
 
 - (void)initMapView
@@ -68,7 +156,27 @@ static CGFloat kRowHeight = 89.0f;
     _mapView.width = self.view.width;
     _mapView.height = self.view.height - _spotsViewController.handlerButton.height;
     // delegate
-    _mapView.delegate = self;
+    _mapViewDelegate = [[TUISearchMapViewDelegate alloc] init];
+    _mapViewDelegate.mapView = _mapView;
+    // region changed block
+    typeof(self) __weak weakSelf = self;
+    _mapViewDelegate.regionChangedBlock = ^
+    {
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        //update list if region changed.
+        MKMapRect mapRect = strongSelf.mapViewDelegate.mapView.visibleMapRect;
+        MKMapPoint northMapPoint = MKMapPointMake(MKMapRectGetMidX(mapRect), MKMapRectGetMinY(mapRect));
+        MKMapPoint southMapPoint = MKMapPointMake(MKMapRectGetMidX(mapRect), MKMapRectGetMaxY(mapRect));
+        NSUInteger radius = MKMetersBetweenMapPoints(northMapPoint, southMapPoint)/TWO_FLOAT;
+        
+        [strongSelf updateSpotListForLatitude:strongSelf.mapViewDelegate.mapView.centerCoordinate.latitude
+                                    longitude:strongSelf.mapViewDelegate.mapView.centerCoordinate.longitude
+                                       radius:radius];
+    };
+    // get user location
+    [[TUILocationManager sharedManager] setDelegate:self];
+    [[TUILocationManager sharedManager] startGettingUserLocation];
 }
 
 - (void)initContainerListView
@@ -76,7 +184,7 @@ static CGFloat kRowHeight = 89.0f;
     _containerListView.x = ZERO_FLOAT;
     _containerListView.y = _mapView.height;
     _containerListView.width = self.view.width;
-    _containerListView.height = _spotsViewController.handlerButton.height + kNumberOfElementsShownInTheList*kRowHeight;
+    _containerListView.height = _spotsViewController.handlerButton.height + _spotsViewController.spotListContainerView.height;
 }
 
 - (void)initContainerFilterView
@@ -178,6 +286,8 @@ static CGFloat kRowHeight = 89.0f;
          if (finished)
          {
              strongSelf.filterListViewController.displayed = NO;
+             // reload with new filters
+             [strongSelf reloadMapAndList];
          }
      }];
 }
@@ -193,6 +303,8 @@ static CGFloat kRowHeight = 89.0f;
          // hide list if displayed
          if (_spotsViewController.displayed)
          {
+             UIImage *listUpImage = [UIImage imageNamed:@"ux-list-up.png"];
+             [_spotsViewController.handlerButton setImage:listUpImage forState:UIControlStateNormal];
              [strongSelf hideList];
          }
          strongSelf.containerFilterView.y = ZERO_FLOAT;
@@ -214,8 +326,13 @@ static CGFloat kRowHeight = 89.0f;
 
 - (void)saveButtonPressed
 {
+    typeof(self) __weak weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
-        //TODO: add reload logic here with the new criteria
+        typeof(self) __strong strongSelf = weakSelf;
+        if (!strongSelf) return;
+        
+        [strongSelf.filterListViewController updateFilters];
+        [strongSelf reloadMapAndList];
     }];
 }
 
@@ -234,6 +351,15 @@ static CGFloat kRowHeight = 89.0f;
         TUISettingsViewController *destinationViewController = segue.destinationViewController;
         destinationViewController.delegate = self;
     }
+}
+
+
+#pragma mark - TUILocationManagerDelegate delegate -
+
+- (void)userLocationReady:(TUIUserLocation *)location
+{
+    [self updateSpotListForLatitude:location.coordinate.latitude longitude:location.coordinate.longitude radius:_filterListViewController.activeDistanceFilter];
+    [_mapViewDelegate userLocationUpdated:location radius:_filterListViewController.activeDistanceFilter];
 }
 
 @end

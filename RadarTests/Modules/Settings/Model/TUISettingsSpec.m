@@ -92,6 +92,27 @@ describe(@"When calling cachedSettings", ^{
     });
 });
 
+describe(@"When calling current settings", ^{
+    
+    it(@"should return the cached settings if not nil", ^{
+        TUISettings *mockSettings = [TUISettings mock];
+        [TUICache stub:@selector(readObjectOfClass:forKey:) andReturn:mockSettings];
+        settings = [TUISettings currentSettings];
+        [[settings should] equal:mockSettings];
+    });
+    
+    it(@"should return the default settings if cached are nil", ^{
+        [TUICache stub:@selector(readObjectOfClass:forKey:) andReturn:nil];
+        settings = [TUISettings currentSettings];
+        [[settings.weather should] equal:DEFAULT_WEATHER];
+        [[settings.autolocation should] equal:[NSNumber numberWithBool:DEFAULT_AUTOLOCATION]];
+        [[settings.latitude should] equal:[NSNumber numberWithDouble:DEFAULT_LATITUDE]];
+        [[settings.longitude should] equal:[NSNumber numberWithDouble:DEFAULT_LONGITUDE]];
+        [[settings.autotime should] equal:[NSNumber numberWithBool:DEFAULT_AUTOTIME]];
+        [[settings.time should] equal:DEFAULT_TIME];
+    });
+});
+
 describe(@"When serializing", ^{
     
     beforeEach(^{

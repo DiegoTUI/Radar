@@ -70,7 +70,7 @@ static const CGFloat kKeyboardShownRatio    = 0.7;
 {
     [super initData];
     
-    _settings = [TUISettings cachedSettings] == nil ? [TUISettings defaultSettings] : [TUISettings cachedSettings];
+    _settings = [TUISettings currentSettings];
 }
 
 
@@ -96,12 +96,11 @@ static const CGFloat kKeyboardShownRatio    = 0.7;
 {
     _weatherView = [[TUISettingsWeatherView alloc] initWithFrame:CGRectMake(ZERO_FLOAT, NAVIGATION_BAR_HEIGHT_IOS6, SCREEN_WIDTH, kWeatherViewHeight)];
     //Get weather from settings
-    for (NSUInteger i=0; i<_weatherView.weatherSegmentedControl.numberOfSegments; i++)
+    _weatherView.weatherSegmentedControl.selectedSegmentIndex = ZERO_INT;
+    
+    if ([_settings.weather isEqualToString:WEATHER_CLOUDY])
     {
-        if ([[_weatherView.weatherSegmentedControl titleForSegmentAtIndex:i] isEqualToString:_settings.weather])
-        {
-            _weatherView.weatherSegmentedControl.selectedSegmentIndex = i;
-        }
+        _weatherView.weatherSegmentedControl.selectedSegmentIndex = ONE_INT;
     }
     
     [self.view addSubview:_weatherView];
@@ -250,10 +249,12 @@ static const CGFloat kKeyboardShownRatio    = 0.7;
     [UIView commitAnimations];
 }
 
+
 #pragma mark - Update Settings -
+
 - (void)updateSettings
 {
-    _settings.weather = [_weatherView.weatherSegmentedControl titleForSegmentAtIndex:_weatherView.weatherSegmentedControl.selectedSegmentIndex];
+    _settings.weather = [_weatherView.weatherSegmentedControl titleForSegmentAtIndex:_weatherView.weatherSegmentedControl.selectedSegmentIndex] == NSLocalizedString(@"WEATHER_VIEW_SUNNY", nil) ? WEATHER_SUNNY : WEATHER_CLOUDY;
     _settings.autolocation = [NSNumber numberWithBool:_locationView.automaticLocationSwitch.on];
     _settings.latitude = [NSNumber numberWithDouble:[_locationView.latitudeTextField.text doubleValue]];
     _settings.longitude = [NSNumber numberWithDouble:[_locationView.longitudeTextField.text doubleValue]];

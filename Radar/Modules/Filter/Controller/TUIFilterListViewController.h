@@ -13,6 +13,13 @@
 @interface TUIFilterListViewController : TUIBaseViewController
 
 /**
+ The active filters
+ */
+@property (nonatomic, copy, readonly) NSString *activeWeatherFilter;
+@property (nonatomic, readonly) NSUInteger activeDistanceFilter;
+@property (nonatomic, copy, readonly) NSString *activeTimeFilter;
+
+/**
  The TUISpotsViewController delegate
  */
 @property (nonatomic, weak) id<TUIFilterListViewControllerDelegate> delegate;
@@ -48,6 +55,18 @@
  @return The number of filters in the list
  */
 - (NSInteger)numberOfFilters;
+
+/**
+ @methodName updateFilters
+ @abstract Updates the filters according to the new settings
+ @discussion This method reloads the current filters and updates the UI
+ accordingly
+ 
+ @return The number of filters in the list
+ */
+- (void)updateFilters;
+
+
 
 @end
 

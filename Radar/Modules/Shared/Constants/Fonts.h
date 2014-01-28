@@ -33,7 +33,7 @@
 // *********************
 
 // General bar navigation and lateral menu elements
-#define TITLE_SECTION_FONT_SIZE ( LARGE_FONT_SIZE - 4 )
+#define TITLE_SECTION_FONT_SIZE ( REGULAR_FONT_SIZE - 4 )
 #define MENU_OPTIONS_FONT_SIZE ( SMALL_FONT_SIZE - 2 )
 #define MENU_EDIT_FONT_SIZE REGULAR_FONT_SIZE
 
@@ -45,7 +45,7 @@
 #define PRICE_ACTIVITY_FONT_SIZE (BIG_FONT_SIZE - 4)
 
 // Filters menu elements
-#define FILTER_MENU_FONT_SIZE LARGE_FONT_SIZE
+#define FILTER_MENU_FONT_SIZE SMALL_FONT_SIZE - 4
 
 // Cart Section (share elements with "Activities Section")
 #define BADGE_FONT_SIZE SMALL_FONT_SIZE

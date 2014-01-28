@@ -7,14 +7,43 @@
 //
 
 #import "Kiwi.h"
-
 #import "TUIAtlasTicket.h"
 
 SPEC_BEGIN(TUIAtlasTicketSpec)
 
+__block TUIAtlasTicket *spot;
+
+beforeAll(^{
+    spot = [[TUIAtlasTicket alloc] init];
+});
+
 describe(@"TUIAtlasTicket", ^{
     it(@"shoudld subclass TUISpot", ^{
         [[TUIAtlasTicket should] beSubclassOfClass:[TUISpot class]];
+    });
+    
+    it(@"should have an indoor flag", ^{
+        [[spot should] respondToSelector:@selector(indoor)];
+    });
+    
+    it(@"should have a morning flag", ^{
+        [[spot should] respondToSelector:@selector(morning)];
+    });
+    
+    it(@"should have an afternoon flag", ^{
+        [[spot should] respondToSelector:@selector(afternoon)];
+    });
+    
+    it(@"should have an evening flag", ^{
+        [[spot should] respondToSelector:@selector(evening)];
+    });
+    
+    it(@"should have a full day flag", ^{
+        [[spot should] respondToSelector:@selector(fullday)];
+    });
+    
+    it(@"should have a price", ^{
+        [[spot should] respondToSelector:@selector(price)];
     });
     
 });

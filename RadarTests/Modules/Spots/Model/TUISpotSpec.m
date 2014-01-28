@@ -36,7 +36,7 @@ describe(@"TUISpot", ^{
     });
     
     it(@"should have a location", ^{
-        [[spot should] respondToSelector:@selector(location)];
+        [[spot should] respondToSelector:@selector(coordinate)];
     });
     
     it(@"should have images", ^{

@@ -14,9 +14,14 @@
 @interface TUIServerError : TUIBaseModel
 
 /**
+ The error title
+ */
+@property (nonatomic, copy) NSString *title;
+
+/**
  The error code
  */
-@property (nonatomic, copy) NSString *code;
+@property (nonatomic, copy) NSNumber *code;
 
 /**
  The error message
