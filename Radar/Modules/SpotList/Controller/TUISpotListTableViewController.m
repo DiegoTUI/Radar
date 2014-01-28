@@ -11,6 +11,8 @@
 #import "TUISpotListTableViewController_Private.h"
 // Controllers
 #import "TUISpotListTableViewDataSource.h"
+// Views
+#import "TUISpotListCell.h"
 
 
 @interface TUISpotListTableViewController () <UITableViewDelegate>
@@ -80,7 +82,21 @@
     _selectedRow = _selectedRow == indexPath.row ? -ONE_INT : indexPath.row;
     
     [tableView beginUpdates];
+    
     [tableView endUpdates];
+    
+    // show/hide description
+    TUISpotListCell *cell = (TUISpotListCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if (_selectedRow == indexPath.row)
+    {
+        // the row has been selected. Show description
+        [cell showDescriptionLabelAnimated];
+    }
+    else
+    {
+        // the row has been deselected. Hide description
+        [cell hideDescriptionLabelAnimated];
+    }
     
 }
 
