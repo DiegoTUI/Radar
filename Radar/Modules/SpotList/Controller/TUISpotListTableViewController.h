@@ -11,6 +11,16 @@
 @interface TUISpotListTableViewController : TUIBaseTableViewController
 
 /**
+ The row selected block. called when a row in the list is selected.
+ */
+@property (nonatomic,copy) void (^rowSelectedBlock)(NSInteger);
+
+/**
+ The row deselected block. called when a row in the list is deselected.
+ */
+@property (nonatomic,copy) void (^rowDeselectedBlock)(NSInteger);
+
+/**
  @methodName deselectAllRows
  @abstract Deselects all rows in the table
  @discussion This method deselects all rows in the table

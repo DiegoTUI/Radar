@@ -75,4 +75,14 @@
  */
 - (void)hideList;
 
+/**
+ Tell the delegate that a row was selected
+ */
+- (void)rowSelected:(NSInteger)row;
+
+/**
+ Tell the delegate that a row was deselected
+ */
+- (void)rowDeselected:(NSInteger)row;
+
 @end

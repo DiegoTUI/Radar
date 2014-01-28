@@ -84,7 +84,6 @@
     _selectedRow = _selectedRow == indexPath.row ? -ONE_INT : indexPath.row;
     
     [tableView beginUpdates];
-    
     [tableView endUpdates];
     
     // show/hide description. Enable/disable user interaction.
@@ -99,6 +98,8 @@
         [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
         // disable scroll
         tableView.scrollEnabled = NO;
+        // call the row select block
+        _rowSelectedBlock(_selectedRow);
     }
     else
     {
@@ -108,6 +109,8 @@
         [self enableUserInteractionForAllCells];
         // enable scroll
         tableView.scrollEnabled = YES;
+        // call the row select block
+        _rowDeselectedBlock(indexPath.row);
     }
 }
 

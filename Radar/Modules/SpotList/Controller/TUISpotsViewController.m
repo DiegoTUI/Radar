@@ -53,6 +53,22 @@ static CGFloat kRowHeight = 89.0f;
     _displayed = NO;
     // spot list table view controller
     _spotListTableViewController = (TUISpotListTableViewController *) self.childViewControllers[0];
+    // set row selected and deselected blocks
+    typeof(self) __weak weakSelf = self;
+    _spotListTableViewController.rowSelectedBlock = ^(NSInteger row)
+    {
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        [strongSelf.delegate rowSelected:row];
+    };
+    _spotListTableViewController.rowDeselectedBlock = ^(NSInteger row)
+    {
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        [strongSelf.delegate rowDeselected:row];
+    };
 }
 
 

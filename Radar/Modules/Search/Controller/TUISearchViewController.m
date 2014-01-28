@@ -21,6 +21,7 @@
 #import "TUISearchMapViewDelegate.h"
 // Views
 #import "TUIUserLocationAnnotationView.h"
+#import "TUISpotAnnotationView.h"
 
 
 @interface TUISearchViewController () <TUISettingsViewControllerDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate, TUILocationManagerDelegate>
@@ -265,6 +266,27 @@
             strongSelf.spotsViewController.displayed = YES;
         }
     }];
+}
+
+
+#pragma mark - Row selected/deselected -
+
+- (void)rowSelected:(NSInteger)row
+{
+    // Center map in selected annotation
+    MKCoordinateSpan currentSpan = _mapViewDelegate.mapView.region.span;
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMake(((TUISpot *)_spotList.spots[row]).coordinate, currentSpan);
+    MKCoordinateRegion adjustedRegion = [_mapViewDelegate.mapView regionThatFits:viewRegion];
+    [_mapViewDelegate.mapView setRegion:adjustedRegion animated:YES];
+    // Make annotation jiggle
+    TUISpotAnnotationView *selectedAnnotationView = (TUISpotAnnotationView *)[_mapViewDelegate.mapView viewForAnnotation:_spotList.spots[row]];
+    [selectedAnnotationView startJiggling];
+}
+
+- (void)rowDeselected:(NSInteger)row
+{
+    TUISpotAnnotationView *selectedAnnotationView = (TUISpotAnnotationView *)[_mapViewDelegate.mapView viewForAnnotation:_spotList.spots[row]];
+    [selectedAnnotationView stopJiggling];
 }
 
 #pragma mark - Hide/display filters -

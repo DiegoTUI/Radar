@@ -66,8 +66,6 @@
  */
 - (void)updateFilters;
 
-
-
 @end
 
 
