@@ -13,4 +13,4 @@
 #define DEFAULT_AUTOTIME            1
 #define DEFAULT_TIME                @""
 
-#define TIME_THRESHOLD              15
+#define TIME_THRESHOLD              17

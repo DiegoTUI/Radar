@@ -11,6 +11,8 @@
 
 #define TIME_TODAY                  @"TIME_TODAY"
 #define TIME_TOMORROW               @"TIME_TOMORROW"
+#define TIME_AFTERNOON              12
+#define TIME_EVENING                17
 
 #define DISTANCE_300_M              300
 #define DISTANCE_1000_M             1000

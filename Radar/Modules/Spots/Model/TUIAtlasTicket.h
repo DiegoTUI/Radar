@@ -43,5 +43,19 @@
  */
 @property (nonatomic, strong) NSNumber *price;
 
+/**
+ @methodName compliesWithWeatherFilter:timefilter:
+ @abstract Checks if the ticket complies with the given filters
+ @discussion This method will check if self complies with the given filters.
+ It will return YES if it does, NO otherwise.
+ 
+ @param weatherFilter The weather filter
+ @param timeFilter The time filter
+ 
+ @return YES if the ticket complies with the filters, NO otherwise.
+ */
+- (BOOL)compliesWithWeatherFilter:(NSString *)weatherFilter
+                       timeFilter:(NSString *)timeFilter;
+
 
 @end

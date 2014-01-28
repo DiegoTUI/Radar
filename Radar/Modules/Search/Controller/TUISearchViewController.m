@@ -13,6 +13,7 @@
 #import "TUILocationManager.h"
 #import "TUISettings.h"
 #import "TUISpotList+Proxy.h"
+#import "TUIAtlasTicket.h"
 // Controllers
 #import "TUISettingsViewController.h"
 #import "TUISpotsViewController.h"
@@ -102,13 +103,37 @@
         if (!strongSelf) return;
         
         strongSelf.spotList = spotList;
-        [strongSelf.spotsViewController reloadSpotsWithSpotList:spotList];
-        strongSelf.mapViewDelegate.spotList = spotList;
-        [strongSelf.mapViewDelegate reloadData];
+        [strongSelf reloadMapAndList];
         
     } failure:^(NSError *error) {
         // TODO: handle errors
     }];
+}
+
+- (void)reloadMapAndList
+{
+    [_spotsViewController reloadSpotsWithSpotList:[self filteredSpotList]];
+    _mapViewDelegate.spotList = [self filteredSpotList];
+    [_mapViewDelegate reloadData];
+}
+
+- (TUISpotList *)filteredSpotList
+{
+    TUISpotList * result = [[TUISpotList alloc] init];
+    // get the spots from the given list
+    NSMutableOrderedSet *filteredOrderedSet = [_spotList.spots mutableCopy];
+    // apply the filters
+    for (TUISpot *spot in _spotList.spots)
+    {
+        if ([spot isKindOfClass:[TUIAtlasTicket class]] &&
+            ![(TUIAtlasTicket *)spot compliesWithWeatherFilter:_filterListViewController.activeWeatherFilter timeFilter:_filterListViewController.activeTimeFilter])
+        {
+            [filteredOrderedSet removeObject:spot];
+        }
+    }
+    // assign the spots and return
+    result.spots = filteredOrderedSet;
+    return result;
 }
 
 
@@ -261,6 +286,8 @@
          if (finished)
          {
              strongSelf.filterListViewController.displayed = NO;
+             // reload with new filters
+             [strongSelf reloadMapAndList];
          }
      }];
 }
@@ -299,8 +326,13 @@
 
 - (void)saveButtonPressed
 {
+    typeof(self) __weak weakSelf = self;
     [self dismissViewControllerAnimated:YES completion:^{
-        [_filterListViewController updateFilters];
+        typeof(self) __strong strongSelf = weakSelf;
+        if (!strongSelf) return;
+        
+        [strongSelf.filterListViewController updateFilters];
+        [strongSelf reloadMapAndList];
     }];
 }
 

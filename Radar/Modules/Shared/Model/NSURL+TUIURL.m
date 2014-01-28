@@ -26,7 +26,7 @@
              longitude:(CGFloat)longitude
                 radius:(NSInteger)radius
 {
-    NSString *path = [NSString stringWithFormat:@"ms-venues?ll=%f,%f&radius=%ld", latitude, longitude, radius];
+    NSString *path = [NSString stringWithFormat:@"ms-venues?ll=%f,%f&radius=%ld", latitude, longitude, (long)radius];
     return [NSURL URLWithString:path relativeToURL:[NSURL APIURL]];
 }
 
