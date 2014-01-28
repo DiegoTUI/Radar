@@ -55,6 +55,15 @@
  */
 + (UIColor *)tuiLightGrayColor;
 
+/**
+ @methodName tuiDisabledCellBackgroundColor
+ @abstract Returns a UIColor for the disabled table cells
+ @discussion This method will return a UIColor object designed for for the disabled table cells
+ R240, G240, B240
+ @return A UIColor instance for white backgrounds
+ */
++ (UIColor *)tuiDisabledCellBackgroundColor;
+
 
 
 @end

@@ -53,7 +53,9 @@
 
 }
 
+
 #pragma mark - Update
+
 - (void)updateData
 {
     [super updateData];
@@ -85,19 +87,57 @@
     
     [tableView endUpdates];
     
-    // show/hide description
+    // show/hide description. Enable/disable user interaction.
     TUISpotListCell *cell = (TUISpotListCell *)[tableView cellForRowAtIndexPath:indexPath];
     if (_selectedRow == indexPath.row)
     {
         // the row has been selected. Show description
         [cell showDescriptionLabelAnimated];
+        // disable user interacion in all cells but this one
+        [self disableUserInteractionForAllCellsExceptForRow:_selectedRow];
+        // disable scroll
+        tableView.scrollEnabled = NO;
     }
     else
     {
         // the row has been deselected. Hide description
         [cell hideDescriptionLabelAnimated];
+        // enable user interaction in all cells
+        [self enableUserInteractionForAllCells];
+        // enable scroll
+        tableView.scrollEnabled = YES;
     }
     
+    
+    for (int i = 0; i < [tableView numberOfRowsInSection:ZERO_INT]; i++)
+    {
+    }
+}
+
+
+#pragma mark - Enable/Disable user interaction -
+
+- (void)enableUserInteractionForAllCells
+{
+    for (int i = 0; i < [self.tableView numberOfRowsInSection:ZERO_INT]; i++)
+    {
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:ZERO_INT]];
+        cell.contentView.backgroundColor = [UIColor whiteColor];
+        cell.userInteractionEnabled = YES;
+    }
+}
+
+- (void)disableUserInteractionForAllCellsExceptForRow:(NSInteger)row
+{
+    for (int i = 0; i < [self.tableView numberOfRowsInSection:ZERO_INT]; i++)
+    {
+        if (i != row)
+        {
+            TUISpotListCell *cell = (TUISpotListCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:ZERO_INT]];
+            cell.contentView.backgroundColor = [UIColor tuiDisabledCellBackgroundColor];
+            cell.userInteractionEnabled = NO;
+        }
+    }
 }
 
 @end
