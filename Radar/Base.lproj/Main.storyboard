@@ -108,16 +108,16 @@
         <scene sceneID="VPW-aR-n0b">
             <objects>
                 <tableViewController id="HDr-4M-4zr" customClass="TUISpotListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="22" sectionFooterHeight="22" id="TwF-6O-gdC">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TwF-6O-gdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TUISpotListCell" rowHeight="89" id="cLO-xa-bNj" customClass="TUISpotListCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TUISpotListCell" rowHeight="89" id="cLO-xa-bNj" customClass="TUISpotListCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLO-xa-bNj" id="BLU-73-Cmc">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KdB-iA-kUs">
@@ -145,13 +145,13 @@
                                             <color key="highlightedColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.3999999762" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         </label>
                                         <view contentMode="scaleToFill" id="VSR-1O-bjo">
-                                            <rect key="frame" x="316" y="0.0" width="4" height="89"/>
+                                            <rect key="frame" x="316" y="0.0" width="4" height="178"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.62745098040000002" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kdS-TQ-kLz">
-                                            <rect key="frame" x="265" y="39" width="46" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="265" y="40" width="46" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                             <state key="normal" title="100€">
                                                 <color key="titleColor" red="0.40784313729999999" green="0.7725490196" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,6 +164,11 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view alpha="0.39999999999999986" contentMode="scaleToFill" id="JaB-Pr-YVz">
+                                            <rect key="frame" x="0.0" y="0.0" width="316" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>

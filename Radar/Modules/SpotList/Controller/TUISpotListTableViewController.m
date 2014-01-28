@@ -14,10 +14,14 @@
 
 
 @interface TUISpotListTableViewController () <UITableViewDelegate>
+{
+    NSInteger _selectedRow;
+}
 
 @end
 
 #define STANDARD_CELL_HEIGHT    89.0f
+#define SELECTED_CELL_HEIGHT    178.0f
 
 @implementation TUISpotListTableViewController
 
@@ -29,6 +33,10 @@
     
     self.dataSource = [[TUISpotListTableViewDataSource alloc] init];
     self.tableView.dataSource = _dataSource;
+    // No selected row
+    _selectedRow = -ONE_INT;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, self.tableView.width);
 }
 
 - (void)initUserInterface
@@ -49,6 +57,8 @@
     [super updateData];
     
     self.tableView.dataSource = _dataSource;
+    // No selected row
+    _selectedRow = -ONE_INT;
     [self.tableView reloadData];
 }
 
@@ -57,7 +67,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == _selectedRow)
+    {
+        return SELECTED_CELL_HEIGHT;
+    }
     return STANDARD_CELL_HEIGHT;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // update selected row
+    _selectedRow = _selectedRow == indexPath.row ? -ONE_INT : indexPath.row;
+    
+    [tableView beginUpdates];
+    [tableView endUpdates];
+    
 }
 
 @end

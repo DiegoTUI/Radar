@@ -48,6 +48,7 @@ static NSInteger kCornerImageViewWidth              = 22;
     //[self setupCornerLabel];
     [self setupPriceButton];
     [self setupDescriptionLabel];
+    //[self setupSeparator];
 
 }
 
@@ -78,6 +79,7 @@ static NSInteger kCornerImageViewWidth              = 22;
 {
     _descriptionLabel.hidden = YES;
 }
+
 
 #pragma mark - Cell types -
 
