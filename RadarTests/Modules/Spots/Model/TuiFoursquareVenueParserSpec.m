@@ -55,9 +55,8 @@ describe(@"TUIFoursquareVenueParser", ^{
         });
         
         it(@"should parse the ticket latitude and longitude", ^{
-            [[foursquareVenue.location shouldNot] beNil];
-            [[@(foursquareVenue.location.coordinate.latitude) should] equal:mockResponse[@"latitude"]];
-            [[@(foursquareVenue.location.coordinate.longitude) should] equal:mockResponse[@"longitude"]];
+            [[@(foursquareVenue.coordinate.latitude) should] equal:mockResponse[@"latitude"]];
+            [[@(foursquareVenue.coordinate.longitude) should] equal:mockResponse[@"longitude"]];
         });
     });
     

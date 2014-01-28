@@ -65,10 +65,8 @@
     }
     else
     {
-        TUILocation *userLocation = [[TUILocation alloc] init];
-        userLocation.latitude = currentSettings.latitude;
-        userLocation.longitude = currentSettings.longitude;
-        
+        TUIUserLocation *userLocation = [[TUIUserLocation alloc] initWithLatitude:[currentSettings.latitude doubleValue]
+                                                                        longitude:[currentSettings.longitude doubleValue]];
         [_delegate userLocationReady:userLocation];
     }
 }
@@ -82,9 +80,8 @@
     [_locationManager stopUpdatingLocation];
     CLLocation *location = [locations lastObject];
     // Store the location in the cache
-    TUILocation *userLocation = [[TUILocation alloc] init];
-    userLocation.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
-    userLocation.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
+    TUIUserLocation *userLocation = [[TUIUserLocation alloc] initWithLatitude:location.coordinate.latitude
+                                                                    longitude:location.coordinate.longitude];
     [TUICache storeObject:userLocation forKey:CACHED_USER_LOCATION_KEY];
     // Call delegate
     [_delegate userLocationReady:userLocation];
@@ -92,13 +89,13 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     //No location available, let's try cache
-    TUILocation *locationStored = (TUILocation *)[TUICache readObjectOfClass:[TUILocation class] forKey:CACHED_USER_LOCATION_KEY];
+    TUIUserLocation *locationStored = (TUIUserLocation *)[TUICache readObjectOfClass:[TUIUserLocation class] forKey:CACHED_USER_LOCATION_KEY];
     if (locationStored) {
         // Call delegate
         [_delegate userLocationReady:locationStored];
     } else {
         //No location stored, return default
-        [_delegate userLocationReady:[TUILocation defaultUserLocation]];
+        [_delegate userLocationReady:[TUIUserLocation defaultUserLocation]];
     }
 }
 

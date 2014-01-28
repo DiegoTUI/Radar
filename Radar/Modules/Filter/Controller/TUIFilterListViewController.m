@@ -58,20 +58,32 @@ static CGFloat kFilterContainerHeight = 103.0f;
  */
 @property (strong, nonatomic) UIPageViewController *weatherFilterViewController;
 
-
+/**
+ The data sources
+ */
 @property (strong, nonatomic) TUIWeatherPageViewControllerDataSource *weatherDataSource;
 @property (strong, nonatomic) TUITimePageViewControllerDataSource *timeDataSource;
 @property (strong, nonatomic) TUIDistancePageViewControllerDataSource *distanceDataSource;
 
 /**
- The settings object
+ The filters object
  */
 @property (nonatomic, strong) TUIFilters *filters;
 @property (nonatomic, strong) TUIFilters *temporalFilters;
 
+/**
+ The filter icons
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *timeStatusFilterImage;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherStatusFilterImage;
 @property (weak, nonatomic) IBOutlet UIImageView *distanceStatusFilterImage;
+
+/**
+ The active filters
+ */
+@property (nonatomic, copy) NSString *activeWeatherFilter;
+@property (nonatomic) NSUInteger activeDistanceFilter;
+@property (nonatomic, copy) NSString *activeTimeFilter;
 
 - (IBAction)handlerButtonClicked:(UIButton *)sender;
 
@@ -109,7 +121,8 @@ static CGFloat kFilterContainerHeight = 103.0f;
     
     // set displayed to false
     _displayed = NO;
-    
+    // update active filters
+    [self updateActiveFilters];
 }
 
 
@@ -218,6 +231,8 @@ static CGFloat kFilterContainerHeight = 103.0f;
         }
         
         _filters = _temporalFilters;
+        // update active filters
+        [self updateActiveFilters];
     }
 }
 
@@ -284,6 +299,27 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
 {
     [self initData];
     [self initFilterIcons];
+}
+
+- (void)updateActiveFilters
+{
+    // Weather
+    _activeWeatherFilter = [_filters.weatherFilterLabel isEqualToString:NSLocalizedString(@"FILTERS_WEATHER_SUNNY", nil)] ?
+                                                                                                    WEATHER_SUNNY: WEATHER_CLOUDY;
+    // Distance
+    _activeDistanceFilter = DISTANCE_300_M;
+    if ([_filters.distanceFilterLabel isEqualToString:NSLocalizedString(@"FILTERS_DISTANCE_300M", nil)])
+    {
+        _activeDistanceFilter = DISTANCE_1000_M;
+    }
+    else if ([_filters.distanceFilterLabel isEqualToString:NSLocalizedString(@"FILTERS_DISTANCE_FAR", nil)])
+    {
+        _activeDistanceFilter = DISTANCE_FAR;
+    }
+    
+    // Time
+    _activeTimeFilter = [_filters.timeFilterLabel isEqualToString:NSLocalizedString(@"FILTERS_TIME_TODAY", nil)] ?
+                                                                                                    TIME_TODAY: TIME_TOMORROW;
 }
 
 @end

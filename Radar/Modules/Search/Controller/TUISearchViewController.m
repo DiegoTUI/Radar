@@ -131,23 +131,8 @@
     _mapViewDelegate = [[TUISearchMapViewDelegate alloc] init];
     _mapViewDelegate.mapView = _mapView;
     // get user location
-    TUISettings *settings = [TUISettings currentSettings];
-    // check if autolocation is on
-    if ([settings.autolocation boolValue])
-    {
-        // auto location
-        [[TUILocationManager sharedManager] setDelegate:self];
-        [[TUILocationManager sharedManager] startGettingUserLocation];
-    }
-    else
-    {
-        TUILocation *savedLocation = [[TUILocation alloc] init];
-        savedLocation.latitude = settings.latitude;
-        savedLocation.longitude = settings.longitude;
-        [self userLocationReady:savedLocation];
-        //[self centerMapInLatitude:[settings.latitude doubleValue] longitude:[settings.longitude doubleValue] radius:DISTANCE_1000_M];
-        //[self updateSpotListForLatitude:[settings.latitude doubleValue] longitude:[settings.longitude doubleValue] radius:DISTANCE_1000_M];
-    }
+    [[TUILocationManager sharedManager] setDelegate:self];
+    [[TUILocationManager sharedManager] startGettingUserLocation];
 }
 
 - (void)initContainerListView
@@ -320,24 +305,10 @@
 
 #pragma mark - TUILocationManagerDelegate delegate -
 
-- (void)userLocationReady:(TUILocation *)location
+- (void)userLocationReady:(TUIUserLocation *)location
 {
-    [self centerMapInLatitude:[location.latitude doubleValue] longitude:[location.longitude doubleValue] radius:DISTANCE_1000_M];
-    [self updateSpotListForLatitude:[location.latitude doubleValue] longitude:[location.longitude doubleValue] radius:DISTANCE_1000_M];
-    [_mapViewDelegate userLocationUpdated:location];
-}
-
-
-#pragma mark - Map -
-
-- (void)centerMapInLatitude:(CLLocationDegrees)latitude
-                  longitude:(CLLocationDegrees)longitude
-                     radius:(NSInteger)radius
-{
-    CLLocation *userLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, radius, radius);
-    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    [self.mapView setRegion:adjustedRegion animated:YES];
+    [self updateSpotListForLatitude:location.coordinate.latitude longitude:location.coordinate.longitude radius:_filterListViewController.activeDistanceFilter];
+    [_mapViewDelegate userLocationUpdated:location radius:_filterListViewController.activeDistanceFilter];
 }
 
 @end

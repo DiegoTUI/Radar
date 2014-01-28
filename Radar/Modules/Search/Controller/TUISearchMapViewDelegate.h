@@ -9,7 +9,7 @@
 #import <MapKit/MapKit.h>
 // Forward declarations
 @class TUISpotList;
-@class TUILocation;
+@class TUIUserLocation;
 
 /**
  The TUISearchMapViewDelegate is in charge of controlling
@@ -28,12 +28,20 @@
 @property (strong, nonatomic) MKMapView *mapView;
 
 /**
+ @methodName reloadData
  @abstract Reload the datasource
  @discussion Reload the datasource and update the
  datasource's mapView to display the current data
  */
 - (void)reloadData;
 
-- (void)userLocationUpdated:(TUILocation *)location;
+/**
+ @methodName userLocationUpdated:
+ @abstract Updates the user location in the map
+ @discussion This method receives the updated user location and the current
+ distance filter and updates the map with it.
+ */
+- (void)userLocationUpdated:(TUIUserLocation *)location
+                     radius:(NSUInteger)radius;
 
 @end

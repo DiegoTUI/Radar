@@ -73,9 +73,9 @@ describe(@"TUIAtlasTicketParser", ^{
         });
         
         it(@"should parse the ticket latitude and longitude", ^{
-            [[atlasTicket.location shouldNot] beNil];
-            [[@(atlasTicket.location.coordinate.latitude) should] equal:mockResponse[@"latitude"]];
-            [[@(atlasTicket.location.coordinate.longitude) should] equal:mockResponse[@"longitude"]];
+            
+            [[@(atlasTicket.coordinate.latitude) should] equal:mockResponse[@"latitude"]];
+            [[@(atlasTicket.coordinate.longitude) should] equal:mockResponse[@"longitude"]];
         });
         
         it(@"should parse the ticket indoor flag", ^{

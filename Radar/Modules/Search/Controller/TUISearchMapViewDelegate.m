@@ -11,7 +11,7 @@
 #import "TUISpotList.h"
 #import "TUIAtlasTicket.h"
 #import "TUIFoursquareVenue.h"
-#import "TUILocation.h"
+#import "TUIUserLocation.h"
 // Views
 #import "TUIUserLocationAnnotationView.h"
 #import "TUISpotAnnotationView.h"
@@ -58,7 +58,7 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     //remove all the annotations except the user location
     for (id<MKAnnotation> annotation in _mapView.annotations)
     {
-        if (![annotation isKindOfClass:[TUILocation class]])
+        if (![annotation isKindOfClass:[TUIUserLocation class]])
         {
             [_mapView removeAnnotation:annotation];
         }
@@ -70,25 +70,32 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     //remove all the annotations except the user location
     for (id<MKAnnotation> annotation in _mapView.annotations)
     {
-        if ([annotation isKindOfClass:[TUILocation class]])
+        if ([annotation isKindOfClass:[TUIUserLocation class]])
         {
             [_mapView removeAnnotation:annotation];
         }
     }
 }
 
-- (void)userLocationUpdated:(TUILocation *)location
+- (void)userLocationUpdated:(TUIUserLocation *)location
+                     radius:(NSUInteger)radius
 {
     //remove previous user location
     [self removeUserLocationAnnotation];
+    [self centerMapInLocation:location radius:radius];
     // add the new one
-    TUILocation *userLocation = [[TUILocation alloc] init];
-    CLLocationCoordinate2D coordinate;
-    coordinate.latitude = [location.latitude doubleValue];
-    coordinate.longitude = [location.longitude doubleValue];
-    userLocation.coordinate = coordinate;
-    
-    [_mapView addAnnotation:userLocation];
+    [_mapView addAnnotation:location];
+}
+
+
+#pragma mark - Map -
+
+- (void)centerMapInLocation:(TUIUserLocation *)location
+                     radius:(NSUInteger)radius
+{
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, radius, radius);
+    MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
+    [_mapView setRegion:adjustedRegion animated:YES];
 }
 
 
@@ -98,7 +105,7 @@ static CGFloat kUserLocationAnnotationHeight = 26;
 {
     MKAnnotationView *annotationView = nil;
     
-    if([annotation isKindOfClass:[TUILocation class]])
+    if([annotation isKindOfClass:[TUIUserLocation class]])
     {
         annotationView = [[TUIUserLocationAnnotationView alloc] initWithFrame:CGRectMake(ZERO_FLOAT, ZERO_FLOAT, kUserLocationAnnotationWidth, kUserLocationAnnotationHeight)];
         

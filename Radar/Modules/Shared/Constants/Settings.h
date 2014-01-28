@@ -13,7 +13,4 @@
 #define DEFAULT_AUTOTIME            1
 #define DEFAULT_TIME                @""
 
-#define WEATHER_SUNNY               @"WEATHER_SUNNY"
-#define WEATHER_CLOUDY              @"WEATHER_CLOUDY"
-
 #define TIME_THRESHOLD              15

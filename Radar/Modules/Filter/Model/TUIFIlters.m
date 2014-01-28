@@ -31,13 +31,13 @@
     if ([[TUIWeatherManager currentWeather] isEqualToString:WEATHER_SUNNY])
     {
         result.weatherFilterIndex = ONE_INT;
-        result.weatherFilterLabel = NSLocalizedString(@"FILTERS_WEATHER_OUTDOOR", nil);
+        result.weatherFilterLabel = NSLocalizedString(@"FILTERS_WEATHER_SUNNY", nil);
         result.weatherFilterIconImage = OUTDOOR_ICON;
     }
     else
     {
         result.weatherFilterIndex = ZERO_INT;
-        result.weatherFilterLabel = NSLocalizedString(@"FILTERS_WEATHER_INDOOR", nil);
+        result.weatherFilterLabel = NSLocalizedString(@"FILTERS_WEATHER_CLOUDY", nil);
         result.weatherFilterIconImage = INDOOR_ICON;
     }
     
