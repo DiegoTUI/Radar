@@ -175,6 +175,29 @@
                                     longitude:strongSelf.mapViewDelegate.mapView.centerCoordinate.longitude
                                        radius:radius];
     };
+    // annotation selected block
+    _mapViewDelegate.annotationSelectedBlock = ^(TUISpot *spot)
+    {
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        // find the row of the selected spot in the current list
+        TUISpotList *currentSpotList = [strongSelf.spotsViewController currentSpotList];
+        NSInteger row = [currentSpotList.spots indexOfObject:spot];
+        // return if not found
+        if (row == NSNotFound) return;
+        __block NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:ZERO_INT];
+        // scroll to the selected row
+        [strongSelf.spotsViewController scrollTableToRowAtIndexPath:indexPath];
+        // display the list and select the row otherwise
+        [strongSelf displayListCompletion:^(BOOL finished) {
+            typeof(self) strongSelf = weakSelf;
+            if ( !strongSelf ) { return ;}
+            if (finished)
+            {
+                [strongSelf.spotsViewController selectRowAtIndexPath:indexPath];
+            }
+        }];
+    };
     // get user location
     [[TUILocationManager sharedManager] setDelegate:self];
     [[TUILocationManager sharedManager] startGettingUserLocation];
@@ -211,7 +234,7 @@
 
 #pragma mark - Hide/display list -
 
-- (void)hideList
+- (void)hideListCompletion:(void (^)(BOOL))completion
 {
     // deselect all rows in the table
     [_spotsViewController deselectAllRows];
@@ -235,11 +258,15 @@
          if (finished)
          {
              strongSelf.spotsViewController.displayed = NO;
+             if (completion)
+             {
+                 completion (finished);
+             }
          }
      }];
 }
 
-- (void)displayList
+- (void)displayListCompletion:(void (^)(BOOL))completion
 {
     typeof(self) __weak weakSelf = self;
     [UIView animateWithDuration:DEFAULT_ANIMATION_SPEED
@@ -264,6 +291,10 @@
         if (finished)
         {
             strongSelf.spotsViewController.displayed = YES;
+            if (completion)
+            {
+                completion (finished);
+            }
         }
     }];
 }
@@ -273,19 +304,23 @@
 
 - (void)rowSelected:(NSInteger)row
 {
+    // Get the spot list displayed in the list
+    TUISpotList *spotList = [_spotsViewController currentSpotList];
     // Center map in selected annotation
     MKCoordinateSpan currentSpan = _mapViewDelegate.mapView.region.span;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMake(((TUISpot *)_spotList.spots[row]).coordinate, currentSpan);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMake(((TUISpot *)spotList.spots[row]).coordinate, currentSpan);
     MKCoordinateRegion adjustedRegion = [_mapViewDelegate.mapView regionThatFits:viewRegion];
     [_mapViewDelegate.mapView setRegion:adjustedRegion animated:YES];
     // Make annotation jiggle
-    TUISpotAnnotationView *selectedAnnotationView = (TUISpotAnnotationView *)[_mapViewDelegate.mapView viewForAnnotation:_spotList.spots[row]];
+    TUISpotAnnotationView *selectedAnnotationView = (TUISpotAnnotationView *)[_mapViewDelegate.mapView viewForAnnotation:spotList.spots[row]];
     [selectedAnnotationView startJiggling];
 }
 
 - (void)rowDeselected:(NSInteger)row
 {
-    TUISpotAnnotationView *selectedAnnotationView = (TUISpotAnnotationView *)[_mapViewDelegate.mapView viewForAnnotation:_spotList.spots[row]];
+    // Get the spot list displayed in the list
+    TUISpotList *spotList = [_spotsViewController currentSpotList];
+    TUISpotAnnotationView *selectedAnnotationView = (TUISpotAnnotationView *)[_mapViewDelegate.mapView viewForAnnotation:spotList.spots[row]];
     [selectedAnnotationView stopJiggling];
 }
 
@@ -330,7 +365,7 @@
          {
              UIImage *listUpImage = [UIImage imageNamed:@"ux-list-up.png"];
              [_spotsViewController.handlerButton setImage:listUpImage forState:UIControlStateNormal];
-             [strongSelf hideList];
+             [strongSelf hideListCompletion:nil];
          }
          strongSelf.containerFilterView.y = ZERO_FLOAT;
      }

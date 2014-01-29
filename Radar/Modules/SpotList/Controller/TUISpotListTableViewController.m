@@ -15,7 +15,7 @@
 #import "TUISpotListCell.h"
 
 
-@interface TUISpotListTableViewController () <UITableViewDelegate>
+@interface TUISpotListTableViewController ()
 {
     NSInteger _selectedRow;
 }

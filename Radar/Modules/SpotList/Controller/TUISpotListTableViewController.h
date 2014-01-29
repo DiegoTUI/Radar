@@ -8,7 +8,7 @@
 
 #import "TUIBaseTableViewController.h"
 
-@interface TUISpotListTableViewController : TUIBaseTableViewController
+@interface TUISpotListTableViewController : TUIBaseTableViewController <UITableViewDelegate>
 
 /**
  The row selected block. called when a row in the list is selected.

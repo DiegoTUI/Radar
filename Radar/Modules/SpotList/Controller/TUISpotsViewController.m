@@ -113,14 +113,14 @@ static CGFloat kRowHeight = 89.0f;
         // deselect all rows in the spotlist
         [self deselectAllRows];
         
-        [_delegate hideList];
+        [_delegate hideListCompletion:nil];
     }
     else
     {
         UIImage *listDownImage = [UIImage imageNamed:@"ux-list-down.png"];
         [_handlerButton setImage:listDownImage forState:UIControlStateNormal];
         
-        [_delegate displayList];
+        [_delegate displayListCompletion:nil];
     }
 }
 
@@ -133,11 +133,29 @@ static CGFloat kRowHeight = 89.0f;
     [_spotListTableViewController updateData];
 }
 
-#pragma mark - Deselect rows -
+#pragma mark - Current spot list -
+
+- (TUISpotList *)currentSpotList
+{
+    return _spotListTableViewController.dataSource.spotList;
+}
+
+
+#pragma mark - Table methods -
 
 - (void)deselectAllRows
 {
     [_spotListTableViewController deselectAllRows];
+}
+
+- (void)scrollTableToRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_spotListTableViewController.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+}
+
+- (void)selectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_spotListTableViewController tableView:(_spotListTableViewController.tableView) didSelectRowAtIndexPath:indexPath];
 }
 
 @end
