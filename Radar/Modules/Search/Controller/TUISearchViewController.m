@@ -198,6 +198,13 @@
             }
         }];
     };
+    // annotation deselected block
+    _mapViewDelegate.annotationDeselectedBlock = ^(TUISpot *spot)
+    {
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        [strongSelf.spotsViewController deselectAllRows];
+    };
     // get user location
     [[TUILocationManager sharedManager] setDelegate:self];
     [[TUILocationManager sharedManager] startGettingUserLocation];
@@ -219,7 +226,6 @@
     _containerFilterView.height = [_filterListViewController numberOfFilters] * [_filterListViewController filterHeight] + [_filterListViewController handlerButton].height;
     
 }
-
 
 #pragma mark - Shaking -
 

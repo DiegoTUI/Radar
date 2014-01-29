@@ -137,6 +137,13 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     _annotationSelectedBlock(annotationSelected);
 }
 
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    TUISpot *annotationDeselected = (TUISpot *)view.annotation;
+    NSLog(@"Annotation view deselected: %@", annotationDeselected.name);
+    _annotationDeselectedBlock(annotationDeselected);
+}
+
 
 #pragma mark - Region changed -
 

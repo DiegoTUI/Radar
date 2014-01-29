@@ -44,6 +44,11 @@
 @property (nonatomic,copy) void (^annotationSelectedBlock)(TUISpot *spot);
 
 /**
+ The annotation deselected block. Called when an annotation has been deselected.
+ */
+@property (nonatomic,copy) void (^annotationDeselectedBlock)(TUISpot *spot);
+
+/**
  @methodName reloadData
  @abstract Reload the datasource
  @discussion Reload the datasource and update the
