@@ -57,7 +57,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="K4F-gO-JLj"/>
+                    <navigationItem key="navigationItem" id="K4F-gO-JLj">
+                        <barButtonItem key="rightBarButtonItem" image="iconnav-basket.png" id="g6F-Iz-vmq"/>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -368,6 +370,7 @@
         <image name="filter-indoor.png" width="16" height="16"/>
         <image name="filter-now.png" width="13" height="13"/>
         <image name="iconfilter-indoor.png" width="25" height="23"/>
+        <image name="iconnav-basket.png" width="23" height="19"/>
         <image name="ux-filter-handle.png" width="320" height="35"/>
         <image name="ux-list-up.png" width="320" height="22"/>
     </resources>
