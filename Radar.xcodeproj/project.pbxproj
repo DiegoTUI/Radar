@@ -40,6 +40,7 @@
 		760BFF3A18979B5F007B1FE7 /* TUIUserLocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF3918979B5F007B1FE7 /* TUIUserLocationSpec.m */; };
 		760BFF3D18979B85007B1FE7 /* TUIUserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF3C18979B85007B1FE7 /* TUIUserLocation.m */; };
 		760BFF4518992F63007B1FE7 /* TUIBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF4418992F63007B1FE7 /* TUIBaseButton.m */; };
+		760BFF4D189931F1007B1FE7 /* TUIBasketButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF4C189931F1007B1FE7 /* TUIBasketButton.m */; };
 		7614223D18964AA9002AF91C /* TUIFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7614223C18964AA9002AF91C /* TUIFilters.m */; };
 		7614223E18965E31002AF91C /* TUISpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672095A188C2635007CAE17 /* TUISpotsViewController.m */; };
 		7614223F18965E3D002AF91C /* TUISpotListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720945188BF5D5007CAE17 /* TUISpotListCell.m */; };
@@ -260,6 +261,8 @@
 		760BFF4218992F63007B1FE7 /* TUIBaseButton_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseButton_Private.h; path = Modules/Base/View/TUIBaseButton_Private.h; sourceTree = "<group>"; };
 		760BFF4318992F63007B1FE7 /* TUIBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBaseButton.h; path = Modules/Base/View/TUIBaseButton.h; sourceTree = "<group>"; };
 		760BFF4418992F63007B1FE7 /* TUIBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBaseButton.m; path = Modules/Base/View/TUIBaseButton.m; sourceTree = "<group>"; };
+		760BFF4B189931F1007B1FE7 /* TUIBasketButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBasketButton.h; path = Modules/Basket/View/TUIBasketButton.h; sourceTree = "<group>"; };
+		760BFF4C189931F1007B1FE7 /* TUIBasketButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBasketButton.m; path = Modules/Basket/View/TUIBasketButton.m; sourceTree = "<group>"; };
 		7614223B18964AA9002AF91C /* TUIFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilters.h; path = Modules/Filter/Model/TUIFilters.h; sourceTree = "<group>"; };
 		7614223C18964AA9002AF91C /* TUIFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilters.m; path = Modules/Filter/Model/TUIFilters.m; sourceTree = "<group>"; };
 		766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketSpec.m; path = Modules/Spots/Model/TUIAtlasTicketSpec.m; sourceTree = "<group>"; };
@@ -555,6 +558,39 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		760BFF47189930ED007B1FE7 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				760BFF4A18993107007B1FE7 /* Controller */,
+				760BFF48189930F8007B1FE7 /* Model */,
+				760BFF4918993100007B1FE7 /* View */,
+			);
+			name = Basket;
+			sourceTree = "<group>";
+		};
+		760BFF48189930F8007B1FE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		760BFF4918993100007B1FE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				760BFF4B189931F1007B1FE7 /* TUIBasketButton.h */,
+				760BFF4C189931F1007B1FE7 /* TUIBasketButton.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		760BFF4A18993107007B1FE7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		7672093C188BF419007CAE17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +717,7 @@
 			children = (
 				76D7288918841C9400F3545E /* Application */,
 				76D727DC187C58E400F3545E /* Base */,
+				760BFF47189930ED007B1FE7 /* Basket */,
 				76D72845187EC77100F3545E /* Cache */,
 				76D728741883DAA300F3545E /* Error */,
 				76720967188D3047007CAE17 /* Filter */,
@@ -1682,6 +1719,7 @@
 				7672094F188BFCDA007CAE17 /* TUIBaseTableViewController.m in Sources */,
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
+				760BFF4D189931F1007B1FE7 /* TUIBasketButton.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
 				62EFE2C518919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m in Sources */,
 				760B4F72188FE9D400AB65F5 /* TUIErrorHandler.m in Sources */,
