@@ -8,9 +8,9 @@
 
 #import <MapKit/MapKit.h>
 // Forward declarations
+@class TUISpot;
 @class TUISpotList;
 @class TUIUserLocation;
-@protocol TUIMapRegionDelegate;
 
 /**
  The TUISearchMapViewDelegate is in charge of controlling
@@ -29,9 +29,24 @@
 @property (strong, nonatomic) MKMapView *mapView;
 
 /**
- The region changed block. called when the region of the map changes
+ A flag to force (or prevent) the reload of spots whe the region of the map changes
+ */
+@property (nonatomic) BOOL reloadSpotsWhenRegionChanges;
+
+/**
+ The region changed block. called when the region of the map changes (if reloadSpotsWhenRegionChanges is set to YES)
  */
 @property (nonatomic,copy) void (^regionChangedBlock)(void);
+
+/**
+ The annotation selected block. Called when an annotation has been selected.
+ */
+@property (nonatomic,copy) void (^annotationSelectedBlock)(TUISpot *spot);
+
+/**
+ The annotation deselected block. Called when an annotation has been deselected.
+ */
+@property (nonatomic,copy) void (^annotationDeselectedBlock)(TUISpot *spot);
 
 /**
  @methodName reloadData

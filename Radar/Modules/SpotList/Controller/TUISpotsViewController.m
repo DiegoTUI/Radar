@@ -53,6 +53,22 @@ static CGFloat kRowHeight = 89.0f;
     _displayed = NO;
     // spot list table view controller
     _spotListTableViewController = (TUISpotListTableViewController *) self.childViewControllers[0];
+    // set row selected and deselected blocks
+    typeof(self) __weak weakSelf = self;
+    _spotListTableViewController.rowSelectedBlock = ^(NSInteger row)
+    {
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        [strongSelf.delegate rowSelected:row];
+    };
+    _spotListTableViewController.rowDeselectedBlock = ^(NSInteger row)
+    {
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        [strongSelf.delegate rowDeselected:row];
+    };
 }
 
 
@@ -94,15 +110,17 @@ static CGFloat kRowHeight = 89.0f;
     {
         UIImage *listUpImage = [UIImage imageNamed:@"ux-list-up.png"];
         [_handlerButton setImage:listUpImage forState:UIControlStateNormal];
+        // deselect all rows in the spotlist
+        [self deselectAllRows];
         
-        [_delegate hideList];
+        [_delegate hideListCompletion:nil];
     }
     else
     {
         UIImage *listDownImage = [UIImage imageNamed:@"ux-list-down.png"];
         [_handlerButton setImage:listDownImage forState:UIControlStateNormal];
         
-        [_delegate displayList];
+        [_delegate displayListCompletion:nil];
     }
 }
 
@@ -113,6 +131,31 @@ static CGFloat kRowHeight = 89.0f;
 {
     _spotListTableViewController.dataSource = [[TUISpotListTableViewDataSource alloc] initWithSpotList:spotList];
     [_spotListTableViewController updateData];
+}
+
+#pragma mark - Current spot list -
+
+- (TUISpotList *)currentSpotList
+{
+    return _spotListTableViewController.dataSource.spotList;
+}
+
+
+#pragma mark - Table methods -
+
+- (void)deselectAllRows
+{
+    [_spotListTableViewController deselectAllRows];
+}
+
+- (void)scrollTableToRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_spotListTableViewController.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+}
+
+- (void)selectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_spotListTableViewController tableView:(_spotListTableViewController.tableView) didSelectRowAtIndexPath:indexPath];
 }
 
 @end

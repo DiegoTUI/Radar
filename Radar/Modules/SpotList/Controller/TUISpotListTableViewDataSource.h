@@ -19,6 +19,15 @@
 @property (nonatomic, strong) TUISpotList *spotList;
 
 /**
+ @methodName serveCellsEnabled:
+ @abstract Specifies if the data source should serve the cells enabled or disabled
+ @discussion This method sets if the data source should serve the cells enabled or disabled
+ 
+ @param flag YES if the cells are to served enabled. NO otherwise.
+ */
+- (void)serveCellsEnabled:(BOOL)flag;
+
+/**
  @methodName initWithSpotList:
  @abstract Inits the data source with a given spot list
  @discussion This method will return an instance of the data source with the

@@ -38,9 +38,18 @@
  @abstract Returns the spot list container view
  @discussion This method returns the spot list container view
  
- @return The hspot list container view
+ @return The spot list container view
  */
 - (UIView *)spotListContainerView;
+
+/**
+ @methodName currentSpotList
+ @abstract Returns the spot list currently displayed in the list
+ @discussion This method returns the spot list currently displayed in the list
+ 
+ @return The pot list currently displayed in the list
+ */
+- (TUISpotList *)currentSpotList;
 
 /**
  @methodName reloadSpotsWithSpotList:
@@ -48,6 +57,31 @@
  @discussion This method reloads the table view contents with the provided spot list
  */
 - (void)reloadSpotsWithSpotList:(TUISpotList *)spotList;
+
+/**
+ @methodName deselectAllRows
+ @abstract Deselects all rows in the table
+ @discussion This method deselects all rows in the table
+ */
+- (void)deselectAllRows;
+
+/**
+ @methodName scrollTableToRowAtIndexPath:
+ @abstract Scrolls the table to the row at the given index path
+ @discussion This method scrolls the table to the row at the given index path
+ 
+ @param indexPath The index path of the cell to scroll to
+ */
+- (void)scrollTableToRowAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ @methodName selectRowAtIndexPath:
+ @abstract Selects the row in the table at the given index path
+ @discussion This method selects the row in the table at the given index path
+ 
+ @param indexPath The index path of the cell to select
+ */
+- (void)selectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -61,11 +95,21 @@
 /**
  Tell the delegate to display the list
  */
-- (void)displayList;
+- (void)displayListCompletion:(void(^)(BOOL finished))completion;
 
 /**
  Tell the delegate to hide the list
  */
-- (void)hideList;
+- (void)hideListCompletion:(void(^)(BOOL finished))completion;
+
+/**
+ Tell the delegate that a row was selected
+ */
+- (void)rowSelected:(NSInteger)row;
+
+/**
+ Tell the delegate that a row was deselected
+ */
+- (void)rowDeselected:(NSInteger)row;
 
 @end

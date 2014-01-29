@@ -26,10 +26,10 @@ static NSInteger kCornerImageViewYPadding           = 6;
 static NSInteger kCornerImageViewHeight             = 22;
 static NSInteger kCornerImageViewWidth              = 22;
 
+#define DESCRIPTION_LABEL_ANIMATION_DURATION        0.3f
+
 
 @interface TUISpotListCell()
-
-
 
 @end
 
@@ -48,6 +48,7 @@ static NSInteger kCornerImageViewWidth              = 22;
     //[self setupCornerLabel];
     [self setupPriceButton];
     [self setupDescriptionLabel];
+    //[self setupSeparator];
 
 }
 
@@ -76,8 +77,12 @@ static NSInteger kCornerImageViewWidth              = 22;
 
 - (void)setupDescriptionLabel
 {
+    _descriptionLabel.numberOfLines = ZERO_INT;
+    _descriptionLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    _descriptionLabel.alpha = ZERO_FLOAT;
     _descriptionLabel.hidden = YES;
 }
+
 
 #pragma mark - Cell types -
 
@@ -142,6 +147,26 @@ static NSInteger kCornerImageViewWidth              = 22;
     CALayer *imageLayer = _mainImageView.layer;
     [imageLayer setCornerRadius:_mainImageView.width/TWO_INT];
     [imageLayer setMasksToBounds:YES];
+}
+
+
+#pragma mark - Show/hide description label -
+
+- (void)showDescriptionLabelAnimated
+{
+    _descriptionLabel.hidden = NO;
+    [UIView animateWithDuration:DESCRIPTION_LABEL_ANIMATION_DURATION animations:^{
+        _descriptionLabel.alpha = 1;
+    }];
+}
+
+- (void)hideDescriptionLabelAnimated
+{
+    [UIView animateWithDuration:DESCRIPTION_LABEL_ANIMATION_DURATION animations:^{
+        _descriptionLabel.alpha = 0;
+    } completion: ^(BOOL finished) {
+        _descriptionLabel.hidden = finished;
+    }];
 }
 
 @end

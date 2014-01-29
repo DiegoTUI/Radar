@@ -30,4 +30,9 @@
     return RGB(216.0, 216.0, 216.0);
 }
 
++ (UIColor *)tuiDisabledCellBackgroundColor
+{
+    return RGB(240.0, 240.0, 240.0);
+}
+
 @end

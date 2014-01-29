@@ -37,6 +37,7 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     _mapView = mapView;
     _mapView.showsUserLocation = NO;
     _mapView.delegate = self;
+    _reloadSpotsWhenRegionChanges = NO;
 }
 
 
@@ -129,6 +130,20 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     return annotationView;
 }
 
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    TUISpot *annotationSelected = (TUISpot *)view.annotation;
+    NSLog(@"Annotation view selected: %@", annotationSelected.name);
+    _annotationSelectedBlock(annotationSelected);
+}
+
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    TUISpot *annotationDeselected = (TUISpot *)view.annotation;
+    NSLog(@"Annotation view deselected: %@", annotationDeselected.name);
+    _annotationDeselectedBlock(annotationDeselected);
+}
+
 
 #pragma mark - Region changed -
 
@@ -138,7 +153,8 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     CLLocation *before = [[CLLocation alloc] initWithLatitude:_centerCoordinate.latitude longitude:_centerCoordinate.longitude];
     CLLocation *after = [[CLLocation alloc] initWithLatitude:mapView.centerCoordinate.latitude longitude:mapView.centerCoordinate.longitude];
     
-    if ([before distanceFromLocation:after] > REGION_CHANGED_DISTANCE_THRESHOLD)
+    if (([before distanceFromLocation:after] > REGION_CHANGED_DISTANCE_THRESHOLD) &&
+        _reloadSpotsWhenRegionChanges)
     {
         _regionChangedBlock();
         _centerCoordinate = mapView.centerCoordinate;

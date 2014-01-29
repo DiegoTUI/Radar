@@ -73,4 +73,18 @@
  */
 - (void)foursquareVenueCellWithSpot:(TUIFoursquareVenue *)spot;
 
+/**
+ @methodName showDescriptionLabelAnimated
+ @abstract Shows the description label with a slight animation
+ @discussion This method shows the description label with a slight animation
+ */
+- (void)showDescriptionLabelAnimated;
+
+/**
+ @methodName hideDescriptionLabelAnimated
+ @abstract Hides the description label with a slight animation
+ @discussion This method hides the description label with a slight animation
+ */
+- (void)hideDescriptionLabelAnimated;
+
 @end
