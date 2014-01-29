@@ -29,7 +29,12 @@
 @property (strong, nonatomic) MKMapView *mapView;
 
 /**
- The region changed block. called when the region of the map changes
+ A flag to force (or prevent) the reload of spots whe the region of the map changes
+ */
+@property (nonatomic) BOOL reloadSpotsWhenRegionChanges;
+
+/**
+ The region changed block. called when the region of the map changes (if reloadSpotsWhenRegionChanges is set to YES)
  */
 @property (nonatomic,copy) void (^regionChangedBlock)(void);
 

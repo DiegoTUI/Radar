@@ -33,7 +33,8 @@
 {
     [super initData];
     
-    self.dataSource = [[TUISpotListTableViewDataSource alloc] init];
+    _dataSource = [[TUISpotListTableViewDataSource alloc] init];
+    [_dataSource serveCellsEnabled:YES];
     self.tableView.dataSource = _dataSource;
     // No selected row
     _selectedRow = -ONE_INT;
@@ -84,7 +85,6 @@
     _selectedRow = _selectedRow == indexPath.row ? -ONE_INT : indexPath.row;
     
     [tableView beginUpdates];
-    [tableView endUpdates];
     
     // show/hide description. Enable/disable user interaction.
     TUISpotListCell *cell = (TUISpotListCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -112,6 +112,8 @@
         // call the row select block
         _rowDeselectedBlock(indexPath.row);
     }
+    
+    [tableView endUpdates];
 }
 
 
@@ -119,6 +121,7 @@
 
 - (void)enableUserInteractionForAllCells
 {
+    [_dataSource serveCellsEnabled:YES];
     for (int i = 0; i < [self.tableView numberOfRowsInSection:ZERO_INT]; i++)
     {
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:ZERO_INT]];
@@ -129,6 +132,7 @@
 
 - (void)disableUserInteractionForAllCellsExceptForRow:(NSInteger)row
 {
+    [_dataSource serveCellsEnabled:NO];
     for (int i = 0; i < [self.tableView numberOfRowsInSection:ZERO_INT]; i++)
     {
         if (i != row)

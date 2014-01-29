@@ -13,6 +13,7 @@
 // Views
 #import "TUISpotListCell.h"
 
+static BOOL _serveCellsEnabled = YES;
 
 @implementation TUISpotListTableViewDataSource
 
@@ -45,6 +46,11 @@
 }
 
 
+- (void)serveCellsEnabled:(BOOL)flag
+{
+    _serveCellsEnabled = flag;
+}
+
 #pragma mark - UITableViewDataSource delegate -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -64,7 +70,7 @@
     
     TUISpot *spot = self.spotList.spots[indexPath.row];
     
-    NSLog(@"Getting cell for spot: %@", spot.name);
+    NSLog(@"Getting cell for spot: %@ - row: %d - cellsEnabled: %d", spot.name, indexPath.row, _serveCellsEnabled);
     
     // Check for TUI and Foursquare spots
     if ([spot isKindOfClass:[TUIAtlasTicket class]])
@@ -75,6 +81,9 @@
     {
         [cell foursquareVenueCellWithSpot:(TUIFoursquareVenue *)spot];
     }
+    // Set user interaction and background
+    cell.userInteractionEnabled = _serveCellsEnabled;
+    cell.contentView.backgroundColor = _serveCellsEnabled ? [UIColor whiteColor] : [UIColor tuiDisabledCellBackgroundColor];
     
     return cell;
 }

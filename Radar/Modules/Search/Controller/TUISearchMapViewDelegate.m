@@ -37,6 +37,7 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     _mapView = mapView;
     _mapView.showsUserLocation = NO;
     _mapView.delegate = self;
+    _reloadSpotsWhenRegionChanges = NO;
 }
 
 
@@ -138,7 +139,8 @@ static CGFloat kUserLocationAnnotationHeight = 26;
     CLLocation *before = [[CLLocation alloc] initWithLatitude:_centerCoordinate.latitude longitude:_centerCoordinate.longitude];
     CLLocation *after = [[CLLocation alloc] initWithLatitude:mapView.centerCoordinate.latitude longitude:mapView.centerCoordinate.longitude];
     
-    if ([before distanceFromLocation:after] > REGION_CHANGED_DISTANCE_THRESHOLD)
+    if (([before distanceFromLocation:after] > REGION_CHANGED_DISTANCE_THRESHOLD) &&
+        _reloadSpotsWhenRegionChanges)
     {
         _regionChangedBlock();
         _centerCoordinate = mapView.centerCoordinate;
