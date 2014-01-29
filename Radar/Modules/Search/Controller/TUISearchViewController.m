@@ -9,6 +9,7 @@
 #import "TUISearchViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+#import "TUISearchViewController+Basket.h"
 // Models
 #import "TUILocationManager.h"
 #import "TUISettings.h"

@@ -169,6 +169,10 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconlist-check.png" id="2i0-6V-dHf">
+                                            <rect key="frame" x="302" y="56" width="12" height="12"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -368,6 +372,7 @@
         <image name="filter-indoor.png" width="16" height="16"/>
         <image name="filter-now.png" width="13" height="13"/>
         <image name="iconfilter-indoor.png" width="25" height="23"/>
+        <image name="iconlist-check.png" width="12" height="12"/>
         <image name="ux-filter-handle.png" width="320" height="35"/>
         <image name="ux-list-up.png" width="320" height="22"/>
     </resources>

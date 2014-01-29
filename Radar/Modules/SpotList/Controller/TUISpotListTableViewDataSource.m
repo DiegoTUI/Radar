@@ -85,6 +85,8 @@ static BOOL _serveCellsEnabled = YES;
     cell.userInteractionEnabled = _serveCellsEnabled;
     cell.contentView.backgroundColor = _serveCellsEnabled ? [UIColor whiteColor] : [UIColor tuiDisabledCellBackgroundColor];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:CELL_ADDED_NOTIFICATION object:cell userInfo:nil];
+    
     return cell;
 }
 

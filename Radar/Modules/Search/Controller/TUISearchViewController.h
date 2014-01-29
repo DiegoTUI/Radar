@@ -7,7 +7,7 @@
 //
 
 #import "TUIBaseViewController.h"
-#import "MapKit/Mapkit.h"
+
 
 /**
  The TUISearchViewController is the main controller for search and 

@@ -10,8 +10,14 @@
 // Forward declarations
 @class TUIAtlasTicket;
 @class TUIFoursquareVenue;
+@protocol TUISpotAddRemoveDelegate;
 
 @interface TUISpotListCell : TUIBaseTableViewCell
+
+/**
+ The cells remove add delegate
+ */
+@property (nonatomic, weak) id <TUISpotAddRemoveDelegate> delegate;
 
 /**
  The spot image
