@@ -271,6 +271,7 @@
 		760BFF5218995CBF007B1FE7 /* TUISearchViewController+Basket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TUISearchViewController+Basket.m"; path = "Modules/Search/Controller/TUISearchViewController+Basket.m"; sourceTree = "<group>"; };
 		760BFF5418996253007B1FE7 /* TUISpotAddRemoveDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUISpotAddRemoveDelegate.h; path = Modules/Basket/Model/TUISpotAddRemoveDelegate.h; sourceTree = "<group>"; };
 		760BFF5518996B53007B1FE7 /* Notifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Notifications.h; path = Modules/Shared/Constants/Notifications.h; sourceTree = "<group>"; };
+		760BFF56189A4E40007B1FE7 /* TUISearchViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUISearchViewController_Private.h; path = Modules/Search/Controller/TUISearchViewController_Private.h; sourceTree = "<group>"; };
 		7614223B18964AA9002AF91C /* TUIFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilters.h; path = Modules/Filter/Model/TUIFilters.h; sourceTree = "<group>"; };
 		7614223C18964AA9002AF91C /* TUIFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilters.m; path = Modules/Filter/Model/TUIFilters.m; sourceTree = "<group>"; };
 		766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketSpec.m; path = Modules/Spots/Model/TUIAtlasTicketSpec.m; sourceTree = "<group>"; };
@@ -935,6 +936,7 @@
 				760BFF5218995CBF007B1FE7 /* TUISearchViewController+Basket.m */,
 				76D72821187D440800F3545E /* TUISearchViewController.h */,
 				76D72822187D440800F3545E /* TUISearchViewController.m */,
+				760BFF56189A4E40007B1FE7 /* TUISearchViewController_Private.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

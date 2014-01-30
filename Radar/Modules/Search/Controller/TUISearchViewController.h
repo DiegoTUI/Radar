@@ -16,9 +16,6 @@
  */
 @interface TUISearchViewController : TUIBaseViewController
 
-/**
- The basket.
- */
-@property (nonatomic, strong) TUIBasket *basket;
+
 
 @end

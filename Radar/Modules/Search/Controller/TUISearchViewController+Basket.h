@@ -25,5 +25,12 @@
  */
 - (void)initBasket;
 
+/**
+ @methodName initBasketButton
+ @abstract Init the basket button
+ @discussion Inits the basket button
+ */
+- (void)initBasketButton;
+
 
 @end

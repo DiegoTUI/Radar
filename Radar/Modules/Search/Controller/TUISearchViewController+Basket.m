@@ -7,6 +7,8 @@
 //
 
 #import "TUISearchViewController+Basket.h"
+// Extensions
+#import "TUISearchViewController_Private.h"
 // Models
 #import "TUIBasket.h"
 // Views
@@ -28,6 +30,30 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cellAdded:) name:CELL_ADDED_NOTIFICATION object:nil];
 }
 
+- (void)initBasketButton
+{
+    self.basketButton = [[TUIBasketButton alloc] initAsBarButton];
+    [self.basketButton addTarget:self action:@selector(basketButtonClicked:)forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *basketBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.basketButton];
+    self.navigationItem.rightBarButtonItem = basketBarButton;
+}
+
+#pragma mark - Basket button -
+
+- (void)basketButtonClicked:(TUIBasketButton *)sender
+{
+    static BOOL flag = YES;
+    if (flag)
+    {
+        [sender showCounterAnimatedWithText:@"1"];
+        flag = NO;
+    }
+    else
+    {
+        [sender hideCounterAnimated];
+        flag = YES;
+    }
+}
 
 
 #pragma mark - Cell added -

@@ -9,6 +9,7 @@
 #import "TUISearchViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+#import "TUISearchViewController_Private.h"
 #import "TUISearchViewController+Basket.h"
 // Models
 #import "TUILocationManager.h"
@@ -23,7 +24,6 @@
 // Views
 #import "TUIUserLocationAnnotationView.h"
 #import "TUISpotAnnotationView.h"
-#import "TUIBasketButton.h"
 
 
 @interface TUISearchViewController () <TUISettingsViewControllerDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate, TUILocationManagerDelegate>
@@ -150,7 +150,7 @@
     [self initMapView];
     [self initContainerListView];
     [self initContainerFilterView];
-    [self initBarButtons];
+    [self initBasketButton];
 #endif
 }
 
@@ -229,14 +229,6 @@
     _containerFilterView.width = self.view.width;
     _containerFilterView.height = [_filterListViewController numberOfFilters] * [_filterListViewController filterHeight] + [_filterListViewController handlerButton].height;
     
-}
-
-- (void)initBarButtons
-{
-    TUIBasketButton *basketButton = [[TUIBasketButton alloc] initAsBarButton];
-    [basketButton addTarget:self action:@selector(basketButtonClicked:)forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *basketBarButton = [[UIBarButtonItem alloc] initWithCustomView:basketButton];
-    self.navigationItem.rightBarButtonItem = basketBarButton;
 }
 
 #pragma mark - Shaking -
@@ -417,24 +409,6 @@
 - (void)cancelButtonPressed
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-#pragma mark - Basket button -
-
-- (void)basketButtonClicked:(TUIBasketButton *)sender
-{
-    static BOOL flag = YES;
-    if (flag)
-    {
-        [sender showCounterAnimatedWithText:@"1"];
-        flag = NO;
-    }
-    else
-    {
-        [sender hideCounterAnimated];
-        flag = YES;
-    }
 }
 
 
