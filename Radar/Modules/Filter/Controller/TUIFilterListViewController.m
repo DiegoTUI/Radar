@@ -13,7 +13,7 @@
 #import "TUIWeatherPageViewControllerDataSource.h"
 #import "TUITimePageViewControllerDataSource.h"
 #import "TUIDistancePageViewControllerDataSource.h"
-#import "TUIPageViewControllerDataSource.h"
+//#import "TUIPageViewControllerDataSource.h"
 #import "TUIFilterContentViewController.h"
 #import "TUIFilters.h"
 
@@ -267,15 +267,6 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers
     {
         _timeFilterViewController = [segue destinationViewController];
     }
-}
-
-
-#pragma mark - Update Settings -
-
-- (void)updateSettings
-{
-   // _settings.weather = [_weatherView.weatherSegmentedControl titleForSegmentAtIndex:_weatherView.weatherSegmentedControl.selectedSegmentIndex];
-    //_settings.weatherFilterIndex =
 }
 
 @end
