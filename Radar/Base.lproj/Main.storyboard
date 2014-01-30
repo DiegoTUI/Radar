@@ -176,6 +176,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="addedToBaskedTick" destination="2i0-6V-dHf" id="oTu-Xy-Zrp"/>
                                     <outlet property="cornerLabel" destination="L05-aQ-v67" id="pSj-b1-o8G"/>
                                     <outlet property="descriptionLabel" destination="oJz-2Y-bmZ" id="Fcm-DC-nJm"/>
                                     <outlet property="priceButton" destination="kdS-TQ-kLz" id="gqM-OX-n70"/>

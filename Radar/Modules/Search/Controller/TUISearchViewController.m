@@ -75,6 +75,7 @@
     [super initData];
     
     [self initViewControllers];
+    [self initBasket];
 }
 
 - (void)initViewControllers

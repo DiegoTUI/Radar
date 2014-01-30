@@ -13,6 +13,7 @@
 // Models
 #import "TUIAtlasTicket.h"
 #import "TUIFoursquareVenue.h"
+#import "TUISpotAddRemoveDelegate.h"
 // Categories
 #import "UIImageView+AFNetworking.h"
 
@@ -26,7 +27,8 @@ static NSInteger kCornerImageViewYPadding           = 6;
 static NSInteger kCornerImageViewHeight             = 22;
 static NSInteger kCornerImageViewWidth              = 22;
 
-#define DESCRIPTION_LABEL_ANIMATION_DURATION        0.3f
+#define DEFAULT_ANIMATION_DURATION        0.3f
+#define DISABLED_BUTTON_ALPHA             0.4f
 
 
 @interface TUISpotListCell()
@@ -49,6 +51,7 @@ static NSInteger kCornerImageViewWidth              = 22;
     [self setupPriceButton];
     [self setupDescriptionLabel];
     //[self setupSeparator];
+    [self setupAddedToBasketTick];
 
 }
 
@@ -73,6 +76,7 @@ static NSInteger kCornerImageViewWidth              = 22;
     _priceButton.layer.cornerRadius = kPriceButtonCornerRadius; // this value vary as per your desire
     _priceButton.clipsToBounds = YES;
     [_priceButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [_priceButton addTarget:self action:@selector(priceButtonClicked:)forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setupDescriptionLabel
@@ -83,6 +87,11 @@ static NSInteger kCornerImageViewWidth              = 22;
     _descriptionLabel.hidden = YES;
 }
 
+- (void)setupAddedToBasketTick
+{
+    // hide it
+    _addedToBaskedTick.transform = CGAffineTransformMakeScale(ZERO_FLOAT, ZERO_FLOAT);
+}
 
 #pragma mark - Cell types -
 
@@ -108,7 +117,7 @@ static NSInteger kCornerImageViewWidth              = 22;
     // show corner label
     _cornerLabel.hidden = NO;
     // price
-    _priceButton.titleLabel.text = [NSString stringWithFormat:@"%ld€", [spot.price longValue]];
+    [_priceButton setTitle:[NSString stringWithFormat:@"%ld€", [spot.price longValue]] forState:UIControlStateNormal];
     // show price button
     _priceButton.hidden = NO;
 }
@@ -154,19 +163,76 @@ static NSInteger kCornerImageViewWidth              = 22;
 
 - (void)showDescriptionLabelAnimated
 {
+    typeof(self) __weak weakSelf = self;
     _descriptionLabel.hidden = NO;
-    [UIView animateWithDuration:DESCRIPTION_LABEL_ANIMATION_DURATION animations:^{
-        _descriptionLabel.alpha = 1;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_DURATION animations:^{
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        strongSelf.descriptionLabel.alpha = ONE_FLOAT;
     }];
 }
 
 - (void)hideDescriptionLabelAnimated
 {
-    [UIView animateWithDuration:DESCRIPTION_LABEL_ANIMATION_DURATION animations:^{
-        _descriptionLabel.alpha = 0;
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_DURATION animations:^{
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        strongSelf.descriptionLabel.alpha = ZERO_FLOAT;
     } completion: ^(BOOL finished) {
-        _descriptionLabel.hidden = finished;
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        strongSelf.descriptionLabel.hidden = finished;
     }];
+}
+
+#pragma mark - Add/Remove from basket -
+
+- (void)addToBasketAnimated
+{
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_DURATION animations:^{
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        strongSelf.addedToBaskedTick.transform = CGAffineTransformIdentity;
+        strongSelf.priceButton.alpha = DISABLED_BUTTON_ALPHA;
+    }];
+}
+
+- (void)removeFromBasketAnimated
+{
+    typeof(self) __weak weakSelf = self;
+    [UIView animateWithDuration:DEFAULT_ANIMATION_DURATION animations:^{
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        strongSelf.addedToBaskedTick.transform = CGAffineTransformMakeScale(ZERO_FLOAT, ZERO_FLOAT);
+        strongSelf.priceButton.alpha = ONE_FLOAT;
+    }];
+}
+
+
+#pragma mark - Price button clicked -
+
+- (void)priceButtonClicked:(UIButton *)sender
+{
+    // check the previous state of the button and call the delegate
+    if (sender.alpha > DISABLED_BUTTON_ALPHA)
+    {
+        NSLog(@"add spot clicked in %@", _titleLabel.text);
+        //[self addToBasketAnimated];
+        [_delegate addSpotButtonPressedInCell:self];
+    }
+    else
+    {
+        NSLog(@"remove spot clicked in %@", _titleLabel.text);
+        //[self removeFromBasketAnimated];
+        [_delegate removeSpotButtonPressedInCell:self];
+    }
 }
 
 @end

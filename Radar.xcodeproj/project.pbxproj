@@ -931,10 +931,10 @@
 			children = (
 				767209761895A77E007CAE17 /* TUISearchMapViewDelegate.h */,
 				767209771895A77E007CAE17 /* TUISearchMapViewDelegate.m */,
-				76D72821187D440800F3545E /* TUISearchViewController.h */,
-				76D72822187D440800F3545E /* TUISearchViewController.m */,
 				760BFF5118995CBF007B1FE7 /* TUISearchViewController+Basket.h */,
 				760BFF5218995CBF007B1FE7 /* TUISearchViewController+Basket.m */,
+				76D72821187D440800F3545E /* TUISearchViewController.h */,
+				76D72822187D440800F3545E /* TUISearchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -950,11 +950,11 @@
 				76D72802187C5D5600F3545E /* Fonts.h */,
 				76D72803187C5D5600F3545E /* Layout.h */,
 				76D728721880270D00F3545E /* Network.h */,
+				760BFF5518996B53007B1FE7 /* Notifications.h */,
 				76D72804187C5D5600F3545E /* Numbers.h */,
 				76D72805187C5D5600F3545E /* OSVersion.h */,
 				76D72824187D473C00F3545E /* Segue.h */,
 				76D72861187ED40200F3545E /* Settings.h */,
-				760BFF5518996B53007B1FE7 /* Notifications.h */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -1733,6 +1733,7 @@
 				7672094F188BFCDA007CAE17 /* TUIBaseTableViewController.m in Sources */,
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
+				760BFF5018995804007B1FE7 /* TUIBasket.m in Sources */,
 				760BFF4D189931F1007B1FE7 /* TUIBasketButton.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
 				62EFE2C518919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m in Sources */,
@@ -1746,6 +1747,7 @@
 				76D728711880197E00F3545E /* TUINetworkClient.m in Sources */,
 				760B4F841890260C00AB65F5 /* TUIPageViewControllerDataSource.m in Sources */,
 				767209781895A77E007CAE17 /* TUISearchMapViewDelegate.m in Sources */,
+				760BFF5318995CBF007B1FE7 /* TUISearchViewController+Basket.m in Sources */,
 				76D72823187D440800F3545E /* TUISearchViewController.m in Sources */,
 				76D728781883DBA000F3545E /* TUIServerError.m in Sources */,
 				76D7287B1883DC3C00F3545E /* TUIServerErrorParser.m in Sources */,
@@ -1757,7 +1759,6 @@
 				76D728951885585F00F3545E /* TUISpot.m in Sources */,
 				767209751895A047007CAE17 /* TUISpotAnnotationView.m in Sources */,
 				760B4F55188EC7C000AB65F5 /* TUISpotList+Proxy.m in Sources */,
-				760BFF5318995CBF007B1FE7 /* TUISearchViewController+Basket.m in Sources */,
 				76D728A418855F6F00F3545E /* TUISpotList.m in Sources */,
 				7614223F18965E3D002AF91C /* TUISpotListCell.m in Sources */,
 				760B4F62188EE77500AB65F5 /* TUISpotListParser.m in Sources */,
@@ -1771,7 +1772,6 @@
 				760B4F9518928B9600AB65F5 /* TUIUserLocationAnnotationView.m in Sources */,
 				760BFF3518967389007B1FE7 /* TUIWeatherManager.m in Sources */,
 				760B4F7E1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.m in Sources */,
-				760BFF5018995804007B1FE7 /* TUIBasket.m in Sources */,
 				760B4F75188FEAC400AB65F5 /* UIAlertView+TUIError.m in Sources */,
 				76D72811187C5D8400F3545E /* UIBarButtonItem+BackBarButtonItem.m in Sources */,
 				76D7280B187C5D6F00F3545E /* UIColor+TUIColors.m in Sources */,
@@ -1911,6 +1911,18 @@
 					"TESTING=1",
 				);
 				INFOPLIST_FILE = "Radar/Radar-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2021,6 +2033,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radar/Radar-Prefix.pch";
 				INFOPLIST_FILE = "Radar/Radar-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2035,6 +2059,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radar/Radar-Prefix.pch";
 				INFOPLIST_FILE = "Radar/Radar-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

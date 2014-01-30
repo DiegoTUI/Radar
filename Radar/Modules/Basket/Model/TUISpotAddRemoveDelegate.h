@@ -33,6 +33,6 @@
  
  @param sender The cell which contains the add button
  */
-- (void)removeSpotButtonPressed:(TUISpotListCell *)sender;
+- (void)removeSpotButtonPressedInCell:(TUISpotListCell *)sender;
 
 @end
