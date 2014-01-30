@@ -42,10 +42,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    NSDictionary *campo = self.array[indexPath.row];
+    NSDictionary *textFieldCurrent = self.array[indexPath.row];
     
     float lateralMargin = 10.0f;
     float heightCell = 44.0f;
@@ -60,17 +60,17 @@
     
     UITextField *entrada = [[UITextField alloc] initWithFrame:textFieldFrame];
     entrada.keyboardType = UIKeyboardTypeDecimalPad;
-    entrada.placeholder = [campo objectForKey:@"placeholder"];
+    entrada.placeholder = [textFieldCurrent objectForKey:@"placeholder"];
     entrada.textAlignment = NSTextAlignmentRight;
     entrada.font = formFont;
     entrada.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    entrada.keyboardType = (UIKeyboardType) [campo objectForKey:@"typeCell"];
+    entrada.keyboardType = (UIKeyboardType) [textFieldCurrent objectForKey:@"typeCell"];
 
 
     cell.selected = NO;
     [cell.contentView addSubview:label];
     [cell.contentView addSubview:entrada];
-    label.text = [campo objectForKey:@"label"];
+    label.text = [textFieldCurrent objectForKey:@"label"];
     
     return cell;
 }

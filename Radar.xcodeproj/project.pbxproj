@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		38B136DFD47540C18913D650 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEA3BF1EC8242E485E23BF5 /* libPods.a */; };
+		620A2125189A68E800D090BA /* bidiFake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 620A2124189A68E800D090BA /* bidiFake.jpg */; };
+		620A2128189A6C5000D090BA /* ux-passbook-grayline.png in Resources */ = {isa = PBXBuildFile; fileRef = 620A2126189A6C5000D090BA /* ux-passbook-grayline.png */; };
+		620A2129189A6C5000D090BA /* ux-passbook-grayline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 620A2127189A6C5000D090BA /* ux-passbook-grayline@2x.png */; };
 		627A418918893CE600926DB6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627A418818893CE600926DB6 /* MapKit.framework */; };
 		6282BF0D18895E86005CC250 /* mapa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6282BF0C18895E86005CC250 /* mapa.plist */; };
 		62BF2C6D18987C2000B46BA8 /* TUIBookingFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BF2C6C18987C2000B46BA8 /* TUIBookingFormViewController.m */; };
@@ -211,6 +214,9 @@
 /* Begin PBXFileReference section */
 		13DA0B9C148D4F648817352A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		620A2124189A68E800D090BA /* bidiFake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bidiFake.jpg; path = Resources/tmp/bidiFake.jpg; sourceTree = "<group>"; };
+		620A2126189A6C5000D090BA /* ux-passbook-grayline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-passbook-grayline.png"; path = "Resources/tmp/ux-passbook-grayline.png"; sourceTree = "<group>"; };
+		620A2127189A6C5000D090BA /* ux-passbook-grayline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-passbook-grayline@2x.png"; path = "Resources/tmp/ux-passbook-grayline@2x.png"; sourceTree = "<group>"; };
 		627A418818893CE600926DB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6282BF0C18895E86005CC250 /* mapa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mapa.plist; path = Resources/mapa.plist; sourceTree = "<group>"; };
 		62BF2C6B18987C2000B46BA8 /* TUIBookingFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingFormViewController.h; path = Modules/Booking/TUIBookingFormViewController.h; sourceTree = "<group>"; };
@@ -1234,6 +1240,9 @@
 		76F2628E188A9AFD00B2EFEB /* tmp */ = {
 			isa = PBXGroup;
 			children = (
+				620A2126189A6C5000D090BA /* ux-passbook-grayline.png */,
+				620A2127189A6C5000D090BA /* ux-passbook-grayline@2x.png */,
+				620A2124189A68E800D090BA /* bidiFake.jpg */,
 				76F26298188A9B9600B2EFEB /* actividadImg.jpg */,
 				76F26299188A9B9600B2EFEB /* actividadImg.png */,
 				76F2629A188A9B9600B2EFEB /* actividadImg2.png */,
@@ -1490,6 +1499,7 @@
 				76F262DC188A9BE300B2EFEB /* filter-far.png in Resources */,
 				76F262DD188A9BE300B2EFEB /* filter-far@2x.png in Resources */,
 				76F262DE188A9BE300B2EFEB /* filter-indoor.png in Resources */,
+				620A2129189A6C5000D090BA /* ux-passbook-grayline@2x.png in Resources */,
 				76F262DF188A9BE300B2EFEB /* filter-indoor@2x.png in Resources */,
 				76F262E0188A9BE300B2EFEB /* filter-now.png in Resources */,
 				76F262E1188A9BE300B2EFEB /* filter-now@2x.png in Resources */,
@@ -1498,6 +1508,7 @@
 				76F262E4188A9BE300B2EFEB /* filter-tomorrow.png in Resources */,
 				76F262E5188A9BE300B2EFEB /* filter-tomorrow@2x.png in Resources */,
 				76F262AB188A9BB500B2EFEB /* icon-120.png in Resources */,
+				620A2128189A6C5000D090BA /* ux-passbook-grayline.png in Resources */,
 				76F262AC188A9BB500B2EFEB /* icon-152.png in Resources */,
 				76F262AD188A9BB500B2EFEB /* icon-512.png in Resources */,
 				76F262A8188A9BB500B2EFEB /* icon-58.png in Resources */,
@@ -1533,6 +1544,7 @@
 				76F26325188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png in Resources */,
 				76F26326188A9C0A00B2EFEB /* iconmap-tui-outdoor.png in Resources */,
 				76F26327188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png in Resources */,
+				620A2125189A68E800D090BA /* bidiFake.jpg in Resources */,
 				76F26328188A9C0A00B2EFEB /* iconmap-tui-shows.png in Resources */,
 				76F26329188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png in Resources */,
 				76F2632A188A9C0A00B2EFEB /* iconmap-tui-tours.png in Resources */,
