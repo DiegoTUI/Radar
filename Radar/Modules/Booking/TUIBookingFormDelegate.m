@@ -12,7 +12,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Handle tap on cell");
+    //NSLog(@"Tap on cell");
 }
 
 @end

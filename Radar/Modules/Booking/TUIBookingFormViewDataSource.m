@@ -64,8 +64,14 @@
     entrada.textAlignment = NSTextAlignmentRight;
     entrada.font = formFont;
     entrada.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    entrada.keyboardType = (UIKeyboardType) [textFieldCurrent objectForKey:@"typeCell"];
-
+    
+    NSString *typeOfKeyboard = [textFieldCurrent objectForKey:@"typeCell"];
+    
+    if([typeOfKeyboard isEqualToString:@"UIKeyboardTypeNumberPad"]){
+        entrada.keyboardType = UIKeyboardTypeNumberPad;
+    }else{
+        entrada.keyboardType = UIKeyboardTypeDefault;
+    }
 
     cell.selected = NO;
     [cell.contentView addSubview:label];
