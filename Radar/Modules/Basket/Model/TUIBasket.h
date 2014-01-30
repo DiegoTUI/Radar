@@ -25,6 +25,15 @@
 - (void)addAtlasTicket:(TUIAtlasTicket *)atlasTicket;
 
 /**
+ @methodName removeAtlasTicket:
+ @abstract Removes an Atlas ticket to the basket
+ @discussion Removes an Atlas ticket to the basket
+ 
+ @param atlasTicket The ticket to remove
+ */
+- (void)removeAtlasTicket:(TUIAtlasTicket *)atlasTicket;
+
+/**
  @methodName ticketCount
  @abstract Returns the number of tickets in the basket
  @discussion This method will return the number of

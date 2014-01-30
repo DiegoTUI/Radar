@@ -11,6 +11,7 @@
 #import "TUISearchViewController_Private.h"
 // Models
 #import "TUIBasket.h"
+#import "TUISpotList.h"
 // Views
 #import "TUISpotListCell.h"
 
@@ -42,17 +43,6 @@
 
 - (void)basketButtonClicked:(TUIBasketButton *)sender
 {
-    static BOOL flag = YES;
-    if (flag)
-    {
-        [sender showCounterAnimatedWithText:@"1"];
-        flag = NO;
-    }
-    else
-    {
-        [sender hideCounterAnimated];
-        flag = YES;
-    }
 }
 
 
@@ -74,12 +64,29 @@
 {
     NSLog(@"delegate add spot pressed in cell: %@", sender.titleLabel.text);
     [sender addToBasketAnimated];
+    NSIndexPath *indexPath = [self.spotsViewController indexPathForCell:sender];
+    TUISpotList *spotList = [self.spotsViewController currentSpotList];
+    TUIAtlasTicket *ticketToAddToBasket = (TUIAtlasTicket *)spotList.spots[indexPath.row];
+    [self.basket addAtlasTicket:ticketToAddToBasket];
+    [self.basketButton showCounterAnimatedWithText:[NSString stringWithFormat:@"%d", [self.basket ticketCount]]];
 }
 
 - (void) removeSpotButtonPressedInCell:(TUISpotListCell *)sender
 {
      NSLog(@"delegate remove spot pressed in cell: %@", sender.titleLabel.text);
     [sender removeFromBasketAnimated];
+    NSIndexPath *indexPath = [self.spotsViewController indexPathForCell:sender];
+    TUISpotList *spotList = [self.spotsViewController currentSpotList];
+    TUIAtlasTicket *ticketToRemoveFromBasket = (TUIAtlasTicket *)spotList.spots[indexPath.row];
+    [self.basket removeAtlasTicket:ticketToRemoveFromBasket];
+    if ([self.basket ticketCount] > 0)
+    {
+        [self.basketButton showCounterAnimatedWithText:[NSString stringWithFormat:@"%d", [self.basket ticketCount]]];
+    }
+    else
+    {
+        [self.basketButton hideCounterAnimated];
+    }
 }
 
 @end

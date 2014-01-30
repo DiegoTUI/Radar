@@ -42,6 +42,11 @@
     [_spots addObject:atlasTicket];
 }
 
+- (void)removeAtlasTicket:(TUIAtlasTicket *)atlasTicket
+{
+    [_spots removeObject:atlasTicket];
+}
+
 - (NSInteger)ticketCount
 {
     return _spots.count;

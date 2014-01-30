@@ -158,4 +158,9 @@ static CGFloat kRowHeight = 89.0f;
     [_spotListTableViewController tableView:(_spotListTableViewController.tableView) didSelectRowAtIndexPath:indexPath];
 }
 
+- (NSIndexPath *)indexPathForCell:(TUISpotListCell *)cell
+{
+    return [_spotListTableViewController.tableView indexPathForCell:(UITableViewCell *)cell];
+}
+
 @end

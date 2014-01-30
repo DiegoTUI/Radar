@@ -32,6 +32,7 @@
  */
 - (void)showCounterAnimatedWithText:(NSString *)text;
 
+
 /**
  @methodName hideCounterAnimated
  @abstract Hides the counter with an animation

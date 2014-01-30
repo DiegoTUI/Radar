@@ -83,7 +83,6 @@ static const CGFloat kLabelOffsetY = -1.0f;
 {
     _counterLabel = [[UILabel alloc] initWithFrame:CGRectMake(kLabelOffsetX, kLabelOffsetY, TWO_FLOAT * kCounterLabelRadius, TWO_FLOAT * kCounterLabelRadius)];
     [_counterLabel setFont:[UIFont fontWithName:BOLD_FONT size:BASKET_COUNTER_SIZE]];
-    [_counterLabel setText:@"0"];
     _counterLabel.textAlignment = NSTextAlignmentCenter;
     [_counterLabel setTextColor:[UIColor whiteColor]];
     _counterLabel.backgroundColor = [UIColor clearColor];
@@ -105,8 +104,27 @@ static const CGFloat kLabelOffsetY = -1.0f;
          typeof(self) strongSelf = weakSelf;
          if ( !strongSelf ) { return ;}
          
-         strongSelf->_redCircleView.transform = CGAffineTransformIdentity;
-     } completion:nil];
+         strongSelf->_redCircleView.transform = CGAffineTransformMakeScale(ZERO_FLOAT, ZERO_FLOAT);
+         strongSelf->_counterLabel.alpha = ZERO_FLOAT;
+     } completion:^(BOOL finished) {
+         if (finished)
+         {
+             [_counterLabel setText:text];
+             
+             [UIView animateWithDuration:DEFAULT_ANIMATION_DURATION
+                                   delay:ZERO_FLOAT
+                                 options:UIViewAnimationOptionCurveEaseInOut animations:^
+              {
+                  typeof(self) strongSelf = weakSelf;
+                  if ( !strongSelf ) { return ;}
+                  
+                  strongSelf->_redCircleView.transform = CGAffineTransformIdentity;
+                  strongSelf->_counterLabel.alpha = ONE_FLOAT;
+              } completion:nil];
+             
+             
+         }
+     }];
 }
 
 - (void)hideCounterAnimated
@@ -123,5 +141,6 @@ static const CGFloat kLabelOffsetY = -1.0f;
          strongSelf->_redCircleView.transform = CGAffineTransformMakeScale(ZERO_FLOAT, ZERO_FLOAT);
      } completion:nil];
 }
+
 
 @end
