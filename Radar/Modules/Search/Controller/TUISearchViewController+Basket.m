@@ -14,6 +14,10 @@
 #import "TUISpotList.h"
 // Views
 #import "TUISpotListCell.h"
+// Controllers
+#import "TUISlidingBookingViewController.h"
+
+static const CGFloat kBasketButtonNegativeSpacer = -10.0f;
 
 
 @interface TUISearchViewController ()
@@ -36,13 +40,19 @@
     self.basketButton = [[TUIBasketButton alloc] initAsBarButton];
     [self.basketButton addTarget:self action:@selector(basketButtonClicked:)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *basketBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.basketButton];
-    self.navigationItem.rightBarButtonItem = basketBarButton;
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [negativeSpacer setWidth:kBasketButtonNegativeSpacer];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, basketBarButton,nil];
 }
 
 #pragma mark - Basket button -
 
 - (void)basketButtonClicked:(TUIBasketButton *)sender
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:TUIBasketButtonPressedNotification
+                                                        object:nil
+                                                      userInfo:nil];
 }
 
 

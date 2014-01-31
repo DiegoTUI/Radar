@@ -109,11 +109,17 @@
 {
     [super initUserInterface];
 #ifndef TESTING
+    [self initNavigationTitle];
     [self initMapView];
     [self initContainerListView];
     [self initContainerFilterView];
     [self initBasketButton];
 #endif
+}
+
+- (void)initNavigationTitle
+{
+    self.navigationItem.title = NSLocalizedString(@"SEARCH_TITLE", nil);
 }
 
 - (void)initMapView
