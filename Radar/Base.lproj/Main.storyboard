@@ -415,7 +415,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="tv7-fI-wZ3" kind="custom" customClass="ECSlidingSegue" id="QM4-GP-0W1"/>
+                                            <segue destination="tv7-fI-wZ3" kind="custom" identifier="CheckoutSegue" customClass="ECSlidingSegue" id="QM4-GP-0W1"/>
                                         </connections>
                                     </button>
                                 </subviews>
