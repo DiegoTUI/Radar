@@ -11,6 +11,7 @@
 // Forward declarations
 @protocol TUISpotsViewControllerDelegate;
 @class TUISpotList;
+@class TUISpotListCell;
 
 @interface TUISpotsViewController : TUIBaseViewController
 
@@ -82,6 +83,17 @@
  @param indexPath The index path of the cell to select
  */
 - (void)selectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+/**
+ @methodName indexPathForCell:
+ @abstract Returns the index path for the given cell
+ @discussion This method returns the index path for the given cell
+ 
+ @param cell The cell to look for
+ 
+ @return The index path for the given cell
+ */
+- (NSIndexPath *)indexPathForCell:(TUISpotListCell *)cell;
 
 @end
 

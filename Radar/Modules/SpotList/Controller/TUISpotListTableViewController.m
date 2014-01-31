@@ -22,9 +22,6 @@
 
 @end
 
-#define STANDARD_CELL_HEIGHT    89.0f
-#define SELECTED_CELL_HEIGHT    178.0f
-
 @implementation TUISpotListTableViewController
 
 #pragma mark - Init

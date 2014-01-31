@@ -10,8 +10,17 @@
 // Forward declarations
 @class TUIAtlasTicket;
 @class TUIFoursquareVenue;
+@protocol TUISpotAddRemoveDelegate;
 
+/**
+ The cell for the spot list in the search scene
+ */
 @interface TUISpotListCell : TUIBaseTableViewCell
+
+/**
+ The cells remove add delegate
+ */
+@property (nonatomic, weak) id <TUISpotAddRemoveDelegate> delegate;
 
 /**
  The spot image
@@ -47,6 +56,11 @@
  The price button
  */
 @property (weak, nonatomic) IBOutlet UIButton *priceButton;
+
+/**
+ The added to basket tick
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *addedToBaskedTick;
 
 /**
  The side view indicating if the spot is TUI or foursquare
@@ -86,5 +100,21 @@
  @discussion This method hides the description label with a slight animation
  */
 - (void)hideDescriptionLabelAnimated;
+
+/**
+ @methodName addToBasketAnimated
+ @abstract Adds the cell to the basket animated
+ @discussion This method disables and grays out the price button and shows the
+ add to basket tick. Animated.
+ */
+- (void)addToBasketAnimated;
+
+/**
+ @methodName removeFromBasketAnimated
+ @abstract Removes the cell from the basket animated
+ @discussion This method enables and colours the price button and hides the
+ add to basket tick. Animated.
+ */
+- (void)removeFromBasketAnimated;
 
 @end

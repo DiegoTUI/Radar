@@ -19,3 +19,10 @@
 // Screen size
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
+// Cells
+#define STANDARD_CELL_HEIGHT    89.0f
+#define SELECTED_CELL_HEIGHT    178.0f
+
+// Basket sliding view
+#define SLIDING_VIEW_CONTROLLER_LEFT_PEEK_AMOUNT   40.0f

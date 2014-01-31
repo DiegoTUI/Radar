@@ -35,7 +35,7 @@
  
  @param spotList The given spot list
  
- @return The singleton instance of TUILocationManager
+ @return The initialized data source
  */
 - (TUISpotListTableViewDataSource *)initWithSpotList:(TUISpotList *)spotList;
 

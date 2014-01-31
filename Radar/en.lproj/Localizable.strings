@@ -49,3 +49,10 @@
 "FOURSQUARE_GENERIC_SUBTITLE" = "Foursquare Venue";
 "INDOOR" = "INDOOR";
 "OUTDOOR" = "OUTDOOR";
+
+// Search
+"SEARCH_TITLE" = "Activities";
+
+// Basket
+"BASKET_TITLE" = "MY CART";
+"BASKET_TOTAL" = "Total";
