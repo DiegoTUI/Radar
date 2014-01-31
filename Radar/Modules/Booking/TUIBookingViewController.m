@@ -45,6 +45,7 @@ static NSInteger kSendButtonViewHeight = 100;
     [super initUserInterface];
     [self initContainerBookingForm];
     [self initContainerBookingSendButton];
+    self.title = NSLocalizedString(@"FORM_BOOKING_TITLE", nil);
 }
 
 

@@ -46,6 +46,7 @@
 - (void)initUserInterface
 {
     [super initUserInterface];
+    
 }
 
 
@@ -55,7 +56,7 @@
     NSDictionary *name = [[NSDictionary alloc] initWithObjectsAndKeys:
                           @"Name", @"label",
                           @"UIKeyboardTypeAlphabet", @"typeCell",
-                          @"Jhon Doe", @"placeholder",
+                          @"John Doe", @"placeholder",
                           nil];
     
     NSDictionary *surname = [[NSDictionary alloc] initWithObjectsAndKeys:

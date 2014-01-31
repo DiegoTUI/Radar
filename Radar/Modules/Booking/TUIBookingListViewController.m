@@ -51,6 +51,8 @@
     
     [self.bookingContainerView setOrigin:(bookingViewFrame)];
     [self.bookingContainerView setSize:CGSizeMake(self.view.width, 336.0)];
+    
+    self.title = NSLocalizedString(@"LIST_BOOKING_TITLE", nil);
 }
 
 

@@ -72,6 +72,10 @@
     }else{
         entrada.keyboardType = UIKeyboardTypeDefault;
     }
+    
+    entrada.returnKeyType = UIReturnKeyDone;
+    //entrada.resignFirstResponder
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     cell.selected = NO;
     [cell.contentView addSubview:label];

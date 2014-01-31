@@ -148,6 +148,7 @@
     [self initContainerListView];
     [self initContainerFilterView];
 #endif
+    self.title = NSLocalizedString(@"SEARCH_MAP_TITLE", nil);
 }
 
 - (void)initMapView
