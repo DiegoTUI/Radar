@@ -8,8 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		38B136DFD47540C18913D650 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFEA3BF1EC8242E485E23BF5 /* libPods.a */; };
+		620A2125189A68E800D090BA /* bidiFake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 620A2124189A68E800D090BA /* bidiFake.jpg */; };
+		620A2128189A6C5000D090BA /* ux-passbook-grayline.png in Resources */ = {isa = PBXBuildFile; fileRef = 620A2126189A6C5000D090BA /* ux-passbook-grayline.png */; };
+		620A2129189A6C5000D090BA /* ux-passbook-grayline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 620A2127189A6C5000D090BA /* ux-passbook-grayline@2x.png */; };
+		620A212C189A771200D090BA /* TUIBookingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620A212B189A771200D090BA /* TUIBookingListViewController.m */; };
+		620A212F189A7B1000D090BA /* TUIBookingPageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 620A212E189A7B1000D090BA /* TUIBookingPageViewControllerDataSource.m */; };
+		620A2132189A7D1600D090BA /* TUIBookingPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620A2131189A7D1600D090BA /* TUIBookingPageContentViewController.m */; };
 		627A418918893CE600926DB6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627A418818893CE600926DB6 /* MapKit.framework */; };
 		6282BF0D18895E86005CC250 /* mapa.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6282BF0C18895E86005CC250 /* mapa.plist */; };
+		62BF2C6D18987C2000B46BA8 /* TUIBookingFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BF2C6C18987C2000B46BA8 /* TUIBookingFormViewController.m */; };
+		62BF2C701898842800B46BA8 /* TUIBookingFormDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BF2C6F1898842800B46BA8 /* TUIBookingFormDelegate.m */; };
+		62DE87D11897B9BB00C915CA /* TUIBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DE87D01897B9BB00C915CA /* TUIBookingViewController.m */; };
+		62DE87D71897C2FD00C915CA /* TUIBookingSendButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DE87D61897C2FD00C915CA /* TUIBookingSendButtonViewController.m */; };
+		62DE87DA1897D8B800C915CA /* TUIBookingFormViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 62DE87D91897D8B800C915CA /* TUIBookingFormViewDataSource.m */; };
 		62EFE2C218919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EFE2C118919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m */; };
 		62EFE2C518919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EFE2C418919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m */; };
 		760B4F55188EC7C000AB65F5 /* TUISpotList+Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 760B4F54188EC7C000AB65F5 /* TUISpotList+Proxy.m */; };
@@ -208,8 +219,27 @@
 /* Begin PBXFileReference section */
 		13DA0B9C148D4F648817352A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		477B66755DAD4A9CB4E19525 /* libPods-RadarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		620A2124189A68E800D090BA /* bidiFake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bidiFake.jpg; path = Resources/tmp/bidiFake.jpg; sourceTree = "<group>"; };
+		620A2126189A6C5000D090BA /* ux-passbook-grayline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-passbook-grayline.png"; path = "Resources/tmp/ux-passbook-grayline.png"; sourceTree = "<group>"; };
+		620A2127189A6C5000D090BA /* ux-passbook-grayline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ux-passbook-grayline@2x.png"; path = "Resources/tmp/ux-passbook-grayline@2x.png"; sourceTree = "<group>"; };
+		620A212A189A771200D090BA /* TUIBookingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingListViewController.h; path = Modules/Booking/TUIBookingListViewController.h; sourceTree = "<group>"; };
+		620A212B189A771200D090BA /* TUIBookingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBookingListViewController.m; path = Modules/Booking/TUIBookingListViewController.m; sourceTree = "<group>"; };
+		620A212D189A7B1000D090BA /* TUIBookingPageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingPageViewControllerDataSource.h; path = Modules/Booking/TUIBookingPageViewControllerDataSource.h; sourceTree = "<group>"; };
+		620A212E189A7B1000D090BA /* TUIBookingPageViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBookingPageViewControllerDataSource.m; path = Modules/Booking/TUIBookingPageViewControllerDataSource.m; sourceTree = "<group>"; };
+		620A2130189A7D1600D090BA /* TUIBookingPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingPageContentViewController.h; path = Modules/Booking/TUIBookingPageContentViewController.h; sourceTree = "<group>"; };
+		620A2131189A7D1600D090BA /* TUIBookingPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBookingPageContentViewController.m; path = Modules/Booking/TUIBookingPageContentViewController.m; sourceTree = "<group>"; };
 		627A418818893CE600926DB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6282BF0C18895E86005CC250 /* mapa.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = mapa.plist; path = Resources/mapa.plist; sourceTree = "<group>"; };
+		62BF2C6B18987C2000B46BA8 /* TUIBookingFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingFormViewController.h; path = Modules/Booking/TUIBookingFormViewController.h; sourceTree = "<group>"; };
+		62BF2C6C18987C2000B46BA8 /* TUIBookingFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBookingFormViewController.m; path = Modules/Booking/TUIBookingFormViewController.m; sourceTree = "<group>"; };
+		62BF2C6E1898842800B46BA8 /* TUIBookingFormDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingFormDelegate.h; path = Modules/Booking/TUIBookingFormDelegate.h; sourceTree = "<group>"; };
+		62BF2C6F1898842800B46BA8 /* TUIBookingFormDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBookingFormDelegate.m; path = Modules/Booking/TUIBookingFormDelegate.m; sourceTree = "<group>"; };
+		62DE87CF1897B9BB00C915CA /* TUIBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingViewController.h; path = Modules/Booking/TUIBookingViewController.h; sourceTree = "<group>"; };
+		62DE87D01897B9BB00C915CA /* TUIBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBookingViewController.m; path = Modules/Booking/TUIBookingViewController.m; sourceTree = "<group>"; };
+		62DE87D51897C2FD00C915CA /* TUIBookingSendButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingSendButtonViewController.h; path = Modules/Booking/TUIBookingSendButtonViewController.h; sourceTree = "<group>"; };
+		62DE87D61897C2FD00C915CA /* TUIBookingSendButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBookingSendButtonViewController.m; path = Modules/Booking/TUIBookingSendButtonViewController.m; sourceTree = "<group>"; };
+		62DE87D81897D8B800C915CA /* TUIBookingFormViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBookingFormViewDataSource.h; path = Modules/Booking/TUIBookingFormViewDataSource.h; sourceTree = "<group>"; };
+		62DE87D91897D8B800C915CA /* TUIBookingFormViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBookingFormViewDataSource.m; path = Modules/Booking/TUIBookingFormViewDataSource.m; sourceTree = "<group>"; };
 		62EFE2C018919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUITimePageViewControllerDataSource.h; path = Modules/Filter/Controller/TUITimePageViewControllerDataSource.h; sourceTree = "<group>"; };
 		62EFE2C118919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUITimePageViewControllerDataSource.m; path = Modules/Filter/Controller/TUITimePageViewControllerDataSource.m; sourceTree = "<group>"; };
 		62EFE2C318919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIDistancePageViewControllerDataSource.h; path = Modules/Filter/Controller/TUIDistancePageViewControllerDataSource.h; sourceTree = "<group>"; };
@@ -508,6 +538,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62DE87CB1897B8E400C915CA /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				62DE87CF1897B9BB00C915CA /* TUIBookingViewController.h */,
+				62DE87D01897B9BB00C915CA /* TUIBookingViewController.m */,
+				62DE87D51897C2FD00C915CA /* TUIBookingSendButtonViewController.h */,
+				62DE87D61897C2FD00C915CA /* TUIBookingSendButtonViewController.m */,
+				62BF2C6B18987C2000B46BA8 /* TUIBookingFormViewController.h */,
+				62BF2C6C18987C2000B46BA8 /* TUIBookingFormViewController.m */,
+				62DE87D81897D8B800C915CA /* TUIBookingFormViewDataSource.h */,
+				62DE87D91897D8B800C915CA /* TUIBookingFormViewDataSource.m */,
+				62BF2C6E1898842800B46BA8 /* TUIBookingFormDelegate.h */,
+				62BF2C6F1898842800B46BA8 /* TUIBookingFormDelegate.m */,
+				620A212A189A771200D090BA /* TUIBookingListViewController.h */,
+				620A212B189A771200D090BA /* TUIBookingListViewController.m */,
+				620A212D189A7B1000D090BA /* TUIBookingPageViewControllerDataSource.h */,
+				620A212E189A7B1000D090BA /* TUIBookingPageViewControllerDataSource.m */,
+				620A2130189A7D1600D090BA /* TUIBookingPageContentViewController.h */,
+				620A2131189A7D1600D090BA /* TUIBookingPageContentViewController.m */,
+			);
+			name = Booking;
+			sourceTree = "<group>";
+		};
 		62EFE2C618928FF600F5EBD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,13 +607,13 @@
 		7672093C188BF419007CAE17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76720959188C2635007CAE17 /* TUISpotsViewController.h */,
+				7672095A188C2635007CAE17 /* TUISpotsViewController.m */,
 				76720953188C1119007CAE17 /* TUISpotListTableViewController.h */,
 				76720954188C1119007CAE17 /* TUISpotListTableViewController.m */,
 				76720963188C60A1007CAE17 /* TUISpotListTableViewController_Private.h */,
 				76720960188C51D5007CAE17 /* TUISpotListTableViewDataSource.h */,
 				76720961188C51D5007CAE17 /* TUISpotListTableViewDataSource.m */,
-				76720959188C2635007CAE17 /* TUISpotsViewController.h */,
-				7672095A188C2635007CAE17 /* TUISpotsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -586,8 +639,6 @@
 		76720968188D3055007CAE17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				62EFE2C318919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.h */,
-				62EFE2C418919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m */,
 				760B4F7F189021AF00AB65F5 /* TUIFilterContentViewController.h */,
 				760B4F80189021AF00AB65F5 /* TUIFilterContentViewController.m */,
 				76720969188D309A007CAE17 /* TUIFilterListViewController.h */,
@@ -598,6 +649,8 @@
 				62EFE2C118919A4B00F5EBD9 /* TUITimePageViewControllerDataSource.m */,
 				760B4F7C1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.h */,
 				760B4F7D1890151000AB65F5 /* TUIWeatherPageViewControllerDataSource.m */,
+				62EFE2C318919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.h */,
+				62EFE2C418919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -677,6 +730,7 @@
 			children = (
 				76D7288918841C9400F3545E /* Application */,
 				76D727DC187C58E400F3545E /* Base */,
+				62DE87CB1897B8E400C915CA /* Booking */,
 				76D72845187EC77100F3545E /* Cache */,
 				76D728741883DAA300F3545E /* Error */,
 				76720967188D3047007CAE17 /* Filter */,
@@ -1243,6 +1297,9 @@
 		76F2628E188A9AFD00B2EFEB /* tmp */ = {
 			isa = PBXGroup;
 			children = (
+				620A2126189A6C5000D090BA /* ux-passbook-grayline.png */,
+				620A2127189A6C5000D090BA /* ux-passbook-grayline@2x.png */,
+				620A2124189A68E800D090BA /* bidiFake.jpg */,
 				76F26298188A9B9600B2EFEB /* actividadImg.jpg */,
 				76F26299188A9B9600B2EFEB /* actividadImg.png */,
 				76F2629A188A9B9600B2EFEB /* actividadImg2.png */,
@@ -1499,6 +1556,7 @@
 				76F262DC188A9BE300B2EFEB /* filter-far.png in Resources */,
 				76F262DD188A9BE300B2EFEB /* filter-far@2x.png in Resources */,
 				76F262DE188A9BE300B2EFEB /* filter-indoor.png in Resources */,
+				620A2129189A6C5000D090BA /* ux-passbook-grayline@2x.png in Resources */,
 				76F262DF188A9BE300B2EFEB /* filter-indoor@2x.png in Resources */,
 				76F262E0188A9BE300B2EFEB /* filter-now.png in Resources */,
 				76F262E1188A9BE300B2EFEB /* filter-now@2x.png in Resources */,
@@ -1507,6 +1565,7 @@
 				76F262E4188A9BE300B2EFEB /* filter-tomorrow.png in Resources */,
 				76F262E5188A9BE300B2EFEB /* filter-tomorrow@2x.png in Resources */,
 				76F262AB188A9BB500B2EFEB /* icon-120.png in Resources */,
+				620A2128189A6C5000D090BA /* ux-passbook-grayline.png in Resources */,
 				76F262AC188A9BB500B2EFEB /* icon-152.png in Resources */,
 				76F262AD188A9BB500B2EFEB /* icon-512.png in Resources */,
 				76F262A8188A9BB500B2EFEB /* icon-58.png in Resources */,
@@ -1542,6 +1601,7 @@
 				76F26325188A9C0A00B2EFEB /* iconmap-tui-culture@2x.png in Resources */,
 				76F26326188A9C0A00B2EFEB /* iconmap-tui-outdoor.png in Resources */,
 				76F26327188A9C0A00B2EFEB /* iconmap-tui-outdoor@2x.png in Resources */,
+				620A2125189A68E800D090BA /* bidiFake.jpg in Resources */,
 				76F26328188A9C0A00B2EFEB /* iconmap-tui-shows.png in Resources */,
 				76F26329188A9C0A00B2EFEB /* iconmap-tui-shows@2x.png in Resources */,
 				76F2632A188A9C0A00B2EFEB /* iconmap-tui-tours.png in Resources */,
@@ -1658,6 +1718,7 @@
 				76D727B4187C523A00F3545E /* main.m in Sources */,
 				76D72853187ECA8B00F3545E /* NSDictionary+JSON.m in Sources */,
 				760B4F6F188FE6FD00AB65F5 /* NSError+TUIError.m in Sources */,
+				620A212C189A771200D090BA /* TUIBookingListViewController.m in Sources */,
 				76D72854187ECA8B00F3545E /* NSString+JSON.m in Sources */,
 				76D7280A187C5D6F00F3545E /* NSString+TUIString.m in Sources */,
 				760B4F6A188FD9C500AB65F5 /* NSURL+TUIURL.m in Sources */,
@@ -1665,18 +1726,22 @@
 				76D7288D18841CF200F3545E /* TUIApplicationController.m in Sources */,
 				76D7289C18855E2200F3545E /* TUIAtlasTicket.m in Sources */,
 				760B4F58188EC8D500AB65F5 /* TUIAtlasTicketParser.m in Sources */,
+				62DE87DA1897D8B800C915CA /* TUIBookingFormViewDataSource.m in Sources */,
 				76D7284C187EC87F00F3545E /* TUIBaseCachedModel.m in Sources */,
 				76D727EE187C5CC500F3545E /* TUIBaseController.m in Sources */,
 				76D727FD187C5CF000F3545E /* TUIBaseLabel.m in Sources */,
 				76D727F5187C5CDB00F3545E /* TUIBaseMapAnnotation.m in Sources */,
 				76D727F6187C5CDB00F3545E /* TUIBaseModel.m in Sources */,
 				7672095E188C48DC007CAE17 /* TUIBaseTableViewCell.m in Sources */,
+				620A2132189A7D1600D090BA /* TUIBookingPageContentViewController.m in Sources */,
 				7672094F188BFCDA007CAE17 /* TUIBaseTableViewController.m in Sources */,
 				76D727FE187C5CF000F3545E /* TUIBaseView.m in Sources */,
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
 				62EFE2C518919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m in Sources */,
 				760B4F72188FE9D400AB65F5 /* TUIErrorHandler.m in Sources */,
+				62BF2C701898842800B46BA8 /* TUIBookingFormDelegate.m in Sources */,
+				62BF2C6D18987C2000B46BA8 /* TUIBookingFormViewController.m in Sources */,
 				760B4F81189021AF00AB65F5 /* TUIFilterContentViewController.m in Sources */,
 				760BFF2C18965EFB007B1FE7 /* TUIFilterListViewController.m in Sources */,
 				7614223D18964AA9002AF91C /* TUIFilters.m in Sources */,
@@ -1691,11 +1756,14 @@
 				76D7287B1883DC3C00F3545E /* TUIServerErrorParser.m in Sources */,
 				76D7285F187ECE0000F3545E /* TUISettings.m in Sources */,
 				76D72841187DA84600F3545E /* TUISettingsLocationView.m in Sources */,
+				62DE87D71897C2FD00C915CA /* TUIBookingSendButtonViewController.m in Sources */,
 				76D72844187DBA2200F3545E /* TUISettingsTimeView.m in Sources */,
 				76D72838187D98F200F3545E /* TUISettingsViewController.m in Sources */,
+				62DE87D11897B9BB00C915CA /* TUIBookingViewController.m in Sources */,
 				76D7283E187D990000F3545E /* TUISettingsWeatherView.m in Sources */,
 				76D728951885585F00F3545E /* TUISpot.m in Sources */,
 				767209751895A047007CAE17 /* TUISpotAnnotationView.m in Sources */,
+				620A212F189A7B1000D090BA /* TUIBookingPageViewControllerDataSource.m in Sources */,
 				760B4F55188EC7C000AB65F5 /* TUISpotList+Proxy.m in Sources */,
 				76D728A418855F6F00F3545E /* TUISpotList.m in Sources */,
 				7614223F18965E3D002AF91C /* TUISpotListCell.m in Sources */,
