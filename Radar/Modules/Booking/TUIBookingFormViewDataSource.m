@@ -8,7 +8,7 @@
 
 #import "TUIBookingFormViewDataSource.h"
 
-@interface TUIBookingFormViewDataSource ()
+@interface TUIBookingFormViewDataSource ()<UITextFieldDelegate>
 
 @property (nonatomic, copy) NSArray *array;
 
@@ -74,7 +74,7 @@
     }
     
     entrada.returnKeyType = UIReturnKeyDone;
-    //entrada.resignFirstResponder
+    entrada.delegate = self;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     cell.selected = NO;
@@ -83,6 +83,11 @@
     label.text = [textFieldCurrent objectForKey:@"label"];
     
     return cell;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 @end
