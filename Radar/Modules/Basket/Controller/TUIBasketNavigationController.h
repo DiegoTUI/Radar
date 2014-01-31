@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Navigation controller for the basket list scene
+ */
 @interface TUIBasketNavigationController : UINavigationController
 
 @end

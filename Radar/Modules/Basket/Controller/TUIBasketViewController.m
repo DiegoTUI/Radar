@@ -9,13 +9,40 @@
 #import "TUIBasketViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+#import "TUIBasket_Private.h"
+// Models
+#import "TUISpotList.h"
+// Controllers
+#import "TUIBasketSpotListTableViewDataSource.h"
+#import "TUIBasketSpotListTableViewController_Private.h"
 
 static const CGFloat kTotalLabelXOffset = 10.0f;
 
 @interface TUIBasketViewController ()
+
+/**
+ Container view for the list of spots in the basket
+ */
 @property (weak, nonatomic) IBOutlet UIView *basketSpotListContainerView;
+
+/**
+ The basket spot list view controller
+ */
+@property (strong, nonatomic) TUIBasketSpotListTableViewController *basketSpotListTableViewController;
+
+/**
+ Label for the "Total" title
+ */
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+
+/**
+ Label for the price
+ */
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
+/**
+ Book it now button
+ */
 @property (weak, nonatomic) IBOutlet UIButton *bookItButton;
 
 @end
@@ -37,6 +64,7 @@ const CGFloat kPriceLabelPadding = 10.0f;
 {
     [super initData];
     
+    _basketSpotListTableViewController = (TUIBasketSpotListTableViewController *)self.childViewControllers[0];
 }
 
 
@@ -84,14 +112,27 @@ const CGFloat kPriceLabelPadding = 10.0f;
     [_priceLabel setTextColor:[UIColor blackColor]];
     [_priceLabel setFont:[UIFont fontWithName:LIGHT_FONT size:LARGE_FONT_SIZE]];
     [_priceLabel setTextAlignment:NSTextAlignmentRight];
-    [_priceLabel setText:@"125 €"];
-    [_priceLabel sizeToFit];
+    //[_priceLabel sizeToFit];
     _priceLabel.x = SCREEN_WIDTH - _priceLabel.width - kPriceLabelPadding;
     
 }
 
 - (void)initBookItButton
 {
+}
+
+
+#pragma mark - Basket -
+
+- (void)setBasket:(TUIBasket *)basket
+{
+    _basket = basket;
+    TUISpotList *spotList = [[TUISpotList alloc] init];
+    spotList.spots = basket.spots;
+    double totalPrice = [[_basket totalPrice] doubleValue];
+    [_priceLabel setText:[NSString stringWithFormat:@"%.2f €", totalPrice]];
+    _basketSpotListTableViewController.dataSource = [[TUIBasketSpotListTableViewDataSource alloc] initWithSpotList:spotList];
+    [_basketSpotListTableViewController updateData];
 }
 
 @end

@@ -9,6 +9,8 @@
 #import "TUISlidingBookingViewController.h"
 // Models
 #import "TUIBaseViewController_Private.h"
+// Controllers
+#import "TUIBasketViewController.h"
 
 NSString *const TUIBasketButtonPressedNotification = @"TUIBasketButtonPressedNotification";
 
@@ -85,7 +87,17 @@ NSString *const TUIBasketButtonPressedNotification = @"TUIBasketButtonPressedNot
 
 - (void)basketButtonPressed:(NSNotification *)notification
 {
-    [self anchorTopViewToLeftAnimated:YES];
+    typeof(self) __weak weakSelf = self;
+    
+    //[self anchorTopViewToLeftAnimated:YES];
+    
+    [self anchorTopViewToLeftAnimated:YES onComplete:^{
+        typeof(self) strongSelf = weakSelf;
+        if ( !strongSelf ) { return ;}
+        
+        TUIBasketViewController *basketViewController = (TUIBasketViewController *)[(UINavigationController *)strongSelf.underRightViewController topViewController];
+        [basketViewController setBasket:notification.object];
+    }];
 }
 
 

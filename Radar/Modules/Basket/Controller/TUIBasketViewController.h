@@ -7,8 +7,17 @@
 //
 
 #import "TUIBaseViewController.h"
+// Forward declarations
+@class TUIBasket;
 
+/**
+ View controller for the basket slide view
+ */
 @interface TUIBasketViewController : TUIBaseViewController
 
+/**
+ The basket
+ */
+@property (strong, nonatomic) TUIBasket *basket;
 
 @end

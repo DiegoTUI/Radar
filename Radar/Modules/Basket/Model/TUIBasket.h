@@ -43,4 +43,13 @@
  */
 - (NSInteger)ticketCount;
 
+/**
+ @methodName totalPrice
+ @abstract Returns the total price of the spots in the basket
+ @discussion This method will return the total price of the spots in the basket
+ 
+ @return The total price of the spots in the basket
+ */
+- (NSNumber *)totalPrice;
+
 @end

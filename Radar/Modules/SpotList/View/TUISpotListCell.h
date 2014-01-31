@@ -12,6 +12,9 @@
 @class TUIFoursquareVenue;
 @protocol TUISpotAddRemoveDelegate;
 
+/**
+ The cell for the spot list in the search scene
+ */
 @interface TUISpotListCell : TUIBaseTableViewCell
 
 /**

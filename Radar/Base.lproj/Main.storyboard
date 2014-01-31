@@ -407,7 +407,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ztz-LQ-Idm">
-                                        <rect key="frame" x="258" y="5" width="42" height="21"/>
+                                        <rect key="frame" x="181" y="5" width="119" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
@@ -429,22 +429,86 @@
             </objects>
             <point key="canvasLocation" x="1623" y="-832"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Basket Spot List Table View Controller-->
         <scene sceneID="PCs-4n-Ls8">
             <objects>
-                <tableViewController id="9h0-V4-0uh" sceneMemberID="viewController">
+                <tableViewController id="9h0-V4-0uh" customClass="TUIBasketSpotListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OT2-qc-OJk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="MmI-X7-Iyq">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TUIBasketListCell" rowHeight="89" id="DZe-Vk-Vwu" customClass="TUIBasketListCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MmI-X7-Iyq" id="L97-6C-DD3">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DZe-Vk-Vwu" id="PXb-UJ-wc6">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z5y-Rx-mTJ">
+                                            <rect key="frame" x="131" y="20" width="166" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jT5-g4-rHV">
+                                            <rect key="frame" x="131" y="37" width="166" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="10"/>
+                                            <color key="textColor" red="0.62745098040000002" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INDOOR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pAA-cr-rTb">
+                                            <rect key="frame" x="261" y="5" width="50" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES"/>
+                                                <bool key="isElement" value="YES"/>
+                                            </accessibility>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="9"/>
+                                            <color key="textColor" red="0.71764705880000002" green="0.71764705880000002" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.3999999762" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" id="EkV-Ft-dq9">
+                                            <rect key="frame" x="316" y="0.0" width="4" height="178"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.62745098040000002" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NVB-yZ-S6o">
+                                            <rect key="frame" x="265" y="40" width="46" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                            <state key="normal" title="100€">
+                                                <color key="titleColor" red="0.40784313729999999" green="0.7725490196" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RyJ-N0-AgC">
+                                            <rect key="frame" x="101" y="62" width="207" height="116"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view alpha="0.40000000596046448" contentMode="scaleToFill" id="mNf-6f-kcK">
+                                            <rect key="frame" x="0.0" y="0.0" width="316" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconlist-check.png" id="8C3-Oy-3oV">
+                                            <rect key="frame" x="302" y="56" width="12" height="12"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addedToBaskedTick" destination="8C3-Oy-3oV" id="6rG-zY-3D7"/>
+                                    <outlet property="cornerLabel" destination="pAA-cr-rTb" id="sy6-34-ZpA"/>
+                                    <outlet property="descriptionLabel" destination="RyJ-N0-AgC" id="I0F-AY-eKi"/>
+                                    <outlet property="priceButton" destination="NVB-yZ-S6o" id="npZ-eu-fqh"/>
+                                    <outlet property="sideView" destination="EkV-Ft-dq9" id="OhT-0T-0OC"/>
+                                    <outlet property="subtitleLabel" destination="jT5-g4-rHV" id="SSa-1y-VUg"/>
+                                    <outlet property="titleLabel" destination="Z5y-Rx-mTJ" id="O9t-4K-wCB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

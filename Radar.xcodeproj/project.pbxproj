@@ -46,6 +46,9 @@
 		760BFF59189A9F37007B1FE7 /* TUIBasketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF58189A9F37007B1FE7 /* TUIBasketViewController.m */; };
 		760BFF5F189AC09E007B1FE7 /* TUISlidingBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF5E189AC09E007B1FE7 /* TUISlidingBookingViewController.m */; };
 		760BFF62189B94AB007B1FE7 /* TUIBasketNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF61189B94AB007B1FE7 /* TUIBasketNavigationController.m */; };
+		760BFF65189BCA1B007B1FE7 /* TUIBasketSpotListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF64189BCA1B007B1FE7 /* TUIBasketSpotListTableViewController.m */; };
+		760BFF68189BD46B007B1FE7 /* TUIBasketSpotListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF67189BD46B007B1FE7 /* TUIBasketSpotListTableViewDataSource.m */; };
+		760BFF6D189BF12C007B1FE7 /* TUIBasketListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 760BFF6C189BF12C007B1FE7 /* TUIBasketListCell.m */; };
 		7614223D18964AA9002AF91C /* TUIFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7614223C18964AA9002AF91C /* TUIFilters.m */; };
 		7614223E18965E31002AF91C /* TUISpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7672095A188C2635007CAE17 /* TUISpotsViewController.m */; };
 		7614223F18965E3D002AF91C /* TUISpotListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76720945188BF5D5007CAE17 /* TUISpotListCell.m */; };
@@ -281,6 +284,14 @@
 		760BFF5E189AC09E007B1FE7 /* TUISlidingBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUISlidingBookingViewController.m; path = Modules/Shared/Controller/TUISlidingBookingViewController.m; sourceTree = "<group>"; };
 		760BFF60189B94AB007B1FE7 /* TUIBasketNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBasketNavigationController.h; path = Modules/Basket/Controller/TUIBasketNavigationController.h; sourceTree = "<group>"; };
 		760BFF61189B94AB007B1FE7 /* TUIBasketNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBasketNavigationController.m; path = Modules/Basket/Controller/TUIBasketNavigationController.m; sourceTree = "<group>"; };
+		760BFF63189BCA1B007B1FE7 /* TUIBasketSpotListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBasketSpotListTableViewController.h; path = Modules/Basket/Controller/TUIBasketSpotListTableViewController.h; sourceTree = "<group>"; };
+		760BFF64189BCA1B007B1FE7 /* TUIBasketSpotListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBasketSpotListTableViewController.m; path = Modules/Basket/Controller/TUIBasketSpotListTableViewController.m; sourceTree = "<group>"; };
+		760BFF66189BD46B007B1FE7 /* TUIBasketSpotListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBasketSpotListTableViewDataSource.h; path = Modules/Basket/Controller/TUIBasketSpotListTableViewDataSource.h; sourceTree = "<group>"; };
+		760BFF67189BD46B007B1FE7 /* TUIBasketSpotListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBasketSpotListTableViewDataSource.m; path = Modules/Basket/Controller/TUIBasketSpotListTableViewDataSource.m; sourceTree = "<group>"; };
+		760BFF69189BD71B007B1FE7 /* TUIBasketSpotListTableViewController_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUIBasketSpotListTableViewController_Private.h; path = Modules/Basket/Controller/TUIBasketSpotListTableViewController_Private.h; sourceTree = "<group>"; };
+		760BFF6A189BE51D007B1FE7 /* TUIBasket_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TUIBasket_Private.h; path = Modules/Basket/Model/TUIBasket_Private.h; sourceTree = "<group>"; };
+		760BFF6B189BF12C007B1FE7 /* TUIBasketListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIBasketListCell.h; path = Modules/Basket/View/TUIBasketListCell.h; sourceTree = "<group>"; };
+		760BFF6C189BF12C007B1FE7 /* TUIBasketListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIBasketListCell.m; path = Modules/Basket/View/TUIBasketListCell.m; sourceTree = "<group>"; };
 		7614223B18964AA9002AF91C /* TUIFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TUIFilters.h; path = Modules/Filter/Model/TUIFilters.h; sourceTree = "<group>"; };
 		7614223C18964AA9002AF91C /* TUIFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIFilters.m; path = Modules/Filter/Model/TUIFilters.m; sourceTree = "<group>"; };
 		766CADCD1886895F00E5C296 /* TUIAtlasTicketSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TUIAtlasTicketSpec.m; path = Modules/Spots/Model/TUIAtlasTicketSpec.m; sourceTree = "<group>"; };
@@ -591,6 +602,7 @@
 			children = (
 				760BFF4E18995804007B1FE7 /* TUIBasket.h */,
 				760BFF4F18995804007B1FE7 /* TUIBasket.m */,
+				760BFF6A189BE51D007B1FE7 /* TUIBasket_Private.h */,
 				760BFF5418996253007B1FE7 /* TUISpotAddRemoveDelegate.h */,
 			);
 			name = Model;
@@ -601,6 +613,8 @@
 			children = (
 				760BFF4B189931F1007B1FE7 /* TUIBasketButton.h */,
 				760BFF4C189931F1007B1FE7 /* TUIBasketButton.m */,
+				760BFF6B189BF12C007B1FE7 /* TUIBasketListCell.h */,
+				760BFF6C189BF12C007B1FE7 /* TUIBasketListCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -610,6 +624,11 @@
 			children = (
 				760BFF60189B94AB007B1FE7 /* TUIBasketNavigationController.h */,
 				760BFF61189B94AB007B1FE7 /* TUIBasketNavigationController.m */,
+				760BFF63189BCA1B007B1FE7 /* TUIBasketSpotListTableViewController.h */,
+				760BFF64189BCA1B007B1FE7 /* TUIBasketSpotListTableViewController.m */,
+				760BFF69189BD71B007B1FE7 /* TUIBasketSpotListTableViewController_Private.h */,
+				760BFF66189BD46B007B1FE7 /* TUIBasketSpotListTableViewDataSource.h */,
+				760BFF67189BD46B007B1FE7 /* TUIBasketSpotListTableViewDataSource.m */,
 				760BFF57189A9F37007B1FE7 /* TUIBasketViewController.h */,
 				760BFF58189A9F37007B1FE7 /* TUIBasketViewController.m */,
 			);
@@ -1752,7 +1771,10 @@
 				76D727EF187C5CC500F3545E /* TUIBaseViewController.m in Sources */,
 				760BFF5018995804007B1FE7 /* TUIBasket.m in Sources */,
 				760BFF4D189931F1007B1FE7 /* TUIBasketButton.m in Sources */,
+				760BFF6D189BF12C007B1FE7 /* TUIBasketListCell.m in Sources */,
 				760BFF62189B94AB007B1FE7 /* TUIBasketNavigationController.m in Sources */,
+				760BFF65189BCA1B007B1FE7 /* TUIBasketSpotListTableViewController.m in Sources */,
+				760BFF68189BD46B007B1FE7 /* TUIBasketSpotListTableViewDataSource.m in Sources */,
 				760BFF59189A9F37007B1FE7 /* TUIBasketViewController.m in Sources */,
 				76D72849187EC7BE00F3545E /* TUICache.m in Sources */,
 				62EFE2C518919C6400F5EBD9 /* TUIDistancePageViewControllerDataSource.m in Sources */,

@@ -15,7 +15,7 @@
 /**
  The spots in the basket
  */
-@property (nonatomic, strong) NSMutableOrderedSet *spots;
+@property (nonatomic, strong, readwrite) NSMutableOrderedSet *spots;
 
 @end
 
@@ -62,6 +62,27 @@
     }
     
     return ticket;
+}
+
+#pragma mark - Price -
+
+- (NSNumber *)totalPrice
+{
+    NSNumber *totalPrice = [NSNumber numberWithDouble:ZERO_FLOAT];
+    
+    for (TUIAtlasTicket *atlasTicket in _spots)
+    {
+        totalPrice = [NSNumber numberWithDouble:([totalPrice doubleValue] + [atlasTicket.price doubleValue])];
+    }
+    
+    return totalPrice;
+}
+
+#pragma mark - Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%p> Count:%d, Spots: %@", self , [self ticketCount], self.spots];
 }
 
 @end

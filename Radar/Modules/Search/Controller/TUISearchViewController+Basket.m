@@ -43,6 +43,8 @@ static const CGFloat kBasketButtonNegativeSpacer = -10.0f;
     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     [negativeSpacer setWidth:kBasketButtonNegativeSpacer];
     
+    self.basketButton.enabled = NO;
+    
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, basketBarButton,nil];
 }
 
@@ -51,7 +53,7 @@ static const CGFloat kBasketButtonNegativeSpacer = -10.0f;
 - (void)basketButtonClicked:(TUIBasketButton *)sender
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:TUIBasketButtonPressedNotification
-                                                        object:nil
+                                                        object:self.basket
                                                       userInfo:nil];
 }
 
@@ -79,6 +81,8 @@ static const CGFloat kBasketButtonNegativeSpacer = -10.0f;
     TUIAtlasTicket *ticketToAddToBasket = (TUIAtlasTicket *)spotList.spots[indexPath.row];
     [self.basket addAtlasTicket:ticketToAddToBasket];
     [self.basketButton showCounterAnimatedWithText:[NSString stringWithFormat:@"%d", [self.basket ticketCount]]];
+    
+    self.basketButton.enabled = YES;
 }
 
 - (void) removeSpotButtonPressedInCell:(TUISpotListCell *)sender
@@ -96,6 +100,7 @@ static const CGFloat kBasketButtonNegativeSpacer = -10.0f;
     else
     {
         [self.basketButton hideCounterAnimated];
+        self.basketButton.enabled = NO;
     }
 }
 
