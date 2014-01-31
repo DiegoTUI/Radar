@@ -82,7 +82,7 @@ static const CGFloat kLabelOffsetY = -1.0f;
 - (void)setupCounterLabel
 {
     _counterLabel = [[UILabel alloc] initWithFrame:CGRectMake(kLabelOffsetX, kLabelOffsetY, TWO_FLOAT * kCounterLabelRadius, TWO_FLOAT * kCounterLabelRadius)];
-    [_counterLabel setFont:[UIFont fontWithName:BOLD_FONT size:BASKET_COUNTER_SIZE]];
+    [_counterLabel setFont:[UIFont fontWithName:BOLD_FONT size:BASKET_COUNTER_FONT_SIZE]];
     _counterLabel.textAlignment = NSTextAlignmentCenter;
     [_counterLabel setTextColor:[UIColor whiteColor]];
     _counterLabel.backgroundColor = [UIColor clearColor];
