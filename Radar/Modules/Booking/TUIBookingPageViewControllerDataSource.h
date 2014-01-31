@@ -7,7 +7,11 @@
 //
 
 #import "TUIPageViewControllerDataSource.h"
+// Forward declarations
+@class TUIBasket;
 
 @interface TUIBookingPageViewControllerDataSource : TUIPageViewControllerDataSource
+
+- (TUIBookingPageViewControllerDataSource *)initWithBasket:(TUIBasket *)basket;
 
 @end

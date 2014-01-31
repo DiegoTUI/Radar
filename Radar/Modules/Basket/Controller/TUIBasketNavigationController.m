@@ -27,10 +27,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSDictionary *textAttributes = @{NSForegroundColorAttributeName:[UIColor tuiLightGreenColor],
+    /*NSDictionary *textAttributes = @{NSForegroundColorAttributeName:[UIColor tuiLightGreenColor],
                                      NSFontAttributeName:[UIFont fontWithName:REGULAR_FONT size:TITLE_SECTION_FONT_SIZE],
                                      NSForegroundColorAttributeName: [NSValue valueWithUIOffset:UIOffsetZero],
-                                     };
+                                     };*/
     self.navigationBar.barTintColor = [UIColor whiteColor];
     self.navigationBar.tintColor = [UIColor tuiLightGreenColor];
     //[self.navigationBar setTitleTextAttributes:textAttributes];

@@ -9,6 +9,13 @@
 #import "TUIBookingPageContentViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+// Models
+#import "TUIAtlasTicket.h"
+// Categories
+#import "UIImageView+AFNetworking.h"
+
+static NSString *kReferenceNumber = @"65452";
+static NSString *kFakeBidiImageName = @"bidiFake.png";
 
 @interface TUIBookingPageContentViewController ()
 
@@ -16,27 +23,23 @@
 
 @implementation TUIBookingPageContentViewController
 
-- (void)initData
-{
-    [super initData];
-    
-}
-
 
 #pragma mark - User interface -
 
-- (void)initUserInterface
+- (void)setViewControllerWithAtlasTicket:(TUIAtlasTicket *)atlasTicket
 {
-    [super initUserInterface];
-    
-    self.titleLabel.text = self.titleString;
-    self.weatherLabel.text = self.weatherString;
-    self.priceLabel.text = self.priceString;
-    self.referenceLabel.text = [NSString stringWithFormat:@"Ref: %@",self.referenceNumber];
-    
-    self.thumbImageView.image = [UIImage imageNamed:self.thumbString];
-    self.iconTypeImageView.image = [UIImage imageNamed:self.iconTypeString];
-    //self.bidiImageView.image = [UIImage imageNamed:self.bidiString];
+    _titleLabel.text = atlasTicket.name;
+    _weatherLabel.text = [atlasTicket.indoor boolValue] ? NSLocalizedString(@"INDOOR", nil) : NSLocalizedString(@"OUTDOOR", nil);
+    _priceLabel.text = [NSString stringWithFormat:@"%ld", [atlasTicket.price integerValue]];
+    _referenceLabel.text = kReferenceNumber;
+    _iconTypeImageView.image = [UIImage imageNamed:@"iconlist-tui.png"];
+    // Load image asynchronously
+    [_thumbImageView setImageWithURL:[NSURL URLWithString:atlasTicket.imageURLs[ZERO_INT]]];
+    // Make it circular
+    CALayer *imageLayer = _thumbImageView.layer;
+    [imageLayer setCornerRadius:_thumbImageView.width/TWO_INT];
+    [imageLayer setMasksToBounds:YES];
+    _bidiImageView.image = [UIImage imageNamed:kFakeBidiImageName];
 }
 
 @end

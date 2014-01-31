@@ -11,6 +11,7 @@
 #import "TUIBaseViewController_Private.h"
 // Controllers
 #import "TUIBookingSendButtonViewController.h"
+#import "TUIBookingListViewController.h"
 
 static NSInteger kSendButtonViewHeight = 100;
 
@@ -65,5 +66,15 @@ static NSInteger kSendButtonViewHeight = 100;
     _containerBookingSendButton.height = kSendButtonViewHeight;
 }
 
+#pragma mark - Segue -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:BOOKING_CONFIRMATION_SEGUE])
+    {
+        TUIBookingListViewController *bookingListViewController = (TUIBookingListViewController *)segue.destinationViewController;
+        bookingListViewController.basket = _basket;
+    }
+}
 
 @end

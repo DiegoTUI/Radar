@@ -94,7 +94,7 @@ static const NSInteger kCornerImageViewWidth              = 22;
     UIImage *icon = [UIImage imageNamed:@"iconlist-tui.png"];
     _cornerImageView.image = icon;
     // main image
-    [self setMainImage:spot.imageURLs[0]];
+    [self setMainImage:spot.imageURLs[ZERO_INT]];
     // title
     _titleLabel.text = spot.name;
     // description

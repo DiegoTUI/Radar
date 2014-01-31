@@ -31,50 +31,6 @@ NSString *const kTruncationString = @"...";
     return string;
 }
 
-- (NSString *)truncatedStringToFitWidth:(CGFloat)width withFont:(UIFont *)font
-{
-    // If there is no truncation we don't need to apply ...
-    BOOL hasTruncated = NO;
-    NSString *truncatedString = [self copy];
-    
-    // Reduce the string until it fits
-    NSString *truncationString = @"...";
-    CGSize truncationSize = [truncationString sizeWithAttributes:@{NSFontAttributeName: font}];
-    while ([truncatedString sizeWithFont:font forWidth:INT16_MAX lineBreakMode:NSLineBreakByTruncatingTail].width + truncationSize.width > width) {
-        truncatedString = [truncatedString substringToIndex:truncatedString.length - 1];
-        hasTruncated = YES;
-    }
-    
-    // If truncation then append ...
-    if(hasTruncated)
-    {
-        truncatedString = [self truncatedString:truncatedString replacingChars:NO];
-    }
-    
-    return truncatedString;
-}
-
-- (NSString *)truncatedStringToFitWidth:(CGFloat)width height:(CGFloat)height withFont:(UIFont *)font
-{
-    // If there is no truncation we don't need to apply ...
-    BOOL hasTruncated = NO;
-    NSString *truncatedString = [self copy];
-    
-    // Reduce the string until it fits
-    while ([truncatedString sizeWithFont:font constrainedToSize:CGSizeMake(width, INT16_MAX) lineBreakMode:NSLineBreakByWordWrapping].height > height) {
-        truncatedString = [truncatedString substringToIndex:truncatedString.length - 1];
-        hasTruncated = YES;
-    }
-    
-    // If truncation then append ...
-    if(hasTruncated)
-    {
-        truncatedString = [self truncatedString:truncatedString replacingChars:YES];
-    }
-    
-    return truncatedString;
-}
-
 
 #pragma mark - Truncation (Private)
 

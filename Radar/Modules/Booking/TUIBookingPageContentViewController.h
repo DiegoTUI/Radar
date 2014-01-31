@@ -7,6 +7,8 @@
 //
 
 #import "TUIBaseViewController.h"
+// Forward declarations
+@class TUIAtlasTicket;
 
 @interface TUIBookingPageContentViewController : TUIBaseViewController
 
@@ -27,5 +29,7 @@
 @property (nonatomic) NSString *thumbString;
 @property (nonatomic) NSString *iconTypeString;
 @property (nonatomic) NSString *bidiString;
+
+- (void)setViewControllerWithAtlasTicket:(TUIAtlasTicket *)atlasTicket;
 
 @end
