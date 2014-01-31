@@ -9,6 +9,8 @@
 #import "TUISearchViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+#import "TUISearchViewController_Private.h"
+#import "TUISearchViewController+Basket.h"
 // Models
 #import "TUILocationManager.h"
 #import "TUISettings.h"
@@ -16,50 +18,12 @@
 #import "TUIAtlasTicket.h"
 // Controllers
 #import "TUISettingsViewController.h"
-#import "TUISpotsViewController.h"
-#import "TUIFilterListViewController.h"
-#import "TUISearchMapViewDelegate.h"
 // Views
 #import "TUIUserLocationAnnotationView.h"
 #import "TUISpotAnnotationView.h"
 
 
 @interface TUISearchViewController () <TUISettingsViewControllerDelegate, TUISpotsViewControllerDelegate, TUIFilterListViewControllerDelegate, TUILocationManagerDelegate>
-
-/**
- The map view
- */
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
-/**
- The map view delegate
- */
-@property (strong, nonatomic)  TUISearchMapViewDelegate *mapViewDelegate;
-
-/**
- The container view for the list of spots
- */
-@property (weak, nonatomic) IBOutlet UIView *containerListView;
-
-/**
- The container view for the filters
- */
-@property (weak, nonatomic) IBOutlet UIView *containerFilterView;
-
-/**
- The spots view controller (contained in containerListView)
- */
-@property (strong, nonatomic) TUISpotsViewController *spotsViewController;
-
-/**
- The filter list view controller (contained in containerFilterView)
- */
-@property (strong, nonatomic) TUIFilterListViewController *filterListViewController;
-
-/**
- The current list of spots
- */
-@property (strong, nonatomic) TUISpotList *spotList;
 
 @end
 
@@ -73,6 +37,7 @@
     [super initData];
     
     [self initViewControllers];
+    [self initBasket];
 }
 
 - (void)initViewControllers
@@ -144,11 +109,18 @@
 {
     [super initUserInterface];
 #ifndef TESTING
+    [self initNavigationTitle];
     [self initMapView];
     [self initContainerListView];
     [self initContainerFilterView];
+    [self initBasketButton];
 #endif
     self.title = NSLocalizedString(@"SEARCH_MAP_TITLE", nil);
+}
+
+- (void)initNavigationTitle
+{
+    self.navigationItem.title = NSLocalizedString(@"SEARCH_TITLE", nil);
 }
 
 - (void)initMapView

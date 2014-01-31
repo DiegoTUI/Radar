@@ -70,7 +70,7 @@ static BOOL _serveCellsEnabled = YES;
     
     TUISpot *spot = self.spotList.spots[indexPath.row];
     
-    NSLog(@"Getting cell for spot: %@ - row: %d - cellsEnabled: %d", spot.name, indexPath.row, _serveCellsEnabled);
+    NSLog(@"Getting cell for spot: %@ - row: %ld - cellsEnabled: %d", spot.name, (long)indexPath.row, _serveCellsEnabled);
     
     // Check for TUI and Foursquare spots
     if ([spot isKindOfClass:[TUIAtlasTicket class]])
@@ -84,6 +84,9 @@ static BOOL _serveCellsEnabled = YES;
     // Set user interaction and background
     cell.userInteractionEnabled = _serveCellsEnabled;
     cell.contentView.backgroundColor = _serveCellsEnabled ? [UIColor whiteColor] : [UIColor tuiDisabledCellBackgroundColor];
+    
+    NSLog(@"Cell added notification pushed");
+    [[NSNotificationCenter defaultCenter] postNotificationName:CELL_ADDED_NOTIFICATION object:cell userInfo:nil];
     
     return cell;
 }

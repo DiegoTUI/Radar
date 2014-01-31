@@ -40,4 +40,9 @@
  */
 @property (nonatomic, strong) NSOrderedSet *imageURLs;
 
+/**
+ The added to basket flag
+ */
+@property (nonatomic) BOOL addedToBasket;
+
 @end

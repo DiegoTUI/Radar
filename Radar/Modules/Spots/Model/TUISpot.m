@@ -10,6 +10,17 @@
 
 @implementation TUISpot
 
+#pragma mark - Init
+- (TUISpot *)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.addedToBasket = NO;
+    }
+    return self;
+}
+
 #pragma mark - Description
 
 - (NSString *)description

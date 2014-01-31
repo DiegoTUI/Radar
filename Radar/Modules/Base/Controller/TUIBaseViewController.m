@@ -70,11 +70,11 @@
 - (void)initUserInterface
 {
     [self initNavigationBar];
-    [self initTitleView];
-    [self initCustomLeftBarButtonItem];
-    [self initGestureToHideKeyboard];
+    //[self initTitleView];
+    //[self initCustomLeftBarButtonItem];
+    //[self initGestureToHideKeyboard];
     
-    [self setInteractivePopGestureEnabled:YES];
+    //[self setInteractivePopGestureEnabled:YES];
 }
 
 - (void)initNavigationBar

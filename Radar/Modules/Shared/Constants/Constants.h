@@ -17,3 +17,4 @@
 #import "Settings.h"
 #import "Network.h"
 #import "Filters.h"
+#import "Notifications.h"
