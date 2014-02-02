@@ -10,8 +10,13 @@
 // Forward declarations
 @class TUIBasket;
 
-@interface TUIBookingPageViewControllerDataSource : TUIPageViewControllerDataSource
+@interface TUIBookingPageViewControllerDataSource : NSObject<UIPageViewControllerDataSource>
 
 - (TUIBookingPageViewControllerDataSource *)initWithBasket:(TUIBasket *)basket;
+
+/**
+ The view controllers of the data source
+ */
+@property (nonatomic, strong) NSArray *viewControllers;
 
 @end

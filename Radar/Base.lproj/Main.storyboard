@@ -415,7 +415,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="JHD-oB-sdO" kind="custom" identifier="CheckoutSegue" customClass="ECSlidingSegue" id="gIH-fB-fyi"/>
+                                            <segue destination="tv7-fI-wZ3" kind="custom" identifier="CheckoutSegue" customClass="ECSlidingSegue" id="Gts-PL-MQ7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -745,7 +745,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Tt5-jr-y8H" kind="modal" identifier="BookingConfirmationSegue" id="Co6-BA-wry"/>
+                                    <segue destination="IDr-p5-OlH" kind="modal" identifier="BookingConfirmationSegue" id="jJ4-4b-yzA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -885,8 +885,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="gIH-fB-fyi"/>
-        <segue reference="Co6-BA-wry"/>
-    </inferredMetricsTieBreakers>
 </document>

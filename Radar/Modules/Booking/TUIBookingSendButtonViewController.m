@@ -9,6 +9,8 @@
 #import "TUIBookingSendButtonViewController.h"
 // Extensions
 #import "TUIBaseViewController_Private.h"
+// Controllers
+#import "TUIBookingListViewController.h"
 
 @interface TUIBookingSendButtonViewController ()
 
@@ -36,6 +38,18 @@
     
     [super initUserInterface];
     
+}
+
+#pragma mark - Segue -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:BOOKING_CONFIRMATION_SEGUE])
+    {
+        UINavigationController *navigationController = (UINavigationController *)segue.destinationViewController;
+        TUIBookingListViewController *bookingListViewController = (TUIBookingListViewController *)navigationController.topViewController;
+        bookingListViewController.basket = _basket;
+    }
 }
 
 @end

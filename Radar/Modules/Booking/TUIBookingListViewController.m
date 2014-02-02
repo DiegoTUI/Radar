@@ -34,7 +34,7 @@
     [super initData];
     // set view controllers from containers
     
-    self.bookingDataSource = [[TUIBookingPageViewControllerDataSource alloc] init];
+    self.bookingDataSource = [[TUIBookingPageViewControllerDataSource alloc] initWithBasket:_basket];
     self.bookingPageViewController.dataSource = _bookingDataSource;
     self.bookingPageViewController.delegate = self;
     

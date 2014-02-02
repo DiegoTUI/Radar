@@ -11,7 +11,7 @@
 #import "TUIBaseViewController_Private.h"
 // Controllers
 #import "TUIBookingSendButtonViewController.h"
-#import "TUIBookingListViewController.h"
+
 
 static NSInteger kSendButtonViewHeight = 100;
 
@@ -23,7 +23,7 @@ static NSInteger kSendButtonViewHeight = 100;
 
 @property (weak, nonatomic) IBOutlet UIView *containerBookingSendButton;
 
-//@property (weak, nonatomic) TUIBookingSendButtonViewController *bookingSendButtonViewCotroller;
+@property (strong, nonatomic) TUIBookingSendButtonViewController *bookingSendButtonViewCotroller;
 
 
 @end
@@ -36,6 +36,16 @@ static NSInteger kSendButtonViewHeight = 100;
 - (void)initData
 {
     [super initData];
+    
+    for (UIViewController *viewController in self.childViewControllers)
+    {
+        if ([viewController isKindOfClass:[TUIBookingSendButtonViewController class]])
+        {
+            _bookingSendButtonViewCotroller = (TUIBookingSendButtonViewController *)viewController;
+            _bookingSendButtonViewCotroller.basket = _basket;
+        }
+        
+    }
 }
 
 
@@ -64,17 +74,6 @@ static NSInteger kSendButtonViewHeight = 100;
     _containerBookingSendButton.y = _containerBookingForm.origin.y + _containerBookingForm.height;
     _containerBookingSendButton.width = self.view.width;
     _containerBookingSendButton.height = kSendButtonViewHeight;
-}
-
-#pragma mark - Segue -
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:BOOKING_CONFIRMATION_SEGUE])
-    {
-        TUIBookingListViewController *bookingListViewController = (TUIBookingListViewController *)segue.destinationViewController;
-        bookingListViewController.basket = _basket;
-    }
 }
 
 @end

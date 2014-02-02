@@ -32,12 +32,37 @@
             [viewControllers addObject:bookingPageContentViewController];
         }
         
-        self.viewControllers = viewControllers;
+        _viewControllers = viewControllers;
         
     }
     return self;
 }
 
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+       viewControllerAfterViewController:(UIViewController *)viewController
+{
+    NSUInteger index = [_viewControllers indexOfObject:viewController];
+    
+    if ((index == _viewControllers.count-ONE_INT) || (index == NSNotFound)) {
+        return nil;
+    }
+    
+    index++;
+    return _viewControllers[index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
+      viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    NSUInteger index = [_viewControllers indexOfObject:viewController];
+    
+    if ((index == 0) || (index == NSNotFound)) {
+        return nil;
+    }
+    
+    index--;
+    return _viewControllers[index];
+}
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
@@ -46,7 +71,7 @@
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {
-    return 0;
+    return ZERO_INT;
 }
 
 @end

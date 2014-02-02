@@ -49,7 +49,7 @@
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
 {
-    return 0;
+    return ZERO_INT;
 }
 
 @end

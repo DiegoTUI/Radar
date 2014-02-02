@@ -7,7 +7,14 @@
 //
 
 #import "TUIBaseViewController.h"
+// Forward declarations
+@class TUIBasket;
 
 @interface TUIBookingSendButtonViewController : TUIBaseViewController
+
+/**
+ The basket
+ */
+@property (strong, nonatomic) TUIBasket *basket;
 
 @end

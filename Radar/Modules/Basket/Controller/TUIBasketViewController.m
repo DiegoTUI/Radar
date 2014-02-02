@@ -142,7 +142,7 @@ const CGFloat kPriceLabelPadding = 10.0f;
 {
     if ([segue.identifier isEqualToString:CHECKOUT_SEGUE])
     {
-        TUIBookingViewController *bookingViewController = (TUIBookingViewController *)segue.destinationViewController;
+        TUIBookingViewController *bookingViewController = (TUIBookingViewController *)([(UINavigationController *)segue.destinationViewController topViewController]);
         bookingViewController.basket = _basket;
     }
 }

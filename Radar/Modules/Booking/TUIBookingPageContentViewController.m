@@ -15,9 +15,14 @@
 #import "UIImageView+AFNetworking.h"
 
 static NSString *kReferenceNumber = @"65452";
-static NSString *kFakeBidiImageName = @"bidiFake.png";
+static NSString *kFakeBidiImageName = @"bidiFake.jpg";
 
 @interface TUIBookingPageContentViewController ()
+
+@property (strong, nonatomic) NSString *titleText;
+@property (strong, nonatomic) NSString *weatherText;
+@property (strong, nonatomic) NSString *priceText;
+@property (strong, nonatomic) NSString *imageUrl;
 
 @end
 
@@ -26,20 +31,29 @@ static NSString *kFakeBidiImageName = @"bidiFake.png";
 
 #pragma mark - User interface -
 
-- (void)setViewControllerWithAtlasTicket:(TUIAtlasTicket *)atlasTicket
+- (void)initUserInterface
 {
-    _titleLabel.text = atlasTicket.name;
-    _weatherLabel.text = [atlasTicket.indoor boolValue] ? NSLocalizedString(@"INDOOR", nil) : NSLocalizedString(@"OUTDOOR", nil);
-    _priceLabel.text = [NSString stringWithFormat:@"%ld", [atlasTicket.price integerValue]];
+    [super initUserInterface];
+    
+    _titleLabel.text = _titleText;
+    _weatherLabel.text = _weatherText;
+    _priceLabel.text = _priceText;
     _referenceLabel.text = kReferenceNumber;
     _iconTypeImageView.image = [UIImage imageNamed:@"iconlist-tui.png"];
-    // Load image asynchronously
-    [_thumbImageView setImageWithURL:[NSURL URLWithString:atlasTicket.imageURLs[ZERO_INT]]];
+    [_thumbImageView setImageWithURL:[NSURL URLWithString:_imageUrl]];
     // Make it circular
     CALayer *imageLayer = _thumbImageView.layer;
     [imageLayer setCornerRadius:_thumbImageView.width/TWO_INT];
     [imageLayer setMasksToBounds:YES];
     _bidiImageView.image = [UIImage imageNamed:kFakeBidiImageName];
+}
+
+- (void)setViewControllerWithAtlasTicket:(TUIAtlasTicket *)atlasTicket
+{
+    _titleText = atlasTicket.name;
+    _weatherText = [atlasTicket.indoor boolValue] ? NSLocalizedString(@"INDOOR", nil) : NSLocalizedString(@"OUTDOOR", nil);
+    _priceText = [NSString stringWithFormat:@"%ld €", [atlasTicket.price integerValue]];
+    _imageUrl = atlasTicket.imageURLs[ZERO_INT];
 }
 
 @end
