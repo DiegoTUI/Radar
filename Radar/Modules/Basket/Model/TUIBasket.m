@@ -82,7 +82,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%p> Count:%d, Spots: %@", self , [self ticketCount], self.spots];
+    return [NSString stringWithFormat:@"<%p> Count:%ld, Spots: %@", self , (long)[self ticketCount], self.spots];
 }
 
 @end

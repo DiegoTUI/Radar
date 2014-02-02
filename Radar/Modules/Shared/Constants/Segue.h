@@ -8,3 +8,5 @@
 
 // Segues
 #define DEVELOPER_SETTINGS_SEGUE                                @"DeveloperSettingsSegue"
+#define CHECKOUT_SEGUE                                          @"CheckoutSegue"
+#define BOOKING_CONFIRMATION_SEGUE                              @"BookingConfirmationSegue"

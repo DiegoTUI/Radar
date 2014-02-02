@@ -48,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Basket list length: %d", self.spotList.spots.count);
+    NSLog(@"Basket list length: %lu", (unsigned long)self.spotList.spots.count);
     return self.spotList.spots.count;
 }
 
@@ -64,7 +64,7 @@
     
     TUIAtlasTicket *spot = self.spotList.spots[indexPath.row];
     
-    NSLog(@"Basket list - Getting cell for spot: %@ - row: %d", spot.name, indexPath.row);
+    NSLog(@"Basket list - Getting cell for spot: %@ - row: %ld", spot.name, (long)indexPath.row);
     
     [cell atlasTicketCellWithSpot:(TUIAtlasTicket *)spot];
     

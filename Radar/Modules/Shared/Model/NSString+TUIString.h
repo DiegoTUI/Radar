@@ -36,33 +36,6 @@
 - (NSString *)truncatedStringToNearestWordAtIndex:(NSUInteger)index;
 
 /**
- @methodName truncatedStringToFitWidth:withFont
- @abstract Truncate a string to fit inside a width
- @discussion THis method will truncate a string to fit a width and
- append ... to the end of the truncated string.
- 
- @param width The width limit to truncate to
- @param font The font to calculate the truncation with
- 
- @return The truncated string
- */
-- (NSString *)truncatedStringToFitWidth:(CGFloat)width withFont:(UIFont *)font;
-
-/**
- @methodName truncatedStringToFitWidth:height:withFont
- @abstract Truncate a string to fit inside a width and height
- @discussion THis method will truncate a string to fit a width and height and then
- append ... to the end of the truncated string.
- 
- @param width The width limit to truncate to
- @param height The height limit to truncate to
- @param font The font to calculate the truncation with
- 
- @return The truncated string
- */
-- (NSString *)truncatedStringToFitWidth:(CGFloat)width height:(CGFloat)height withFont:(UIFont *)font;
-
-/**
  @methodName isValidEmail
  @abstract Checks if the string is a valid e-mail
  @discussion This method will check if the current string is a valid email.

@@ -15,6 +15,7 @@
 // Controllers
 #import "TUIBasketSpotListTableViewDataSource.h"
 #import "TUIBasketSpotListTableViewController_Private.h"
+#import "TUIBookingViewController.h"
 
 static const CGFloat kTotalLabelXOffset = 10.0f;
 
@@ -133,6 +134,17 @@ const CGFloat kPriceLabelPadding = 10.0f;
     [_priceLabel setText:[NSString stringWithFormat:@"%.2f €", totalPrice]];
     _basketSpotListTableViewController.dataSource = [[TUIBasketSpotListTableViewDataSource alloc] initWithSpotList:spotList];
     [_basketSpotListTableViewController updateData];
+}
+
+#pragma mark - Segue -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:CHECKOUT_SEGUE])
+    {
+        TUIBookingViewController *bookingViewController = (TUIBookingViewController *)([(UINavigationController *)segue.destinationViewController topViewController]);
+        bookingViewController.basket = _basket;
+    }
 }
 
 @end

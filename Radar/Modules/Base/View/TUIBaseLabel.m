@@ -82,16 +82,6 @@
 {
     NSString *actualText = self.text;
     
-    // Just return the text if one line, as the height calculation will be wrong and return ...
-    if(self.numberOfLines != ONE_INT)
-    {
-        actualText = [self.text truncatedStringToFitWidth:self.frame.size.width height:self.frame.size.height withFont:self.font];
-    }
-    else
-    {
-        actualText = [self.text truncatedStringToFitWidth:self.bounds.size.width withFont:self.font];
-    }
-    
     return actualText;
 }
 

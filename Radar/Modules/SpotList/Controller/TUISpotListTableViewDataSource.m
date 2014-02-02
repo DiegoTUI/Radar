@@ -70,7 +70,7 @@ static BOOL _serveCellsEnabled = YES;
     
     TUISpot *spot = self.spotList.spots[indexPath.row];
     
-    NSLog(@"Getting cell for spot: %@ - row: %d - cellsEnabled: %d", spot.name, indexPath.row, _serveCellsEnabled);
+    NSLog(@"Getting cell for spot: %@ - row: %ld - cellsEnabled: %d", spot.name, (long)indexPath.row, _serveCellsEnabled);
     
     // Check for TUI and Foursquare spots
     if ([spot isKindOfClass:[TUIAtlasTicket class]])

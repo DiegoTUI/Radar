@@ -80,7 +80,7 @@ static const CGFloat kBasketButtonNegativeSpacer = -10.0f;
     TUISpotList *spotList = [self.spotsViewController currentSpotList];
     TUIAtlasTicket *ticketToAddToBasket = (TUIAtlasTicket *)spotList.spots[indexPath.row];
     [self.basket addAtlasTicket:ticketToAddToBasket];
-    [self.basketButton showCounterAnimatedWithText:[NSString stringWithFormat:@"%d", [self.basket ticketCount]]];
+    [self.basketButton showCounterAnimatedWithText:[NSString stringWithFormat:@"%ld", (long)[self.basket ticketCount]]];
     
     self.basketButton.enabled = YES;
 }
@@ -95,7 +95,7 @@ static const CGFloat kBasketButtonNegativeSpacer = -10.0f;
     [self.basket removeAtlasTicket:ticketToRemoveFromBasket];
     if ([self.basket ticketCount] > 0)
     {
-        [self.basketButton showCounterAnimatedWithText:[NSString stringWithFormat:@"%d", [self.basket ticketCount]]];
+        [self.basketButton showCounterAnimatedWithText:[NSString stringWithFormat:@"%ld", (long)[self.basket ticketCount]]];
     }
     else
     {

@@ -89,8 +89,9 @@ static NSInteger kCornerImageViewWidth              = 22;
 
 - (void)setupAddedToBasketTick
 {
-    // hide it
-    _addedToBaskedTick.transform = CGAffineTransformMakeScale(ZERO_FLOAT, ZERO_FLOAT);
+    // hide it if the button is enabled
+    if (_priceButton.alpha > DISABLED_BUTTON_ALPHA)
+        _addedToBaskedTick.transform = CGAffineTransformMakeScale(ZERO_FLOAT, ZERO_FLOAT);
 }
 
 #pragma mark - Cell types -

@@ -115,6 +115,7 @@
     [self initContainerFilterView];
     [self initBasketButton];
 #endif
+    self.title = NSLocalizedString(@"SEARCH_MAP_TITLE", nil);
 }
 
 - (void)initNavigationTitle
