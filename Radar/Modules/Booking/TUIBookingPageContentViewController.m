@@ -52,7 +52,7 @@ static NSString *kFakeBidiImageName = @"bidiFake.jpg";
 {
     _titleText = atlasTicket.name;
     _weatherText = [atlasTicket.indoor boolValue] ? NSLocalizedString(@"INDOOR", nil) : NSLocalizedString(@"OUTDOOR", nil);
-    _priceText = [NSString stringWithFormat:@"%ld €", [atlasTicket.price integerValue]];
+    _priceText = [NSString stringWithFormat:@"%d €", [atlasTicket.price intValue]];
     _imageUrl = atlasTicket.imageURLs[ZERO_INT];
 }
 

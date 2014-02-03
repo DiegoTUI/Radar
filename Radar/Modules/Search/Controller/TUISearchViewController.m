@@ -30,6 +30,21 @@
 @implementation TUISearchViewController
 
 
+#pragma mark - View lifecycle - 
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
+
 #pragma mark - Data
 
 - (void)initData
@@ -208,6 +223,11 @@
     {
         [self performSegueWithIdentifier:DEVELOPER_SETTINGS_SEGUE sender:self];
     }
+}
+
+-(BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
 
 
